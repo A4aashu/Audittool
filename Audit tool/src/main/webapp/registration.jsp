@@ -37,7 +37,7 @@
                         <form method="post" action="RegisterServlet" id="registerForm" class="form-horizontal">
                         <div class="row px-3"> <label class="mb-1">
                                 <h6 class="mb-0 text-lg" style="font-size: 23px; margin-left: 43px;">Full Name</h6>
-                            </label> <input class="mb-4 input_first_name" type="text" name="input_full_name">
+                            </label> <input class="mb-4 input_full_name" type="text" name="input_full_name">
                             <h6 class="mb-0 text-lg" style="margin-left: 80px;font-size:23px;">Designation</h6>
                             </label> <input class="mb-4 input_designation" type="text" name="input_designation">
                         </div>
