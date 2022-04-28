@@ -1,5 +1,75 @@
 package com.tool.controller;
 
-public class RegisterServlet {
+import java.io.IOException;
+import java.util.Random;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.commons.codec.digest.DigestUtils;
+
+import com.tool.bean.RegisterBean;
+import com.tool.dao.RegisterDao;
+
+
+@WebServlet("/RegisterServlet")
+public class RegisterServlet extends HttpServlet {
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		if(request.getParameter("btn_register")!=null)
+		{
+			String firstname = request.getParameter("input_first_name");
+			String lastname = request.getParameter("input_last_name");
+			String designation=request.getParameter("input_designation");
+			String location=request.getParameter("input_location");
+			String email = request.getParameter("input_email");
+			String password = request.getParameter("input_password");
+			
+			String newPassword = DigestUtils.md5Hex(password);
+			
+			String makeHash;
+			Random random = new Random();
+			random.nextInt(999999);
+			makeHash = DigestUtils.md5Hex(""+random);
+			
+			RegisterBean registerBean = new RegisterBean();
+			
+			registerBean.setFirstname(firstname);
+			registerBean.setLastname(lastname);
+			registerBean.setDesignation(designation);
+			registerBean.setLocation(location);
+			registerBean.setEmail(email);
+			registerBean.setPassword(newPassword);
+			registerBean.setHash(makeHash);
+			
+			RegisterDao registerDao = new RegisterDao();
+			
+			String str = registerDao.RegisterUser(registerBean);
+			
+			if(str.equals("SUCCESS")){
+                
+                response.sendRedirect("verify.jsp");
+            }
+			else if(str.equals("sorry email already exist")){
+                
+                request.setAttribute("RegisterErrorMsg",str); 
+                RequestDispatcher rd=request.getRequestDispatcher("registration.jsp"); 
+                rd.include(request, response);
+            }
+            else{
+                
+                request.setAttribute("RegisterErrorMsg",str); 
+                RequestDispatcher rd=request.getRequestDispatcher("registration.jsp"); 
+                rd.include(request, response);
+                response.sendRedirect("registration.jsp");
+            }
+		}
+	
+	}
 
 }

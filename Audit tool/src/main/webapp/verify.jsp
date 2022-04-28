@@ -7,6 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<center>
+    <h2>Thank You</h2>
+    <h3>Please check your inbox and verify email</h3>
+</center>
 </body>
 </html>

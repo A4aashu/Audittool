@@ -1,0 +1,248 @@
+body {
+    color: #000;
+    overflow-x: hidden;
+    height: 100%;
+    background-color: #B0BEC5;
+    background-repeat: no-repeat
+}
+
+.card0 {
+    box-shadow: 0px 4px 8px 0px #757575;
+    border-radius: 0px
+}
+
+section{
+    position: relative!important;
+}
+section::after{
+
+    content: ''!important;
+
+    position: absolute!important;
+
+    top: 0!important;
+
+    left: 0!important;
+
+    border-top: 380px solid #00338D!important;
+
+    border-left: 80px solid white;
+
+    border-bottom: 275px solid #00338D!important;
+
+    width: 0;
+
+}
+.signup_btn{
+    border-radius: 60px!important;
+    background-color: white!important;
+    color: #00338D!important;
+    margin-left: 290px!important;
+    padding: 6px!important;
+    width: 100px!important;
+    font-weight: bold!important;
+    margin-top: 18px!important;
+}
+.input_email{
+    border-radius: 60px!important;
+    background-color: #E5E5E5!important;
+    width: 290px!important;
+    margin-top: 37px!important;
+    margin-left: -159px!important;
+    height: 45px!important;
+}
+.input_designation{
+    border-radius: 60px!important;
+    background-color: #E5E5E5!important;
+    width: 290px!important;
+    margin-top: 38px!important;
+    margin-left: -128px!important;
+}
+.input_location{
+    border-radius: 60px!important;
+    background-color: #E5E5E5!important;
+    width: 290px!important;
+    margin-top: 37px!important;
+    margin-left: -94px!important;
+    height: 45px!important;
+}
+.input_password{
+    border-radius: 60px!important;
+    background-color: #E5E5E5!important;
+    width: 290px!important;
+    margin-top: 38px!important;
+    margin-left: -101px!important;
+}
+.input_first_name{
+    border-radius: 60px!important;
+    background-color: #E5E5E5!important;
+    width: 290px!important;
+    margin-top: 38px!important;
+    margin-left: -115px!important;
+}
+.input_last_name{
+    border-radius: 60px!important;
+    background-color: #E5E5E5!important;
+    width: 290px!important;
+    margin-top: 37px!important;
+    margin-left: -116px!important;
+    height: 45px!important;
+}
+.card2 {
+    margin: 0px 40px
+}
+
+.logo {
+    width: 200px;
+    height: 100px;
+    margin-top: 20px;
+    margin-left: 35px
+}
+
+.image {
+    width: 500px;
+    height: 437px;
+    margin-left: 21px;
+    padding-top: 54px;
+}
+
+.border-line {
+    border-right: 1px solid #EEEEEE
+}
+
+.facebook {
+    background-color: #3b5998;
+    color: #fff;
+    font-size: 18px;
+    padding-top: 5px;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    cursor: pointer
+}
+
+.twitter {
+    background-color: #1DA1F2;
+    color: #fff;
+    font-size: 18px;
+    padding-top: 5px;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    cursor: pointer
+}
+
+.linkedin {
+    background-color: #2867B2;
+    color: #fff;
+    font-size: 18px;
+    padding-top: 5px;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    cursor: pointer
+}
+
+.line {
+    height: 1px;
+    width: 45%;
+    background-color: #E0E0E0;
+    margin-top: 10px
+}
+
+.or {
+    width: 10%;
+    font-weight: bold
+}
+
+.text-sm {
+    font-size: 14px !important
+}
+
+::placeholder {
+    color: #BDBDBD;
+    opacity: 1;
+    font-weight: 300
+}
+
+:-ms-input-placeholder {
+    color: #BDBDBD;
+    font-weight: 300
+}
+
+::-ms-input-placeholder {
+    color: #BDBDBD;
+    font-weight: 300
+}
+
+input,
+textarea {
+    padding: 10px 12px 10px 12px;
+    border: 1px solid lightgrey;
+    border-radius: 2px;
+    margin-bottom: 5px;
+    margin-top: 2px;
+    width: 100%;
+    box-sizing: border-box;
+    color: #2C3E50;
+    font-size: 14px;
+    letter-spacing: 1px
+}
+
+input:focus,
+textarea:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 1px solid #304FFE;
+    outline-width: 0
+}
+
+button:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    outline-width: 0
+}
+
+a {
+    color: inherit;
+    cursor: pointer
+}
+
+.btn-blue {
+    background-color: #1A237E;
+    width: 150px;
+    color: #fff;
+    border-radius: 2px
+}
+
+.btn-blue:hover {
+    background-color: #000;
+    cursor: pointer
+}
+
+.bg-blue {
+    color: #fff;
+    background-color: #1A237E
+}
+
+@media screen and (max-width: 991px) {
+    .logo {
+        margin-left: 0px
+    }
+
+    .image {
+        width: 300px;
+        height: 220px
+    }
+
+    .border-line {
+        border-right: none
+    }
+
+    .card2 {
+        border-top: 1px solid #EEEEEE !important;
+        margin: 0px 15px
+    }
+}

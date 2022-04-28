@@ -7,6 +7,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<%
+if(session.getAttribute("user_login")!=null)
+{
+	session.removeAttribute("user_login");
+	request.getSession(false);
+	session.setAttribute("user_login", null);
+	session.invalidate();
+	response.sendRedirect("index.jsp");
+}
+%>
 </body>
 </html>

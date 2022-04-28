@@ -1,0 +1,105 @@
+body{
+    background-color: white
+}
+
+#loginImage{
+    width: 450px;
+    height: 450px;
+    padding: 20px , 50px, 30px, 40px;
+    margin-top: 60px;
+    margin-bottom: 50px;
+    margin-left: 100px;
+}
+
+#logo{
+    width: 100px;
+    height: 60px;
+    margin-top: 15px;
+    margin-right: 15px;
+    margin-left: 15px;
+
+}
+
+.login-form-1{
+    position: relative !important;
+    background-color: #003797;
+  
+    
+}
+
+
+.form-control{
+    width: 200px!important;
+    height: 30px!important;
+    display: inline-block!important;
+    border-radius: 40px!important;
+    
+}
+.container-1{
+    padding-left: 90px;
+    padding-top: 50px;
+}
+
+h6{
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+input.form-control{
+    width: 300px!important;
+    height: 30px!important;
+    display: inline-block !important;
+}
+
+.ForgetPwd{
+
+    text-decoration:none!important;
+    color: white!important;
+    margin-top: 15px!important;
+    padding-top: 30px !important;
+
+}
+
+.ForgetPwd :hover{
+    color: white!important;
+    
+}
+
+.btn-primary{
+background-color: white!important;
+color: #003797!important;
+border-radius: 30px!important;
+margin-left: 100px;
+margin-top: 10px;
+margin-bottom: 20px;
+width: 100px;
+height: 35px!important;
+padding-top: 5px!important;
+padding-bottom: 7px!important;
+font-weight: bold !important;
+}
+
+.NewUser{
+padding-top: 5px !important;
+padding-left: 85px!important;
+text-decoration:none!important;
+color: white!important;
+
+}
+
+.NewUser :hover{
+    color: white!important;
+    
+}
+/* .container1{
+    background-color: #00338d;
+    background-repeat: no-repeat;
+    position:absolute;
+    width: 100px;
+    height:100px;
+    left: 10.83%;
+    right: -1.75%;
+    top: 10%;
+    bottom: 0%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    transform: matrix(1.98, 0.21, -0.22, 1.98, 0, 0);
+} */
