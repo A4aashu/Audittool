@@ -23,9 +23,9 @@ public class RegisterServlet extends HttpServlet {
 		
 		if(request.getParameter("btn_register")!=null)
 		{
-			String firstname = request.getParameter("input_first_name");
-			String lastname = request.getParameter("input_last_name");
+			String fullname = request.getParameter("input_full_name");
 			String designation=request.getParameter("input_designation");
+			String department=request.getParameter("input_department");
 			String location=request.getParameter("input_location");
 			String email = request.getParameter("input_email");
 			String password = request.getParameter("input_password");
@@ -39,8 +39,8 @@ public class RegisterServlet extends HttpServlet {
 			
 			RegisterBean registerBean = new RegisterBean();
 			
-			registerBean.setFirstname(firstname);
-			registerBean.setLastname(lastname);
+			registerBean.setFullname(fullname);
+			registerBean.setDepartment(department);
 			registerBean.setDesignation(designation);
 			registerBean.setLocation(location);
 			registerBean.setEmail(email);

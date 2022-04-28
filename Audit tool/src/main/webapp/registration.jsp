@@ -36,22 +36,22 @@
                         </div>
                         <form method="post" action="RegisterServlet" id="registerForm" class="form-horizontal">
                         <div class="row px-3"> <label class="mb-1">
-                                <h6 class="mb-0 text-lg" style="font-size: 23px; margin-left: 43px;">First Name</h6>
-                            </label> <input class="mb-4 input_first_name" type="text" name="input_first_name">
-                            <h6 class="mb-0 text-lg" style="margin-left: 80px;font-size:23px;">Last Name</h6>
-                            </label> <input class="mb-4 input_last_name" type="text" name="input_last_name">
+                                <h6 class="mb-0 text-lg" style="font-size: 23px; margin-left: 43px;">Full Name</h6>
+                            </label> <input class="mb-4 input_first_name" type="text" name="input_full_name">
+                            <h6 class="mb-0 text-lg" style="margin-left: 80px;font-size:23px;">Designation</h6>
+                            </label> <input class="mb-4 input_designation" type="text" name="input_designation">
                         </div>
                         <div class="row px-3"> <label class="mb-1">
-                                <h6 class="mb-0 text-lg" style="font-size: 23px; margin-left: 43px;">Designation</h6>
-                            </label> <input class="mb-4 input_designation" type="text" name="input_designation">
+                                <h6 class="mb-0 text-lg" style="font-size: 23px; margin-left: 43px;">Department</h6>
+                            </label> <input class="mb-4 input_designation" type="text" name="input_department">
                             <h6 class="mb-0 text-lg" style="margin-left: 78px;font-size:23px;">Location</h6>
                             </label> <input class="mb-4 input_location" type="text" name="input_location">
                         </div>
                         <div class="row px-3"> <label class="mb-1">
-                                <h6 class="mb-0 text-lg" style="font-size: 23px; margin-left: 43px;">Password</h6>
-                            </label> <input class="mb-4 input_password" type="password" name="input_password">
-                            <h6 class="mb-0 text-lg" style="margin-left: 77px;font-size:23px;">KPMG Email ID</h6>
+                                <h6 class="mb-0 text-lg" style="font-size: 23px; margin-left: 43px;">KPMG Email ID</h6>
                             </label> <input class="mb-4 input_email" type="email" name="input_email">
+                            <h6 class="mb-0 text-lg" style="margin-left: 77px;font-size:23px;">Password</h6>
+                            </label> <input class="mb-4 input_password" type="password" name="input_password">
                         </div>
 
                         <div class="row mb-3 px-3"> <input type="submit" name="btn_register" class="btn btn-blue text-center signup_btn" value="Sign Up"> </div>

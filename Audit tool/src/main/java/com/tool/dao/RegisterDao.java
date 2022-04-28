@@ -12,8 +12,8 @@ public class RegisterDao {
 	
 	public String RegisterUser(RegisterBean registerBean) {
 		
-		String firstname = registerBean.getFirstname();
-		String lastname  = registerBean.getLastname();
+		String fullname = registerBean.getFullname();
+		String department  = registerBean.getDepartment();
 		String email 	 = registerBean.getEmail();
 		String password  = registerBean.getPassword();
 		String hash 	 = registerBean.getHash();
@@ -41,11 +41,11 @@ public class RegisterDao {
 			}
 			else
 			{
-				pstmt=con.prepareStatement("INSERT INTO tbl_user(user_firstname,user_lastname,"
-                        + "user_email,user_password,hash_password,Designation,Location) VALUES(?,?,?,?,?,?,?) ");
+				pstmt=con.prepareStatement("INSERT INTO tbl_user(user_fullname,user_department,"
+                        + "user_email,user_password,hash_password,user_designation,user_location) VALUES(?,?,?,?,?,?,?) ");
 				
-				pstmt.setString(1, firstname);
-                pstmt.setString(2, lastname);
+				pstmt.setString(1, fullname);
+                pstmt.setString(2, department);
                 pstmt.setString(3, email);
                 pstmt.setString(4, password);
                 pstmt.setString(5, hash);

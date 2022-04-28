@@ -2,8 +2,8 @@ package com.tool.bean;
 
 public class RegisterBean {
 	
-	private String firstname;
-	private String lastname;
+	private String fullname;
+	private String department;
 	private String email;
 	private String password;
 	private String hash;
@@ -22,17 +22,18 @@ public class RegisterBean {
 	public void setLocation(String location) {
 		this.location = location;
 	}
-	public String getFirstname() {
-		return firstname;
+	
+	public String getFullname() {
+		return fullname;
 	}
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
+	public void setFullname(String fullname) {
+		this.fullname = fullname;
 	}
-	public String getLastname() {
-		return lastname;
+	public String getDepartment() {
+		return department;
 	}
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
+	public void setDepartment(String department) {
+		this.department = department;
 	}
 	public String getEmail() {
 		return email;
