@@ -37,7 +37,7 @@
               <img id="logo" src="assets/images/KPMG logo balckbg.png" alt="KPMG" />
             </div>
             <div class="container-1">
-              <h3>Welcome, Login to Continue</h3>
+              <h3>Welcome, Login to Continue with KPMG</h3>
               <form>
                 <div class="form-group">
                   <h6>User ID</h6>
