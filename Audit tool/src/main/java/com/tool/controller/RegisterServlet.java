@@ -2,7 +2,7 @@ package com.tool.controller;
 
 import java.io.IOException;
 import java.util.Random;
-
+import java.io.PrintWriter; 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -51,9 +51,15 @@ public class RegisterServlet extends HttpServlet {
 			
 			String str = registerDao.RegisterUser(registerBean);
 			
+			PrintWriter out = response.getWriter(); 
+
+			
+			
 			if(str.equals("SUCCESS")){
-                
-                response.sendRedirect("verify.jsp");
+				out.println(
+						"<html><head></head><body onload=\"alert('Thank you, Please check your inbox and verify email')\"></body></html>");
+								
+								out.println("<meta http-equiv='refresh' content='1;URL=index.jsp'>");
             }
 			else if(str.equals("sorry email already exist")){
                 

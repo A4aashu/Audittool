@@ -1,3 +1,6 @@
+
+
+
 body {
     color: #000;
     overflow-x: hidden;
@@ -10,7 +13,14 @@ body {
     box-shadow: 0px 4px 8px 0px #757575;
     border-radius: 0px
 }
-
+.labelstyle{
+	font-size: 23px!important; 
+	margin-left: 43px!important;
+}
+.labelstyle2{
+	margin-left: 12%!important;
+	font-size:23px!important;
+}
 section{
     position: relative!important;
 }
@@ -37,7 +47,7 @@ section::after{
     border-radius: 60px!important;
     background-color: white!important;
     color: #00338D!important;
-    margin-left: 290px!important;
+    margin-left: 40%!important;
     padding: 6px!important;
     width: 100px!important;
     font-weight: bold!important;
@@ -46,48 +56,60 @@ section::after{
 .input_email{
     border-radius: 60px!important;
     background-color: #E5E5E5!important;
-    width: 290px!important;
-    margin-top: 37px!important;
+    /*width: 290px!important;*/
+    width:38%!important;
+    margin-top: 58px!important;
     margin-left: -159px!important;
     height: 45px!important;
+    font-weight:bold;
 }
 .input_designation{
     border-radius: 60px!important;
     background-color: #E5E5E5!important;
-    width: 290px!important;
+    /*width: 290px!important;*/
+    width:38%!important;
     margin-top: 38px!important;
     margin-left: -128px!important;
+    height: 45px!important;
+    font-weight:bold;
 }
-
 .input_location{
     border-radius: 60px!important;
     background-color: #E5E5E5!important;
-    width: 290px!important;
+    /*width: 290px!important;*/
+    width:38%!important;
     margin-top: 37px!important;
     margin-left: -94px!important;
     height: 45px!important;
+    font-weight:bold;
 }
 .input_password{
     border-radius: 60px!important;
     background-color: #E5E5E5!important;
-    width: 290px!important;
-    margin-top: 38px!important;
+    /*width: 290px!important;*/
+    width:38%!important;
+    margin-top: 58px!important;
     margin-left: -101px!important;
+    font-weight:bold;
 }
-.input_full_name{
+.input_first_name{
     border-radius: 60px!important;
     background-color: #E5E5E5!important;
-    width: 290px!important;
+    /*width: 290px!important;*/
+    width:38%!important;
     margin-top: 38px!important;
-    margin-left: -115px!important;
+    margin-left: -105px!important;
+    font-weight:bold;
 }
 .input_last_name{
     border-radius: 60px!important;
     background-color: #E5E5E5!important;
-    width: 290px!important;
+    /*width: 290px!important;*/
+    width:38%!important;
     margin-top: 37px!important;
-    margin-left: -116px!important;
+    margin-left: -125px!important;
     height: 45px!important;
+    font-weight:bold;
 }
 .card2 {
     margin: 0px 40px
@@ -228,16 +250,25 @@ a {
     background-color: #1A237E
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1232px) {
+	.image {
+    width: 400px;
+    height: 337px;
+    margin-left: 10px;
+    padding-top: 54px;
+}
+}
+@media screen and (max-width: 982px) {
     .logo {
         margin-left: 0px
     }
 
     .image {
-        width: 300px;
-        height: 220px
+        width: 700px;
+        height: 637px;
+        margin-left: 21px;
+        padding-top: 54px;
     }
-
     .border-line {
         border-right: none
     }
@@ -246,4 +277,309 @@ a {
         border-top: 1px solid #EEEEEE !important;
         margin: 0px 15px
     }
+
+	.input_email{
+    border-radius: 60px!important;
+    background-color: #E5E5E5!important;
+    /*width: 290px!important;*/
+    width:40%!important;
+    margin-top: 58px!important;
+    margin-left: -159px!important;
+    height: 45px!important;
+    font-weight:bold;
+}
+.input_designation{
+    border-radius: 60px!important;
+    background-color: #E5E5E5!important;
+    /*width: 290px!important;*/
+    width:40%!important;
+    margin-top: 38px!important;
+    margin-left: -128px!important;
+    height: 45px!important;
+    font-weight:bold;
+}
+.input_location{
+    border-radius: 60px!important;
+    background-color: #E5E5E5!important;
+    /*width: 290px!important;*/
+    width:40%!important;
+    margin-top: 37px!important;
+    margin-left: -94px!important;
+    height: 45px!important;
+    font-weight:bold;
+}
+.input_password{
+    border-radius: 60px!important;
+    background-color: #E5E5E5!important;
+    /*width: 290px!important;*/
+    width:40%!important;
+    margin-top: 58px!important;
+    margin-left: -101px!important;
+    font-weight:bold;
+}
+.input_first_name{
+    border-radius: 60px!important;
+    background-color: #E5E5E5!important;
+    /*width: 290px!important;*/
+    width:40%!important;
+    margin-top: 38px!important;
+    margin-left: -115px!important;
+    font-weight:bold;
+}
+.input_last_name{
+    border-radius: 60px!important;
+    background-color: #E5E5E5!important;
+    /*width: 290px!important;*/
+    width:40%!important;
+    margin-top: 37px!important;
+    margin-left: -116px!important;
+    height: 45px!important;
+    font-weight:bold;
+}
+.card2 {
+    margin: 0px 40px
+}
+
+.logo {
+    width: 200px;
+    height: 100px;
+    margin-top: 20px;
+    margin-left: 35px
+}
+
+.image {
+    width: 500px;
+    height: 437px;
+    margin-left: 21px;
+    padding-top: 54px;
+}
+}
+
+
+
+@media screen and (max-width: 700px) {
+    .logo {
+        margin-left: 0px
+    }
+
+    .image {
+        width: 700px;
+        height: 637px;
+        margin-left: 21px;
+        padding-top: 54px;
+    }
+    .border-line {
+        border-right: none
+    }
+
+    .card2 {
+        border-top: 1px solid #EEEEEE !important;
+        margin: 0px 15px
+    }
+
+	.input_email{
+    border-radius: 60px!important;
+    background-color: #E5E5E5!important;
+    /*width: 290px!important;*/
+    width:80%!important;
+    margin-top: 58px!important;
+    margin-left: -159px!important;
+    height: 45px!important;
+    font-weight:bold;
+}
+.input_designation{
+    border-radius: 60px!important;
+    background-color: #E5E5E5!important;
+    /*width: 290px!important;*/
+    width:80%!important;
+    margin-top: 38px!important;
+    margin-left: -128px!important;
+    height: 45px!important;
+    font-weight:bold;
+}
+.input_location{
+    border-radius: 60px!important;
+    background-color: #E5E5E5!important;
+    /*width: 290px!important;*/
+    width:80%!important;
+    margin-top: 37px!important;
+    margin-left: -94px!important;
+    height: 45px!important;
+    font-weight:bold;
+}
+.input_password{
+    border-radius: 60px!important;
+    background-color: #E5E5E5!important;
+    /*width: 290px!important;*/
+    width:80%!important;
+    margin-top: 58px!important;
+    margin-left: -101px!important;
+    font-weight:bold;
+}
+.input_first_name{
+    border-radius: 60px!important;
+    background-color: #E5E5E5!important;
+    /*width: 290px!important;*/
+    width:80%!important;
+    margin-top: 38px!important;
+    margin-left: -115px!important;
+    font-weight:bold;
+}
+.input_last_name{
+    border-radius: 60px!important;
+    background-color: #E5E5E5!important;
+    /*width: 290px!important;*/
+    width:80%!important;
+    margin-top: 37px!important;
+    margin-left: -116px!important;
+    height: 45px!important;
+    font-weight:bold;
+}
+.card2 {
+    margin: 0px 40px
+}
+
+.logo {
+    width: 200px;
+    height: 100px;
+    margin-top: 20px;
+    margin-left: 35px
+}
+
+.image {
+    width: 80%;
+    height:50%;
+    margin-left: 21px;
+    padding-top: 54px;
+}
+.labelstyle{
+	font-size: 23px!important; 
+	margin-left: 43px!important;
+}
+.labelstyle2{
+	margin-left: 9%!important;
+	font-size:23px!important;
+}
+.txtt{font-size:1rem!important;}
+}
+
+
+@media screen and (max-width: 500px) {
+    .logo {
+        margin-left: 0px
+    }
+
+    .image {
+        width: 700px;
+        height: 637px;
+        margin-left: 21px;
+        padding-top: 54px;
+    }
+    .border-line {
+        border-right: none
+    }
+
+    .card2 {
+        border-top: 1px solid #EEEEEE !important;
+        margin: 0px 15px
+    }
+
+	.input_email{
+    border-radius: 60px!important;
+    background-color: #E5E5E5!important;
+    /*width: 290px!important;*/
+    width:80%!important;
+    margin-top: 58px!important;
+    margin-left: -159px!important;
+    height: 45px!important;
+    font-weight:bold;
+}
+.input_designation{
+    border-radius: 60px!important;
+    background-color: #E5E5E5!important;
+    /*width: 290px!important;*/
+    width:80%!important;
+    margin-top: 38px!important;
+    margin-left: -128px!important;
+    height: 45px!important;
+    font-weight:bold;
+}
+.input_location{
+    border-radius: 60px!important;
+    background-color: #E5E5E5!important;
+    /*width: 290px!important;*/
+    width:80%!important;
+    margin-top: 37px!important;
+    margin-left: -94px!important;
+    height: 45px!important;
+    font-weight:bold;
+}
+.input_password{
+    border-radius: 60px!important;
+    background-color: #E5E5E5!important;
+    /*width: 290px!important;*/
+    width:80%!important;
+    margin-top: 58px!important;
+    margin-left: -101px!important;
+    font-weight:bold;
+}
+.input_first_name{
+    border-radius: 60px!important;
+    background-color: #E5E5E5!important;
+    /*width: 290px!important;*/
+    width:80%!important;
+    margin-top: 38px!important;
+    margin-left: -115px!important;
+    font-weight:bold;
+}
+.input_last_name{
+    border-radius: 60px!important;
+    background-color: #E5E5E5!important;
+    /*width: 290px!important;*/
+    width:80%!important;
+    margin-top: 37px!important;
+    margin-left: -116px!important;
+    height: 45px!important;
+    font-weight:bold;
+}
+.card2 {
+    margin: 0px 40px
+}
+
+.logo {
+    width: 200px;
+    height: 100px;
+    margin-top: 20px;
+    margin-left: 35px
+}
+
+.image {
+    width: 80%;
+    height:50%;
+    margin-left: 21px;
+    padding-top: 54px;
+}
+.labelstyle{
+	font-size: 23px!important; 
+	margin-left: 43px!important;
+}
+.labelstyle2{
+	margin-left: 16%!important;
+	font-size:23px!important;
+}
+.txtt{font-size:1rem!important;}
+.logintxt{
+    margin-left: 15%!important;
+    
+}
+.signup_btn{
+    border-radius: 60px!important;
+    background-color: white!important;
+    color: #00338D!important;
+    margin-left: 30%!important;
+    padding: 6px!important;
+    width: 100px!important;
+    font-weight: bold!important;
+    margin-top: 18px!important;
+}
 }

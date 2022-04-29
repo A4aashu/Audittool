@@ -1,105 +1,198 @@
-body{
-    background-color: white
+* {
+  margin: 0;
+  padding: 0;
 }
 
-#loginImage{
-    width: 450px;
-    height: 450px;
-    padding: 20px , 50px, 30px, 40px;
-    margin-top: 60px;
-    margin-bottom: 50px;
-    margin-left: 100px;
-}
-
-#logo{
-    width: 100px;
-    height: 60px;
-    margin-top: 15px;
-    margin-right: 15px;
-    margin-left: 15px;
+html,
+body {
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0px 0px !important;
 
 }
 
-.login-form-1{
-    position: relative !important;
-    background-color: #003797;
+.login-container {
+
+  width: 100% !important;
+  margin: 0px 0px !important;
+  height: 100% !important;
+}
+
+#loginImage {
+  display: block;
+  width: 90%;
+  height: 70%;
+  padding: 0%, 0%, 0%, 5%;
+  margin-top: 20%; 
+  margin-left: 20%;
+}
+
+#logo {
+  width: 20%;
+  height: 10%;
+  margin-top: 5%;
+  margin-right: 5%;
+  margin-left: 5%;
+}
+
+.login-form-1 {
   
-    
+  height: 100% !important;
+  position: relative !important;
+  background-color: #003797;
+  color: white;
 }
 
-
-.form-control{
-    width: 200px!important;
-    height: 30px!important;
-    display: inline-block!important;
-    border-radius: 40px!important;
-    
-}
-.container-1{
-    padding-left: 90px;
-    padding-top: 50px;
+.form-control {
+  width: 60%!important;
+  height: 30px !important;
+  display: inline-block !important;
+  border-radius: 40px !important;
 }
 
-h6{
-    padding-top: 30px;
-    padding-bottom: 10px;
-}
-input.form-control{
-    width: 300px!important;
-    height: 30px!important;
-    display: inline-block !important;
-}
-
-.ForgetPwd{
-
-    text-decoration:none!important;
-    color: white!important;
-    margin-top: 15px!important;
-    padding-top: 30px !important;
-
+.container-1 {
+  
+  width: 100%;
+  height: 90% !important;
+  padding-left: 22%;
+  padding-top: 15%;
+  padding-bottom: 15%;
+  
 }
 
-.ForgetPwd :hover{
-    color: white!important;
-    
+h6 {
+  padding-top: 30px;
+  padding-bottom: 10px;
 }
 
-.btn-primary{
-background-color: white!important;
-color: #003797!important;
-border-radius: 30px!important;
-margin-left: 100px;
-margin-top: 10px;
-margin-bottom: 20px;
-width: 100px;
-height: 35px!important;
-padding-top: 5px!important;
-padding-bottom: 7px!important;
-font-weight: bold !important;
+input.form-control {
+  width: 80% !important;
+  height: 8% !important;
+  display: inline-block !important;
 }
 
-.NewUser{
-padding-top: 5px !important;
-padding-left: 85px!important;
-text-decoration:none!important;
-color: white!important;
-
+.ForgetPwd {
+  text-decoration: none !important;
+  color: white !important;
+  margin-top: 5% !important;
+  padding-top: 3% !important;
 }
 
-.NewUser :hover{
-    color: white!important;
-    
+.ForgetPwd :hover {
+  color: white !important;
 }
-/* .container1{
-    background-color: #00338d;
-    background-repeat: no-repeat;
-    position:absolute;
-    width: 100px;
-    height:100px;
-    left: 10.83%;
-    right: -1.75%;
-    top: 10%;
-    bottom: 0%;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    transform: matrix(1.98, 0.21, -0.22, 1.98, 0, 0);
+
+.btn-primary {
+  background-color: white !important;
+  color: #003797 !important;
+  border-radius: 30px !important;
+  margin-left: 25%;
+  margin-top: 6%;
+  margin-bottom: 6%;
+  width: 30%;
+  height: 20% !important;
+  padding-top: 5px !important;
+  padding-bottom: 7px !important;
+  font-weight: bold !important;
+}
+
+.NewUser {
+  padding-top: 5px !important;
+  padding-left: 25% !important;
+  text-decoration: none !important;
+  color: white !important;
+}
+
+.NewUser :hover {
+  color: white !important;
+}
+
+/* //  for slant height */
+
+section {
+  position: relative !important;
+  width: 100%;
+  height: 100%;
+}
+section::after {
+  position: absolute !important;
+  content: "" !important;
+  width: 0 !important;
+  height: 0px !important;
+  right: -100px !important;
+  border-width: 60px 110px !important;
+  top: 0 !important;
+  border-left: 100px solid #003797;
+  border-bottom: 633px solid white !important;
+  clear: both;
+}
+
+/* actual code section */
+/* section::after {
+  position: absolute !important;
+  content: "" !important;
+  width: 0 !important;
+  height: 0px !important;
+  right: -100px !important;
+  border-width: 60px 110px !important;
+  top: 0 !important;
+  border-left: 100px solid #003797;
+  border-bottom: 672px solid white !important;
+  clear: both;
 } */
+
+/* code below is to check page is responsive or not */
+@media screen and (max-width: 1200px) {
+
+  section::after {
+    position: absolute !important;
+    content: "" !important;
+    width: 0 !important;
+    height: 0px !important;
+    right: -100px !important;
+    border-width: 60px 110px !important;
+    top: 0 !important;
+    border-left: 100px solid white;
+    border-bottom: 672px solid white !important;
+    clear: both;
+  }
+  
+  .container-1{
+    width: 100%;
+  }
+  
+
+}
+
+/* //for size reduce --2 */
+@media screen and (max-width: 1000px) {
+
+  section::after {
+    display: block;
+    position: absolute !important;
+    content: "" !important;
+    width: 0 !important;
+    height: 0px !important;
+    right: -100px !important;
+    border-width: 60px 110px !important;
+    top: 0 !important;
+    border-left: 100px solid #003797;
+    border-bottom: 613px solid #003797 !important;
+    clear: both;
+  }
+  
+  .container-1{
+    width: 100%;
+  }
+
+  #loginImage {
+    display: block;
+    width: 90%;
+    height: 70%;
+   
+    margin-top: 20%; 
+    margin-left: 20%;
+  }
+  
+
+}

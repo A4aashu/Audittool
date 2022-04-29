@@ -5,7 +5,7 @@
 <head>
 <title>Sign Up</title>
 <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="assets/css/registration.css">
@@ -17,49 +17,74 @@
 <body>
 
 					
-    <div class="container-fluid px-1 px-md-5 px-lg-1 px-xl-5 mx-auto">
+    <div class="container-fluid" style="padding:0px;">
         <div class="card card0 border-0">
             <div class="row d-flex">
-                <div class="col-lg-4">
+                <div class="col-lg-4 col-md-12 col-sm-12">
                     <div class="card1 pb-5" style="margin-left:5px;margin-top: 124px;">
                         <div class="row px-3 justify-content-center mt-4 mb-5 border-line"> <img src="assets/images/Picture1.png"
                                 class="image"> </div>
                     </div>
                 </div>
-                <section class="col-lg-8 cutts" style="background-color: #00338D!important;">
+                <section class="col-lg-8  col-md-12 col-sm-12 cutts" style="background-color: #00338D!important;">
                     <div class="card2 card border-0 px-4 py-5" style="margin-top: 15px;background-color: #00338D;
                     color: white;">
                         <div class="row mb-4 px-3">
-                            <h3 class="mb-0 mr-4 mt-2" style="margin-left: 290px;">Sign Up!</h3>
-                            <h5 class="mb-0 mr-4 mt-2" style="margin-left: 170px;">Let's get you all set up for your
+                            <h3 class="mb-0 mr-4 mt-2" style="margin-left: 40%;">Sign Up!</h3>
+                            <h5 class="mb-0 mr-4 mt-2 txtt" style="margin-left: 25%;">Let's get you all set up for your
                                 journey</h5>
                         </div>
                         <form method="post" action="RegisterServlet" id="registerForm" class="form-horizontal">
                         <div class="row px-3"> <label class="mb-1">
-                                <h6 class="mb-0 text-lg" style="font-size: 23px; margin-left: 43px;">Full Name</h6>
-                            </label> <input class="mb-4 input_full_name" type="text" name="input_full_name">
-                            <h6 class="mb-0 text-lg" style="margin-left: 80px;font-size:23px;">Designation</h6>
-                            </label> <input class="mb-4 input_designation" type="text" name="input_designation">
+                                <h6 class="mb-0 text-lg labelstyle">Full Name</h6>
+                            </label> <input class="mb-4 input_first_name" type="text" name="input_full_name" required>
+                            <h6 class="mb-0 text-lg labelstyle2">Department</h6>
+                            </label> <input class="mb-4 input_last_name" type="text" name="input_department" required>
                         </div>
                         <div class="row px-3"> <label class="mb-1">
-                                <h6 class="mb-0 text-lg" style="font-size: 23px; margin-left: 43px;">Department</h6>
-                            </label> <input class="mb-4 input_designation" type="text" name="input_department">
-                            <h6 class="mb-0 text-lg" style="margin-left: 78px;font-size:23px;">Location</h6>
-                            </label> <input class="mb-4 input_location" type="text" name="input_location">
+                                <h6 class="mb-0 text-lg labelstyle ">Designation</h6>
+                            </label>
+                             <select class="form-control input_designation font-weight-bold" name="input_designation">
+                                <option value="Partner">Partner</option>
+                                <option value="Associate_Partner">Associate Partner</option>
+                                <option value="Director">Director</option>
+                                <option value="Associate_Director">Associate Director</option>
+                                <option value="Manager">Manager</option>
+                                <option value="Assistant_Manager">Assistant Manager</option>
+                                <option value="Consultant">Consultant</option>
+                                <option value="Associate_Consultant">Associate Consultant</option>
+                                <option value="Analyst">Analyst</option>
+                              </select>
+                            <h6 class="mb-0 text-lg labelstyle2">Location</h6>
+                            </label>
+                            <select class="form-control input_location font-weight-bold" name="input_location">
+                                <option value="Ahmedabad">Ahmedabad</option>
+                                <option value="Bengaluru">Bengaluru</option>
+                                <option value="Chandigarh">Chandigarh</option>
+                                <option value="Chennai">Chennai</option>
+                                <option value="Gurugram">Gurugram</option>
+                                <option value="Hyderabad">Hyderabad</option>
+                                <option value="Mumbai">Mumbai</option>
+                                <option value="Navi_Mumbai">Navi Mumbai</option>
+                                <option value="Noida">Noida</option>
+                                <option value="Pune">Pune</option>
+                                <option value="Vadodara">Vadodara</option>
+                                <option value="Vijayawada">Vijayawada</option>
+                              </select>
                         </div>
                         <div class="row px-3"> <label class="mb-1">
-                                <h6 class="mb-0 text-lg" style="font-size: 23px; margin-left: 43px;">KPMG Email ID</h6>
-                            </label> <input class="mb-4 input_email" type="email" name="input_email">
-                            <h6 class="mb-0 text-lg" style="margin-left: 77px;font-size:23px;">Password</h6>
-                            </label> <input class="mb-4 input_password" type="password" name="input_password">
+                                <h6 class="mb-0 text-lg labelstyle" style="padding-top:15px!important;">Password</h6>
+                            </label> <input class="mb-4 input_password" type="password" name="input_password" id="txtPassword"  onchange="checkPass()" required>
+                            <h6 class="mb-0 text-lg labelstyle2" style="padding-top:15px!important;">KPMG Email ID</h6>
+                            </label> <input class="mb-4 input_email" type="email" name="input_email" id="txtEmail"  onchange="checkEmail()" required>
                         </div>
 
                         <div class="row mb-3 px-3"> <input type="submit" name="btn_register" class="btn btn-blue text-center signup_btn" value="Sign Up"> </div>
                         </form>
                         
                         
-                   <div class="row mb-4 px-3" style="margin-left:240px;font-size: 22px;"> <small
-                                class="font-weight-bold">Existing User ? <a class="text-danger ">Login</a></small>
+                   <div class="row mb-4 px-3 logintxt" style="margin-left:35%;font-size: 22px;"> <small
+                                class="font-weight-bold">Existing User ? <a href="index.jsp" class="text-danger ">Login</a></small>
                         </div>
                     </div>
                 </section>
@@ -67,6 +92,28 @@
         </div>
     </div>
 				
+<script>
+        function checkEmail() {
 
+        var email = document.getElementById('txtEmail');
+        // var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        var filter=/^[a-z0-9]+(?!.*(?:\+{2,}|\-{2,}|\.{2,}))(?:[\.+\-]{0,1}[a-z0-9])*@kpmg\.com$/
+        if (!filter.test(email.value)) {
+        alert('Please provide a valid KPMG Email ID');
+        email.focus;
+        return false;
+        }
+    }
+    function checkPass() {
+
+        var Pass = document.getElementById('txtPassword');
+        var filter=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[_@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/
+        if (!filter.test(Pass.value)) {
+        alert('Please provide a one Special Symbol, Atleast one Upper Case, Atleast one Lower Case and Atleast one number in your Password ');
+        Pass.focus;
+        return false;
+        }
+    }
+    </script>
 </body>
 </html>
