@@ -79,7 +79,7 @@
                             </label> <input class="mb-4 input_email" type="email" name="input_email" id="txtEmail"  onchange="checkEmail()" required>
                         </div>
 
-                        <div class="row mb-3 px-3"> <input type="submit" name="btn_register" class="btn btn-blue text-center signup_btn" value="Sign Up"> </div>
+                        <div class="row mb-3 px-3"> <input type="submit" name="btn_register" class="btn btn-blue text-center signup_btn" onclick="buttonclick()" value="Sign Up"> </div>
                         </form>
                         
                         
@@ -113,6 +113,20 @@
         Pass.focus;
         return false;
         }
+    }
+    function buttonclick(){
+    	var email = document.getElementById('txtEmail');
+    	var Pass = document.getElementById('txtPassword');
+    	var filter=/^[a-z0-9]+(?!.*(?:\+{2,}|\-{2,}|\.{2,}))(?:[\.+\-]{0,1}[a-z0-9])*@kpmg\.com$/
+    	var filter1=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[_@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/
+    	if (!filter.test(email.value) || !filter1.test(Pass.value)) {
+    	alert('Please provide a valid Credentials');
+    	email.focus;
+    	Pass.focus;
+    	return false;
+    	}
+    	return true;
+    	
     }
     </script>
 </body>
