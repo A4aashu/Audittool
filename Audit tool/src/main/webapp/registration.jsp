@@ -57,7 +57,8 @@
                               </select>
                             <h6 class="mb-0 text-lg labelstyle2">Location</h6>
                             </label>
-                            <select class="form-control input_location font-weight-bold" name="input_location">
+                            
+                            <select class="form-control input_location font-weight-bold ms-Dropdown-select" name="input_location">
                                 <option value="Ahmedabad">Ahmedabad</option>
                                 <option value="Bengaluru">Bengaluru</option>
                                 <option value="Chandigarh">Chandigarh</option>
@@ -73,10 +74,11 @@
                               </select>
                         </div>
                         <div class="row px-3"> <label class="mb-1">
-                                <h6 class="mb-0 text-lg labelstyle" style="padding-top:15px!important;">Password</h6>
-                            </label> <input class="mb-4 input_password" type="password" name="input_password" id="txtPassword"  required>
-                            <h6 class="mb-0 text-lg labelstyle2" style="padding-top:15px!important;">KPMG Email ID</h6>
+                        <h6 class="mb-0 text-lg labelstyle" style="padding-top:15px!important;">KPMG Email ID</h6>
                             </label> <input class="mb-4 input_email" type="email" name="input_email" id="txtEmail"  required>
+                                <h6 class="mb-0 text-lg labelstyle2" style="padding-top:15px!important;">Password</h6>
+                            </label> <input class="mb-4 input_password" type="password" name="input_password" id="txtPassword"  required>
+                            
                         </div>
 
                         <div class="row mb-3 px-3"> <input type="submit" name="btn_register" class="btn btn-blue text-center signup_btn"  value="Sign Up"> </div>
@@ -112,6 +114,13 @@
     	}
     	return true;
     	
+    }
+    </script>
+    <script>
+    var DropdownHTMLElements = document.querySelectorAll('.ms-Dropdown-select');
+
+    for (var i = 0; i < DropdownHTMLElements.length; ++i) {
+      var Dropdown = new fabric['Dropdown'](DropdownHTMLElements[i]);
     }
     </script>
 </body>

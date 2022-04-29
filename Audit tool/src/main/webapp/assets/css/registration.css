@@ -59,8 +59,7 @@ section::after{
     /*width: 290px!important;*/
     width:38%!important;
     margin-top: 58px!important;
-    margin-left: -159px!important;
-    height: 45px!important;
+    margin-left:-158px!important;
     font-weight:bold;
 }
 .input_designation{
@@ -84,14 +83,16 @@ section::after{
     font-weight:bold;
 }
 .input_password{
-    border-radius: 60px!important;
+	border-radius: 60px!important;
     background-color: #E5E5E5!important;
     /*width: 290px!important;*/
     width:38%!important;
     margin-top: 58px!important;
-    margin-left: -101px!important;
+    margin-left:-100px!important;
+    height: 45px!important;
     font-weight:bold;
 }
+
 .input_first_name{
     border-radius: 60px!important;
     background-color: #E5E5E5!important;
@@ -107,7 +108,7 @@ section::after{
     /*width: 290px!important;*/
     width:38%!important;
     margin-top: 37px!important;
-    margin-left: -125px!important;
+    margin-left:-133px!important;
     height: 45px!important;
     font-weight:bold;
 }
@@ -431,7 +432,7 @@ a {
     /*width: 290px!important;*/
     width:80%!important;
     margin-top: 37px!important;
-    margin-left: -116px!important;
+    margin-left:-134px!important;
     height: 45px!important;
     font-weight:bold;
 }

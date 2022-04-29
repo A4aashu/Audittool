@@ -40,7 +40,7 @@
               <h3>Welcome, Login to Continue</h3>
               <form>
                 <div class="form-group">
-                  <h6>User ID</h6>
+                  <h6 style="font-size:23px!important;">User ID</h6>
                   <input
                     type="text"
                     name="txt_email"
@@ -50,7 +50,7 @@
                   />
                 </div>
                 <div class="form-group">
-                  <h6>Password</h6>
+                  <h6 style="font-size:23px!important;">Password</h6>
                   <input
                     type="password"
                     name="txt_password"
