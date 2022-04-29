@@ -44,7 +44,7 @@
                   <input
                     type="text"
                     name="txt_email"
-                    class="form-control"
+                    class="form-control font-weight-bold"
                     placeholder="Your Email *"
                     value=""
                   />
@@ -54,13 +54,13 @@
                   <input
                     type="password"
                     name="txt_password"
-                    class="form-control"
+                    class="form-control font-weight-bold"
                     placeholder="Your Password *"
                     value=""
                   />
                 </div>
                 <div class="form-group" style="padding-top: 15px">
-                  <a href="#" class="ForgetPwd">Forget Password?</a>
+                  <a href="forgotpass.jsp" class="ForgetPwd">Forget Password?</a>
                 </div>
                 <div class="form-group">
                   <input type="submit" name="btn_login" class="btn btn-primary" value="Login">

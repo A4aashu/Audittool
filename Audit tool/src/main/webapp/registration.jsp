@@ -34,7 +34,7 @@
                             <h5 class="mb-0 mr-4 mt-2 txtt" style="margin-left: 25%;">Let's get you all set up for your
                                 journey</h5>
                         </div>
-                        <form method="post" action="RegisterServlet" id="registerForm" class="form-horizontal">
+                        <form method="post" action="RegisterServlet" id="registerForm" class="form-horizontal" onsubmit="return buttonclick()">
                         <div class="row px-3"> <label class="mb-1">
                                 <h6 class="mb-0 text-lg labelstyle">Full Name</h6>
                             </label> <input class="mb-4 input_first_name" type="text" name="input_full_name" required>
@@ -74,12 +74,12 @@
                         </div>
                         <div class="row px-3"> <label class="mb-1">
                                 <h6 class="mb-0 text-lg labelstyle" style="padding-top:15px!important;">Password</h6>
-                            </label> <input class="mb-4 input_password" type="password" name="input_password" id="txtPassword"  onchange="checkPass()" required>
+                            </label> <input class="mb-4 input_password" type="password" name="input_password" id="txtPassword"  required>
                             <h6 class="mb-0 text-lg labelstyle2" style="padding-top:15px!important;">KPMG Email ID</h6>
-                            </label> <input class="mb-4 input_email" type="email" name="input_email" id="txtEmail"  onchange="checkEmail()" required>
+                            </label> <input class="mb-4 input_email" type="email" name="input_email" id="txtEmail"  required>
                         </div>
 
-                        <div class="row mb-3 px-3"> <input type="submit" name="btn_register" class="btn btn-blue text-center signup_btn" onclick="buttonclick()" value="Sign Up"> </div>
+                        <div class="row mb-3 px-3"> <input type="submit" name="btn_register" class="btn btn-blue text-center signup_btn"  value="Sign Up"> </div>
                         </form>
                         
                         
@@ -93,37 +93,22 @@
     </div>
 				
 <script>
-        function checkEmail() {
 
-        var email = document.getElementById('txtEmail');
-        // var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-        var filter=/^[a-z0-9]+(?!.*(?:\+{2,}|\-{2,}|\.{2,}))(?:[\.+\-]{0,1}[a-z0-9])*@kpmg\.com$/
-        if (!filter.test(email.value)) {
-        alert('Please provide a valid KPMG Email ID');
-        email.focus;
-        return false;
-        }
-    }
-    function checkPass() {
-
-        var Pass = document.getElementById('txtPassword');
-        var filter=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[_@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/
-        if (!filter.test(Pass.value)) {
-        alert('Please provide a one Special Symbol, Atleast one Upper Case, Atleast one Lower Case and Atleast one number in your Password ');
-        Pass.focus;
-        return false;
-        }
-    }
     function buttonclick(){
     	var email = document.getElementById('txtEmail');
     	var Pass = document.getElementById('txtPassword');
     	var filter=/^[a-z0-9]+(?!.*(?:\+{2,}|\-{2,}|\.{2,}))(?:[\.+\-]{0,1}[a-z0-9])*@kpmg\.com$/
     	var filter1=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[_@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/
-    	if (!filter.test(email.value) || !filter1.test(Pass.value)) {
-    	alert('Please provide a valid Credentials');
-    	email.focus;
-    	Pass.focus;
-    	return false;
+    	if (!filter.test(email.value)) {
+    		alert('please provide valid KPMG email id')
+    	    email.focus;
+    		return false;
+    	
+    	}
+    	else if(!filter1.test(Pass.value)){
+    		alert('Please provide a valid Password with UpperCase, LowerCase, Symbol, Number and 8 characters long');
+    		Pass.focus;
+        	return false;
     	}
     	return true;
     	
