@@ -50,7 +50,8 @@ public class LoginServlet extends HttpServlet {
 				rd.forward(request, response);
 			}
 			else
-			{
+			{	out.println(
+					"<html><head></head><body onload=\"alert('Sorry, Wrong credentials')\"></body></html>");
 				request.setAttribute("WrongLoginMsg",str);
 				RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
 				rd.include(request, response);

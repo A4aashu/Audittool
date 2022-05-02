@@ -30,19 +30,20 @@
       <div class="card card-style">
         <div class="row">
           <div class="col col-lg-6 col-md-12 col-sm-12 col-xs-12 main-content">
-            <div class-="row">
+            <div >
+<form method="post" action="ForgotPasswordServlet" id="ForgetForm" class="form-horizontal" onsubmit="return buttonclick()" >
               <div class="content_1">
                 <p class="header">Forgot your Password?</p>
                 <p class="ptext">
                   Enter your USER ID below to receive the instructions to reset
                   your Password?
                 </p>
-                <input class="user" type="text" id="user-id" name="user=id" />
+                <input class="user" type="text" id="user-id" name="user_id" required/>
               </div>
               <div class="form-group">
-                <button class="btn btn-primary">Submit</button>
+                <input type="submit" name="btn_forgot" class="btn btn-primary" value="Submit">
               </div>
-
+</form>
               <div class="row content_2">
                 <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 para_2">
                   <div class="form-group">
@@ -60,5 +61,19 @@
         </div>
       </div>
     </div>
+    
+    <script>
+
+    function buttonclick(){
+    	var email = document.getElementById('user-id');
+    	var filter=/^[a-z0-9]+(?!.*(?:\+{2,}|\-{2,}|\.{2,}))(?:[\.+\-]{0,1}[a-z0-9])*@kpmg\.com$/
+    	if (!filter.test(email.value)) {
+    		alert('please provide valid KPMG email id')
+    	    email.focus;
+    		return false;
+    	}
+    	return true;
+    }
+    </script>
   </body>
 </html>

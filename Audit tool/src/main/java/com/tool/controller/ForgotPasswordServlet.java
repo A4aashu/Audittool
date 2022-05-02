@@ -9,47 +9,47 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.time.format.DateTimeFormatter;
+import java.time.LocalDateTime;  
 
 import org.apache.commons.codec.digest.DigestUtils;
 
 import com.tool.bean.RegisterBean;
-import com.tool.dao.RegisterDao;
+import com.tool.dao.forgotDao;
 
 
-@WebServlet("/RegisterServlet")
-public class RegisterServlet extends HttpServlet {
+@WebServlet("/ForgotPasswordServlet")
+public class ForgotPasswordServlet extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		if(request.getParameter("btn_register")!=null)
+		if(request.getParameter("btn_forgot")!=null)
 		{
-			String fullname = request.getParameter("input_full_name");
-			String designation=request.getParameter("input_designation");
-			String department=request.getParameter("input_department");
-			String location=request.getParameter("input_location");
-			String email = request.getParameter("input_email");
-			String password = request.getParameter("input_password");
 			
-			String newPassword = DigestUtils.md5Hex(password);
+			String email = request.getParameter("user_id");
+			
 			
 			String makeHash;
 			Random random = new Random();
 			random.nextInt(999999);
 			makeHash = DigestUtils.md5Hex(""+random);
 			
+			System.out.println(makeHash);
+			DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yy HH:mm:ss");
+			   LocalDateTime now = LocalDateTime.now();
+			   String expiredtime=dtf.format(now);
+			   System.out.println(expiredtime);
 			RegisterBean registerBean = new RegisterBean();
 			
-			registerBean.setFullname(fullname);
-			registerBean.setDepartment(department);
-			registerBean.setDesignation(designation);
-			registerBean.setLocation(location);
-			registerBean.setEmail(email);
-			registerBean.setPassword(newPassword);
-			registerBean.setHash(makeHash);
+		
+			registerBean.setForgotemail(email);
+			registerBean.setToken(makeHash);
+			registerBean.setExpired(expiredtime);
 			
-			RegisterDao registerDao = new RegisterDao();
 			
-			String str = registerDao.RegisterUser(registerBean);
+			forgotDao forgotDao = new forgotDao();
+			
+			String str = forgotDao.RegisterUser(registerBean);
 			
 			PrintWriter out = response.getWriter(); 
 
@@ -57,15 +57,15 @@ public class RegisterServlet extends HttpServlet {
 			
 			if(str.equals("SUCCESS")){
 				out.println(
-						"<html><head></head><body onload=\"alert('Thank you, Please check your inbox and verify email')\"></body></html>");
+						"<html><head></head><body onload=\"alert('Thank you, Please check your inbox and rest your password')\"></body></html>");
 								
 								out.println("<meta http-equiv='refresh' content='1;URL=index.jsp'>");
             }
-			else if(str.equals("sorry email already exist")){
+			else if(str.equals("Incorrect email")){
 				out.println(
-						"<html><head></head><body onload=\"alert('Sorry, Email already exists')\"></body></html>");
+						"<html><head></head><body onload=\"alert('Sorry, Incorrect email')\"></body></html>");
                 request.setAttribute("RegisterErrorMsg",str); 
-                RequestDispatcher rd=request.getRequestDispatcher("registration.jsp"); 
+                RequestDispatcher rd=request.getRequestDispatcher("forgotpass.jsp"); 
                 rd.include(request, response);
             }
             else{

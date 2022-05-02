@@ -9,7 +9,30 @@ public class RegisterBean {
 	private String hash;
 	private String designation;
 	private String location;
+	private String token;
+	private String expired;
+	private String forgotemail;
+	public String getForgotemail() {
+		return forgotemail;
+	}
+	public void setForgotemail(String forgotemail) {
+		this.forgotemail = forgotemail;
+	}
 	
+	
+	public String getToken() {
+		return token;
+	}
+	public void setToken(String token) {
+		this.token = token;
+	}
+	public String getExpired() {
+		return expired;
+	}
+	public void setExpired(String expired) {
+		this.expired = expired;
+	}
+
 	public String getDesignation() {
 		return designation;
 	}
