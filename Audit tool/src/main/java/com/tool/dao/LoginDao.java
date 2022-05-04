@@ -33,6 +33,9 @@ public class LoginDao {
 			{
 				String dbemail 	= rs.getString("user_email");
 				String dbpassword = rs.getString("user_password");
+				loginBean.setFullname(rs.getString("user_fullname"));
+				loginBean.setDepartment(rs.getString("user_department"));
+				loginBean.setDesignation(rs.getString("user_designation"));
 				
 				if(dbemail.equalsIgnoreCase(email) && dbpassword.equalsIgnoreCase(hashPassword))
 				{

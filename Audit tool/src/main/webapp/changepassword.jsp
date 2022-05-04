@@ -31,17 +31,21 @@
         <div class="row">
           <div class="col col-lg-6 col-md-12 col-sm-12 col-xs-12 main-content">
             <div >
-<form method="post" action="ForgotPasswordServlet" id="ForgetForm" class="form-horizontal" onsubmit="return buttonclick()" >
+<form method="post" action="ChangePasswordServlet" id="ChangeForm" class="form-horizontal" onsubmit="return buttonclick()" >
               <div class="content_1">
-                <p class="header">Forgot your Password?</p>
+                 <p class="header">Change Password</p>
                 <p class="ptext">
-                  Enter your email id below to receive the instructions to reset
-                  your Password?
+                  Email
                 </p>
-                <input class="user" type="text" id="user-id" name="user_id" required/>
+                <input class="user" type="text" id="user-id" name="user_id" value=${param.key1} readonly/>
+                <p class="ptext">
+                  New Password
+                </p>
+                <input class="user" type="password" id="user-pass" name="user_password"  required/>
+                <input class="user" type="hidden" id="user-token" name="user_token" value=${param.key2} />
               </div>
               <div class="form-group">
-                <input type="submit" name="btn_forgot" class="btn btn-primary" value="Submit">
+                <input type="submit" name="btn_change" class="btn btn-primary" value="Submit">
               </div>
 </form>
               <div class="row content_2">
@@ -65,14 +69,15 @@
     <script>
 
     function buttonclick(){
-    	var email = document.getElementById('user-id');
-    	var filter=/^[a-z0-9]+(?!.*(?:\+{2,}|\-{2,}|\.{2,}))(?:[\.+\-]{0,1}[a-z0-9])*@kpmg\.com$/
-    	if (!filter.test(email.value)) {
-    		alert('please provide valid KPMG email id')
-    	    email.focus;
-    		return false;
+    	var Pass = document.getElementById('user-pass');
+    	var filter1=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[_@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/
+    	if(!filter1.test(Pass.value)){
+    		alert('Please provide a valid Password with UpperCase, LowerCase, Symbol, Number and 8 characters long');
+    		Pass.focus;
+        	return false;
     	}
     	return true;
+    	
     }
     </script>
   </body>

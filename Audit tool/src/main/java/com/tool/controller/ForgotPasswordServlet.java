@@ -35,7 +35,7 @@ public class ForgotPasswordServlet extends HttpServlet {
 			makeHash = DigestUtils.md5Hex(""+random);
 			
 			System.out.println(makeHash);
-			DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yy HH:mm:ss");
+			DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
 			   LocalDateTime now = LocalDateTime.now();
 			   String expiredtime=dtf.format(now);
 			   System.out.println(expiredtime);

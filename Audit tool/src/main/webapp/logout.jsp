@@ -8,11 +8,11 @@
 </head>
 <body>
 <%
-if(session.getAttribute("user_login")!=null)
+if(session.getAttribute("user_designation")!=null)
 {
-	session.removeAttribute("user_login");
+	session.removeAttribute("user_designation");
 	request.getSession(false);
-	session.setAttribute("user_login", null);
+	session.setAttribute("user_designation", null);
 	session.invalidate();
 	response.sendRedirect("index.jsp");
 }

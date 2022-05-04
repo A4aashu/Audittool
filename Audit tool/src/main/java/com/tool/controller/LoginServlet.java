@@ -45,7 +45,9 @@ public class LoginServlet extends HttpServlet {
 			if(str.equals("SUCCESS LOGIN"))
 			{
 				HttpSession session = request.getSession(true);
-				session.setAttribute("user_login", loginBean.getEmail());
+				session.setAttribute("user_fullname", loginBean.getFullname());
+				session.setAttribute("user_department", loginBean.getDepartment());
+				session.setAttribute("user_designation", loginBean.getDesignation());
 				RequestDispatcher rd = request.getRequestDispatcher("welcome.jsp");
 				rd.forward(request, response);
 			}

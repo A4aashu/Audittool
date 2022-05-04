@@ -47,12 +47,12 @@ public class ForgotPassword {
         	message.setFrom(new InternetAddress(email));
         	message.addRecipient(Message.RecipientType.TO, new InternetAddress(userEmail));
         	message.setText("Verification Link....");
-            message.setText("Click Here :: "+"http://localhost:8080/Audit_tool/AccountActivate?key1="+userEmail+"&key2="+token);
+            message.setText("Click Here :: "+"http://localhost:8080/Audit_tool/changepassword.jsp?key1="+userEmail+"&key2="+token);
             Transport.send(message);
         	
         }catch(Exception e){
         	
-        	System.out.println("SendEmail File Error"+ e);
+        	System.out.println("Forgotpassword Email File Error"+ e);
         }
 	}
 	
