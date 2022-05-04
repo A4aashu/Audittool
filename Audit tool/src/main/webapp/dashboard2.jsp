@@ -99,6 +99,7 @@
                     <!-- /Page Header -->
                     <div class="container-2">
                         <div class="row" style="width: 1100px;padding-left: 130px;padding-top: 50px;">
+                        <a href="#">
                             <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
                                 <div class="card dash-widget" style="background: #00338D;">
                                     <div class="card-body card-body-1">
@@ -112,6 +113,8 @@
                                     </div>
                                 </div>
                             </div>
+                            </a>
+                            <a href="#">
                             <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
                                 <div class="card dash-widget" style="background: #483698;">
                                     <div class="card-body card-body-2">
@@ -125,8 +128,10 @@
                                     </div>
                                 </div>
                             </div>
+                            </a>
                         </div>
                         <div class="row" style="width: 1100px;padding-left: 130px;padding-bottom: 20px;">
+                            <a href="#">
                             <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
                                 <div class="card dash-widget" style="background: #470A68;">
                                     <div class="card-body card-body-3">
@@ -140,6 +145,8 @@
                                     </div>
                                 </div>
                             </div>
+                            </a>
+                            <a href="#">
                             <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
                                 <div class="card dash-widget" style="background: #005EB8;">
                                     <div class="card-body card-body-4">
@@ -153,6 +160,7 @@
                                     </div>
                                 </div>
                             </div>
+                            </a>
                         </div>
                     </div>
                 </div>

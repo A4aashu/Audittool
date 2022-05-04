@@ -14,9 +14,18 @@
 
 .main-drop .user-img img {
     border-radius: 50%;
-    width: 45px !important;
+    width: 50px!important;
 }
-
+.text{
+	height: 110px;
+	cursor:pointer;
+}
+.main-drop{
+        	margin-top:10px;
+}
+h3{
+	font-size:20px!important;
+}
 .down {
     margin-top: 75% !important;
 }
@@ -26,9 +35,9 @@
     border-radius: 20px;
     color: #00338D !important;
     margin-bottom: 30px;
-    margin-left: 35px;
+    margin-left: 20px;
     margin-top: 50px;
-    width: 150px;
+    width: 190px;
 }
 
 body {
