@@ -9,11 +9,11 @@ import com.tool.config.Dbconfig;
 
 public class LoginDao {
 	
-	public String authorizeLogin(LoginBean loginBean)
+	public LoginBean authorizeLogin(LoginBean bean)
 	{
-		String email = loginBean.getEmail();
-		String password = loginBean.getPassword();
-		String hashPassword = loginBean.getHashPassword();
+		String email = bean.getEmail();
+		String password = bean.getPassword();
+		String hashPassword = bean.getHashPassword();
 		
 		Connection con = Dbconfig.getConnection();
 		
@@ -28,18 +28,23 @@ public class LoginDao {
 			pstmt.setString(2, hashPassword);
 			
 			ResultSet rs = pstmt.executeQuery();
-			
-			while(rs.next())
+			boolean more = rs.next();
+			if (!more) {	        	
+	        	   System.out.println("Sorry, you are not a registered user! Please sign up first");
+	               bean.setValid(false);	       	       
+	        }
+			else
 			{
 				String dbemail 	= rs.getString("user_email");
 				String dbpassword = rs.getString("user_password");
-				loginBean.setFullname(rs.getString("user_fullname"));
-				loginBean.setDepartment(rs.getString("user_department"));
-				loginBean.setDesignation(rs.getString("user_designation"));
-				
+				bean.setEmail(dbemail);
+				bean.setPassword(dbpassword);
+				bean.setFullname(rs.getString("user_fullname"));
+				bean.setDepartment(rs.getString("user_department"));
+				bean.setDesignation(rs.getString("user_designation"));
 				if(dbemail.equalsIgnoreCase(email) && dbpassword.equalsIgnoreCase(hashPassword))
 				{
-					return "SUCCESS LOGIN";
+					bean.setValid(true);
 				}
 			}
 		}
@@ -47,8 +52,9 @@ public class LoginDao {
 		{
 			System.out.println("LoginDao File Error"+ e);
 		}
+		System.out.println(bean);
+		return bean;
 		
-		return "WRONG EMAIL AND PASSWORD";
 	}
 
 }

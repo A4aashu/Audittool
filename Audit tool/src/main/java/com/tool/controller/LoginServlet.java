@@ -31,32 +31,37 @@ public class LoginServlet extends HttpServlet {
 			
 			String hashPassword = DigestUtils.md5Hex(password);
 			
-			LoginBean loginBean = new LoginBean();
+			LoginBean user = new LoginBean();
 			
-			loginBean.setEmail(email);
-			loginBean.setPassword(password);
-			loginBean.setHashPassword(hashPassword);
+			user.setEmail(email);
+			user.setPassword(password);
+			user.setHashPassword(hashPassword);
 			
 			
 			LoginDao loginDao = new LoginDao();
 			
-			String str = loginDao.authorizeLogin(loginBean);
+			user = loginDao.authorizeLogin(user);
 			
-			if(str.equals("SUCCESS LOGIN"))
+			if(user.isValid())
 			{
+				System.out.println("Done till now");
 				HttpSession session = request.getSession(true);
-				session.setAttribute("user_fullname", loginBean.getFullname());
-				session.setAttribute("user_department", loginBean.getDepartment());
-				session.setAttribute("user_designation", loginBean.getDesignation());
-				RequestDispatcher rd = request.getRequestDispatcher("welcome.jsp");
-				rd.forward(request, response);
+				session.setAttribute("currentSessionUser",user);
+				System.out.println(user.getDesignation());
+				if(user.getDesignation().equals("Analyst")||user.getDesignation().equals("Associate Consultant")||user.getDesignation().equals("Consultant")||user.getDesignation().equals("Assistant Manager")) {
+				response.sendRedirect("dashboard1.jsp");
+				}
+				else
+				{
+					response.sendRedirect("dashboard2.jsp");	
+				}
 			}
 			else
-			{	out.println(
-					"<html><head></head><body onload=\"alert('Sorry, Wrong credentials')\"></body></html>");
-				request.setAttribute("WrongLoginMsg",str);
-				RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
-				rd.include(request, response);
+			{	
+				out.println(
+						"<html><head></head><body onload=\"alert('Wrong Credentials')\"></body></html>");
+								
+								out.println("<meta http-equiv='refresh' content='1;URL=index.jsp'>");
 			}
 		}
 	}

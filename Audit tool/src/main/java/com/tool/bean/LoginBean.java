@@ -8,6 +8,14 @@ public class LoginBean {
 	private String fullname;
 	private String department;
 	private String designation;
+	public boolean valid;
+	
+	public boolean isValid() {
+		return valid;
+	}
+	public void setValid(boolean valid) {
+		this.valid = valid;
+	}
 	public String getFullname() {
 		return fullname;
 	}

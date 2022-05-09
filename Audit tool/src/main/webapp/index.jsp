@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -25,6 +26,7 @@
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"
     ></script>
+    
  </head>
 
 <body>
@@ -47,6 +49,7 @@
                     class="form-control font-weight-bold"
                     placeholder="Your Email *"
                     value=""
+                    required
                   />
                 </div>
                 <div class="form-group">
@@ -57,6 +60,7 @@
                     class="form-control font-weight-bold"
                     placeholder="Your Password *"
                     value=""
+                    required
                   />
                 </div>
                 <div class="form-group" style="padding-top: 15px">

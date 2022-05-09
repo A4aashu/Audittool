@@ -1,8 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+    <%@ taglib uri = "http://java.sun.com/jsp/jstl/sql" prefix = "sql"%>
+	<%@ page language="java" import="com.tool.bean.LoginBean"%>
 <!DOCTYPE html>
 <html>
 <head>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
     <meta name="description" content="Smarthr - Bootstrap Admin Template">
@@ -35,6 +39,7 @@
 </head>
 
 <body>
+<%LoginBean currentUser = ((LoginBean) (session.getAttribute("currentSessionUser")));%>
     <!-- Main Wrapper -->
     <div class="main-wrapper">
 
@@ -49,9 +54,9 @@
                                 <span class="status online"></span>
                             </span>
                             <div class="section">
-                                <span style="color:#ffffff;margin-left:85px;font-size: 16px!important;"><%=session.getAttribute("user_fullname")%></span>
-                                <span style="color:#ffffff;margin-left:85px;"><%=session.getAttribute("user_designation")%></span>
-                                <span style="color:#ffffff;margin-left:85px;"><%=session.getAttribute("user_department")%></span>
+                                <span style="color:#ffffff;margin-left:85px;font-size: 16px!important;"><%= currentUser.getFullname()%></span>
+                                <span style="color:#ffffff;margin-left:85px;"><%= currentUser.getDepartment()%></span>
+                                <span style="color:#ffffff;margin-left:85px;"><%= currentUser.getDesignation()%></span>
                             </div>
                         </li>
                         <li class="submenu">
@@ -112,21 +117,21 @@
                                 </div>
                             </div>
                             </a>
-                            <a href="#">
+                           
                             <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
                                 <div class="card dash-widget" style="background: #C4C4C4;">
                                     <div class="card-body card-body-2">
                                         <img src="./assets/images/Picture2.png" alt="" width="70px" height="70px">
                                     </div>
                                     <div class="text px-3 py-2">
-                                        <a href="">
+                                       
                                             <h3>Create New Audit</h3>
-                                        </a>
+                                        
                                         <h5>Plan your audit smoothly.</h5>
                                     </div>
                                 </div>
                             </div>
-                            </a>
+                           
                         </div>
                         <div class="row" style="width: 1100px;padding-left: 130px;padding-bottom: 20px;">
                         <a href="#">

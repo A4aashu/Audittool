@@ -11,28 +11,19 @@
 </head>
 <body>
 <h2>
+
+    <%LoginBean currentUser = ((LoginBean) (session.getAttribute("currentSessionUser")));%>
+    <c:set var="userdata" scope="session" value="<%= currentUser.getDesignation()%>"/>
+    <c:if test="${userdata == 'Analyst'}">
     <%
-    
-    response.setHeader("Cache-Control", "no-cache,no-store, must-revalidate");
-    response.setHeader("progma", "no-cache");
-    
-    session = request.getSession();
-    
-    if(session.getAttribute("user_designation")==null || session.getAttribute("user_designation")=="" || session.getAttribute("user_designation").equals("")) 
-    {
-        response.sendRedirect("index.jsp");
-    }
-    
-    else if(session.getAttribute("user_designation").equals("Analyst")||session.getAttribute("user_designation").equals("Associate Consultant")||session.getAttribute("user_designation").equals("Consultant")||session.getAttribute("user_designation").equals("Assistant Manager"))
-    {
-    	response.sendRedirect("dashboard1.jsp");
-    }
-    else
-    {
-    	response.sendRedirect("dashboard2.jsp");
-    }
+    response.sendRedirect("dashboard1.jsp");
     %>
-   
+   </c:if>
+   <c:if test="${userdata == 'Manager'}">
+    <%
+    response.sendRedirect("dashboard1.jsp");
+    %>
+   </c:if>
 </h2>
 
 <h3>

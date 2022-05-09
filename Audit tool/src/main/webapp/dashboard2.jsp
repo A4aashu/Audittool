@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+         <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+    <%@ taglib uri = "http://java.sun.com/jsp/jstl/sql" prefix = "sql"%>
+	<%@ page language="java" import="com.tool.bean.LoginBean"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,6 +35,7 @@
 </head>
 
 <body>
+<%LoginBean currentUser = ((LoginBean) (session.getAttribute("currentSessionUser")));%>
     <!-- Main Wrapper -->
     <div class="main-wrapper">
 
@@ -47,9 +51,9 @@
                                 <span class="status online"></span>
                             </span>
                             <div class="section">
-                                <span style="color:#ffffff;margin-left:93px;font-size: 17px!important;"><%=session.getAttribute("user_fullname")%></span>
-                                <span style="color:#ffffff;margin-left:93px;"><%=session.getAttribute("user_designation")%></span>
-                                <span style="color:#ffffff;margin-left:93px;"><%=session.getAttribute("user_department")%></span>
+                                <span style="color:#ffffff;margin-left:93px;font-size: 17px!important;"><%= currentUser.getFullname()%></span>
+                                <span style="color:#ffffff;margin-left:93px;"><%= currentUser.getDepartment()%></span>
+                                <span style="color:#ffffff;margin-left:93px;"><%= currentUser.getDesignation()%></span>
                             </div>
 
                         </li>
@@ -60,7 +64,7 @@
                             <a class="btn-links" href="#"><i class="la la-cube"></i> <span>Audit List</span></a>
                         </li>
                         <li class="submenu">
-                            <a class="btn-links" href="#"><i class="la la-plus"></i> <span>Create Audit</span></a>
+                            <a class="btn-links" href="createaudit.jsp"><i class="la la-plus"></i> <span>Create Audit</span></a>
                         </li>
                         <li class="submenu">
                             <a class="btn-links down" href="logout.jsp"><i class="la la-user"></i> <span> Logout
@@ -114,14 +118,14 @@
                                 </div>
                             </div>
                             </a>
-                            <a href="#">
+                            <a href="createaudit.jsp">
                             <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
                                 <div class="card dash-widget" style="background: #483698;">
                                     <div class="card-body card-body-2">
                                         <img src="./assets/images/Picture2.png" alt="" width="70px" height="70px">
                                     </div>
                                     <div class="text px-3 py-2">
-                                        <a href="">
+                                        <a href="createaudit.jsp">
                                             <h3>Create New Audit</h3>
                                         </a>
                                         <h5>Plan your audit smoothly.</h5>
