@@ -1,8 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ page import="java.sql.*" %>
       <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
     <%@ taglib uri = "http://java.sun.com/jsp/jstl/sql" prefix = "sql"%>
 	<%@ page language="java" import="com.tool.bean.LoginBean"%>
+	<%@ page language="java" import="com.tool.config.*"%>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -50,7 +53,10 @@
 </head>
 
 <body>
-<%LoginBean currentUser = ((LoginBean) (session.getAttribute("currentSessionUser")));%>
+
+<%
+
+LoginBean currentUser = ((LoginBean) (session.getAttribute("currentSessionUser")));%>
     <!-- Main Wrapper -->
     <div class="main-wrapper">
 
@@ -165,17 +171,45 @@
                     <div class="card card0 border-0">
                         <div class="row d-flex">
                             <div class="col-lg-8" style="background-color: #ffffff; color: #00338D!important;">
-                                <form style="padding-left: 10%;">
+                                <form style="padding-left: 10%;" action="" method="POST">
 
                                     <div class="row px-3" style="padding-top: 10px;"> <label class="mb-0"
                                             style="margin-bottom: -1.75rem!important;">
                                             <h6 class="mb-0 text-lg" style="font-size: 23px; margin-left: -8%;margin-top:3%;">Name of
                                                 Client</h6>
-                                        </label> <input class="mb-2 input_name_of_client" type="text" name="client_name">
+                                                <%
+                                               String client_name="";
+                                                String editType = request.getParameter("client_name");
+                                                if(editType!=null && !editType.isEmpty()){
+                                                	client_name=request.getParameter("client_name");
+                                                }
+                                                	String engagement_name="";
+                                                    String editType1 = request.getParameter("engagement_name");
+                                                    if(editType1!=null && !editType1.isEmpty()){
+                                                    	engagement_name=request.getParameter("engagement_name");	
+                                                    }
+                                                    String audit_start_date="";
+                                                    String editType2 = request.getParameter("audit_start_date");
+                                                    if(editType2!=null && !editType2.isEmpty()){
+                                                    	audit_start_date=request.getParameter("audit_start_date");	
+                                                    }
+                                                    String audit_end_date="";
+                                                    String editType3 = request.getParameter("audit_end_date");
+                                                    if(editType3!=null && !editType3.isEmpty()){
+                                                    	audit_end_date=request.getParameter("audit_end_date");	
+                                                    }
+                                                    String input_audit_background="";
+                                                    String editType4 = request.getParameter("input_audit_background");
+                                                    if(editType4!=null && !editType4.isEmpty()){
+                                                    	input_audit_background=request.getParameter("input_audit_background");	
+                                                    }
+                                               
+                                                %>
+                                        </label> <input class="mb-2 input_name_of_client" type="text" name="client_name" value="<%=client_name%>" required>
                                         <h6 class="mb-0 text-lg" style="margin-left: 43.5%;font-size: 23px;
                                         margin-top: -14%;">Engagement Name</h6>
                                         </label> <input class="mb-4 input_engagement_name" id="txtPassword"
-                                            onchange="checkPass()" type="text" name="engagement_name">
+                                            onchange="checkPass()" type="text" name="engagement_name" value="<%=engagement_name%>" required>
                                     </div>
                                     <div class="row px-3"> <label class="mb-0"
                                             style="margin-bottom: -1.75rem!important;">
@@ -183,28 +217,88 @@
                                                 style="font-size: 23px; margin-left: -8%;margin-top: -2%;">
                                                 Process</h6>
                                         </label>
-                                        <select class="form-control input_process" id="exampleFormControlSelect2" name="process">
-                                            <option value="">Choose Value</option>
-                                            <option value="Ahmedabad">Ahmedabad</option>
-                                            <option value="Bengaluru">Bengaluru</option>
-                                            <option value="Chandigarh">Chandigarh</option>
-                                            <option value="Chennai">Chennai</option>
-                                            <option value="Gurugram">Gurugram</option>
-                                            <option value="Vadodara">Vadodara</option>
-                                            <option value="Vijayawada">Vijayawada</option>
+                                        <select class="form-control input_process" id="megaprocess" name="megaprocess" onchange=this.form.submit() required>
+                                            <option value="0">Choose Value</option>
+                                           <%
+    try{
+    	Connection connection=Dbconfig.getConnection();
+       Statement statement = connection.createStatement() ;
+
+       ResultSet resultset =statement.executeQuery("select distinct(megaprocess) as megaprocess from RACM;") ;
+%>
+        <%  while(resultset.next()){ %>
+        
+            <option value="<%=resultset.getString("Megaprocess")%>"
+            <%
+            if(request.getParameter("megaprocess")!=null)
+            {
+            	if(resultset.getString("Megaprocess").equals(request.getParameter("megaprocess")))
+            	{
+            		out.print("selected");
+            	}
+            }
+            
+            
+            
+            
+            
+            
+            %>
+            
+            ><%= resultset.getString("Megaprocess")%></option>
+            <% } 
+
+        }
+        catch(Exception e)
+        {
+             out.println("wrong entry"+e);
+        }
+%>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
                                         </select>
                                         <h6 class="mb-0 text-lg" style="margin-left: 43.5%;font-size: 23px;
                                         margin-top: -12%;">Sub-Process</h6>
                                         </label>
-                                        <select class="form-control input_subprocess" id="exampleFormControlSelect1" name="subproces">
-                                            <option value="">Choose Value</option>
-                                            <option value="Ahmedabad">Ahmedabad</option>
-                                            <option value="Bengaluru">Bengaluru</option>
-                                            <option value="Chandigarh">Chandigarh</option>
-                                            <option value="Chennai">Chennai</option>
-                                            <option value="Gurugram">Gurugram</option>
-                                            <option value="Vadodara">Vadodara</option>
-                                            <option value="Vijayawada">Vijayawada</option>
+                                        <select class="form-control input_subprocess" id="department" name="department" required>
+                                            <option value="0">Choose Value</option>
+                                            
+                                            
+                                            
+                                            <%
+    try{
+    	String query="select distinct(DepartmentCategorisation) from RACM where megaprocess=?;";
+    	Connection connection=Dbconfig.getConnection();
+    	PreparedStatement psmt=connection.prepareStatement(query);
+    	psmt.setString(1,request.getParameter("megaprocess"));
+    	
+
+       ResultSet resultset =psmt.executeQuery() ;
+%>
+        <%  while(resultset.next()){ %>
+        
+            <option value="<%= resultset.getString("DepartmentCategorisation")%>"><%= resultset.getString("DepartmentCategorisation")%></option>
+            <% } 
+
+        }
+        catch(Exception e)
+        {
+             out.println("wrong entry"+e);
+        }
+%>
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
+                                            
                                         </select>
                                     </div>
                                     <div class="row px-3">
@@ -215,12 +309,12 @@
                                         </label>
                                        
                                         <input class="mb-4 input_start_date" id="audit_start_date"
-                                            type="date" name="audit_end_date">
+                                            type="date" name="audit_start_date" value="<%=audit_start_date%>" required>
                                         <h6 class="mb-0 text-lg" style="margin-left: 43.5%;font-size: 23px;
                                         margin-top: -15%;">Audit End Date
                                         </h6>
                                         </label> <input class="mb-4 input_end_date" id="audit_end_date" onchange="checkEmail()"
-                                            type="date" name="audit_end_date">
+                                            type="date" name="audit_end_date" value="<%=audit_end_date%>" required>
                                     </div>
 
                                     <div class="row px-3">
@@ -230,13 +324,19 @@
                                                 Audit Background</h6>
                                         </label>
                                         <input class="mb-2 input_audit_background" id="audit_background" onchange="checkEmail()"
-                                            type="text" name="input_audit_background">
+                                            type="text" name="input_audit_background" value="<%=input_audit_background%>" required>
                                     </div>
 
                                     <div class="row px-3"> <button type="submit"
                                             class="btn btn-blue text-center signup_btn"
-                                            style="background-color: #470A68;">Save & Proceed</button>
+                                            style="background-color: #470A68; " formaction="GeneralServlet">Save & Proceed</button>
+                                            &nbsp&nbsp  &nbsp&nbsp  &nbsp&nbsp  &nbsp&nbsp  &nbsp&nbsp  &nbsp&nbsp  &nbsp&nbsp  &nbsp&nbsp
+                                             <button type="submit"
+                                            class="btn btn-blue text-center signup_btn"
+                                            style="background-color: #470A68; " formaction="SubmitAudit">Submit</button>
                                     </div>
+                                    
+                                   
 
                                 </form>
                             </div>
