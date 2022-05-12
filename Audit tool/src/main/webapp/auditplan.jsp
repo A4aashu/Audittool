@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+      <%@ page import="java.sql.*" %>
+      <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+    <%@ taglib uri = "http://java.sun.com/jsp/jstl/sql" prefix = "sql"%>
+	<%@ page language="java" import="com.tool.bean.LoginBean"%>
+	<%@ page language="java" import="com.tool.config.*"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -53,6 +58,7 @@
 </head>
 
 <body onload="myfunction()">
+<%LoginBean currentUser = ((LoginBean) (session.getAttribute("currentSessionUser")));%>
   <!-- Main Wrapper -->
   <div class="main-wrapper">
 
@@ -67,24 +73,24 @@
                 <span class="status online"></span>
               </span>
               <div class="section">
-                <span style="color:#ffffff;margin-left:85px;font-size: 16px!important;">Yatin Gaind</span>
-                <span style="color:#ffffff;margin-left:85px;">Associate Director</span>
-                <span style="color:#ffffff;margin-left:85px;">GRCS Telecom</span>
-              </div>
+                    <span style="color:#ffffff;margin-left:85px;font-size: 16px!important;"><%= currentUser.getFullname()%></span>
+                    <span style="color:#ffffff;margin-left:85px;"><%= currentUser.getDepartment()%></span>
+                    <span style="color:#ffffff;margin-left:85px;"><%= currentUser.getDesignation()%></span>
+                  </div>
             </li>
-            <li class="submenu">
-              <a class="btn-links btn-inactive" href="#"><i class="la la-dashboard"></i> <span> Home</span></a>
-            </li>
-            <li class="submenu">
-              <a class="btn-links btn-inactive" href="#"><i class="la la-cube"></i> <span>Audit List</span></a>
-            </li>
-            <li class="submenu">
-              <a class="btn-links" href="#"><i class="la la-plus"></i> <span>Create Audit</span></a>
-            </li>
-            <li class="submenu">
-              <a class="btn-links down" href="#"><i class="la la-user"></i> <span> Logout
-                </span></span></a>
-            </li>
+             <li class="submenu">
+                  <a class="btn-links btn-inactive" href="dashboard2.jsp"><i class="la la-dashboard"></i> <span> Home</span></a>
+                </li>
+                <li class="submenu">
+                  <a class="btn-links btn-inactive" href="#"><i class="la la-cube"></i> <span>Audit List</span></a>
+                </li>
+                <li class="submenu">
+                  <a class="btn-links" href="createaudit.jsp"><i class="la la-plus"></i> <span>Create Audit</span></a>
+                </li>
+                <li class="submenu">
+                  <a class="btn-links down" href="logout.jsp"><i class="la la-user"></i> <span> Logout
+                    </span></span></a>
+                </li>
 
           </ul>
         </div>
@@ -122,12 +128,11 @@
                     class="hover-underline-animation nav-linkk nav2 boxx-shadow"
                     style="width: 131px;padding-right: 5px;">Project objective</a></li>
                 <li style="padding-left: 0px;width: 101px;"><a href="#"
-                    class="nav-linkk nav-2 boxx-shadow" style="padding-right: 9px;">Audit
-                    Plan</a></li>
+                    class="nav-linkk nav-2 boxx-shadow" style="padding-right: 9px;">Milestones</a></li>
                 <li style="width: 131px;"><a href="#" class="hover-underline-animation nav-linkk nav2 boxx-shadow"
                     style="padding-right: 9px;">Team Structure</a></li>
                 <li style="width:141px;margin-left: 0px;"><a href="#"
-                    class="hover-underline-animation nav-linkk nav2 boxx-shadow" style="padding-right: 10px;">Opening
+                    class="hover-underline-animation nav-linkk nav2 boxx-shadow" style="padding-right: 10px;">Export Opening
                     Meeting</a></li>
               </ul>
 
@@ -154,41 +159,42 @@
             <div class="col-lg-8" style="background-color: #ffffff; color: #00338D!important;">
   
                 <!-- Audit plan section -->
+                <form  action="" method="POST">
                 <div class="audit_plan_dropdown">
                   <div class="drpdowncss">
                     <button type="button" disabled onload="myFunction()" class="btn btn-primary dropdown-toggle buttonscss button1"
                       data-toggle="dropdown" style="background-color:#470a68!important;margin-top: 0px;font-size: 12px!important;" id="posuvnik1">
                       Planning
                     </button>
-                    <div class="dropdown-menu" style="margin-top: -462px;
+                    <div class="dropdown-menu" style="margin-top: -417px;
                     margin-left: 29px;">
                       <a class="dropdown-item" href="#">1) Audit Announcement/ Kick off Meeting
-                        <span><input class="date-field" type="date" /></span>
+                        <span><input class="date-field" type="date" name="auditannounce" /></span>
                       </a>
                       <a class="dropdown-item" href="#">2) Information Request to Audit Scope
-                        <span><input class="date-field" type="date" /></span>
+                        <span><input class="date-field" type="date" name="irauditscrop" /></span>
                       </a>
                       <a class="dropdown-item" href="#">3) Intial discussion with all auditees and set expectations
-                        <span><input class="date-field" type="date" /></span>
+                        <span><input class="date-field" type="date" name="discussiondate"/></span>
                       </a>
                       <a class="dropdown-item" href="#">4) Walkthrough Session
-                        <span><input class="date-field" type="date" /></span>
+                        <span><input class="date-field" type="date" name="walktrhoughsession"/></span>
                       </a>
                     </div>
                   </div>
 
                   <div class="btn-group dropdown drpdowncss">
                     <button type="button" disabled class="btn dropdown-toggle btn-primary buttonscss button2"
-                      data-toggle="dropdown" style="margin-top: -2px;font-size: 12px!important;" id="posuvnik2">
+                      data-toggle="dropdown" style="margin-top: 1px;font-size: 12px!important;" id="posuvnik2">
                       Fieldwork
                     </button>
-                    <div class="dropdown-menu disabled" style="margin-left: 14px;margin-top: 8px;">
+                    <div class="dropdown-menu disabled" style="margin-left: 11px;margin-top: 8px;">
                       <div class="text-div">
                         <a class="dropdown-item text-div" href="#"> Request for Initial Data Request (IDR)
                         </a>
                         <a class="dropdown-item text-div" href="#">/ Assessment of Response to Questionnaire and
                           analysis on IDR
-                          <span><input class="date-field" type="date" /></span>
+                          <span><input class="date-field" type="date" name="datarequest" /></span>
                         </a>
                         <a class="dropdown-item text-div" href="#">/Additional Data Request (ADR) if required any**
                         </a>
@@ -202,15 +208,15 @@
 
                   <div class="dropdown open drpdowncss">
                     <button type="button" disabled class="btn btn-primary dropdown-toggle buttonscss dropbtn button3"
-                      data-toggle="dropdown" style="margin-top: 5px;font-size: 12px!important;" id="posuvnik3">
+                      data-toggle="dropdown" style="margin-top: 15px;font-size: 12px!important;" id="posuvnik3">
                       Discussion with Stakeholders
                     </button>
                     <div class="dropdown-menu dropdown-content" style="margin-left: 14px;
-                    margin-top: 5px;">
+                    margin-top: 9px;">
                       <a class="dropdown-item text-div" href="#">AQM Discussion with the stakeholders
                       </a>
                       <a class="dropdown-item text-div" href="#"> / Interim status update on findings
-                        <span><input class="date-field" type="date" /></span>
+                        <span><input class="date-field" type="date" name="aqm"/></span>
                       </a>
                       <a class="dropdown-item text-div" href="#"> / Preperation of Draft Report and obtain initial
                         management
@@ -221,44 +227,48 @@
 
                   <div class="btn-group dropdown open drpdowncss">
                     <button type="button" disabled class="btn btn-primary dropdown-toggle buttonscss button4"
-                      data-toggle="dropdown" id="posuvnik4" style="margin-top: -41px!important;font-size: 12px!important;">
+                      data-toggle="dropdown" id="posuvnik4" style="margin-top: 5px!important;font-size: 12px!important;">
                       Audit Closure
                     </button>
-                    <div class="dropdown-menu" style="margin-top: -31px;margin-left: 14px;">
+                    <div class="dropdown-menu" style="margin-top: -23px;margin-left: 14px;">
                       <a class="dropdown-item" href="#">1) Provide Draft Report to Stakeholders
-                        <span><input class="date-field" type="date" /></span>
+                        <span><input class="date-field" type="date" name="draftreport" /></span>
                       </a>
                       <a class="dropdown-item" href="#">2) Exit Meeting
-                        <span><input class="date-field" type="date" /></span>
+                        <span><input class="date-field" type="date" name="exitmeeting"  /></span>
                       </a>
                       <a class="dropdown-item" href="#">3) Release Final Report
-                        <span><input class="date-field" type="date" /></span>
+                        <span><input class="date-field" type="date" name="releasefinalreport"  /></span>
                       </a>
                     </div>
 
 
 
                   </div>
-                  <button type="button" class="btn btn-primary submit"
-                    style="width:200px!important;margin-left:-216px;margin-top:125px;background-color: #470a68!important;"> Save & Proceed</button>
-                  <button type="button" class="btn btn-primary submit"
-                    style="width:200px!important;margin-left:20px;margin-top:125px;background-color: #470a68!important;"> Submit</button>
                 </div>
               </div>
               <div class="col-lg-4" style="background-color: #fff;">
-                <img src="assets/images/background-div.png" width="450px" height="460px"
-                  style="margin-left: -20px!important;
-                  margin-top: 20px;
-                  margin-bottom: -33px;" alt="">
-                <img src="assets/images/Picture3.png" style="width: 370px;
-                margin-top: -135%;
-                height: 400px;
-                          " alt="">
-              </div>
+                <img src="assets/images/background-div.png" width="450px" height="492px"
+                    style="margin-left: -20px!important;margin-top:0px;margin-bottom:-80px;" alt="">
+                <img src="assets/images/Picture3.png" style="width: 339px;
+                margin-top: -139%;
+                height: 370px;
+                margin-left: 14%;
+                " alt="">
+                
+            </div>
+            <div class="row px-3"> <button type="submit"
+              class="btn btn-blue text-center signup_btn"
+              style="background-color: #470A68;margin-top: -45px!important;
+              margin-left: 990px!important;z-index: 111;" formaction="GeneralServlet" name="btn_auditplan">Save & Proceed</button>
+              <button type="submit"
+              class="btn btn-blue text-center signup_btn"
+              style="background-color: #470A68;margin-left: 90%!important;z-index: 111;margin-top: 6.95px!important;">Submit</button>
+            </div>
             </div>
           </div>
         </div>
-
+</form>
       </div>
     </div>
   </div>
@@ -290,7 +300,8 @@
 
   <!-- Custom JS -->
 
-
+  
+  </script>
 </body>
 
 </html>

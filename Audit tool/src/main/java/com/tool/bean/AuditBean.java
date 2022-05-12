@@ -6,10 +6,80 @@ public class AuditBean {
 	private String Engagement_name;
 	private String MegaProcess;
 	private String Department;
+	private String Process;
 	private Date Audit_start_date;
 	private Date Audit_end_date;
+	private Date auditannounce;
+	private Date irauditscrop;
+	private Date discussiondate;
+	private Date walktrhoughsession;
+	private Date datarequest;
+	private Date aqm;
+	private Date draftreport;
+	private Date exitmeeting;
+	private Date releasefinalreport;
 	private String Audit_background;
 	
+	public Date getAuditannounce() {
+		return auditannounce;
+	}
+	public void setAuditannounce(Date auditannounce) {
+		this.auditannounce = auditannounce;
+	}
+	public Date getIrauditscrop() {
+		return irauditscrop;
+	}
+	public void setIrauditscrop(Date irauditscrop) {
+		this.irauditscrop = irauditscrop;
+	}
+	public Date getDiscussiondate() {
+		return discussiondate;
+	}
+	public void setDiscussiondate(Date discussiondate) {
+		this.discussiondate = discussiondate;
+	}
+	public Date getWalktrhoughsession() {
+		return walktrhoughsession;
+	}
+	public void setWalktrhoughsession(Date walktrhoughsession) {
+		this.walktrhoughsession = walktrhoughsession;
+	}
+	public Date getDatarequest() {
+		return datarequest;
+	}
+	public void setDatarequest(Date datarequest) {
+		this.datarequest = datarequest;
+	}
+	public Date getAqm() {
+		return aqm;
+	}
+	public void setAqm(Date aqm) {
+		this.aqm = aqm;
+	}
+	public Date getDraftreport() {
+		return draftreport;
+	}
+	public void setDraftreport(Date draftreport) {
+		this.draftreport = draftreport;
+	}
+	public Date getExitmeeting() {
+		return exitmeeting;
+	}
+	public void setExitmeeting(Date exitmeeting) {
+		this.exitmeeting = exitmeeting;
+	}
+	public Date getReleasefinalreport() {
+		return releasefinalreport;
+	}
+	public void setReleasefinalreport(Date releasefinalreport) {
+		this.releasefinalreport = releasefinalreport;
+	}
+	public String getProcess() {
+		return Process;
+	}
+	public void setProcess(String process) {
+		Process = process;
+	}
 	public String getInitiative_id() {
 		return Initiative_id;
 	}

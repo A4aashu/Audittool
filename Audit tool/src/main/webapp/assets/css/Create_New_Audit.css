@@ -1,4 +1,71 @@
-*{margin:0px;padding:0px;}
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+.nav1:hover {
+  background-color: #470a68 !important;
+  cursor: pointer;
+}
+
+option{
+  background-color: #ffffff!important;
+  padding: 50px!important;
+}
+
+.topnavbar li {
+  display: inline;
+}
+
+.topnavbar {
+  position: fixed;
+  z-index: 11;
+  margin-left: -70px;
+  margin-top: -16px;
+}
+
+.Nav2 {
+
+  width: 1210px;
+  height: 110px;
+  background: rgba(183, 193, 211, 0.23);
+  /* background-color: #fff; */
+  padding-top: 10px;
+  /* display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: sticky;
+    top: 0px; */
+}
+
+/* .Nav2::before {
+  content: "";
+  background-color: black;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  opacity: 0.7;
+} */
+/* .topnavbar ul button{
+background-color: #470A68 !important;
+} */
+
+.sidebtn {
+  float: right;
+
+}
+
+
+.sidebtn button {
+  width: 200px !important;
+  height: 80px !important;
+  margin-top: 20px !important;
+}
+
+
 body {
   color: #000;
   overflow-x: hidden;
@@ -6,8 +73,41 @@ body {
   background-color: #b0bec5;
   background-repeat: no-repeat;
 }
-hr{
-  border-top: 4px solid red!important;
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color:#495057!important;
+  opacity: 1; /* Firefox */
+}
+
+
+
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+  color: #483698;
+}
+
+.hover-underline-animation:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #483698;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.lower-nav>li {
+  height: 45px !important;
+  width: 140px;
+}
+
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 .card0 {
@@ -15,12 +115,26 @@ hr{
   border-radius: 0px;
 }
 
+.btn-inactive {
+  background-color: #B7C1D3 !important;
+  border-radius: 20px;
+  color: #00338d !important;
+  margin-bottom: 30px;
+  margin-left: 20px;
+  margin-top: 50px;
+  width: 135px !important;
+  font-size: 13px !important;
+}
+
+
+
 .recc {
-  margin-left: 20% !important;
+  margin-left: 84% !important;
+  margin-top: -96px;
   padding: 1.5% !important;
   background-color: #ccc7e3;
-  border-top-left-radius: 31px!important;
-  border-bottom-left-radius: 31px!important;
+  border-top-left-radius: 31px !important;
+  border-bottom-left-radius: 31px !important;
 }
 
 .signup_btn {
@@ -28,7 +142,7 @@ hr{
   background-color: #470a68 !important;
   color: #fff !important;
   margin-left: -30px !important;
-  padding: 6px !important;
+  padding: 4px !important;
   width: 180px !important;
   font-weight: bold !important;
   margin-top: 18px !important;
@@ -36,69 +150,80 @@ hr{
 
 .input_end_date {
   border-radius: 60px !important;
-  background-color: #e5e5e5 !important;
+  background-color: #B7C1D3 !important;
   /* width: 290px !important; */
-  width: 48% !important;
-  margin-top: -65px !important;
-  margin-left: 285px !important;
+  width: 34% !important;
+  margin-top: -68px !important;
+  margin-left: 185px !important;
   height: 45px !important;
 }
 
 .input_start_date {
   border-radius: 60px !important;
-  background-color: #e5e5e5 !important;
+  background-color: #B7C1D3 !important;
   /* width: 290px !important; */
-  width: 48% !important;
+  width: 34% !important;
   margin-top: 26px !important;
-  margin-left: -37px !important;
+  margin-left: -45px !important;
   height: 45px !important;
 }
 
 .input_subprocess {
   border-radius: 60px !important;
-  background-color: #e5e5e5 !important;
+  background-color: #B7C1D3 !important;
   /* width: 290px !important; */
-  width: 48% !important;
+  width: 34% !important;
   margin-top: -48px !important;
-  margin-left: 285px !important;
+  margin-left: 421px !important;
   height: 45px !important;
 }
 
 .input_process {
   border-radius: 60px !important;
-  background-color: #e5e5e5 !important;
-  width: 48% !important;
+  background-color: #B7C1D3 !important;
+  width: 34% !important;
   /* width: 290px !important; */
   margin-top: 20px !important;
-  margin-left: -37px !important;
+  margin-left: -45px !important;
   height: 45px !important;
 }
 
+.input_categorization {
+  border-radius: 60px !important;
+  background-color: #B7C1D3 !important;
+  width: 34% !important;
+  /* width: 290px !important; */
+  margin-top: -47px !important;
+  margin-left: 185px !important;
+  height: 45px !important;
+}
+
+
 .input_audit_background {
   border-radius: 60px !important;
-  background-color: #e5e5e5 !important;
+  background-color: #B7C1D3 !important;
   /* width: 600px !important; */
-  width: 100% !important;
+  width: 70% !important;
   margin-top: 26px !important;
-  margin-left: -37px !important;
+  margin-left: -45px !important;
   height: 45px !important;
 }
 
 .input_name_of_client {
   border-radius: 60px !important;
-  background-color: #e5e5e5 !important;
-  width: 310px !important;
+  background-color: #B7C1D3 !important;
+  width: 34%!important;
   margin-top: 38px !important;
-  margin-left: -37px !important;
+  margin-left: -45px !important;
   height: 45px !important;
 }
 
 .input_engagement_name {
   border-radius: 60px !important;
-  background-color: #e5e5e5 !important;
-  width: 310px !important;
+  background-color: #B7C1D3 !important;
+  width: 34%!important;
   margin-top: -54px !important;
-  margin-left: 285px !important;
+  margin-left: 185px !important;
   height: 45px !important;
 }
 
@@ -262,9 +387,10 @@ a {
   margin-bottom: 30px;
   margin-left: 20px;
   margin-top: 50px;
-  width: 135px!important;
+  width: 135px !important;
   font-size: 13px !important;
 }
+
 
 body {
   background-color: #ffffff;
@@ -276,31 +402,39 @@ body {
   margin-bottom: 4px;
 }
 
-.page-wrapper > .content {
+.page-wrapper>.content {
   padding: 0px;
   padding-top: 0px;
   margin-left: 10px;
 }
 
 .navbar {
-  margin-top: -57px;
+  /* margin-top: 6px;?*/
+  margin-left: 230px;
+  margin-top: 39px;
 }
 
 .upper-nav {
   margin-top: -34px !important;
   margin-left: -68px;
+  margin-bottom: 100px;
 }
+
 .lower-nav {
-  margin-top: -25px;
-  margin-left: -68px;
+  margin-top: 12px !important;
+  margin-left: -70px !important;
 }
 
 .nav1 {
   background-color: #b7c1d3;
+  color: #00338D;
   border-radius: 30px;
   margin-right: 12px;
   padding: 10px;
+  padding-left: 14px !important;
   margin-left: 44px;
+  width: 141px;
+  border: none;
 }
 
 .nav-2 {
@@ -309,8 +443,9 @@ body {
   margin-right: 2px;
   padding-bottom: 0px;
   margin-left: 48px;
-  margin-top: 50px;
+  margin-top: 15px;
   font-weight: bold;
+  cursor: pointer !important;
 }
 
 .nav-linkk {
@@ -324,6 +459,19 @@ body {
   margin-right: 12px;
   padding: 10px;
   margin-left: 44px;
+  color: #ffffff;
+  border: none;
+}
+
+.nav-1:hover {
+  background-color: #b7c1d3;
+  cursor: pointer;
+}
+
+.nav1:hover {
+  background-color: #470a68;
+  cursor: pointer;
+  color:#fff;
 }
 
 .content {
@@ -345,20 +493,24 @@ body {
   margin-right: 2px;
   padding-bottom: 0px;
   margin-left: 48px;
-  margin-top: 50px;
+  margin-top: 15px;
+  cursor: pointer;
 }
+
+
 .boxx-shadow {
   text-shadow: 2px 2px 4px #919090;
 }
+
 .boxx-shadow2 {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 .card-1 {
   box-shadow: 0 14px 28px rgb(0 0 0 / 25%), 0 10px 10px rgb(0 0 0 / 22%);
-  padding: 57px 100px!important;
+  padding: 57px 100px !important;
   margin-top: -60px;
-  margin-left: -70px!important;
+  margin-left: -70px !important;
   background-color: #e5e5e5;
 }
 
@@ -388,7 +540,7 @@ a {
 .section {
   margin-top: -50px;
   margin-left: 14px;
-  font-size: 10px!important;
+  font-size: 10px !important;
 }
 
 @media screen and (max-width: 1324px) {
@@ -440,7 +592,7 @@ a {
     background-color: #e5e5e5 !important;
     width: 200px !important;
     margin-top: -48px !important;
-    margin-left: 285px !important;
+    margin-left: 225px !important;
     height: 45px !important;
   }
 
@@ -465,7 +617,7 @@ a {
   .input_name_of_client {
     border-radius: 60px !important;
     background-color: #e5e5e5 !important;
-    width: 200px !important;
+    width: 34%!important;
     margin-top: 38px !important;
     margin-left: -37px !important;
     height: 45px !important;
@@ -474,7 +626,7 @@ a {
   .input_engagement_name {
     border-radius: 60px !important;
     background-color: #e5e5e5 !important;
-    width: 200px !important;
+    width: 34%!important;
     margin-top: -54px !important;
     margin-left: 285px !important;
     height: 45px !important;
