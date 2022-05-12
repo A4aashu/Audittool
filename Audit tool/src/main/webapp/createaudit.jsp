@@ -358,7 +358,7 @@
                                                 Audit Background</h6>
                                         </label>
                                         <input class="mb-2 input_audit_background" id="audit_background" placeholder="Enter Audit Background" onchange="checkEmail()"
-                                            type="text" name="input_audit_background" value="<%=input_audit_background%>" required>
+                                            type="text" name="input_audit_background" value="<%=input_audit_background%>" >
                                     </div>
 
                                     
@@ -381,7 +381,7 @@
                               margin-left: 990px!important;z-index: 111;" formaction="GeneralServlet" name="btn_general">Save & Proceed</button>
                               <button type="submit"
                               class="btn btn-blue text-center signup_btn"
-                              style="background-color: #470A68;margin-left: 89.5%!important;z-index: 111;margin-top: 6.95px!important;"formaction="SubmitAudit">Submit</button>
+                              style="background-color: #470A68;margin-left: 89.5%!important;z-index: 111;margin-top: 6.95px!important;"formaction="GeneralServlet">Submit</button>
                             </div>
                              </form>
                         </div>

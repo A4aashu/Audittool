@@ -7,6 +7,7 @@ public class AuditBean {
 	private String MegaProcess;
 	private String Department;
 	private String Process;
+	private String Audit_background;
 	private Date Audit_start_date;
 	private Date Audit_end_date;
 	private Date auditannounce;
@@ -18,8 +19,121 @@ public class AuditBean {
 	private Date draftreport;
 	private Date exitmeeting;
 	private Date releasefinalreport;
-	private String Audit_background;
+	private String epname;
+	private String edname;
+	private String emname1;
+	private String emname2;
+	private String etname1;
+	private String etname2;
+	private String etname3;
+	private String etname4;
+	private String epdes;
+	private String eddes;
+	private String emdes1;
+	private String emdes2;
+	private String etdes1;
+	private String etdes2;
+	private String etdes3;
+	private String etdes4;
 	
+	
+	
+	public String getEpdes() {
+		return epdes;
+	}
+	public void setEpdes(String epdes) {
+		this.epdes = epdes;
+	}
+	public String getEddes() {
+		return eddes;
+	}
+	public void setEddes(String eddes) {
+		this.eddes = eddes;
+	}
+	public String getEmdes1() {
+		return emdes1;
+	}
+	public void setEmdes1(String emdes1) {
+		this.emdes1 = emdes1;
+	}
+	public String getEmdes2() {
+		return emdes2;
+	}
+	public void setEmdes2(String emdes2) {
+		this.emdes2 = emdes2;
+	}
+	public String getEtdes1() {
+		return etdes1;
+	}
+	public void setEtdes1(String etdes1) {
+		this.etdes1 = etdes1;
+	}
+	public String getEtdes2() {
+		return etdes2;
+	}
+	public void setEtdes2(String etdes2) {
+		this.etdes2 = etdes2;
+	}
+	public String getEtdes3() {
+		return etdes3;
+	}
+	public void setEtdes3(String etdes3) {
+		this.etdes3 = etdes3;
+	}
+	public String getEtdes4() {
+		return etdes4;
+	}
+	public void setEtdes4(String etdes4) {
+		this.etdes4 = etdes4;
+	}
+	public String getEpname() {
+		return epname;
+	}
+	public void setEpname(String epname) {
+		this.epname = epname;
+	}
+	public String getEdname() {
+		return edname;
+	}
+	public void setEdname(String edname) {
+		this.edname = edname;
+	}
+	public String getEmname1() {
+		return emname1;
+	}
+	public void setEmname1(String emname1) {
+		this.emname1 = emname1;
+	}
+	public String getEmname2() {
+		return emname2;
+	}
+	public void setEmname2(String emname2) {
+		this.emname2 = emname2;
+	}
+	public String getEtname1() {
+		return etname1;
+	}
+	public void setEtname1(String etname1) {
+		this.etname1 = etname1;
+	}
+	public String getEtname2() {
+		return etname2;
+	}
+	public void setEtname2(String etname2) {
+		this.etname2 = etname2;
+	}
+	public String getEtname3() {
+		return etname3;
+	}
+	public void setEtname3(String etname3) {
+		this.etname3 = etname3;
+	}
+	public String getEtname4() {
+		return etname4;
+	}
+	public void setEtname4(String etname4) {
+		this.etname4 = etname4;
+	}
 	public Date getAuditannounce() {
 		return auditannounce;
 	}

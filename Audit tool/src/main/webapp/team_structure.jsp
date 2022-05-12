@@ -60,7 +60,7 @@
 </head>
 
 <body>
-
+<%LoginBean currentUser = ((LoginBean) (session.getAttribute("currentSessionUser")));%>
   <!-- Main Wrapper -->
   <div class="main-wrapper">
 
@@ -75,9 +75,9 @@
                 <span class="status online"></span>
               </span>
               <div class="section">
-                    <span style="color:#ffffff;margin-left:85px;font-size: 16px!important;">ABC</span>
-                    <span style="color:#ffffff;margin-left:85px;">DEF</span>
-                    <span style="color:#ffffff;margin-left:85px;">GHI</span>
+                    <span style="color:#ffffff;margin-left:85px;font-size: 16px!important;"><%= currentUser.getFullname()%></span>
+                    <span style="color:#ffffff;margin-left:85px;"><%= currentUser.getDepartment()%></span>
+                    <span style="color:#ffffff;margin-left:85px;"><%= currentUser.getDesignation()%></span>
                   </div>
             </li>
             <li class="submenu">
@@ -176,12 +176,12 @@
                         <div class="modal-header">
                           <h4 class="modal-title" id="myModalLabel">Enagagement Partner</h4>
                           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">�</span>
+                            <span aria-hidden="true">X</span>
                           </button>
                         </div>
                         <!--Body-->
                         <div class="modal-body">
-
+<form action="" method="POST">
                           <table class="table table-hover">
                             <thead>
                               <tr>
@@ -193,12 +193,12 @@
                             </thead>
                             <tbody>
                               <tr>
-                                <td> <input type="text" id="EMname" name="EMname" placeholder="Enter Name"></td>
-                                <td> <select name="Emname" id="EMname">
-                                    <option value="Enter Designation">Enter Designation</option>
-                                    <option value="EMname2">Partner</option>
-                                    <option value="EMname3">Director</option>
-                                    <option value="EMname4">Associate Director</option>
+                                <td> <input type="text" id="EMname" name="Epname" placeholder="Enter Name"></td>
+                                <td> <select name="Epdes" id="EMname">
+                                    <option value="0">Enter Designation</option>
+                                    <option value="Partner">Partner</option>
+                                    <option value="Director">Director</option>
+                                    <option value="Associate Director">Associate Director</option>
                                   </select></td>
 
                                
@@ -211,10 +211,10 @@
                         <!--Footer-->
                         <div class="modal-footer">
 
-                          <input class="btn btn-primary PopUpSubmitbutton" type="submit" value="Submit"
+                          <input class="btn btn-primary PopUpSubmitbutton" type="submit" name="epname"  formaction="GeneralServlet" value="Submit"
                             style="border-color: white;">
                           <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Close</button>
-
+</form>
                         </div>
                       </div>
                     </div>
@@ -235,12 +235,12 @@
                         <div class="modal-header">
                           <h4 class="modal-title" id="myModalLabel1">Enagagement Director </h4>
                           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">�</span>
+                            <span aria-hidden="true">X</span>
                           </button>
                         </div>
                         <!--Body-->
                         <div class="modal-body">
-
+<form action="" method="POST">
                           <table class="table table-hover">
                             <thead>
                               <tr>
@@ -252,12 +252,12 @@
                             </thead>
                             <tbody>
                               <tr>
-                                <td> <input type="text" id="EDname" name="EDname" placeholder="Enter Name"></td>
-                                <td> <select name="EDname" id="EDname1">
-                                    <option value="Enter Designation1">Enter Designation</option>
-                                    <option value="EDname2">Director</option>
-                                    <option value="EDname3">Manager</option>
-                                    <option value="EDname4">Assistant Manager</option>
+                                <td> <input type="text" id="EDname" name="Edname" placeholder="Enter Name"></td>
+                                <td> <select name="Eddes" id="EDname1">
+                                    <option value="0">Enter Designation</option>
+                                    <option value="Director">Director</option>
+                                    <option value="Manager">Manager</option>
+                                    <option value="Assistant Manager">Assistant Manager</option>
                                   </select></td>
 
                                 
@@ -273,10 +273,10 @@
                         <!--Footer-->
                         <div class="modal-footer">
 
-                          <input class="btn btn-primary PopUpSubmitbutton" type="submit" value="Submit"
+                          <input class="btn btn-primary PopUpSubmitbutton" type="submit" name="edname"  formaction="GeneralServlet" value="Submit"
                             style="border-color: white;">
                           <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Close</button>
-
+</form>
                         </div>
                       </div>
                     </div>
@@ -304,12 +304,12 @@
                         <div class="modal-header">
                           <h4 class="modal-title" id="myModalLabel2">Enagagement Manager </h4>
                           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">�</span>
+                            <span aria-hidden="true">X</span>
                           </button>
                         </div>
                         <!--Body-->
                         <div class="modal-body">
-
+<form action="" method="POST">
                           <table class="table table-hover">
                             <thead>
                               <tr>
@@ -321,21 +321,21 @@
                             </thead>
                             <tbody>
                               <tr>
-                                <td> <input type="text" id="EDname" name="EDname" placeholder="Enter Name"></td>
-                                <td> <select name="EDname" id="EDname1">
-                                    <option value="Enter Designation1">Enter Designation</option>
-                                    <option value="EDname2">Manager</option>
-                                    <option value="EDname3">Assistant Manager</option>
+                                <td> <input type="text" id="EDname" name="Emname1" placeholder="Enter Name"></td>
+                                <td> <select name="Emdes1" id="EDname1">
+                                    <option value="0">Enter Designation</option>
+                                    <option value="Manager">Manager</option>
+                                    <option value="Assistant Manager">Assistant Manager</option>
                                   </select></td>
 
                                
                               </tr>
                               <tr>
-                                <td> <input type="text" id="EDname1" name="EDname" placeholder="Enter Name"></td>
-                                <td> <select name="EDname3" id="EDname3">
-                                    <option value="Enter Designation">Enter Designation</option>
-                                    <option value="Edname2">Manager</option>
-                                    <option value="Edname3">Assistant Manager</option>
+                                <td> <input type="text" id="EDname1" name="Emname2" placeholder="Enter Name"></td>
+                                <td> <select name="Emdes2" id="EDname3">
+                                    <option value="0">Enter Designation</option>
+                                    <option value="Manager">Manager</option>
+                                    <option value="Assistant Manager">Assistant Manager</option>
                                   </select></td>
 
                                 
@@ -350,10 +350,10 @@
                         <!--Footer-->
                         <div class="modal-footer">
 
-                          <input class="btn btn-primary PopUpSubmitbutton" type="submit" value="Submit"
+                          <input class="btn btn-primary PopUpSubmitbutton" type="submit" name="emname"  formaction="GeneralServlet" value="Submit"
                             style="border-color: white;">
                           <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Close</button>
-
+</form>
                         </div>
                       </div>
                     </div>
@@ -375,12 +375,12 @@
                         <div class="modal-header">
                           <h4 class="modal-title" id="myModalLabel3">Team Members </h4>
                           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">�</span>
+                            <span aria-hidden="true">X</span>
                           </button>
                         </div>
                         <!--Body-->
                         <div class="modal-body">
-
+<form action="" method="POST">
                           <table class="table table-hover">
                             <thead>
                               <tr>
@@ -392,59 +392,59 @@
                             </thead>
                             <tbody>
                               <tr>
-                                <td> <input type="text" id="TNname" name="TNname" placeholder="Enter Name"></td>
-                                <td> <select name="TNname" id="TNname1">
-                                    <option value="Enter Designation1">Enter Designation</option>
-                                    <option value="TNname2">Manager</option>
-                                    <option value="TNname3">Assistant Manager</option>
-                                    <option value="TNname4">Consultant</option>
-                                    <option value="TNname5">Associate Consultant</option>
-                                    <option value="TNname6">Analyst</option>
-                                    <option value="TNname7">Intern</option>
+                                <td> <input type="text" id="TNname" name="Tmname" placeholder="Enter Name"></td>
+                                <td> <select name="Tmdes" id="TNname1">
+                                    <option value="0">Enter Designation</option>
+                                    <option value="Manager">Manager</option>
+                                    <option value="Assistant Manager">Assistant Manager</option>
+                                    <option value="Consultant">Consultant</option>
+                                    <option value="Associate Consultant">Associate Consultant</option>
+                                    <option value="Analyst">Analyst</option>
+                                    <option value="Intern">Intern</option>
                                   </select></td>
 
                                 
                               </tr>
                               <tr>
-                                <td> <input type="text" id="TNname1" name="TNname" placeholder="Enter Name"></td>
-                                <td> <select name="TNname3" id="TNname3">
-                                    <option value="Enter Designation">Enter Designation</option>
-                                    <option value="TNname8">Manager</option>
-                                    <option value="TNname9">Assistant Manager</option>
-                                    <option value="TNname10">Consultant</option>
-                                    <option value="TNname11">Associate Consultant</option>
-                                    <option value="TNname12">Analyst</option>
-                                    <option value="TNname13">Intern</option>
-                                  </select></td>
-
-                                
-                              </tr>
-
-                              <tr>
-                                <td> <input type="text" id="TNname1" name="TNname" placeholder="Enter Name"></td>
-                                <td> <select name="TNname3" id="TNname3">
-                                    <option value="Enter Designation">Enter Designation</option>
-                                    <option value="TNname14">Manager</option>
-                                    <option value="TNname15">Assistant Manager</option>
-                                    <option value="TNname16">Consultant</option>
-                                    <option value="TNname17">Associate Consultant</option>
-                                    <option value="TNname18">Analyst</option>
-                                    <option value="TNname19">Intern</option>
+                                <td> <input type="text" id="TNname1" name="Tmname1" placeholder="Enter Name"></td>
+                                <td> <select name="Tmdes1" id="TNname3">
+                                    <option value="0">Enter Designation</option>
+                                    <option value="Manager">Manager</option>
+                                    <option value="Assistant Manager">Assistant Manager</option>
+                                    <option value="Consultant">Consultant</option>
+                                    <option value="Associate Consultant">Associate Consultant</option>
+                                    <option value="Analyst">Analyst</option>
+                                    <option value="Intern">Intern</option>
                                   </select></td>
 
                                 
                               </tr>
 
                               <tr>
-                                <td> <input type="text" id="TNname1" name="TNname" placeholder="Enter Name"></td>
-                                <td> <select name="TNname3" id="TNname3">
-                                    <option value="Enter Designation">Enter Designation</option>
-                                    <option value="TNname20">Manager</option>
-                                    <option value="TNname21">Assistant Manager</option>
-                                    <option value="TNname22">Consultant</option>
-                                    <option value="TNname23">Associate Consultant</option>
-                                    <option value="TNname24">Analyst</option>
-                                    <option value="TNname25">Intern</option>
+                                <td> <input type="text" id="TNname1" name="Tmname2" placeholder="Enter Name"></td>
+                                <td> <select name="Tmdes2" id="TNname3">
+                                    <option value="0">Enter Designation</option>
+                                    <option value="Manager">Manager</option>
+                                    <option value="Assistant Manager">Assistant Manager</option>
+                                    <option value="Consultant">Consultant</option>
+                                    <option value="Associate Consultant">Associate Consultant</option>
+                                    <option value="Analyst">Analyst</option>
+                                    <option value="Intern">Intern</option>
+                                  </select></td>
+
+                                
+                              </tr>
+
+                              <tr>
+                                <td> <input type="text" id="TNname1" name="Tmname3" placeholder="Enter Name"></td>
+                                <td> <select name="Tmdes3" id="TNname3">
+                                     <option value="0">Enter Designation</option>
+                                    <option value="Manager">Manager</option>
+                                    <option value="Assistant Manager">Assistant Manager</option>
+                                    <option value="Consultant">Consultant</option>
+                                    <option value="Associate Consultant">Associate Consultant</option>
+                                    <option value="Analyst">Analyst</option>
+                                    <option value="Intern">Intern</option>
                                   </select></td>
 
                                 
@@ -457,10 +457,10 @@
                         <!--Footer-->
                         <div class="modal-footer">
 
-                          <input class="btn btn-primary PopUpSubmitbutton" type="submit" value="Submit"
+                          <input class="btn btn-primary PopUpSubmitbutton" type="submit" name="etname"  formaction="GeneralServlet" value="Submit"
                             style="border-color: white;">
                           <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Close</button>
-
+</form>
                         </div>
                       </div>
                     </div>
@@ -481,18 +481,19 @@
               " alt="">
               
           </div>
+          <form action="" method="POST">
           <div class="row px-3"> <button type="submit"
             class="btn btn-blue text-center signup_btn"
             style="background-color: #470A68;margin-top: -40px!important;
             margin-left: 990px!important;z-index: 111;">Save & Proceed</button>
             <button type="submit"
             class="btn btn-blue text-center signup_btn"
-            style="background-color: #470A68;margin-left: 89.5%!important;z-index: 111;margin-top: 6.95px!important;">Submit</button>
+            style="background-color: #470A68;margin-left: 89.5%!important;z-index: 111;margin-top: 6.95px!important;" formaction="GeneralServlet">Submit</button>
           </div>
           </div>
         </div>
       </div>
-
+</form>
     </div>
   </div>
   </div>

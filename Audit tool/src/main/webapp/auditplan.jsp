@@ -169,16 +169,16 @@
                     <div class="dropdown-menu" style="margin-top: -417px;
                     margin-left: 29px;">
                       <a class="dropdown-item" href="#">1) Audit Announcement/ Kick off Meeting
-                        <span><input class="date-field" type="date" name="auditannounce" /></span>
+                        <span><input class="date-field" type="date" name="auditannounce" required/></span>
                       </a>
                       <a class="dropdown-item" href="#">2) Information Request to Audit Scope
-                        <span><input class="date-field" type="date" name="irauditscrop" /></span>
+                        <span><input class="date-field" type="date" name="irauditscrop" required/></span>
                       </a>
                       <a class="dropdown-item" href="#">3) Intial discussion with all auditees and set expectations
-                        <span><input class="date-field" type="date" name="discussiondate"/></span>
+                        <span><input class="date-field" type="date" name="discussiondate" required/></span>
                       </a>
                       <a class="dropdown-item" href="#">4) Walkthrough Session
-                        <span><input class="date-field" type="date" name="walktrhoughsession"/></span>
+                        <span><input class="date-field" type="date" name="walktrhoughsession" required/></span>
                       </a>
                     </div>
                   </div>
@@ -194,7 +194,7 @@
                         </a>
                         <a class="dropdown-item text-div" href="#">/ Assessment of Response to Questionnaire and
                           analysis on IDR
-                          <span><input class="date-field" type="date" name="datarequest" /></span>
+                          <span><input class="date-field" type="date" name="datarequest" required/></span>
                         </a>
                         <a class="dropdown-item text-div" href="#">/Additional Data Request (ADR) if required any**
                         </a>
@@ -216,7 +216,7 @@
                       <a class="dropdown-item text-div" href="#">AQM Discussion with the stakeholders
                       </a>
                       <a class="dropdown-item text-div" href="#"> / Interim status update on findings
-                        <span><input class="date-field" type="date" name="aqm"/></span>
+                        <span><input class="date-field" type="date" name="aqm" required/></span>
                       </a>
                       <a class="dropdown-item text-div" href="#"> / Preperation of Draft Report and obtain initial
                         management
@@ -232,13 +232,13 @@
                     </button>
                     <div class="dropdown-menu" style="margin-top: -23px;margin-left: 14px;">
                       <a class="dropdown-item" href="#">1) Provide Draft Report to Stakeholders
-                        <span><input class="date-field" type="date" name="draftreport" /></span>
+                        <span><input class="date-field" type="date" name="draftreport" required /></span>
                       </a>
                       <a class="dropdown-item" href="#">2) Exit Meeting
-                        <span><input class="date-field" type="date" name="exitmeeting"  /></span>
+                        <span><input class="date-field" type="date" name="exitmeeting"  required/></span>
                       </a>
                       <a class="dropdown-item" href="#">3) Release Final Report
-                        <span><input class="date-field" type="date" name="releasefinalreport"  /></span>
+                        <span><input class="date-field" type="date" name="releasefinalreport" required /></span>
                       </a>
                     </div>
 
@@ -263,12 +263,13 @@
               margin-left: 990px!important;z-index: 111;" formaction="GeneralServlet" name="btn_auditplan">Save & Proceed</button>
               <button type="submit"
               class="btn btn-blue text-center signup_btn"
-              style="background-color: #470A68;margin-left: 90%!important;z-index: 111;margin-top: 6.95px!important;">Submit</button>
+              style="background-color: #470A68;margin-left: 90%!important;z-index: 111;margin-top: 6.95px!important;" formaction="GeneralServlet">Submit</button>
+              </form>
             </div>
             </div>
           </div>
         </div>
-</form>
+
       </div>
     </div>
   </div>
