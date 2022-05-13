@@ -82,13 +82,11 @@
                   <a class="btn-links btn-inactive" href="dashboard2.jsp"><i class="la la-dashboard"></i> <span> Home</span></a>
                 </li>
                 <li class="submenu">
-                  <a class="btn-links btn-inactive" href="#"><i class="la la-cube"></i> <span>Audit List</span></a>
+                  <a class="btn-links btn-inactive" href="#"><i class="la la-cube"></i> <span>My Audits</span></a>
                 </li>
+                
                 <li class="submenu">
-                  <a class="btn-links" href="createaudit.jsp"><i class="la la-plus"></i> <span>Create Audit</span></a>
-                </li>
-                <li class="submenu">
-                  <a class="btn-links down" href="logout.jsp"><i class="la la-user"></i> <span> Logout
+                  <a class="btn-links down" style="margin-top:320px!important;" href="logout.jsp"><i class="la la-user"></i> <span> Logout
                     </span></span></a>
                 </li>
 
@@ -121,27 +119,53 @@
 
               <ul style="margin-left: 50px;margin-top: -11px;">
                 <li style="width: 122px!important;"><a href="#"
-                    class="hover-underline-animation nav-linkk nav2 boxx-shadow"
-                    style="border-right: 1px solid #B7C1D3;width: 65px;margin-right: 19px;padding-right: 5px;">General</a>
+                    class="hover-underline-animation nav-linkk boxx-shadow"
+                    style="border-right: 1px solid #B7C1D3;width: 65px;margin-right: 19px;padding-right: 5px;color:#27C719!important">General</a>
                 </li>
                 <li style="width: 122px;margin-left: -18px;"><a href="#"
                     class="hover-underline-animation nav-linkk nav2 boxx-shadow"
-                    style="width: 131px;padding-right: 5px;">Project objective</a></li>
+                    style="width: 131px;padding-right: 5px;color:#27C719!important">Project objective</a></li>
                 <li style="padding-left: 0px;width: 101px;"><a href="#"
                     class="nav-linkk nav-2 boxx-shadow" style="padding-right: 9px;">Milestones</a></li>
                 <li style="width: 131px;"><a href="#" class="hover-underline-animation nav-linkk nav2 boxx-shadow"
                     style="padding-right: 9px;">Team Structure</a></li>
-                <li style="width:141px;margin-left: 0px;"><a href="#"
-                    class="hover-underline-animation nav-linkk nav2 boxx-shadow" style="padding-right: 10px;">Export Opening
-                    Meeting</a></li>
+                
               </ul>
 
 
             </nav>
-            <!-- <div class="recc boxx-shadow2">
-              <h5>Name of Client</h5>
-              <h5>Engagement Name</h5>
-            </div> -->
+            <div class="recc boxx-shadow2">
+                 <footer>
+<span style="margin-left:-30px;">3/4</span>
+        <div id="barInside" class="barInside"></div>
+
+        <div class="barBorder">
+
+          <div class="segment"></div>
+
+          <div class="segment1"></div>
+
+          <div class="segment1"></div>
+
+          <!-- <div class="segment"></div> -->
+
+          <!-- <div class="segment"></div>
+
+          <div class="segment"></div>
+
+          <div class="segment"></div>
+
+          <div class="segment"></div>
+
+          <div class="segment"></div>
+
+          <div class="segment"></div> -->
+
+        </div>
+
+      </footer>
+                </div> 
+
           </div>
 
         </div>
@@ -149,12 +173,12 @@
       </div>
       <div class="container" style="margin-top: 9%;">
         <div class="" style="font-size: 25px;margin-top: 2%;margin-left: -5%;z-index: -1;color:#00338D!important;font-weight: bold;">
-          Audit Plan
+          Milestones
           <hr class="hrr">
         </div>
       </div>
       <div class="container-fluid" style="margin-top: 2%;z-index: -1;margin-left: -6%;">
-        <div class="card card0 border-0">
+        <div class="">
           <div class="row d-flex">
             <div class="col-lg-8" style="background-color: #ffffff; color: #00338D!important;">
   
@@ -163,10 +187,10 @@
                 <div class="audit_plan_dropdown">
                   <div class="drpdowncss">
                     <button type="button" disabled onload="myFunction()" class="btn btn-primary dropdown-toggle buttonscss button1"
-                      data-toggle="dropdown" style="background-color:#470a68!important;margin-top: 0px;font-size: 12px!important;" id="posuvnik1">
+                      data-toggle="dropdown" style="background-color:#470a68!important;margin-top: 1px;font-size: 12px!important;" id="posuvnik1">
                       Planning
                     </button>
-                    <div class="dropdown-menu" style="margin-top: -417px;
+                    <div class="dropdown-menu" style="margin-top: -425px;
                     margin-left: 29px;">
                       <a class="dropdown-item" href="#">1) Audit Announcement/ Kick off Meeting
                         <span><input class="date-field" type="date" name="auditannounce" required/></span>
@@ -185,10 +209,10 @@
 
                   <div class="btn-group dropdown drpdowncss">
                     <button type="button" disabled class="btn dropdown-toggle btn-primary buttonscss button2"
-                      data-toggle="dropdown" style="margin-top: 1px;font-size: 12px!important;" id="posuvnik2">
+                      data-toggle="dropdown" style="margin-top: 5px;font-size: 12px!important;" id="posuvnik2">
                       Fieldwork
                     </button>
-                    <div class="dropdown-menu disabled" style="margin-left: 11px;margin-top: 8px;">
+                    <div class="dropdown-menu disabled" style="margin-left: 11px;margin-top: 17px;">
                       <div class="text-div">
                         <a class="dropdown-item text-div" href="#"> Request for Initial Data Request (IDR)
                         </a>
@@ -208,11 +232,11 @@
 
                   <div class="dropdown open drpdowncss">
                     <button type="button" disabled class="btn btn-primary dropdown-toggle buttonscss dropbtn button3"
-                      data-toggle="dropdown" style="margin-top: 15px;font-size: 12px!important;" id="posuvnik3">
+                      data-toggle="dropdown" style="margin-top: 28px;font-size: 12px!important;" id="posuvnik3">
                       Discussion with Stakeholders
                     </button>
                     <div class="dropdown-menu dropdown-content" style="margin-left: 14px;
-                    margin-top: 9px;">
+                    margin-top: 19px;">
                       <a class="dropdown-item text-div" href="#">AQM Discussion with the stakeholders
                       </a>
                       <a class="dropdown-item text-div" href="#"> / Interim status update on findings
@@ -227,10 +251,10 @@
 
                   <div class="btn-group dropdown open drpdowncss">
                     <button type="button" disabled class="btn btn-primary dropdown-toggle buttonscss button4"
-                      data-toggle="dropdown" id="posuvnik4" style="margin-top: 5px!important;font-size: 12px!important;">
+                      data-toggle="dropdown" id="posuvnik4" style="margin-top: 13px!important;font-size: 12px!important;">
                       Audit Closure
                     </button>
-                    <div class="dropdown-menu" style="margin-top: -23px;margin-left: 14px;">
+                    <div class="dropdown-menu" style="margin-top:-18px;margin-left: 14px;">
                       <a class="dropdown-item" href="#">1) Provide Draft Report to Stakeholders
                         <span><input class="date-field" type="date" name="draftreport" required /></span>
                       </a>
@@ -250,20 +274,18 @@
               <div class="col-lg-4" style="background-color: #fff;">
                 <img src="assets/images/background-div.png" width="450px" height="492px"
                     style="margin-left: -20px!important;margin-top:0px;margin-bottom:-80px;" alt="">
-                <img src="assets/images/Picture3.png" style="width: 339px;
+                <img src="assets/images/Picture3.png" style="width: 300px;
                 margin-top: -139%;
-                height: 370px;
+                height: 270px;
                 margin-left: 14%;
                 " alt="">
                 
             </div>
             <div class="row px-3"> <button type="submit"
               class="btn btn-blue text-center signup_btn"
-              style="background-color: #470A68;margin-top: -45px!important;
+              style="background-color: #470A68;margin-top: -10px!important;
               margin-left: 990px!important;z-index: 111;" formaction="GeneralServlet" name="btn_auditplan">Save & Proceed</button>
-              <button type="submit"
-              class="btn btn-blue text-center signup_btn"
-              style="background-color: #470A68;margin-left: 90%!important;z-index: 111;margin-top: 6.95px!important;" formaction="GeneralServlet">Submit</button>
+              
               </form>
             </div>
             </div>

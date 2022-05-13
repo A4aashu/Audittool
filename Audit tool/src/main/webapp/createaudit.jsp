@@ -104,13 +104,11 @@
                   <a class="btn-links btn-inactive" href="dashboard2.jsp"><i class="la la-dashboard"></i> <span> Home</span></a>
                 </li>
                 <li class="submenu">
-                  <a class="btn-links btn-inactive" href="#"><i class="la la-cube"></i> <span>Audit List</span></a>
+                  <a class="btn-links btn-inactive" href="#"><i class="la la-cube"></i> <span>My Audits</span></a>
                 </li>
+                
                 <li class="submenu">
-                  <a class="btn-links" href="createaudit.jsp"><i class="la la-plus"></i> <span>Create Audit</span></a>
-                </li>
-                <li class="submenu">
-                  <a class="btn-links down" href="logout.jsp"><i class="la la-user"></i> <span> Logout
+                  <a class="btn-links down" style="margin-top:320px!important;" href="logout.jsp"><i class="la la-user"></i> <span> Logout
                     </span></span></a>
                 </li>
     
@@ -144,26 +142,53 @@
                   <ul style="margin-left: 50px;margin-top: -11px;">
                     <li style="width: 122px!important;"><a href="#"
                         class="nav-linkk nav-2 boxx-shadow"
-                        style="border-right: 1px solid #B7C1D3;width: 65px;margin-right: 19px;padding-right: 5px;">General</a>
+                        style="border-right: 1px solid #B7C1D3;width: 65px;margin-right: 19px;padding-right: 9px;">General</a>
                     </li>
                     <li style="width: 122px;margin-left: -18px;"><a href="#"
                         class="hover-underline-animation nav-linkk nav2 boxx-shadow"
-                        style="width: 131px;padding-right: 5px;">Project objective</a></li>
+                        style="width: 123px;">Project objective</a></li>
                     <li style="padding-left: 0px;width: 101px;"><a href="#"
                         class="nav-linkk nav2 boxx-shadow hover-underline-animation" style="padding-right: 9px;">Milestones</a></li>
                     <li style="width: 131px;"><a href="#" class="hover-underline-animation nav-linkk nav2 boxx-shadow"
                         style="padding-right: 9px;">Team Structure</a></li>
-                    <li style="width:141px;margin-left: 0px;"><a href="#"
-                        class="hover-underline-animation nav-linkk nav2 boxx-shadow" style="padding-right: 10px;">Export Opening
-                        Meeting</a></li>
+                    
                   </ul>
     
     
                 </nav>
-                <!-- <div class="recc boxx-shadow2">
-                  <h5>Name of Client</h5>
-                  <h5>Engagement Name</h5>
-                </div> -->
+                
+                <div class="recc boxx-shadow2">
+                
+                 <footer>
+<span style="margin-left:-30px;">1/4</span>
+        <div id="barInside" class="barInside"></div>
+
+        <div class="barBorder">
+
+          <div class="segment"></div>
+
+          <div class="segment1"></div>
+
+          <div class="segment1"></div>
+
+          <!-- <div class="segment"></div> -->
+
+          <!-- <div class="segment"></div>
+
+          <div class="segment"></div>
+
+          <div class="segment"></div>
+
+          <div class="segment"></div>
+
+          <div class="segment"></div>
+
+          <div class="segment"></div> -->
+
+        </div>
+
+      </footer>
+                </div> 
               </div>
     
             </div>
@@ -176,7 +201,7 @@
             </div>
           </div>
           <div class="container-fluid" style="margin-top: 3%;z-index: -1;margin-left: -6%;">
-            <div class="card card0 border-0">
+            <div class="">
               <div class="row d-flex">
                 <div class="col-lg-8" style="background-color: #ffffff; color: #00338D!important;">
                                 <form style="padding-left: 10%;" action="" method="POST">
@@ -188,17 +213,9 @@
                                         </label> 
                                         <input class="mb-2 input_name_of_client" style="width:34%!important;" type="text" list="productName" name="client_name" placeholder="Enter Name" value="<%=client_name%>" required>
 
-                                        <datalist class="" name="process"  id="productName" name="client_name" value="<%=client_name%>" style="width:100px;background-color:rgb(243, 118, 118)!important;">
-                                          <option value="MASCOM" style="background-color:red!important;">MASCOM</option>
-                                          <option value="TCL">TCL</option>
-                                          <option value="LEBARA">LEBARA</option>
-                                          <option value="Dream 11">Dream 11</option>
-                                          <option value="Telkom">Telkom</option>
-                                          <option value="Airtel Tigo">Airtel Tigo</option>
-                                        </datalist>
 
                                         <h6 class="mb-0 text-lg" style="margin-left: 28.5%;font-size: 23px;
-                                        margin-top: -14%;">Engagement Name</h6>
+                                        margin-top: -13.5%;">Engagement Name</h6>
                                         </label> <input class="mb-4 input_engagement_name" id="txtPassword" placeholder="Enter Name"
                                             onchange="checkPass()" type="text" name="engagement_name" value="<%=engagement_name%>" required>
                                     </div>
@@ -247,7 +264,7 @@
                                         style="margin-bottom: -1.75rem!important;">
                                         <h6 class="mb-0 text-lg"
                                             style="font-size: 23px; margin-left: 30%;
-                                            margin-top: -13%;">
+                                            margin-top: -12.5%;">
                                             Categorization</h6>
                                         </label>
                                         <select class="form-control input_categorization" id="exampleFormControlSelect2" name="department" style="color:#495057!important" onchange=this.form.submit()>
@@ -288,7 +305,7 @@
                                         </select>
                                         
                                         
-                                        <h6 class="mb-0 text-lg" style="margin-left: 65.5%;font-size: 23px;
+                                        <h6 class="mb-0 text-lg" style="margin-left: 64.5%;font-size: 23px;
                                         margin-top: -12%;">Process</h6>
                                         </label>
                                         <i class="fa fa-caret-down" aria-hidden="true" style="margin-top: -35px;
@@ -345,7 +362,7 @@
                                         <input class="mb-4 input_start_date" id="audit_start_date"
                                             type="date" name="audit_start_date" value="<%=audit_start_date%>" required>
                                         <h6 class="mb-0 text-lg" style="margin-left: 28.5%;font-size: 23px;
-                                        margin-top: -15%;">Audit End Date
+                                        margin-top: -14.5%;">Audit End Date
                                         </h6>
                                         </label> <input class="mb-4 input_end_date" id="audit_end_date" onchange="checkEmail()"
                                             type="date" name="audit_end_date" value="<%=audit_end_date%>" required>
@@ -377,11 +394,9 @@
                             </div>
                             <div class="row px-3"> <button type="submit"
                               class="btn btn-blue text-center signup_btn"
-                              style="background-color: #470A68;margin-top: -40px!important;
+                              style="background-color: #470A68;margin-top: -10px!important;
                               margin-left: 990px!important;z-index: 111;" formaction="GeneralServlet" name="btn_general">Save & Proceed</button>
-                              <button type="submit"
-                              class="btn btn-blue text-center signup_btn"
-                              style="background-color: #470A68;margin-left: 89.5%!important;z-index: 111;margin-top: 6.95px!important;"formaction="GeneralServlet">Submit</button>
+                              
                             </div>
                              </form>
                         </div>

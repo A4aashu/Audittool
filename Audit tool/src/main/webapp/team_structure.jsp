@@ -84,13 +84,11 @@
               <a class="btn-links btn-inactive" href="dashboard2.jsp"><i class="la la-dashboard"></i> <span> Home</span></a>
             </li>
             <li class="submenu">
-              <a class="btn-links btn-inactive" href="#"><i class="la la-cube"></i> <span>Audit List</span></a>
+              <a class="btn-links btn-inactive" href="#"><i class="la la-cube"></i> <span>My Audits</span></a>
             </li>
+            
             <li class="submenu">
-              <a class="btn-links" href="createaudit.jsp"><i class="la la-plus"></i> <span>Create Audit</span></a>
-            </li>
-            <li class="submenu">
-              <a class="btn-links down" href="logout.jsp"><i class="la la-user"></i> <span> Logout
+              <a class="btn-links down" href="logout.jsp" style="margin-top:320px!important;"><i class="la la-user"></i> <span> Logout
                 </span></span></a>
             </li>
 
@@ -124,31 +122,58 @@
               <ul style="margin-left: 50px;margin-top: -46px;">
                 <li style="width: 122px!important;"><a href="#"
                     class="hover-underline-animation nav-linkk nav2 boxx-shadow"
-                    style="border-right: 1px solid #B7C1D3;width: 65px;margin-right: 19px;padding-right: 5px;">General</a>
+                    style="border-right: 1px solid #B7C1D3;width: 65px;margin-right: 19px;padding-right: 5px;color:#27C719!important">General</a>
                 </li>
                 <li style="width: 122px;margin-left: -18px;"><a href="#"
                     class="hover-underline-animation nav-linkk nav2 boxx-shadow"
-                    style="width: 131px;padding-right: 5px;">Project objective</a></li>
+                    style="width: 131px;padding-right: 5px;color:#27C719!important">Project objective</a></li>
                 <li style="padding-left: 0px;width: 101px;"><a href="#"
-                    class="hover-underline-animation nav-linkk nav2 boxx-shadow" style="padding-right: 9px;">Milestones</a></li>
+                    class="hover-underline-animation nav-linkk nav2 boxx-shadow" style="padding-right: 9px;color:#27C719!important">Milestones</a></li>
                 <li style="width: 131px;"><a href="#" class="nav-linkk nav-2 boxx-shadow"
                     style="padding-right: 9px;">Team Structure</a></li>
-                <li style="width:141px;margin-left: 0px;"><a href="#"
-                    class="hover-underline-animation nav-linkk nav2 boxx-shadow" style="padding-right: 10px;">Export Opening
-                    Meeting</a></li>
+                
               </ul>
 
 
             </nav>
-            <!-- <div class="recc boxx-shadow2">
-              <h5>Name of Client</h5>
-              <h5>Engagement Name</h5>
-            </div> -->
+            <div class="recc boxx-shadow2">
+                 <footer>
+<span style="margin-left:-30px;">4/4</span>
+        <div id="barInside" class="barInside"></div>
+
+        <div class="barBorder">
+
+          <div class="segment"></div>
+
+          <div class="segment1"></div>
+
+          <div class="segment1"></div>
+
+          <!-- <div class="segment"></div> -->
+
+          <!-- <div class="segment"></div>
+
+          <div class="segment"></div>
+
+          <div class="segment"></div>
+
+          <div class="segment"></div>
+
+          <div class="segment"></div>
+
+          <div class="segment"></div> -->
+
+        </div>
+
+      </footer>
+                </div> 
+
           </div>
 
         </div>
 
       </div>
+      <form action="" method="POST">
       <div class="container" style="margin-top: 9%">
         <div class="" style="font-size: 25px;margin-top: 2%;margin-left: -5%;z-index: -1;color:#00338D;font-weight: bold;">
           Team Structure
@@ -156,7 +181,7 @@
         </div>
       </div>
       <div class="container-fluid" style="margin-top: 3%;z-index: -1;margin-left: -6%;">
-        <div class="card card0 border-0">
+        <div class="">
           <div class="row d-flex">
             <div class="col-lg-8" style="background-color: #ffffff; color: #00338D!important;">
               <div class="popupcontainer">
@@ -181,7 +206,7 @@
                         </div>
                         <!--Body-->
                         <div class="modal-body">
-<form action="" method="POST">
+
                           <table class="table table-hover">
                             <thead>
                               <tr>
@@ -195,7 +220,7 @@
                               <tr>
                                 <td> <input type="text" id="EMname" name="Epname" placeholder="Enter Name"></td>
                                 <td> <select name="Epdes" id="EMname">
-                                    <option value="0">Enter Designation</option>
+                                    <option value="">Enter Designation</option>
                                     <option value="Partner">Partner</option>
                                     <option value="Director">Director</option>
                                     <option value="Associate Director">Associate Director</option>
@@ -214,7 +239,7 @@
                           <input class="btn btn-primary PopUpSubmitbutton" type="submit" name="epname"  formaction="GeneralServlet" value="Submit"
                             style="border-color: white;">
                           <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Close</button>
-</form>
+
                         </div>
                       </div>
                     </div>
@@ -240,7 +265,7 @@
                         </div>
                         <!--Body-->
                         <div class="modal-body">
-<form action="" method="POST">
+
                           <table class="table table-hover">
                             <thead>
                               <tr>
@@ -254,7 +279,7 @@
                               <tr>
                                 <td> <input type="text" id="EDname" name="Edname" placeholder="Enter Name"></td>
                                 <td> <select name="Eddes" id="EDname1">
-                                    <option value="0">Enter Designation</option>
+                                    <option value="">Enter Designation</option>
                                     <option value="Director">Director</option>
                                     <option value="Manager">Manager</option>
                                     <option value="Assistant Manager">Assistant Manager</option>
@@ -276,8 +301,7 @@
                           <input class="btn btn-primary PopUpSubmitbutton" type="submit" name="edname"  formaction="GeneralServlet" value="Submit"
                             style="border-color: white;">
                           <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Close</button>
-</form>
-                        </div>
+               </div>
                       </div>
                     </div>
                   </div>
@@ -309,7 +333,7 @@
                         </div>
                         <!--Body-->
                         <div class="modal-body">
-<form action="" method="POST">
+
                           <table class="table table-hover">
                             <thead>
                               <tr>
@@ -323,7 +347,7 @@
                               <tr>
                                 <td> <input type="text" id="EDname" name="Emname1" placeholder="Enter Name"></td>
                                 <td> <select name="Emdes1" id="EDname1">
-                                    <option value="0">Enter Designation</option>
+                                    <option value="">Enter Designation</option>
                                     <option value="Manager">Manager</option>
                                     <option value="Assistant Manager">Assistant Manager</option>
                                   </select></td>
@@ -333,7 +357,7 @@
                               <tr>
                                 <td> <input type="text" id="EDname1" name="Emname2" placeholder="Enter Name"></td>
                                 <td> <select name="Emdes2" id="EDname3">
-                                    <option value="0">Enter Designation</option>
+                                    <option value="">Enter Designation</option>
                                     <option value="Manager">Manager</option>
                                     <option value="Assistant Manager">Assistant Manager</option>
                                   </select></td>
@@ -353,7 +377,7 @@
                           <input class="btn btn-primary PopUpSubmitbutton" type="submit" name="emname"  formaction="GeneralServlet" value="Submit"
                             style="border-color: white;">
                           <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Close</button>
-</form>
+
                         </div>
                       </div>
                     </div>
@@ -380,7 +404,7 @@
                         </div>
                         <!--Body-->
                         <div class="modal-body">
-<form action="" method="POST">
+
                           <table class="table table-hover">
                             <thead>
                               <tr>
@@ -394,7 +418,7 @@
                               <tr>
                                 <td> <input type="text" id="TNname" name="Tmname" placeholder="Enter Name"></td>
                                 <td> <select name="Tmdes" id="TNname1">
-                                    <option value="0">Enter Designation</option>
+                                    <option value="">Enter Designation</option>
                                     <option value="Manager">Manager</option>
                                     <option value="Assistant Manager">Assistant Manager</option>
                                     <option value="Consultant">Consultant</option>
@@ -408,7 +432,7 @@
                               <tr>
                                 <td> <input type="text" id="TNname1" name="Tmname1" placeholder="Enter Name"></td>
                                 <td> <select name="Tmdes1" id="TNname3">
-                                    <option value="0">Enter Designation</option>
+                                    <option value="">Enter Designation</option>
                                     <option value="Manager">Manager</option>
                                     <option value="Assistant Manager">Assistant Manager</option>
                                     <option value="Consultant">Consultant</option>
@@ -423,7 +447,7 @@
                               <tr>
                                 <td> <input type="text" id="TNname1" name="Tmname2" placeholder="Enter Name"></td>
                                 <td> <select name="Tmdes2" id="TNname3">
-                                    <option value="0">Enter Designation</option>
+                                    <option value="">Enter Designation</option>
                                     <option value="Manager">Manager</option>
                                     <option value="Assistant Manager">Assistant Manager</option>
                                     <option value="Consultant">Consultant</option>
@@ -438,7 +462,7 @@
                               <tr>
                                 <td> <input type="text" id="TNname1" name="Tmname3" placeholder="Enter Name"></td>
                                 <td> <select name="Tmdes3" id="TNname3">
-                                     <option value="0">Enter Designation</option>
+                                     <option value="">Enter Designation</option>
                                     <option value="Manager">Manager</option>
                                     <option value="Assistant Manager">Assistant Manager</option>
                                     <option value="Consultant">Consultant</option>
@@ -460,7 +484,7 @@
                           <input class="btn btn-primary PopUpSubmitbutton" type="submit" name="etname"  formaction="GeneralServlet" value="Submit"
                             style="border-color: white;">
                           <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Close</button>
-</form>
+
                         </div>
                       </div>
                     </div>
@@ -474,21 +498,19 @@
             <div class="col-lg-4" style="background-color: #fff;">
               <img src="assets/images/background-div.png" width="450px" height="483px"
                   style="margin-left: -20px!important;margin-top:0px;margin-bottom:-70px;" alt="">
-              <img src="assets/images/Picture7.png" style="width: 339px;
-              margin-top: -135%;
-              height: 370px;
+              <img src="assets/images/Picture7.png" style="width: 300px;
+              margin-top: -139%;
+              height: 270px;
               margin-left: 14%;
               " alt="">
               
           </div>
-          <form action="" method="POST">
+    
           <div class="row px-3"> <button type="submit"
             class="btn btn-blue text-center signup_btn"
-            style="background-color: #470A68;margin-top: -40px!important;
-            margin-left: 990px!important;z-index: 111;">Save & Proceed</button>
-            <button type="submit"
-            class="btn btn-blue text-center signup_btn"
-            style="background-color: #470A68;margin-left: 89.5%!important;z-index: 111;margin-top: 6.95px!important;" formaction="GeneralServlet">Submit</button>
+            style="background-color: #470A68;margin-top: -5px!important;height:35px!important;
+            margin-left: 970px!important;z-index: 111;" formaction="GeneralServlet">Submit</button>
+           
           </div>
           </div>
         </div>

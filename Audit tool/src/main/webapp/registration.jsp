@@ -46,13 +46,13 @@
                             </label>
                              <select class="form-control input_designation font-weight-bold" name="input_designation">
                                 <option value="Partner">Partner</option>
-                                <option value="Associate_Partner">Associate Partner</option>
+                                <option value="Associate Partner">Associate Partner</option>
                                 <option value="Director">Director</option>
-                                <option value="Associate_Director">Associate Director</option>
+                                <option value="Associate Director">Associate Director</option>
                                 <option value="Manager">Manager</option>
-                                <option value="Assistant_Manager">Assistant Manager</option>
+                                <option value="Assistant Manager">Assistant Manager</option>
                                 <option value="Consultant">Consultant</option>
-                                <option value="Associate_Consultant">Associate Consultant</option>
+                                <option value="Associate Consultant">Associate Consultant</option>
                                 <option value="Analyst">Analyst</option>
                               </select>
                             <h6 class="mb-0 text-lg labelstyle2">Location</h6>

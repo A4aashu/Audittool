@@ -26,7 +26,7 @@
 
     <%
                                         try{
-                                          String query="insert into Audits(Name_of_client) values(?)";
+                                          
                                           Connection connection=Dbconfig.getConnection();
                                           PreparedStatement st = connection .prepareStatement("insert into Audits(Name_of_client,Engagement_name,MegaProcess,Department,Audit_start_date,Audit_end_date,Audit_background,Process,Auditannounce,irauditscope,discussiondate,walkthroughsession,datarequest,aqm,draftreport,exitmeeting,releasefinalreport,epname,edname,emname1,emname2,etname1,etname2,etname3,etname4,epdes,eddes,emdes1,emdes2,etdes1,etdes2,etdes3,etdes4,createdby) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",Statement.RETURN_GENERATED_KEYS); 
                                           
@@ -67,18 +67,34 @@
                                           
                                           
                                     
-                                           st.executeUpdate() ;
+                                           st.executeUpdate();
+                                           currentUser2.setEpname(null);
+                                           currentUser3.setEdname(null);
+                                           currentUser4.setEmname1(null);
+                                           currentUser4.setEmname2(null);
+                                           currentUser5.setEtname1(null);
+                                           currentUser5.setEtname2(null);
+                                           currentUser5.setEtname3(null);
+                                           currentUser5.setEtname4(null);
+                                           currentUser2.setEpdes(null);
+                                           currentUser3.setEddes(null);
+                                           currentUser4.setEmdes1(null);
+                                           currentUser4.setEmdes2(null);
+                                           currentUser5.setEtdes1(null);
+                                           currentUser5.setEtdes2(null);
+                                           currentUser5.setEtdes3(null);
+                                           currentUser5.setEtdes4(null);
                                            ResultSet rs = st.getGeneratedKeys();
                                			int generatedKey = 0;
                                			if (rs.next()) {
                                			    generatedKey = rs.getInt(1);
                                			}
                                    PrintWriter outs = response.getWriter(); 
-
+                                   
                                    outs.println(
-                               					"<html><head></head><body onload=\"alert('Successfully inserted your id is= "+ generatedKey + "')\"></body></html>");
+                               					"<html><head></head><body onload=\"alert('Audit created successfully, your Auditid is= "+ generatedKey + "')\"></body></html>");
                                							
-                                   outs.println("<meta http-equiv='refresh' content='1;URL=dashboard2.jsp'>"); 
+                                   outs.println("<meta http-equiv='refresh' content='1;URL=team_structure.jsp'>"); 
                                            
                                         }
     catch(Exception e)

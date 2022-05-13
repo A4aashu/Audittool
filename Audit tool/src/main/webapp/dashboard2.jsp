@@ -61,13 +61,11 @@
                             <a class="btn-links" href="#"><i class="la la-dashboard"></i> <span> Home</span></a>
                         </li>
                         <li class="submenu">
-                            <a class="btn-links" href="#"><i class="la la-cube"></i> <span>Audit List</span></a>
+                            <a class="btn-links" href="#" style="background-color:#B7C1D3 !important;"><i class="la la-cube"></i> <span>My Audits</span></a>
                         </li>
+                        
                         <li class="submenu">
-                            <a class="btn-links" href="createaudit.jsp"><i class="la la-plus"></i> <span>Create Audit</span></a>
-                        </li>
-                        <li class="submenu">
-                            <a class="btn-links down" href="logout.jsp"><i class="la la-user"></i> <span> Logout
+                            <a class="btn-links down" style="margin-top:320px!important;" href="logout.jsp"><i class="la la-user"></i> <span> Logout
                                 </span></span></a>
                         </li>
 

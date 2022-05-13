@@ -130,13 +130,65 @@ body {
 }
 
 .recc {
-  margin-left: 84% !important;
-  margin-top: -96px;
-  padding: 1.5% !important;
+  margin-left: 78% !important;
+  margin-top: -50px;
   background-color: #ccc7e3;
   border-top-left-radius: 31px !important;
   border-bottom-left-radius: 31px !important;
 }
+  :root {
+  --orange: #470A68;
+  --height: 8px;
+  --percentStar: 0%;
+  --percentEnd: 25%;
+  --borderWidth: 2px;
+  --segmentSpace: 2px;
+}
+footer {
+  position: absolute;
+  left: 970px;
+  top: 75px;
+}.barBorder {
+  width: calc(15vw - 0px);
+  height: calc(var(--height) + 2px);
+  /* background: #333; */
+  z-index: 0;
+}.barInside {
+  animation: animationName 5s linear 1;
+  position: relative;
+  background: #0080c0;
+  height: var(--height);
+  margin-bottom: calc(0px - var(--height));
+  margin-top:-16px;
+  z-index: 1;
+}.segment {
+  position: relative;
+  float: left;
+  width: calc((100vw / 25) - (2 * var(--segmentSpace)));
+  height: var(--height);
+  margin-left: 0px;
+  background: #470A68;
+  z-index: 2;
+  border-top: 0px solid black;
+  border-bottom: 0px solid black;
+}.segment1 {
+  position: relative;
+  float: left;
+  width: calc((100vw / 25) - (2 * var(--segmentSpace)));
+  height: var(--height);
+  margin-left: 0px;
+  background: #470A68;
+  z-index: 2;
+  border-top: 0px solid black;
+  border-bottom: 0px solid black;
+}
+
+
+
+
+
+
+
 
 
 .signup_btn {
@@ -415,7 +467,15 @@ body {
   cursor: pointer;
 }
 
-
+.nav--2 {
+  color: #27C719 !important;
+  text-decoration: double !important;
+  margin-right: 2px;
+  padding-bottom: 0px;
+  margin-left: 48px;
+  margin-top: 15px;
+  cursor: pointer;
+}
 .boxx-shadow {
   text-shadow: 2px 2px 4px #919090;
 }

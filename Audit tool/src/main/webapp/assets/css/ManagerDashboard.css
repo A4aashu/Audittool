@@ -11,7 +11,16 @@
     border-top-left-radius: 400px;
     border-bottom-left-radius: 400px;
 }
-
+.btn-inactive {
+  background-color: #B7C1D3 !important;
+  border-radius: 20px;
+  color: #00338d !important;
+  margin-bottom: 30px;
+  margin-left: 20px;
+  margin-top: 50px;
+  width: 135px !important;
+  font-size: 13px !important;
+}
 .main-drop .user-img img {
     border-radius: 50%;
     width: 50px!important;
