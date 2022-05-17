@@ -68,22 +68,7 @@
                                           
                                     
                                            st.executeUpdate();
-                                           currentUser2.setEpname(null);
-                                           currentUser3.setEdname(null);
-                                           currentUser4.setEmname1(null);
-                                           currentUser4.setEmname2(null);
-                                           currentUser5.setEtname1(null);
-                                           currentUser5.setEtname2(null);
-                                           currentUser5.setEtname3(null);
-                                           currentUser5.setEtname4(null);
-                                           currentUser2.setEpdes(null);
-                                           currentUser3.setEddes(null);
-                                           currentUser4.setEmdes1(null);
-                                           currentUser4.setEmdes2(null);
-                                           currentUser5.setEtdes1(null);
-                                           currentUser5.setEtdes2(null);
-                                           currentUser5.setEtdes3(null);
-                                           currentUser5.setEtdes4(null);
+                                           
                                            ResultSet rs = st.getGeneratedKeys();
                                			int generatedKey = 0;
                                			if (rs.next()) {

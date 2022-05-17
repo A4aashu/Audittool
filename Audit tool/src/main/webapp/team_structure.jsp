@@ -237,7 +237,7 @@
                         <div class="modal-footer">
 
                           <input class="btn btn-primary PopUpSubmitbutton" type="submit" name="epname"  formaction="GeneralServlet" value="Submit"
-                            style="border-color: white;">
+                            style="border-color: white;" required>
                           <button type="button" class="btn btn-outline-primary" data-dismiss="modal">Close</button>
 
                         </div>
@@ -509,7 +509,12 @@
           <div class="row px-3"> <button type="submit"
             class="btn btn-blue text-center signup_btn"
             style="background-color: #470A68;margin-top: -5px!important;height:35px!important;
-            margin-left: 970px!important;z-index: 111;" formaction="GeneralServlet">Submit</button>
+            margin-left: 970px!important;z-index: 111;"name="submitbutton" id="submit" formaction="GeneralServlet">Submit</button>
+            
+            <button type="submit"
+            class="btn btn-blue text-center signup_btn"
+            style="background-color: #470A68;margin-top: -5px!important;height:35px!important;
+            margin-left: 970px!important;z-index: 111;margin-top:-490px!important" id="exportppt" formaction="GeneralServlet">Export PPT</button>
            
           </div>
           </div>
@@ -546,6 +551,7 @@
   <script src="assets/js/chart.js"></script>
 
   <!-- Custom JS -->
+ 
 
 </body>
 

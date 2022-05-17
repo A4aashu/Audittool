@@ -116,10 +116,14 @@ HttpServletResponse response)
 				 response.sendRedirect("team_structure.jsp");
 			
 			}
+			if(request.getParameter("submitbutton")!=null)
+			{    
+				 response.sendRedirect("output.jsp");
+			}
 			else
 			{    
-			
-				 response.sendRedirect("output.jsp");
+				
+				 response.sendRedirect("ppt.jsp");
 			}
 			
 		} 
