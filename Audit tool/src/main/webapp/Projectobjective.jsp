@@ -541,11 +541,9 @@
                                                                         <h4 class="modal-title">Record Lookup</h4>
                                                                         <form>
                                                                             <input type="text" name="q"
-                                                                                placeholder="Enter query"
-                                                                                style="width:170px ;height:40px;margin-left: 150px;" />
-                                                                            <input type="button" name="search"
-                                                                                value="Search"
-                                                                                style="width:90px ;height:40px;     padding-top: 7px !important;">
+                                                                                placeholder="Search"
+                                                                                style="width:170px ;height:40px;margin-left:100%"id="myInput5" />
+                                                                           
                                                                         </form>
                                                                         <button data-toggle="modal"
                                                                             data-target="#mymodal" id="showModal"
@@ -573,7 +571,7 @@
                                                                                 		}
                                                                             	
                                                                                 Connection connection=Dbconfig.getConnection();
-                                                                                PreparedStatement psmt1=connection.prepareStatement("select ControlobjectiveID,ControlObjective,Process,Subprocess,DepartmentCategorisation,MegaProcess,min(id) from racm where Process = ? OR Process in (select distinct(Process) from racm where Id in ("+idList1+")) group by ControlobjectiveID,ControlObjective,Process,Subprocess,DepartmentCategorisation,MegaProcess;");
+                                                                                PreparedStatement psmt1=connection.prepareStatement("select ControlobjectiveID,ControlObjective,Process,DepartmentCategorisation,MegaProcess,min(id) as id,min(Subprocess) as subprocess from racm where Process = ? OR Process in (select distinct(Process) from racm where Id in ("+idList1+")) group by ControlobjectiveID,ControlObjective,Process,DepartmentCategorisation,MegaProcess;");
                                                                                 psmt1.setString(1,currentUsers.getProcess());
 
                                                                                 ResultSet resultset1 =psmt1.executeQuery() ;
@@ -590,7 +588,7 @@
                                                                                         Sub-Process</th>
                                                                                 </tr>
                                                                             </thead>
-                                                                            <tbody>
+                                                                            <tbody id="myTableb">
                                                                                 
  <%  while(resultset1.next()){ %>
        																			 <tr>
@@ -649,10 +647,8 @@
                                                                         <form>
                                                                             <input type="text" name="q"
                                                                                 placeholder="Enter query"
-                                                                                style="width:170px ;height:40px;margin-left: 150px;" />
-                                                                            <input type="button" name="search"
-                                                                                value="Search"
-                                                                                style="width:90px ;height:40px;     padding-top: 7px !important;">
+                                                                                style="width:170px ;height:40px;margin-left:80%"id="myInput4" />
+                                                                            
                                                                         </form>
                                                                         <button data-toggle="modal"
                                                                             data-target="#mymodal" id="showModal"
@@ -695,7 +691,7 @@
 
                                                                                 </tr>
                                                                             </thead>
-                                                                            <tbody>
+                                                                            <tbody id="myTableb4">
                                                                                 
                                                                                 <%  while(resultset1.next()){ %>
        																			 <tr>
@@ -761,10 +757,8 @@
                                                                         <form>
                                                                             <input type="text" name="q"
                                                                                 placeholder="Enter query"
-                                                                                style="width:170px ;height:40px;margin-left: 150px;" />
-                                                                            <input type="button" name="search"
-                                                                                value="Search"
-                                                                                style="width:90px ;height:40px;     padding-top: 7px !important;">
+                                                                                style="width:170px ;height:40px;margin-left:80%" id="myInput3"/>
+                                                                           
                                                                         </form>
                                                                         <button data-toggle="modal"
                                                                             data-target="#mymodal" id="showModal"
@@ -812,7 +806,7 @@
 
                                                                                 </tr>
                                                                             </thead>
-                                                                            <tbody>
+                                                                            <tbody id="myTableb3">
                                                                                 
                                                    
                                                                                 
@@ -876,10 +870,8 @@
                                                                         <form>
                                                                             <input type="text" name="q"
                                                                                 placeholder="Enter query"
-                                                                                style="width:170px ;height:40px;margin-left: 150px;" />
-                                                                            <input type="button" name="search"
-                                                                                value="Search"
-                                                                                style="width:90px ;height:40px;     padding-top: 7px !important;">
+                                                                                style="width:170px ;height:40px;margin-left:80%;" id="myInput2"/>
+                                                                            
                                                                         </form>
                                                                         <button data-toggle="modal"
                                                                             data-target="#mymodal" id="showModal"
@@ -927,7 +919,7 @@
 
                                                                                 </tr>
                                                                             </thead>
-                                                                            <tbody>
+                                                                            <tbody id="myTableb2">
                                                                                 
                                                    
                                                                                 
@@ -990,10 +982,8 @@
                                                                         <form>
                                                                             <input type="text" name="q"
                                                                                 placeholder="Enter query"
-                                                                                style="width:170px ;height:40px;margin-left: 64px;" />
-                                                                            <input type="button" name="search"
-                                                                                value="Search"
-                                                                                style="width:90px ;height:40px;     padding-top: 7px !important;">
+                                                                                style="width:170px ;height:40px;margin-left:80%"id="myInput1" />
+                                                                           
                                                                         </form>
                                                                         <button data-toggle="modal"
                                                                             data-target="#mymodal" id="showModal"
@@ -1022,7 +1012,7 @@
                                                                                         <th style="text-align: center;display:none">ID</th>
                                                                                 </tr>
                                                                             </thead>
-                                                                            <tbody class="tbodymodal">
+                                                                            <tbody class="tbodymodal" id="myTableb1">
                                                                                 
                                                                                 <c:forEach var = "row" items = "${resultset.rows}">
                                                                                 <tr >
@@ -1090,6 +1080,42 @@
                                                 });
                                             </script>
                                             <script>
+        $(document).ready(function(){
+          $("#myInput1").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#myTableb1 tr").filter(function() {
+              $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+          }),
+          $("#myInput2").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#myTableb2 tr").filter(function() {
+              $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+          }),
+          $("#myInput3").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#myTableb3 tr").filter(function() {
+              $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+          }),
+          $("#myInput4").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#myTableb4 tr").filter(function() {
+              $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+          }),
+          $("#myInput5").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#myTableb tr").filter(function() {
+              $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+          });
+        });
+    </script>
+                                            
+                                            <script>
+                                            
                                                 $(document).ready(function () {
 
                                                   /*   $('#add_row').click(function () {
