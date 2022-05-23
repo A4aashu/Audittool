@@ -40,6 +40,12 @@ HttpServletResponse response)
 			 auditbean.setAudit_background(request.getParameter("input_audit_background"));
 			 HttpSession session = request.getSession(true);
 				session.setAttribute("currentSessionUsers",auditbean);
+			 response.sendRedirect("Projectobjective.jsp");
+			
+			}
+			if(request.getParameter("btn_objective")!=null)
+			{
+			
 			 response.sendRedirect("auditplan.jsp");
 			
 			}
