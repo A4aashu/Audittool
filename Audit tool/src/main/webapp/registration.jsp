@@ -108,7 +108,8 @@
     	
     	}
     	else if(!filter1.test(Pass.value)){
-    		alert('Please provide a valid Password with UpperCase, LowerCase, Symbol, Number and 8 characters long');
+    		alert('The password does not meet the password policy requirements.
+    				+"Please check the following:Minimum lengthPassword complexityPassword requirementPassword History');
     		Pass.focus;
         	return false;
     	}

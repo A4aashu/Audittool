@@ -8,6 +8,8 @@ public class AuditBean {
 	private String Department;
 	private String Process;
 	private String Audit_background;
+	private String Megaprocessid;
+
 	private Date Audit_start_date;
 	private Date Audit_end_date;
 	private Date auditannounce;
@@ -38,6 +40,12 @@ public class AuditBean {
 	
 	
 	
+	public String getMegaprocessid() {
+		return Megaprocessid;
+	}
+	public void setMegaprocessid(String megaprocessid) {
+		Megaprocessid = megaprocessid;
+	}
 	public String getEpdes() {
 		return epdes;
 	}

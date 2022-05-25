@@ -56,7 +56,21 @@
   <!-- 
     <link rel="stylesheet" href="assets/css/AnalystDashboard.css"> -->
   <link rel="stylesheet" href="assets/css/Team_Structure_Screen.css">
+  <script>
+ $(document).ready(function () {
 
+	 const params = new URLSearchParams(window.location.search);
+
+	 const name = params.get("id");
+
+	console.log(name);
+	if(name>0)
+		{
+		$("#submit").attr("disabled", true);
+		$("#exportppt").attr("disabled", false);
+		}
+ });
+ </script>
 </head>
 
 <body>
@@ -110,7 +124,7 @@
         <div class="topnavbar">
           <div class="compactnavbar">
 
-            <nav class="Nav2 navbar-fixed-top">
+            <nav class="Nav2 navbar-fixed-top" style="background-color:#E1ECF0!important;">
               <ul>
                 <li><button type="button" class="boxx-shadow2 nav-1">Audit Background</button></li>
                 <li><button type="button" class="boxx-shadow2 nav1">Data Request</button></li>
@@ -173,7 +187,7 @@
         </div>
 
       </div>
-      <form action="" method="POST">
+      <form id="formABC" action="" method="POST">
       <div class="container" style="margin-top: 9%">
         <div class="" style="font-size: 25px;margin-top: 2%;margin-left: -5%;z-index: -1;color:#00338D;font-weight: bold;">
           Team Structure
@@ -514,7 +528,7 @@
             <button type="submit"
             class="btn btn-blue text-center signup_btn"
             style="background-color: #470A68;margin-top: -5px!important;height:35px!important;
-            margin-left: 970px!important;z-index: 111;margin-top:-490px!important" id="exportppt" formaction="GeneralServlet">Export PPT</button>
+            margin-left: 970px!important;z-index: 111;margin-top:-490px!important" id="exportppt" formaction="GeneralServlet" disabled >Export PPT</button>
            
           </div>
           </div>
@@ -551,7 +565,13 @@
   <script src="assets/js/chart.js"></script>
 
   <!-- Custom JS -->
+ <script>
  
+
+ 
+ 
+
+</script>
 
 </body>
 

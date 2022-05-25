@@ -3,6 +3,133 @@
   padding: 0px;
 }
 
+.Mytable {
+  width:  100% !important;
+  height: 40% !important;
+  overflow-y: scroll !important;
+  border-color: none !important;
+
+  ;
+}
+table{
+font-family: arial, sans-serif;
+
+border-color: none !important;
+width: 100% !important;
+height: 10% !important;
+margin-right: 100px;
+
+}
+.table>:not(:first-child) {
+border-top: 0px none !important;
+margin-top: 10px !important;
+}
+tr{
+height: 9px !important;
+border-color: none !important;
+}
+td {
+height: 9px !important;
+text-align: left;
+width: 120px !important;
+border-color: none !important;
+
+}
+
+
+tr:nth-child(even) input{
+background-color: #E5E5E5 !important;
+height: 30px ;
+width: 130px !important;
+}
+tr:nth-child(odd) input {
+background-color: #E5E5E5 !important;
+height: 30px ;
+width: 130px !important;
+}
+tr:nth-child(even) colgroup {
+background-color: #E5E5E5;
+height: 30px ;
+width: 130px !important;
+}
+tr:nth-child(odd) colgroup {
+background-color: #E5E5E5;
+height: 30px ;
+width: 130px !important;
+}
+tr:nth-child(even) select{
+background-color: white;
+height: 30px ;
+width: 130px !important;
+}
+tr:nth-child(odd) select {
+background-color: white;
+height: 33px ;
+width: 130px !important;
+}
+
+tr:nth-child(even) se{
+background-color: white;
+height: 30px ;
+width: 130px !important;
+}
+tr:nth-child(odd) select {
+background-color: white;
+height: 33px ;
+width: 130px !important;
+}
+/* tr:nth-child(even) {
+background-color: #E5E5E5;
+
+}
+tr:nth-child(odd) {
+background-color: #E5E5E5;
+
+} */
+
+
+th{
+  text-align: left !important;
+  background-color: #00338D !important;
+  color: white !important;
+  height: 20px !important;
+  width: 70px !important;
+ 
+}
+h4{
+  color: #00338D;
+  margin-bottom: 40px !important;
+  font-weight: bold;
+  
+padding-left: 1px !important;
+}
+
+input {
+ height: 30px;
+ width: 50px;
+border: none !important;
+background-color: white !important;
+}
+.exportbtn{
+width: 213px !important;height: 40px!;height: 65px !important;
+}
+.exportbtn img{
+margin-left: 833px!important;
+width: 30px !important;
+height: 30px !important;
+margin-top: 18px !important;
+}
+.css-serial {
+counter-reset: serial-number;  /* Set the serial number counter to 0 */
+}
+
+.css-serial td:first-child:before {
+counter-increment: serial-number;  /* Increment the serial number counter */
+content: counter(serial-number);  /* Display the counter */
+}
+
+
+
 body {
   color: #000;
   overflow-x: hidden;
@@ -43,61 +170,13 @@ body {
 }
 
 .recc {
-  margin-left: 78% !important;
-  margin-top: -50px;
+  margin-left: 84% !important;
+  margin-top: -96px;
+  padding: 1.5% !important;
   background-color: #ccc7e3;
   border-top-left-radius: 31px !important;
   border-bottom-left-radius: 31px !important;
 }
-  :root {
-  --orange: #470A68;
-  --height: 8px;
-  --percentStar: 0%;
-  --percentEnd: 25%;
-  --borderWidth: 2px;
-  --segmentSpace: 2px;
-}
-footer {
-  position: absolute;
-  left: 970px;
-  top: 75px;
-}.barBorder {
-  width: calc(15vw - 3px);
-  height: calc(var(--height) + 2px);
-  /* background: #333; */
-  z-index: 0;
-}.barInside {
-  animation: animationName 5s linear 1;
-  position: relative;
-  background: #470A68;
-  height: var(--height);
-  margin-bottom: calc(0px - var(--height));
-  margin-top:-16px;
-  z-index: 1;
-}.segment {
-  position: relative;
-  float: left;
-  width: calc((100vw / 25) - (2 * var(--segmentSpace)));
-  height: var(--height);
- 
-
-  margin-left: 0px;
-  background: #470A68;
-  z-index: 2;
-  border-top: 0px solid black;
-  border-bottom: 0px solid black;
-}.segment1 {
-  position: relative;
-  float: left;
-  width: calc((100vw / 25) - (2 * var(--segmentSpace)));
-  height: var(--height);
-  margin-left: 0px;
-  background: #470A68;
-  z-index: 2;
-  border-top: 0px solid black;
-  border-bottom: 0px solid black;
-}
-
 
 .signup_btn {
   border-radius: 60px !important;
@@ -190,83 +269,14 @@ a {
   background-color: #1a237e;
 }
 
-/* // pop-up button */
-.btnEM {
-  background-color: #483698 !important;
-  border-color: 1px solid white !important;
-  width: 200px !important;
-  height: 100px !important;
-  margin-top: 50px !important;
-  margin-right: 15% !important;
-  border-radius: 18px !important;
 
 
-}
 
-.btnED {
-  background-color: #483698 !important;
-  border-color: 1px solid white !important;
-  width: 200px !important;
-  height: 100px !important;
-  margin-top: 50px !important;
-  margin-right: 15% !important;
-  border-radius: 18px !important;
-}
 
-.btnEManager {
-  background-color: #483698 !important;
-  border-color: 1px solid white !important;
-  width: 200px !important;
-  height: 100px !important;
-  margin-top: 50px !important;
-  margin-right: 15% !important;
-  border-radius: 18px !important;
-}
 
-.table>:not(:first-child) {
-  border-top: 2px solid currentColor;
-}
 
-.btnTM {
-  background-color: #483698 !important;
-  border-color: 1px solid white !important;
-  width: 200px !important;
-  height: 100px !important;
-  margin-top: 50px !important;
-  margin-right: 15% !important;
-  border-radius: 18px !important;
-}
 
-select{
-  word-wrap: normal;
-    border-radius: 10px;
-    width: 146px;
-    height: 28px;
-}
-input[type=text]{
-  border-radius: 10px;
-}
-.PopUpSubmitbutton {
-  background-color: #483698 !important;
-}
-.modal-content{
-  border-radius: 1.3rem!important;
-  /* 1.3rem */
-}
-.modal-header{
-  border-bottom: none!important;
-}
-
-/* .modal-header{
-  background-color: #483698 !important;
-}
-.modal-body{
-  background-color: #D9C0E7 !important;
-}
-.modal-footer{
-  background-color: #D9C0E7 !important;
-} */
-/* // resiging of the screen for responsiveness */
+  
 
 
 @media screen and (max-width: 982px) {
@@ -417,7 +427,7 @@ body {
 
 .hrr {
   width: 80% !important;
-  margin-left: 17% !important;
+  margin-left: 20% !important;
   margin-top: -1rem !important;
   border-top: 3px solid #00338d !important;
   color: #00338d !important;
@@ -536,7 +546,7 @@ a {
 
   width: 1210px;
   height: 110px;
-  background-color:#82eefd!important;
+  background: rgba(183, 193, 211, 0.23);
   padding-top: 10px;
   /* display: flex;
     flex-direction: column;

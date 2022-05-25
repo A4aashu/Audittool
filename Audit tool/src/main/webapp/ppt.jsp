@@ -69,7 +69,8 @@ Process p = builder.start();
         outs.println(
     					"<html><head></head><body onload=\"alert('PPT created successfully')\"></body></html>");
     							
-        outs.println("<meta http-equiv='refresh' content='1;URL=team_structure.jsp'>"); 
+        
+        outs.println("<meta http-equiv='refresh' content='1;URL=myAudits.jsp'>"); 
         %>
 </body>
 </html>

@@ -23,16 +23,18 @@
     <%AuditBean currentUser3 = ((AuditBean) (session.getAttribute("currentSessionUser3")));%>
     <%AuditBean currentUser4 = ((AuditBean) (session.getAttribute("currentSessionUser4")));%>
     <%AuditBean currentUser5 = ((AuditBean) (session.getAttribute("currentSessionUser5")));%>
+     <%AuditBean currentUserss = ((AuditBean) (session.getAttribute("projectobjective")));%>
 
     <%
                                         try{
                                           
                                           Connection connection=Dbconfig.getConnection();
-                                          PreparedStatement st = connection .prepareStatement("insert into Audits(Name_of_client,Engagement_name,MegaProcess,Department,Audit_start_date,Audit_end_date,Audit_background,Process,Auditannounce,irauditscope,discussiondate,walkthroughsession,datarequest,aqm,draftreport,exitmeeting,releasefinalreport,epname,edname,emname1,emname2,etname1,etname2,etname3,etname4,epdes,eddes,emdes1,emdes2,etdes1,etdes2,etdes3,etdes4,createdby) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",Statement.RETURN_GENERATED_KEYS); 
+                                          PreparedStatement st = connection .prepareStatement("insert into Audits(Name_of_client,Engagement_name,MegaProcess,Department,Audit_start_date,Audit_end_date,Audit_background,Process,Auditannounce,irauditscope,discussiondate,walkthroughsession,datarequest,aqm,draftreport,exitmeeting,releasefinalreport,epname,edname,emname1,emname2,etname1,etname2,etname3,etname4,epdes,eddes,emdes1,emdes2,etdes1,etdes2,etdes3,etdes4,createdby,Processid) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",Statement.RETURN_GENERATED_KEYS); 
                                           
                                           st.setString(1,currentUsers.getName_of_client());
                                           st.setString(2,currentUsers.getEngagement_name());
                                           st.setString(3,currentUsers.getMegaProcess());
+                                          st.setString(35,currentUserss.getMegaprocessid());
                                           st.setString(4,currentUsers.getDepartment());
                                           st.setDate(5,new java.sql.Date(currentUsers.getAudit_start_date().getTime()));
                                           st.setDate(6,new java.sql.Date(currentUsers.getAudit_end_date().getTime()));
@@ -79,7 +81,7 @@
                                    outs.println(
                                					"<html><head></head><body onload=\"alert('Audit created successfully, your Auditid is= "+ generatedKey + "')\"></body></html>");
                                							
-                                   outs.println("<meta http-equiv='refresh' content='1;URL=team_structure.jsp'>"); 
+                                   outs.println("<meta http-equiv='refresh' content='1;URL=team_structure.jsp?id="+ generatedKey + "'>"); 
                                            
                                         }
     catch(Exception e)

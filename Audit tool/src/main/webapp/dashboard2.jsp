@@ -61,7 +61,7 @@
                             <a class="btn-links" href="#"><i class="la la-dashboard"></i> <span> Home</span></a>
                         </li>
                         <li class="submenu">
-                            <a class="btn-links" href="#" style="background-color:#B7C1D3 !important;"><i class="la la-cube"></i> <span>My Audits</span></a>
+                            <a class="btn-links" href="myAudits.jsp" style="background-color:#B7C1D3 !important;"><i class="la la-cube"></i> <span>My Audits</span></a>
                         </li>
                         
                         <li class="submenu">
@@ -101,14 +101,14 @@
                     <!-- /Page Header -->
                     <div class="container-2">
                         <div class="row" style="width: 1100px;padding-left: 130px;padding-top: 50px;">
-                        <a href="#">
+                        <a href="audit_list.jsp">
                             <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
                                 <div class="card dash-widget" style="background: #00338D;">
                                     <div class="card-body card-body-1">
                                         <img src="./assets/images/Picture5.png" alt="" width="70px" height="70px">
                                     </div>
                                     <div class="text px-3 py-2">
-                                        <a href="">
+                                        <a href="audit_list.jsp">
                                             <h3>Audit List</h3>
                                         </a>
                                         <h5>Track your existing audits effortlessly.</h5>
@@ -133,14 +133,14 @@
                             </a>
                         </div>
                         <div class="row" style="width: 1100px;padding-left: 130px;padding-bottom: 20px;">
-                            <a href="#">
+                            <a href="export.jsp">
                             <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
                                 <div class="card dash-widget" style="background: #470A68;">
                                     <div class="card-body card-body-3">
                                         <img src="./assets/images/Picture3.png" alt="" width="70px" height="70px">
                                     </div>
                                     <div class="text px-3 py-2">
-                                        <a href="">
+                                        <a href="export.jsp">
                                             <h3>Export Document</h3>
                                         </a>
                                         <h5>Get the existing document in one go.</h5>

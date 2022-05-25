@@ -130,7 +130,7 @@
             <div class="topnavbar">
               <div class="compactnavbar">
     
-                <nav class="Nav2 navbar-fixed-top">
+                <nav class="Nav2 navbar-fixed-top" style="background-color:#E1ECF0!important;">
                   <ul>
                     <li><button type="button" class="boxx-shadow2 nav-1">Audit Background</button></li>
                     <li><button type="button" class="boxx-shadow2 nav1">Data Request</button></li>
@@ -383,7 +383,7 @@
                                
                             </div>
                             <div class="col-lg-4" style="background-color: #fff;">
-                                <img src="assets/images/background-div.png" width="450px" height="483px"
+                                <img src="assets/images/background-div.png" width="450px" height="450px"
                                     style="margin-left: -20px!important;margin-top:0px;margin-bottom:-70px;" alt="">
                                 <img src="assets/images/Pictures2.png" style="width: 339px;
                                 margin-top: -139%;
@@ -394,7 +394,7 @@
                             </div>
                             <div class="row px-3"> <button type="submit"
                               class="btn btn-blue text-center signup_btn"
-                              style="background-color: #470A68;margin-top: -10px!important;
+                              style="background-color: #470A68;margin-top: -20px!important;
                               margin-left: 990px!important;z-index: 111;" formaction="GeneralServlet" name="btn_general">Save & Proceed</button>
                               
                             </div>

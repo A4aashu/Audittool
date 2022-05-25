@@ -45,10 +45,14 @@ HttpServletResponse response)
 			}
 			if(request.getParameter("btn_objective")!=null)
 			{
-			
+			 auditbean.setMegaprocessid(request.getParameter("infooo1"));
+			 System.out.println(request.getParameter("infooo1"));
+			 HttpSession session = request.getSession(true);
+			 session.setAttribute("projectobjective",auditbean);
 			 response.sendRedirect("auditplan.jsp");
 			
 			}
+			
 			if(request.getParameter("btn_auditplan")!=null)
 			{
 			Date date = new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("auditannounce"));

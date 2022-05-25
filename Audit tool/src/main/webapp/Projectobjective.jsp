@@ -86,11 +86,15 @@
                                             (session.getAttribute("currentSessionUsers")));
                                             
                                         String process="";
-                                        String editType = request.getParameter("process");
+                                        String editType = request.getParameter("infooo1");
                                         if(editType!=null && !editType.isEmpty()){
-                                        	process=request.getParameter("process");
+                                        	process=request.getParameter("infooo1");
                                         }
-                                            
+                                        String megaprocess="";
+                                        String editType1 = request.getParameter("info1");
+                                        if(editType1!=null && !editType1.isEmpty()){
+                                        	megaprocess=request.getParameter("info1");
+                                        }
                                             
                                             %>
 
@@ -158,7 +162,7 @@
                                                         <div class="topnavbar"  >
                                                             <div class="compactnavbar">
 
-                                                                <nav class="Nav2 navbar-fixed-top">
+                                                                <nav class="Nav2 navbar-fixed-top" style="background-color:#E1ECF0!important;">
                                                                     <ul>
                                                                         <li><button type="button"
                                                                                 class="boxx-shadow2 nav-1">Audit
@@ -282,7 +286,7 @@
                                                                            
                                                                             <form action="" method="POST"
                                                                                 id="submit-form">
-                                                                                <input id="megaprocessid" value="" name="info1" hidden
+                                                                                <input id="megaprocessid" value="<%=megaprocess%>" name="info1" hidden
                                                                                     >
                                                                                
                                                                             </form>
@@ -520,6 +524,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <form action="" method="POST">
+                                                                <input id="processid" value="<%=process%>" name="infooo1" hidden>
                                                                 <div class="row px-3"> <button type="submit"
                                                                         class="btn btn-blue text-center signup_btn"
                                                                         style="background-color: #470A68;margin-top: 10px!important;
@@ -542,7 +547,7 @@
                                                                         <form>
                                                                             <input type="text" name="q"
                                                                                 placeholder="Search"
-                                                                                style="width:170px ;height:40px;margin-left:100%"id="myInput5" />
+                                                                                style="width:170px ;height:40px;margin-left:300px;"id="myInput5" />
                                                                            
                                                                         </form>
                                                                         <button data-toggle="modal"
@@ -578,13 +583,13 @@
                                                                         %>
                                                                             <thead>
                                                                                 <tr>
-                                                                                    <th style="text-align: center;">
+                                                                                    <th style="text-align: left;">
                                                                                         Select Control</th>
-                                                                                    <th style="text-align: center;">
+                                                                                    <th style="text-align: left;">
                                                                                         Control Objective ID</th>
-                                                                                    <th style="text-align: center;">
+                                                                                    <th style="text-align: left;">
                                                                                         Control Objective</th>
-                                                                                    <th style="text-align: center;">
+                                                                                    <th style="text-align: left;">
                                                                                         Sub-Process</th>
                                                                                 </tr>
                                                                             </thead>
@@ -597,13 +602,13 @@
                                                                                             type="checkbox"
                                                                                             name="check-tab1" /> </td>
                                                                                     <td name="firstname"
-                                                                                        style="text-align: center;">
+                                                                                        style="text-align: left;">
                                                                                         <%= resultset1.getString("ControlobjectiveID")%></td>
                                                                                     <td name="lastname"
-                                                                                        style="text-align: center;">
+                                                                                        style="text-align: left;">
                                                                                         <%= resultset1.getString("ControlObjective")%></td>
                                                                                     <td name="email"
-                                                                                        style="text-align: center;">
+                                                                                        style="text-align: left;">
                                                                                         <%= resultset1.getString("Subprocess")%></td>
                                                                                 </tr>
             <% } 
@@ -611,7 +616,7 @@
         }
         catch(Exception e)
         {
-             out.println("wrong entry"+e);
+             out.println("Pass from the previous table to preview this");
         }
 %>
                                                                                 
@@ -646,8 +651,8 @@
                                                                         <h4 class="modal-title">Record Lookup</h4>
                                                                         <form>
                                                                             <input type="text" name="q"
-                                                                                placeholder="Enter query"
-                                                                                style="width:170px ;height:40px;margin-left:80%"id="myInput4" />
+                                                                                placeholder="Search"
+                                                                                style="width:170px ;height:40px;margin-left:300px;"id="myInput4" />
                                                                             
                                                                         </form>
                                                                         <button data-toggle="modal"
@@ -675,19 +680,21 @@
                                                                                 		}
                                                                             	
                                                                                 Connection connection=Dbconfig.getConnection();
-                                                                                PreparedStatement psmt1=connection.prepareStatement("select Subprocess,Process from racm where Process = ? OR Process in (select distinct(Process) from racm where Id in ("+idList1+")) group by Subprocess,Process;");
+                                                                                PreparedStatement psmt1=connection.prepareStatement("select Subprocess,Process,min(id) as id from racm where Process = ? OR Process in (select distinct(Process) from racm where Id in ("+idList1+")) group by Subprocess,Process;");
                                                                                 psmt1.setString(1,currentUsers.getProcess());
 
                                                                                 ResultSet resultset1 =psmt1.executeQuery() ;
                                                                         %>
                                                                             <thead>
                                                                                 <tr>
-                                                                                    <th style="text-align: center;">
+                                                                                    <th style="text-align: left;">
                                                                                         Select Control</th>
-                                                                                    <th style="text-align: center;">
+                                                                                    <th style="text-align: left;">
                                                                                         Sub-Process</th>
-                                                                                    <th style="text-align: center;">
+                                                                                    <th style="text-align: left;">
                                                                                         Process</th>
+                                                                                        <th style="text-align: left;" hidden>
+                                                                                        id</th>
 
                                                                                 </tr>
                                                                             </thead>
@@ -700,18 +707,21 @@
                                                                                             type="checkbox"
                                                                                             name="check-tab11" /> </td>
                                                                                     <td name="firstname"
-                                                                                        style="text-align: center;">
+                                                                                        style="text-align: left;">
                                                                                         <%= resultset1.getString("Subprocess")%></td>
                                                                                     <td name="email"
-                                                                                        style="text-align: center;">
+                                                                                        style="text-align: left;">
                                                                                         <%= resultset1.getString("Process")%></td>
+                                                                                           <td name="email"
+                                                                                        style="text-align: left;" hidden>
+                                                                                        <%= resultset1.getString("id")%></td>
                                                                                 </tr>
             <% } 
 
         }
         catch(Exception e)
         {
-             out.println("wrong entry"+e);
+             out.println("Pass from the previous table to preview this");
         }
 %>
 
@@ -756,8 +766,8 @@
                                                                         <h4 class="modal-title">Record Lookup</h4>
                                                                         <form>
                                                                             <input type="text" name="q"
-                                                                                placeholder="Enter query"
-                                                                                style="width:170px ;height:40px;margin-left:80%" id="myInput3"/>
+                                                                                placeholder="Search"
+                                                                                style="width:170px ;height:40px;margin-left:300px;" id="myInput3"/>
                                                                            
                                                                         </form>
                                                                         <button data-toggle="modal"
@@ -796,12 +806,12 @@
                                       
                                                                             <thead>
                                                                                 <tr>
-                                                                                    <th style="text-align: center;">
+                                                                                    <th style="text-align: left;">
                                                                                         Select Control</th>
-                                                                                    <th style="text-align: center;">
+                                                                                    <th style="text-align: left;">
                                                                                         Process</th>
-                                                                                    <th style="text-align: center;">Categorization</th>
-                                                                                        <th style="text-align: center;display:none">Id</th>
+                                                                                    <th style="text-align: left;">Categorization</th>
+                                                                                        <th style="text-align: left;display:none">Id</th>
 
 
                                                                                 </tr>
@@ -819,9 +829,9 @@
                                                                                         style="width: 5%;"><input
                                                                                             type="checkbox"
                                                                                             name="check-tab1111" /></td>
-                                                                                <td name="firstname" style="text-align: center;"><%= resultset1.getString("Process")%></td>
-                                                                                <td name="email" style="text-align: center;"><%= resultset1.getString("DepartmentCategorisation")%></td>
-                                                                                <td name="email" style="text-align: center;display:none"><%= resultset1.getString("id")%></td>
+                                                                                <td name="firstname" style="text-align: left;"><%= resultset1.getString("Process")%></td>
+                                                                                <td name="email" style="text-align: left;"><%= resultset1.getString("DepartmentCategorisation")%></td>
+                                                                                <td name="email" style="text-align: left;display:none"><%= resultset1.getString("id")%></td>
 
                                                                                 </tr>
             <% } 
@@ -829,7 +839,7 @@
         }
         catch(Exception e)
         {
-             out.println("wrong entry"+e);
+             out.println("Pass from the previous table to preview this");
         }
 %>
                                                                                 
@@ -869,8 +879,8 @@
                                                                         <h4 class="modal-title">Record Lookup</h4>
                                                                         <form>
                                                                             <input type="text" name="q"
-                                                                                placeholder="Enter query"
-                                                                                style="width:170px ;height:40px;margin-left:80%;" id="myInput2"/>
+                                                                                placeholder="Search"
+                                                                                style="width:170px ;height:40px;margin-left:300px;" id="myInput2"/>
                                                                             
                                                                         </form>
                                                                         <button data-toggle="modal"
@@ -908,13 +918,13 @@
                                       
                                                                             <thead>
                                                                                 <tr>
-                                                                                    <th style="text-align: center;">
+                                                                                    <th style="text-align: left;">
                                                                                         Select Control</th>
-                                                                                    <th style="text-align: center;">
+                                                                                    <th style="text-align: left;">
                                                                                         Categorization</th>
-                                                                                    <th style="text-align: center;">Mega
+                                                                                    <th style="text-align: left;">Mega
                                                                                         Process</th>
-                                                                                        <th style="text-align: center;display:none">Id</th>
+                                                                                        <th style="text-align: left;display:none">Id</th>
 
 
                                                                                 </tr>
@@ -932,9 +942,9 @@
                                                                                         style="width: 5%;"><input
                                                                                             type="checkbox"
                                                                                             name="check-tab1111" /></td>
-                                                                                <td name="firstname" style="text-align: center;"><%= resultset.getString("DepartmentCategorisation")%></td>
-                                                                                <td name="email" style="text-align: center;"><%= resultset.getString("Megaprocess")%></td>
-                                                                                <td name="email" style="text-align: center;display:none"><%= resultset.getString("id")%></td>
+                                                                                <td name="firstname" style="text-align: left;"><%= resultset.getString("DepartmentCategorisation")%></td>
+                                                                                <td name="email" style="text-align: left;"><%= resultset.getString("Megaprocess")%></td>
+                                                                                <td name="email" style="text-align: left;display:none"><%= resultset.getString("id")%></td>
 
                                                                                 </tr>
             <% } 
@@ -942,7 +952,7 @@
         }
         catch(Exception e)
         {
-             out.println("wrong entry"+e);
+             out.println("Pass from the previous table to preview this");
         }
 %>
                                                                                 
@@ -981,7 +991,7 @@
                                                                         <h4 class="modal-title">Record Lookup</h4>
                                                                         <form>
                                                                             <input type="text" name="q"
-                                                                                placeholder="Enter query"
+                                                                                placeholder="Search"
                                                                                 style="width:170px ;height:40px;margin-left:80%"id="myInput1" />
                                                                            
                                                                         </form>
@@ -1005,11 +1015,11 @@
                                                                             </sql:query>
                                                                             <thead>
                                                                                 <tr>
-                                                                                    <th style="text-align: center;">
+                                                                                    <th style="text-align: left;">
                                                                                         Select Control</th>
-                                                                                    <th style="text-align: center;">Mega
+                                                                                    <th style="text-align: left;">Mega
                                                                                         Process</th>
-                                                                                        <th style="text-align: center;display:none">ID</th>
+                                                                                        <th style="text-align: left;display:none">ID</th>
                                                                                 </tr>
                                                                             </thead>
                                                                             <tbody class="tbodymodal" id="myTableb1">
@@ -1019,8 +1029,8 @@
                                                                                 <td name="control" style="style="width: 5%;"><input type="checkbox"
                                                                                 name="check-tab11111" /></td>
                                                                                 
-                                                                                <td style="text-align: center;"><c:out value = "${row.MegaProcess}"/></td>
-																					<td style="text-align: center;display:none"><c:out value = "${row.id}"/></td>
+                                                                                <td style="text-align: left;"><c:out value = "${row.MegaProcess}"/></td>
+																					<td style="text-align: left;display:none"><c:out value = "${row.id}"/></td>
                                                                                 </tr>
                                                                                 </c:forEach>
                                                                             </tbody>

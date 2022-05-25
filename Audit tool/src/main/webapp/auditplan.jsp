@@ -108,7 +108,7 @@
         <div class="topnavbar">
           <div class="compactnavbar">
 
-            <nav class="Nav2 navbar-fixed-top">
+            <nav class="Nav2 navbar-fixed-top" style="background-color:#E1ECF0!important;">
               <ul>
                 <li><button type="button" class="boxx-shadow2 nav-1">Audit Background</button></li>
                 <li><button type="button" class="boxx-shadow2 nav1">Data Request</button></li>
@@ -190,7 +190,7 @@
                       data-toggle="dropdown" style="background-color:#470a68!important;margin-top: 1px;font-size: 12px!important;" id="posuvnik1">
                       Planning
                     </button>
-                    <div class="dropdown-menu" style="margin-top: -425px;
+                    <div class="dropdown-menu" style="margin-top: -400px;
                     margin-left: 29px;">
                       <a class="dropdown-item" href="#">1) Audit Announcement/ Kick off Meeting
                         <span><input class="date-field" type="date" name="auditannounce" required/></span>
@@ -214,16 +214,10 @@
                     </button>
                     <div class="dropdown-menu disabled" style="margin-left: 11px;margin-top: 17px;">
                       <div class="text-div">
-                        <a class="dropdown-item text-div" href="#"> Request for Initial Data Request (IDR)
+                        <a class="dropdown-item text-div" href="#"> Initial data request and Validation of existing controls design & effectiveness 
+                        <span><input class="date-field" type="date" name="datarequest" required/></span>
                         </a>
-                        <a class="dropdown-item text-div" href="#">/ Assessment of Response to Questionnaire and
-                          analysis on IDR
-                          <span><input class="date-field" type="date" name="datarequest" required/></span>
-                        </a>
-                        <a class="dropdown-item text-div" href="#">/Additional Data Request (ADR) if required any**
-                        </a>
-                        <a class="dropdown-item text-div" href="#">/ Prepertation of Audit Query Memorandums (AQMs)
-                        </a>
+                       
                       </div>
 
 
@@ -232,11 +226,11 @@
 
                   <div class="dropdown open drpdowncss">
                     <button type="button" disabled class="btn btn-primary dropdown-toggle buttonscss dropbtn button3"
-                      data-toggle="dropdown" style="margin-top: 28px;font-size: 12px!important;" id="posuvnik3">
+                      data-toggle="dropdown" style="margin-top:-30px;font-size: 12px!important;" id="posuvnik3">
                       Discussion with Stakeholders
                     </button>
                     <div class="dropdown-menu dropdown-content" style="margin-left: 14px;
-                    margin-top: 19px;">
+                    margin-top: -10px;">
                       <a class="dropdown-item text-div" href="#">AQM Discussion with the stakeholders
                       </a>
                       <a class="dropdown-item text-div" href="#"> / Interim status update on findings
@@ -251,7 +245,7 @@
 
                   <div class="btn-group dropdown open drpdowncss">
                     <button type="button" disabled class="btn btn-primary dropdown-toggle buttonscss button4"
-                      data-toggle="dropdown" id="posuvnik4" style="margin-top: 13px!important;font-size: 12px!important;">
+                      data-toggle="dropdown" id="posuvnik4" style="margin-top: -13px!important;font-size: 12px!important;">
                       Audit Closure
                     </button>
                     <div class="dropdown-menu" style="margin-top:-18px;margin-left: 14px;">
