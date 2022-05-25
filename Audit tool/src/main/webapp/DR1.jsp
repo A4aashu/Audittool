@@ -152,7 +152,7 @@
                           <tr style=" border-color: white !important;">
                             <th style=" border-color: none !important;">Sl.no.</th>
                         <th>Data items</th>
-                        <th>Sub-Process</th>
+                        <th>Process</th>
                         <th>Period</th>
                         <th>Request-Type</th>
                         <th>Status</th>

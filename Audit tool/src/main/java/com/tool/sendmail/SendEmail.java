@@ -46,8 +46,9 @@ public class SendEmail {
         	MimeMessage message = new MimeMessage(session);
         	message.setFrom(new InternetAddress(email));
         	message.addRecipient(Message.RecipientType.TO, new InternetAddress(userEmail));
-        	message.setText("Verification Link....");
-            message.setText("Click Here :: "+"http://localhost:8080/Audit_tool/AccountActivate?key1="+userEmail+"&key2="+hash);
+        	message.setSubject("Email Verification");
+            String link="http://localhost:8080/Audit_tool/AccountActivate?key1="+userEmail+"&key2="+hash;
+            message.setContent("<p>Dear User,<br>Thank you for registering with IA Accelerator. To continue, please verify by clicking the following link for<br> activation purpose:</p><a href="+link+">Verify Email</a>","text/html");
             Transport.send(message);
         	
         }catch(Exception e){

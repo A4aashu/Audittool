@@ -46,8 +46,9 @@ public class ForgotPassword {
         	MimeMessage message = new MimeMessage(session);
         	message.setFrom(new InternetAddress(email));
         	message.addRecipient(Message.RecipientType.TO, new InternetAddress(userEmail));
-        	message.setText("Verification Link....");
-            message.setText("Click Here :: "+"http://localhost:8080/Audit_tool/changepassword.jsp?key1="+userEmail+"&key2="+token);
+        	message.setSubject("Password Reset");
+        	String link="http://localhost:8080/Audit_tool/changepassword.jsp?key1="+userEmail+"&key2="+token;
+            message.setContent("<p>Dear User,<br>Reset password using the below link and follow the on screen instruction.<br><br>This mail can be ignored in case you didn't request a password reset,this link is only available for short time.</p>Password URL:<a href="+link+">Reset your Password</a>","text/html");
             Transport.send(message);
         	
         }catch(Exception e){

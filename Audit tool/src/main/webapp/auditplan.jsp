@@ -266,7 +266,7 @@
                 </div>
               </div>
               <div class="col-lg-4" style="background-color: #fff;">
-                <img src="assets/images/background-div.png" width="450px" height="492px"
+                <img src="assets/images/background-div.png" width="450px" height="464px"
                     style="margin-left: -20px!important;margin-top:0px;margin-bottom:-80px;" alt="">
                 <img src="assets/images/Picture3.png" style="width: 300px;
                 margin-top: -139%;

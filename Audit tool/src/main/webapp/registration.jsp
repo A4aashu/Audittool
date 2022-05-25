@@ -108,8 +108,7 @@
     	
     	}
     	else if(!filter1.test(Pass.value)){
-    		alert('The password does not meet the password policy requirements.
-    				+"Please check the following:Minimum lengthPassword complexityPassword requirementPassword History');
+    		alert("The password does not meet the password policy requirements\nYour password needs to:\n\u2022Include both lower and upper case\n\u2022Include at least one number and one symbol\n\u2022Be at least 8 characters long");
     		Pass.focus;
         	return false;
     	}

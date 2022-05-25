@@ -67,7 +67,7 @@ Process p = builder.start();
         PrintWriter outs = response.getWriter(); 
         
         outs.println(
-    					"<html><head></head><body onload=\"alert('PPT created successfully')\"></body></html>");
+    					"<html><head></head><body onload=\"alert('Opening Meeting Deck is successfully downloaded')\"></body></html>");
     							
         
         outs.println("<meta http-equiv='refresh' content='1;URL=myAudits.jsp'>"); 

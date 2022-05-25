@@ -155,7 +155,7 @@
                 
             </div>
             <div class="container-fluid" style="margin-top: 2%;margin-left: -3%;">
-                <div class="card border-0">
+                <div >
                     <div class="row d-flex">
                         <div class="col-lg-12" style="background-color: #ffffff; color: #00338D!important;">
                            
@@ -186,7 +186,7 @@
                                         <thead>
                                             <tr>
                                                 <th class="roww"
-                                                    style=" padding-right: 163px!important;font-weight:bold!important;font-size:20px!important;">
+                                                    style="font-weight:bold!important;font-size:20px!important;width:80%">
                                                     Data Items</th>
                                                 <th class="roww2"
                                                     style=" padding-right: 373px!important;font-weight:bold!important;font-size:20px!important;">
@@ -197,17 +197,6 @@
                                         <tbody>
                                             <tr data-id="1">
 
-                                                <td data-field="category" class="td_roww" style="font-weight: bold;color:#00338D;">
-                                                    Data Items 1
-                                                </td>
-                                                <td data-field="mega" class="td_roww2" style="font-weight: bold;color:#00338D;">
-                                                   Process 1
-                                                </td>
-                                                <td
-                                                style="background-color:rgba(167, 158, 205, 0.28);font-weight:700;color:#00338D">
-                                                <button class="btn btn-outline-danger delete_row"
-                                                    style="border-radius: 20px;background-color: #C4C4C4;color: black;border-color: black!important;float:right!important;margin-left:86%;margin-top: -3px!important;">X</button>
-                                                </td>
                                             </tr>
                                           
 
@@ -216,79 +205,8 @@
                                         </tbody>
                                     </table>
 
-                                    <div class="row upperblock">
-                                        <div class="col-md-12">
-                                            <h5 style="color:#00338D!important;
-                                            margin-top: 7px;margin-bottom: -22px;"> Sub-Process</h5>
-                                            <button class="btn btn-default pull-right"
-                                                style="font-weight: bold!important;color:#00338D!important; font-size: 21px!important;"
-                                                data-toggle="modal" data-target="#myModal3">Lookup</button>
-                                            <button class="btn btn-default pull-right" id="add_row3"
-                                                style="font-weight: bold!important;color:#00338D!important; font-size: 21px!important;border-right: 5px solid #00338D;">Add
-                                                Row</button>
-                                        </div>
-                                    </div>
-                                    <table class="table" id="editableTable3" data-toggle="table"
-                                        data-mobile-responsive="true" style="border-radius: 20px;
-                                        overflow: hidden;">
-                                        <thead>
-                                            <tr>
-                                                <th class="roww"
-                                                    style=" padding-right: 149px!important;font-weight:bold!important;font-size:20px!important;">
-                                                    Sub-Process</th>
-                                                <th class="roww2"
-                                                    style=" padding-right: 373px!important;font-weight:bold!important;font-size:20px!important;">
-                                                    Process</th>
-                                                    <th class="th"></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr data-id="1">
-
-                                                <td data-field="Sub-Process" class="td_roww" style="font-weight: bold;color:#00338D;">
-                                                   Sub-Process 1
-                                                </td>
-                                                <td data-field="Categorization" class="td_roww2" style="font-weight: bold;color:#00338D;">
-                                                    Process 1
-                                                </td>
-                                                <td
-                                                style="background-color:rgba(167, 158, 205, 0.28);font-weight:700;color:#00338D">
-                                                <button class="btn btn-outline-danger delete_row"
-                                                    style="border-radius: 20px;background-color: #C4C4C4;color: black;border-color: black!important;float:right!important;margin-left:86%;margin-top: -3px!important;">X</button>
-                                            </td>
-                                            </tr>
-                                            <tr data-id="2">
-
-                                                <td data-field="process" class="td_roww" style="font-weight: bold;color:#00338D;">
-                                                    Sub-Process 2
-                                                </td>
-                                                <td data-field="Categorization" class="td_roww2"style="font-weight: bold;color:#00338D;">
-                                                    Process 2
-                                                </td>
-                                                <td
-                                                style="background-color:rgba(167, 158, 205, 0.28);font-weight:700;color:#00338D">
-                                                <button class="btn btn-outline-danger delete_row"
-                                                    style="border-radius: 20px;background-color: #C4C4C4;color: black;border-color: black!important;float:right!important;margin-left:86%;margin-top: -3px!important;">X</button>
-                                            </td>
-                                            </tr>
-                                            <tr data-id="3">
-                                                <td data-field="process" class="td_roww" style="font-weight: bold;color:#00338D;">
-                                                    Sub-Process 3
-                                                </td>
-                                                <td data-field="Categorization" class="td_roww2" style="font-weight: bold;color:#00338D;">
-                                                    Process 3
-                                                </td>
-                                                <td
-                                                style="background-color:rgba(167, 158, 205, 0.28);font-weight:700;color:#00338D">
-                                                <button class="btn btn-outline-danger delete_row"
-                                                    style="border-radius: 20px;background-color: #C4C4C4;color: black;border-color: black!important;float:right!important;margin-left:86%;margin-top: -3px!important;">X</button>
-                                            </td>
-                                            </tr>
-
-
-
-                                        </tbody>
-                                    </table>
+                                   
+                                   
 
                                   
                                 </div>
@@ -390,115 +308,7 @@
                     </div>
                 </div>
 
-                <div class="modal" id="myModal3">
-                    <div class="modal-dialog">
-                        <div class="modal-content" style="height: 380px!important;">
-
-                            <!-- Modal Header -->
-                            <div class="modal-header">
-                                <h4 class="modal-title">Record Lookup</h4>
-                                <form>
-                                    <input type="text" name="q" placeholder="Enter query" id="myInput3"
-                                        style="width:170px ;height:40px;margin-left: 150px;" />
-                                </form>
-                                <button data-toggle="modal" data-target="#mymodal" id="showModal"
-                                    style="display:none;"></button>
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            </div>
-
-                            <!-- Modal body -->
-                            <div class="modal-body">
-                                <table  id="myTable3" style="height:200px!important;width:700px!important;"
-                                    class="table table-striped table-bordered table-responsive table-hover">
-                                    <thead>
-                                        <tr>
-                                            <th style="text-align: center;">Select Control</th>
-                                            <th style="text-align: center;">Sub-Process</th>
-                                            <th style="text-align: center;">Process</th>
-
-                                        </tr>
-                                    </thead>
-                                    <tbody id="myTableb3">
-                                        <tr>
-                                            <td name="control" style="width: 5%;"><input type="checkbox"
-                                                    name="check-tab111" /> </td>
-                                            <td name="firstname" style="text-align: center;">Sub-Process 1</td>
-                                            <td name="email" style="text-align: center;">Process 1</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td name="control" style="width: 5%;"><input type="checkbox"
-                                                    name="check-tab111" /> </td>
-                                            <td name="firstname" style="text-align: center;">Sub-Process 2</td>
-                                            <td name="email" style="text-align: center;">Process 2</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td name="control" style="width: 5%;"><input type="checkbox"
-                                                    name="check-tab111" /> </td>
-                                            <td name="firstname" style="text-align: center;">Sub-Process 3</td>
-
-                                            <td name="email" style="text-align: center;">Process 3</td>
-                                        </tr>
-                                        <tr>
-                                            <td name="control" style="width: 5%;"><input type="checkbox"
-                                                    name="check-tab111" /> </td>
-                                            <td name="firstname" style="text-align: center;">Sub-Process 4</td>
-
-                                            <td name="email" style="text-align: center;">Process 4</td>
-                                        </tr>
-                                        <tr>
-                                            <td name="control" style="width: 5%;"><input type="checkbox"
-                                                    name="check-tab111" /> </td>
-                                            <td name="firstname" style="text-align: center;">Sub-Process 5</td>
-
-                                            <td name="email" style="text-align: center;">Process 5</td>
-                                        </tr>
-                                        <tr>
-                                            <td name="control" style="width: 5%;"><input type="checkbox"
-                                                    name="check-tab111" /> </td>
-                                            <td name="firstname" style="text-align: center;">Sub-Process 6</td>
-
-                                            <td name="email" style="text-align: center;">Process 6</td>
-                                        </tr>
-                                        <tr>
-                                            <td name="control" style="width: 5%;"><input type="checkbox"
-                                                    name="check-tab111" /> </td>
-                                            <td name="firstname" style="text-align: center;">Sub-Process 7</td>
-
-                                            <td name="email" style="text-align: center;">Process 7</td>
-                                        </tr>
-                                        <tr>
-                                            <td name="control" style="width: 5%;"><input type="checkbox"
-                                                    name="check-tab111" /> </td>
-                                            <td name="firstname" style="text-align: center;">Sub-Process 8</td>
-
-                                            <td name="email" style="text-align: center;">Process 8</td>
-                                        </tr>
-                                        <tr>
-                                            <td name="control" style="width: 5%;"><input type="checkbox"
-                                                    name="check-tab111" /> </td>
-                                            <td name="firstname" style="text-align: center;">Sub-Process 9</td>
-
-                                            <td name="email" style="text-align: center;">Process 9</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-
-                            <!-- Modal footer -->
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-primary" style="padding: 10px!important;"
-                                    data-dismiss="modal" id="userEntry" onclick="transfer3();">
-                                    Select control
-                                </button>
-                                <button type="button" class="btn btn-danger" style="padding: 10px!important;"
-                                    data-dismiss="modal">Close</button>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
+                
             </div>
 
         </div>
@@ -644,6 +454,7 @@
                     cell1.style.backgroundColor = 'rgba(167, 158, 205, 0.28)';
                     cell1.style.fontWeight = '700';
                     cell1.style.color = '#00338D';
+                    cell1.style.width='80%';
                     // cell1.style.borderBottom='thick solid #00338D';
                     cell2.innerHTML = table1.rows[i + 1].cells[2].innerHTML; 
                     cell2.style.backgroundColor = 'rgba(167, 158, 205, 0.28)';

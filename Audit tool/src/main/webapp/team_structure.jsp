@@ -510,7 +510,7 @@
 
             </div>
             <div class="col-lg-4" style="background-color: #fff;">
-              <img src="assets/images/background-div.png" width="450px" height="483px"
+              <img src="assets/images/background-div.png" width="450px" height="455px"
                   style="margin-left: -20px!important;margin-top:0px;margin-bottom:-70px;" alt="">
               <img src="assets/images/Picture7.png" style="width: 300px;
               margin-top: -139%;
@@ -527,8 +527,8 @@
             
             <button type="submit"
             class="btn btn-blue text-center signup_btn"
-            style="background-color: #470A68;margin-top: -5px!important;height:35px!important;
-            margin-left: 970px!important;z-index: 111;margin-top:-490px!important" id="exportppt" formaction="GeneralServlet" disabled >Export PPT</button>
+            style="background-color: #470A68;height:35px!important;
+            margin-left: 970px!important;z-index: 111;margin-top:-450px!important" id="exportppt" formaction="GeneralServlet" disabled >Export PPT</button>
            
           </div>
           </div>

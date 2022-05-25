@@ -383,7 +383,7 @@
                                
                             </div>
                             <div class="col-lg-4" style="background-color: #fff;">
-                                <img src="assets/images/background-div.png" width="450px" height="450px"
+                                <img src="assets/images/background-div.png" width="450px" height="452px"
                                     style="margin-left: -20px!important;margin-top:0px;margin-bottom:-70px;" alt="">
                                 <img src="assets/images/Pictures2.png" style="width: 339px;
                                 margin-top: -139%;

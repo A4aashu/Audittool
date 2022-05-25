@@ -57,7 +57,7 @@ public class ForgotPasswordServlet extends HttpServlet {
 			
 			if(str.equals("SUCCESS")){
 				out.println(
-						"<html><head></head><body onload=\"alert('Thank you, Please check your inbox and rest your password')\"></body></html>");
+						"<html><head></head><body onload=\"alert('Thank you, Please check your inbox and reset your password')\"></body></html>");
 								
 								out.println("<meta http-equiv='refresh' content='1;URL=index.jsp'>");
             }

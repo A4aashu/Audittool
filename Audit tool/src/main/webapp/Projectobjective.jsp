@@ -239,11 +239,7 @@
                                                                                 style="font-weight: bold!important;color:#00338D!important; font-size: 21px!important; border-right: 5px solid #00338D;"
                                                                                 data-toggle="modal"
                                                                                 data-target="#myModal1">Lookup</button>
-                                                                            <button
-                                                                                class="btn btn-default pull-right add-row"
-                                                                                id="add_row"
-                                                                                style="font-weight: bold!important;color:#00338D!important; font-size: 21px!important;border-right: 5px solid #00338D;">Add
-                                                                                Row</button>
+                                                                            
                                                                                  </div>
                                                                     </div>
 
@@ -304,11 +300,7 @@
                                                                                         style="font-weight: bold!important;color:#00338D!important; font-size: 21px!important;border-right: 5px solid #00338D;"
                                                                                         data-toggle="modal"
                                                                                         data-target="#myModal2">Lookup</button>
-                                                                                    <button
-                                                                                        class="btn btn-default pull-right add_row"
-                                                                                        id="add_row1"
-                                                                                        style="font-weight: bold!important;color:#00338D!important; font-size: 21px!important;border-right: 5px solid #00338D;">Add
-                                                                                        Row</button>
+                                                                                    
                                                                                 </div>
                                                                             </div>
 
@@ -376,11 +368,7 @@
                                                                                         style="font-weight: bold!important;color:#00338D!important; font-size: 21px!important;border-right: 5px solid #00338D;"
                                                                                         data-toggle="modal"
                                                                                         data-target="#myModal3">Lookup</button>
-                                                                                    <button
-                                                                                        class="btn btn-default pull-right add_row"
-                                                                                        id="add_row1"
-                                                                                        style="font-weight: bold!important;color:#00338D!important; font-size: 21px!important;border-right: 5px solid #00338D;">Add
-                                                                                        Row</button>
+                                                                                    
                                                                                 </div>
                                                                             </div>
 
@@ -440,11 +428,7 @@
                                                                                         style="font-weight: bold!important;color:#00338D!important; font-size: 21px!important;"
                                                                                         data-toggle="modal"
                                                                                         data-target="#myModal4">Lookup</button>
-                                                                                    <button
-                                                                                        class="btn btn-default pull-right add_row"
-                                                                                        id="add_row4"
-                                                                                        style="font-weight: bold!important;color:#00338D!important; font-size: 21px!important;border-right: 5px solid #00338D;">Add
-                                                                                        Row</button>
+                                                                                    
                                                                                 </div>
                                                                             </div>
 
@@ -484,11 +468,7 @@
                                                                                         style="font-weight: bold!important;color:#00338D!important; font-size: 21px!important;"
                                                                                         data-toggle="modal"
                                                                                         data-target="#myModal">Lookup</button>
-                                                                                    <button
-                                                                                        class="btn btn-default pull-right add_row"
-                                                                                        id="add_row5"
-                                                                                        style="font-weight: bold!important;color:#00338D!important; font-size: 21px!important;border-right: 5px solid #00338D;">Add
-                                                                                        Row</button>
+                                                                                   
                                                                                 </div>
                                                                             </div>
 

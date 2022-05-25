@@ -49,11 +49,17 @@ public class LoginServlet extends HttpServlet {
 				session.setAttribute("currentSessionUser",user);
 				System.out.println(user.getDesignation());
 				if(user.getDesignation().equals("Analyst")||user.getDesignation().equals("Associate Consultant")||user.getDesignation().equals("Consultant")||user.getDesignation().equals("Assistant Manager")) {
-				response.sendRedirect("dashboard1.jsp");
+					out.println(
+    						"<html><head></head><body onload=\"alert('Your attempt to login with IA accelerator has been successful.')\"></body></html>");
+    								
+    								out.println("<meta http-equiv='refresh' content='1;URL=dashboard1.jsp'>");
 				}
 				else
 				{
-					response.sendRedirect("dashboard2.jsp");	
+					out.println(
+    						"<html><head></head><body onload=\"alert('Your attempt to login with IA accelerator has been successful.')\"></body></html>");
+    								
+    								out.println("<meta http-equiv='refresh' content='1;URL=dashboard2.jsp'>");	
 				}
 			}
 			else
