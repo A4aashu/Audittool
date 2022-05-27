@@ -16,7 +16,7 @@
     content="admin, estimates, bootstrap, business, corporate, creative, management, minimal, modern, accounts, invoice, html5, responsive, CRM, Projects">
   <meta name="author" content="Dreamguys - Bootstrap Admin Template">
   <meta name="robots" content="noindex, nofollow">
-  <title>Dashboard - KPMG Admin Portal</title>
+  <title>IA Accelerator</title>
 
   <!-- Favicon -->
 
@@ -56,6 +56,11 @@
   <!-- 
     <link rel="stylesheet" href="assets/css/AnalystDashboard.css"> -->
   <link rel="stylesheet" href="assets/css/Team_Structure_Screen.css">
+  <style>
+  button:disabled {
+  background: grey!important;
+}
+  </style>
   <script>
  $(document).ready(function () {
 
@@ -237,7 +242,6 @@
                                     <option value="">Enter Designation</option>
                                     <option value="Partner">Partner</option>
                                     <option value="Director">Director</option>
-                                    <option value="Associate Director">Associate Director</option>
                                   </select></td>
 
                                
@@ -295,8 +299,7 @@
                                 <td> <select name="Eddes" id="EDname1">
                                     <option value="">Enter Designation</option>
                                     <option value="Director">Director</option>
-                                    <option value="Manager">Manager</option>
-                                    <option value="Assistant Manager">Assistant Manager</option>
+                                    <option value="Associate Director">Associate Director</option>
                                   </select></td>
 
                                 
@@ -433,12 +436,11 @@
                                 <td> <input type="text" id="TNname" name="Tmname" placeholder="Enter Name"></td>
                                 <td> <select name="Tmdes" id="TNname1">
                                     <option value="">Enter Designation</option>
-                                    <option value="Manager">Manager</option>
-                                    <option value="Assistant Manager">Assistant Manager</option>
+                                   <option value="Assistant Manager">Assistant Manager</option>
                                     <option value="Consultant">Consultant</option>
                                     <option value="Associate Consultant">Associate Consultant</option>
                                     <option value="Analyst">Analyst</option>
-                                    <option value="Intern">Intern</option>
+                                    
                                   </select></td>
 
                                 
@@ -447,12 +449,11 @@
                                 <td> <input type="text" id="TNname1" name="Tmname1" placeholder="Enter Name"></td>
                                 <td> <select name="Tmdes1" id="TNname3">
                                     <option value="">Enter Designation</option>
-                                    <option value="Manager">Manager</option>
                                     <option value="Assistant Manager">Assistant Manager</option>
                                     <option value="Consultant">Consultant</option>
                                     <option value="Associate Consultant">Associate Consultant</option>
                                     <option value="Analyst">Analyst</option>
-                                    <option value="Intern">Intern</option>
+                                    
                                   </select></td>
 
                                 
@@ -462,12 +463,12 @@
                                 <td> <input type="text" id="TNname1" name="Tmname2" placeholder="Enter Name"></td>
                                 <td> <select name="Tmdes2" id="TNname3">
                                     <option value="">Enter Designation</option>
-                                    <option value="Manager">Manager</option>
+                                    
                                     <option value="Assistant Manager">Assistant Manager</option>
                                     <option value="Consultant">Consultant</option>
                                     <option value="Associate Consultant">Associate Consultant</option>
                                     <option value="Analyst">Analyst</option>
-                                    <option value="Intern">Intern</option>
+                                    
                                   </select></td>
 
                                 
@@ -477,12 +478,11 @@
                                 <td> <input type="text" id="TNname1" name="Tmname3" placeholder="Enter Name"></td>
                                 <td> <select name="Tmdes3" id="TNname3">
                                      <option value="">Enter Designation</option>
-                                    <option value="Manager">Manager</option>
                                     <option value="Assistant Manager">Assistant Manager</option>
                                     <option value="Consultant">Consultant</option>
                                     <option value="Associate Consultant">Associate Consultant</option>
                                     <option value="Analyst">Analyst</option>
-                                    <option value="Intern">Intern</option>
+                                    
                                   </select></td>
 
                                 
@@ -525,10 +525,10 @@
             style="background-color: #470A68;margin-top: -5px!important;height:35px!important;
             margin-left: 970px!important;z-index: 111;"name="submitbutton" id="submit" formaction="GeneralServlet">Submit</button>
             
-            <button type="submit"
+            <button
             class="btn btn-blue text-center signup_btn"
             style="background-color: #470A68;height:35px!important;
-            margin-left: 970px!important;z-index: 111;margin-top:-450px!important" id="exportppt" formaction="GeneralServlet" disabled >Export PPT</button>
+            margin-left: 970px!important;z-index: 111;margin-top:-450px!important" id="exportppt" name="pptx"disabled ><a href='ppt.jsp?id=<%=request.getParameter("id")%>' alt='Broken Link'>Export PPT</a></button>
            
           </div>
           </div>

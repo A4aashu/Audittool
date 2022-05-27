@@ -16,7 +16,7 @@
     content="admin, estimates, bootstrap, business, corporate, creative, management, minimal, modern, accounts, invoice, html5, responsive, CRM, Projects">
   <meta name="author" content="Dreamguys - Bootstrap Admin Template">
   <meta name="robots" content="noindex, nofollow">
-  <title>Dashboard - KPMG Admin Portal</title>
+  <title>IA Accelerator</title>
 
   <!-- Favicon -->
 

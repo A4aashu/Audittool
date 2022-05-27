@@ -3,6 +3,7 @@
     <%@ page import="java.sql.*" %>
     <%@ page import="java.io.*" %>
     <%@ page import="java.util.Date" %>
+    <%@ page import="java.util.*" %>
     <%@ page import="java.text.*" %>
         <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
     <%@ taglib uri = "http://java.sun.com/jsp/jstl/sql" prefix = "sql"%>
@@ -13,7 +14,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>IA Accelerator</title>
 </head>
 <body>
     <%LoginBean currentUser = ((LoginBean) (session.getAttribute("currentSessionUser")));%>
@@ -23,7 +24,46 @@
     <%AuditBean currentUser3 = ((AuditBean) (session.getAttribute("currentSessionUser3")));%>
     <%AuditBean currentUser4 = ((AuditBean) (session.getAttribute("currentSessionUser4")));%>
     <%AuditBean currentUser5 = ((AuditBean) (session.getAttribute("currentSessionUser5")));%>
+    <%AuditBean currentUser6 = ((AuditBean) (session.getAttribute("projectobjective")));%>
 <% 
+String x=currentUser6.getObjectiveid();
+System.out.println(x);
+String delimiter = "\n\u2022";
+String result = "", prefix = "";
+try{
+	int[] a=Arrays.stream(x.split(",")).mapToInt(Integer::parseInt).toArray();  
+    StringBuilder idList = new StringBuilder();
+    		for (int id : a) {
+    		   if (idList.length() > 0) {
+    		     idList.append(",");
+    		   }
+    		   idList.append(id);
+    		}
+    Connection connection=Dbconfig.getConnection();
+    PreparedStatement psmt1=connection.prepareStatement("select ControlObjective from racm where id in ("+idList+")");
+   ResultSet resultset1 =psmt1.executeQuery() ;
+   
+
+while(resultset1.next()){ 
+	prefix = delimiter;
+	 result += prefix + resultset1.getString("ControlObjective");
+     										
+             } 
+
+        }
+        catch(Exception e)
+        {
+             out.println("Pass from the previous table to preview this");
+        }
+
+
+
+
+
+
+
+
+
 DateFormat dateFormat = new SimpleDateFormat("MMMM-yyyy");
 DateFormat dateFormat1 = new SimpleDateFormat("dd-MM-yyyy");
 Date datestart = new java.sql.Date(currentUsers.getAudit_start_date().getTime());    
@@ -42,8 +82,8 @@ String engname=currentUsers.getEngagement_name();
 String reviewperiod = dateFormat.format(datestart)+" to "+dateFormat.format(dateend);
 String monthomd=dateFormat.format(datestart);
 String auditback=currentUsers.getAudit_background();
-String int1="2";
-String obj='\u2022'+"aashu \n\u2022 yadav";
+String int1="1";
+String obj=result;
 String auditannounce1=dateFormat1.format(auditannounce);
 String irauditscope1=dateFormat1.format(irauditscope);
 String discussiondate1=dateFormat1.format(discussiondate);

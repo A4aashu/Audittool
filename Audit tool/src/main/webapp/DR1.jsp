@@ -1,3 +1,12 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+    <%@ page import="java.sql.*" %>
+        <%@ page import="java.io.*" %>
+        <%@ page import="java.util.*" %>
+            <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+                <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
+                    <%@ page language="java" import="com.tool.bean.LoginBean" %>
+                        <%@ page language="java" import="com.tool.bean.AuditBean" %>
+                            <%@ page language="java" import="com.tool.config.*" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +18,7 @@
     content="admin, estimates, bootstrap, business, corporate, creative, management, minimal, modern, accounts, invoice, html5, responsive, CRM, Projects">
   <meta name="author" content="Dreamguys - Bootstrap Admin Template">
   <meta name="robots" content="noindex, nofollow">
-  <title>Dashboard - KPMG Admin Portal</title>
+  <title>IA Accelerator</title>
 
   <!-- Favicon -->
 
@@ -35,6 +44,21 @@
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript">
+
+
+
+function date_chng(){
+first_date = new Date($('#request_date').val());
+output_f=new Date(first_date.setDate(first_date.getDate()+2)).toISOString().split('.');
+output_s = output_f[0].split('T');
+$('#mydate').val(output_s[0]);
+}
+
+
+
+
+</script>
   <!-- Fontawesome CSS -->
   <link rel="stylesheet" href="assets/css/font-awesome.min.css">
 
@@ -53,6 +77,11 @@
 </head>
 
 <body>
+<%LoginBean currentUser=((LoginBean)
+                                        (session.getAttribute("currentSessionUser")));
+                                        AuditBean currentUsers=((AuditBean)
+                                            (session.getAttribute("currentSessionUser6")));
+                                        %>
   <!-- Main Wrapper -->
   <div class="main-wrapper">
 
@@ -146,7 +175,25 @@
                
                 <div class="Mytable css-serial" margin>
                     <table  class="table " data-toggle="table" >
-                        <thead>
+                         <%
+                                                                            try{
+                                                                            	String x1=currentUsers.getDataid();
+                                                                            	int[] a1=Arrays.stream(x1.split(",")).mapToInt(Integer::parseInt).toArray();  
+                                                                                StringBuilder idList1 = new StringBuilder();
+                                                                                		for (int id : a1) {
+                                                                                		   if (idList1.length() > 0) {
+                                                                                		     idList1.append(",");
+                                                                                		   }
+                                                                                		   idList1.append(id);
+                                                                                		}
+                                                                            	
+                                                                                Connection connection=Dbconfig.getConnection();
+                                                                                PreparedStatement psmt1=connection.prepareStatement("select data1,Process from datatable where dataid in ("+idList1+")");
+                                                                               
+
+                                                                                ResultSet resultset1 =psmt1.executeQuery() ;
+                                                                        %>
+                                                                           <thead>
                           
                               
                           <tr style=" border-color: white !important;">
@@ -164,36 +211,48 @@
                   
                           </tr>
                         </thead>
-                        <tbody style=" border-color: none!important;">
-                          <tr style=" border-color: white !important;">
-                            <colgroup>
-                                <col span="3" style="background-color:#E5E5E5!important">
-                                
-                              </colgroup>
+                                                                            <tbody style=" border-color: none!important;">
+                                                                                
+                                                                                <%  while(resultset1.next()){ %>
+       																			
+                                                                                     <tr style=" border-color: white !important;">
+                            
                               <td></td>
-                            <td><input type="text" class="form-control"></td>
-                            <td><input type="text" class="form-control"></td>
-                            <td><input type="date" style="background-color: white !important ;" class="form-control"></td>
+                            <td><%= resultset1.getString("data1")%></td>
+                            <td><%= resultset1.getString("Process")%></td>
+                            <td><select name="Period" id="Request-Type" class="form-control">
+                                <option value="Monthly">Monthly</option>
+                                <option value="Quarterly">Quarterly</option>
+                                <option value="Annually">Annually</option>
+                                <option value="As on Date">As on Date</option>
+                              </select>
+                            </td>
                             <td><select name="Request-Type" id="Request-Type" class="form-control">
-                                <option value="Request-Type1">Request-Type 1</option>
-                                <option value="Request-Type2">Request-Type 2</option>
-                                <option value="Request-Type3">Request-Type 3</option>
-                                <option value="Request-Type4">Request-Type 4</option>
+                                <option value="IDR">IDR</option>
+                                <option value="ADR">ADR</option>
                               </select></td>
                               <td><select name="Status" id="Status" class="form-control">
-                                <option value="Status 1">Status 1</option>
-                                <option value="Status 2">Status 2</option>
-                                <option value="Status 3">Status 3</option>
-                                <option value="Status 4">Status 4</option>
+                                <option value="Received">Received</option>
+                                <option value="Pending">Pending</option>
+                                <option value="Partially Received">Partially Received</option>
+                                <option value="Not Applicable">Not Applicable</option>
                               </select></td>
-                              <td><input type="date" style="background-color: white !important ;" id="request_date" onchange="adddate()" class="form-control"></td>
-                              <td><input type="date"  id="mydate" ></td>
+                              <td><input type="date" style="background-color: white !important ;" id="request_date" onchange="date_chng()" class="form-control"></td>
+                              <td><input type="date" style="background-color: white !important ;"  id="mydate" class="form-control" ></td>
                             <td><input type="date" style="background-color: white !important ;" id="end_date"  onchange="getDays()"  class="form-control"></td>
                             <td><input type="text" id="days" style="background-color: white !important ;" class="form-control"></td>
-                           
-                  
-                          </tr>
-                         
+                            </tr>
+                            
+                            
+                                                                              
+            <% } 
+
+        }
+        catch(Exception e)
+        {
+             out.println("No Data");
+        }
+%>
                         
                          
                         </tbody>
@@ -201,6 +260,45 @@
                           
                         
                       </table>
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                     
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
+                      
                 </div>
                
             
@@ -306,30 +404,17 @@ DateDiff.inDays
 </script> -->
 <script>
 
-  //formula for 
-// function getDays(){
+
+ function getDays(){
  
-//   var start_date = new Date(document.getElementById('start_date').value);
-//   var end_date = new Date(document.getElementById('end_date').value);
-//   //Here we will use getTime() function to get the time difference
-//   var time_difference = end_date.getTime() - start_date.getTime();
-//   //Here we will divide the above time difference by the no of miliseconds in a day
-//   var days_difference = time_difference / (1000*3600*24);
-//   //alert(days);
-//   document.getElementById('days').value = days_difference;
-// }
+   var start_date = new Date(document.getElementById('mydate').value);
+   var end_date = new Date(document.getElementById('end_date').value);
+   var time_difference = end_date.getTime() - start_date.getTime();
+   var days_difference = time_difference / (1000*3600*24);
 
- function adddate(){
-   
-    // var request_date1=new Date(document.getElementById('request_date').value);
-    
-
-  //    request_date1.setDate(request_date1.getDate()+2);
-  //  let datestring = request_date1.getMonth().toString().padStart(2, '0')+'/'+request_date1.getDate().toString().padStart(2, '0')+'/'+request_date1.getFullYear().toString().padStart(4, '0');
-  
-  document.getElementById("mydate").value = "2022/03/05";
-   alert("datestring");
+   document.getElementById('days').value = days_difference;
  }
+
 
 
 </script>

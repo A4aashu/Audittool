@@ -13,7 +13,7 @@
         content="admin, estimates, bootstrap, business, corporate, creative, management, minimal, modern, accounts, invoice, html5, responsive, CRM, Projects">
     <meta name="author" content="Dreamguys - Bootstrap Admin Template">
     <meta name="robots" content="noindex, nofollow">
-    <title>Dashboard - KPMG Admin Portal</title>
+    <title>IA Accelerator</title>
 
     <!-- Favicon -->
 
@@ -32,6 +32,7 @@
     <!-- Main CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/ManagerDashboard.css">
+    
 </head>
 
 <body>
@@ -41,38 +42,37 @@
 
 
         <!-- Sidebar -->
-        <div class="sidebar" style="background-color: #00338D!important;" id="sidebar">
-            <div class="sidebar-inner slimscroll">
-                <div id="sidebar-menu" class="sidebar-menu">
-                    <ul>
-                        <li class="nav-item main-drop">
-
-                            <span class="user-img"><img src="assets/images/profileimage.jpg" alt="">
-                                <span class="status online"></span>
-                            </span>
-                            <div class="section">
-                                <span style="color:#ffffff;margin-left:93px;font-size: 17px!important;"><%= currentUser.getFullname()%></span>
-                                <span style="color:#ffffff;margin-left:93px;"><%= currentUser.getDepartment()%></span>
-                                <span style="color:#ffffff;margin-left:93px;"><%= currentUser.getDesignation()%></span>
-                            </div>
-
-                        </li>
-                        <li class="submenu">
-                            <a class="btn-links" href="#"><i class="la la-dashboard"></i> <span> Home</span></a>
-                        </li>
-                        <li class="submenu">
-                            <a class="btn-links" href="myAudits.jsp" style="background-color:#B7C1D3 !important;"><i class="la la-cube"></i> <span>My Audits</span></a>
-                        </li>
-                        
-                        <li class="submenu">
-                            <a class="btn-links down" style="margin-top:320px!important;" href="logout.jsp"><i class="la la-user"></i> <span> Logout
-                                </span></span></a>
-                        </li>
-
-                    </ul>
-                </div>
+        <div class="sidebar" style="background-color: #00338D!important;width: 170px;" id="sidebar">
+    <div class="sidebar-inner slimscroll">
+      <div id="sidebar-menu" class="sidebar-menu">
+        <ul>
+          <li class="nav-item main-drop" style="margin-left: -28px">
+            <span class="user-img"><img src="assets/images/profileimage.jpg" alt="">
+              <span class="status online"></span>
+            </span>
+            <div class="section">
+              <span style="color:#ffffff;margin-left:85px;font-size: 16px!important;"><%= currentUser.getFullname()%></span>
+                    <span style="color:#ffffff;margin-left:85px;"><%= currentUser.getDepartment()%></span>
+                    <span style="color:#ffffff;margin-left:85px;"><%= currentUser.getDesignation()%></span>
             </div>
-        </div>
+          </li>
+          <li class="submenu">
+            <a class="btn-links" href="#" style="width:135px"><i class="la la-dashboard"></i> <span>
+                Home</span></a>
+          </li>
+          <li class="submenu">
+            <a class="btn-links" href="myAudits.jsp" style="background-color:#B7C1D3 !important;width:135px"><i class="la la-cube"></i> <span>My
+                Audits</span></a>
+          </li>
+          <li class="submenu">
+            <a class="btn-links" style="margin-top:300px!important;width:135px" href="logout.jsp"><i class="la la-user"></i> <span> Logout
+              </span></a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
         <!-- /Sidebar -->
 
         <!-- Page Wrapper -->
@@ -90,7 +90,7 @@
                                 <div class="col-sm-12">
                                     <img src="./assets/images/Picture6.png" alt="" width="140px" height="100px">
                                     <h3 class="page-title">Welcome to </h3>
-                                    <h3 class="page-title">IA Acclerator</h3>
+                                    <h3 class="page-title">IA Accelerator</h3>
                                     <h5 style="width: 270px;margin-top: 30px;font-size: 15px;">One stop solution for all
                                         your Internal
                                         Audit requirements. Create and manage your reviews effortlessly.</h5>

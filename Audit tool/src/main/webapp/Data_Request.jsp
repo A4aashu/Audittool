@@ -19,7 +19,7 @@
         content="admin, estimates, bootstrap, business, corporate, creative, management, minimal, modern, accounts, invoice, html5, responsive, CRM, Projects">
     <meta name="author" content="Dreamguys - Bootstrap Admin Template">
     <meta name="robots" content="noindex, nofollow">
-    <title>Dashboard - KPMG Admin Portal</title>
+    <title>IA Accelerator</title>
 
     <!-- Favicon -->
 
@@ -86,11 +86,11 @@
                             </div>
                         </li>
                         <li class="submenu">
-                            <a class="btn-links btn-inactive" href="#"><i class="la la-dashboard"></i> <span>
+                            <a class="btn-links btn-inactive" href="dashboard2.jsp"><i class="la la-dashboard"></i> <span>
                                     Home</span></a>
                         </li>
                         <li class="submenu">
-                            <a class="btn-links btn-inactive" href="#"><i class="la la-cube"></i> <span>My
+                            <a class="btn-links btn-inactive" href="myAudits.jsp"><i class="la la-cube"></i> <span>My
                                     Audits</span></a>
                         </li>
                         <li class="submenu">
@@ -185,6 +185,9 @@
         
                                         <thead>
                                             <tr>
+                                            <th class="roww"
+                                                    style="font-weight:bold!important;font-size:20px!important;width:80%" hidden>
+                                                    Id</th>
                                                 <th class="roww"
                                                     style="font-weight:bold!important;font-size:20px!important;width:80%">
                                                     Data Items</th>
@@ -195,9 +198,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr data-id="1">
-
-                                            </tr>
+                                           
                                           
 
 
@@ -214,9 +215,13 @@
                         </div>
 
                         <div class="row px-3"> 
-                            
-                            <button type="submit" class="btn btn-blue text-center signup_btn" style="background-color: #470A68;margin-left: 85.5%!important;
-                                ">Save & Proceed</button>
+                           
+                            <button  class="btn btn-blue text-center signup_btn" style="background-color: #470A68;margin-left: 85.5%!important;
+                                "onclick="xyz3()">Save & Proceed</button>
+                               <form action="GeneralServlet" method="POST" id="submit-form3" >
+                                                                <input id="dataid" value="" name="dataid" hidden>
+                                                                
+                                                                </form>
                         </div>
                     </div>
                 </div>
@@ -254,7 +259,7 @@
         		   idList.append(id);
         		}
     	Connection connection1=Dbconfig.getConnection();
-        PreparedStatement psmt=connection1.prepareStatement("select data1,process from datatable where process=(select process from audits where Initiative_id=?) OR process in (select process from racm where id in ("+idList+"));");
+        PreparedStatement psmt=connection1.prepareStatement("select data1,dataid,process from datatable where process=(select process from audits where Initiative_id=?) OR process in (select process from racm where id in ("+idList+"));");
         psmt.setInt(1, Integer.parseInt(request.getParameter("id")));
  		
         ResultSet resultset =psmt.executeQuery() ;
@@ -265,6 +270,7 @@
                                             <th style="text-align:left;">Select Control</th>
                                             <th style="text-align:left;">Data Items </th>
                                             <th style="text-align:left;">Process</th>
+                                            <th style="text-align:left;" hidden>Id</th>
                                         </tr>
                                     </thead>
                                     <tbody id="myTableb2">
@@ -279,7 +285,7 @@
                                                                                             name="check-tab1111" /></td>
                                                                                 <td name="firstname" style="text-align: left;"><%= resultset.getString("data1")%></td>
                                                                                 <td name="email" style="text-align: left;"><%= resultset.getString("process")%></td>
-
+																				<td name="email" style="text-align: left;" hidden><%= resultset.getString("dataid")%></td>
                                                                                 </tr>
             <% } 
 
@@ -436,44 +442,7 @@
         });
 
              
-        function transfer3() {
-            var table1 = document.getElementById("myTable3"),
-                table2 = document.getElementById("editableTable3"),
-                checkboxes = document.getElementsByName("check-tab111");
-            console.log("Val1 = " + checkboxes.length);
-            for (var i = 0; i < checkboxes.length; i++)
-                if (checkboxes[i].checked) {
-                    var newRow = table2.insertRow(table2.length),
-                        cell1 = newRow.insertCell(0),
-                        cell2 = newRow.insertCell(1);
-                        cell3 = newRow.insertCell(2);
-                        
-
-                    newRow.style.borderBottom = 'thin solid #00338D';
-                    cell1.innerHTML = table1.rows[i + 1].cells[1].innerHTML;
-                    cell1.style.backgroundColor = 'rgba(167, 158, 205, 0.28)';
-                    cell1.style.fontWeight = '700';
-                    cell1.style.color = '#00338D';
-                    cell1.style.width='80%';
-                    // cell1.style.borderBottom='thick solid #00338D';
-                    cell2.innerHTML = table1.rows[i + 1].cells[2].innerHTML; 
-                    cell2.style.backgroundColor = 'rgba(167, 158, 205, 0.28)';
-                    cell2.style.fontWeight = '700';
-                    cell2.style.color = '#00338D';
-                    cell2.classList.add("Process");
-
-                    cell3.innerHTML = '<button class="btn btn-outline-danger delete_row" style="border-radius: 20px;background-color: #C4C4C4;color: black;border-color: black!important;margin-top: -3px!important;">X</button>';;
-                    cell3.style.backgroundColor = 'rgba(167, 158, 205, 0.28)';
-                    cell3.style.fontWeight = '700';
-                    cell3.style.color = '#00338D';
-
-                    var index = table1.rows[i + 1].rowIndex;
-                    table1.deleteRow(index);
-                    i--;
-                    console.log(checkboxes.length);
-                }
-        }
-
+      
         function transfer2() {
             var table1 = document.getElementById("myTable2"),
                 table2 = document.getElementById("editableTable2"),
@@ -485,28 +454,48 @@
                         cell1 = newRow.insertCell(0),
                         cell2 = newRow.insertCell(1);
                         cell3 = newRow.insertCell(2);
+                        cell4 = newRow.insertCell(3);
 
                     newRow.style.borderBottom = 'thin solid #00338D';
-                    cell1.innerHTML = table1.rows[i + 1].cells[1].innerHTML;
+                    cell1.innerHTML = table1.rows[i + 1].cells[3].innerHTML;
                     cell1.style.backgroundColor = 'rgba(167, 158, 205, 0.28)';
                     cell1.style.fontWeight = '700';
                     cell1.style.color = '#00338D';
+                    cell1.style.display = 'none';
                     // cell1.style.borderBottom='thick solid #00338D';
-                    cell2.innerHTML = table1.rows[i + 1].cells[2].innerHTML; 
+                    cell2.innerHTML = table1.rows[i + 1].cells[1].innerHTML; 
                     cell2.style.backgroundColor = 'rgba(167, 158, 205, 0.28)';
                     cell2.style.fontWeight = '700';
                     cell2.style.color = '#00338D';
-
-                    cell3.innerHTML = '<button class="btn btn-outline-danger delete_row" style="border-radius: 20px;background-color: #C4C4C4;color: black;border-color: black!important;margin-top: -3px!important;">X</button>';;
+                    cell3.innerHTML = table1.rows[i + 1].cells[2].innerHTML; 
                     cell3.style.backgroundColor = 'rgba(167, 158, 205, 0.28)';
                     cell3.style.fontWeight = '700';
                     cell3.style.color = '#00338D';
 
-                    var index = table1.rows[i + 1].rowIndex;
-                    table1.deleteRow(index);
-                    i--;
-                    console.log(checkboxes.length);
+                    cell4.innerHTML = '<button class="btn btn-outline-danger delete_row" style="border-radius: 20px;background-color: #C4C4C4;color: black;border-color: black!important;margin-top: -3px!important;">X</button>';;
+                    cell4.style.backgroundColor = 'rgba(167, 158, 205, 0.28)';
+                    cell4.style.fontWeight = '700';
+                    cell4.style.color = '#00338D';
+
+                    
                 }
+            $('input[type="checkbox"]').prop('checked', false);
+        }
+        var person3=[];
+
+        function showTableData3() {
+
+        var xyz=document.getElementById("dataid");
+        var myTab = document.getElementById('editableTable2');
+        for (j = 1; j < myTab.rows.length; j++) {
+        var objCells = myTab.rows.item(j).cells;
+        person3[j-1]=objCells.item(0).innerHTML;
+        }
+        xyz.value =person3;
+        }
+        function xyz3(){
+        showTableData3();
+        document.getElementById("submit-form3").submit();
         }
 
         

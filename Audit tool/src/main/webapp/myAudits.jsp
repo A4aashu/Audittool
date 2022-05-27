@@ -20,7 +20,7 @@
     />
     <meta name="author" content="Dreamguys - Bootstrap Admin Template" />
     <meta name="robots" content="noindex, nofollow" />
-    <title>Dashboard - KPMG Admin Portal</title>
+    <title>IA Accelerator</title>
 
     <!-- Favicon -->
 
@@ -73,6 +73,7 @@
      
      
     </script>
+    
     <!-- Fontawesome CSS -->
     <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
 
@@ -93,7 +94,7 @@
   <%LoginBean currentUser = ((LoginBean) (session.getAttribute("currentSessionUser")));%>
   <sql:setDataSource var = "snapshot" driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver"
          url = "jdbc:sqlserver://IN-AASHUYADAV;databaseName=Audit_tool"
-         user = "aashu"  password = "kpmgKPMG1"/>
+         user = "aashu" password = "kpmgKPMG1"/>
 		<sql:query dataSource = "${snapshot}" var = "resultset">
          SELECT count(distinct(megaprocess)) from audits where createdby=?;
          <sql:param value = "<%=currentUser.getEmail()%>" />
@@ -123,16 +124,16 @@
             </div>
           </li>
           <li class="submenu">
-            <a class="btn-links btn-inactive" href="dashboard2.jsp"><i class="la la-dashboard"></i> <span>
+            <a class="btn-links" href="dashboard2.jsp" style="background-color:#B7C1D3 !important;"><i class="la la-dashboard"></i> <span>
                 Home</span></a>
           </li>
           <li class="submenu">
-            <a class="btn-links btn-inactive" href="#"><i class="la la-cube"></i> <span>My
+            <a class="btn-links" href="#" ><i class="la la-cube"></i> <span>My
                 Audits</span></a>
           </li>
           <li class="submenu">
-            <a class="btn-links down" href="#"><i class="la la-user"></i> <span> Logout
-              </span></span></a>
+            <a class="btn-links down" href="logout.jsp"><i class="la la-user"></i> <span> Logout
+              </span></a>
           </li>
 
         </ul>
@@ -144,7 +145,9 @@
       <img class="bg-img" src="assets/images/bg-1.png" alt="" />
       <p class="chart-text">On-Going vs Completed Engagements</p>
       <div class="piechart">
-        
+        <div class="chartBox">
+            <canvas id="myChart"></canvas>
+        </div>
       </div>
   </div>
     </div>
@@ -247,6 +250,81 @@
         </div>
       </div>
     </div>
-   
+   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.0.0/chartjs-plugin-datalabels.min.js" integrity="sha512-R/QOHLpV1Ggq22vfDAWYOaMd5RopHrJNMxi8/lJu8Oihwi4Ho4BRFeiMiCefn9rasajKjnx9/fTQ/xkWnkDACg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+// setup
+const data = {
+labels: ['On-going Engagements', 'Completed Engagements'],
+datasets: [{
+label: 'Tasks',
+data: [1, 1],
+backgroundColor: [
+'rgba(74, 10, 104, 0.9)',
+'rgba(188, 32, 75, 0.9)',
+],
+borderColor: [
+'rgba(74, 10, 104, 0.9)',
+'rgba(188, 32, 75, 0.9)',
+'rgba(255, 255, 255, 0.9)'
+],
+borderWidth: 1
+}]
+};
+
+
+
+// config
+const config = {
+type: 'pie',
+data,
+plugins:[ChartDataLabels],
+options: {
+plugins:{
+
+datalabels:{
+
+fontColor:'#ffffff',
+color:'#ffffff',
+fontStyle:'bolder',
+}
+},
+indexAxis: 'y',
+scales: {
+y: {
+display: true,
+ticks: {
+display: false
+},
+grid: {
+drawOnChartArea: false,
+drawBorder: false
+},
+
+
+
+
+}, x: {
+display: true,
+ticks: {
+display: false
+},
+grid: {
+drawOnChartArea: false,
+drawBorder: false
+}
+}
+}
+}
+};
+
+
+
+// render init block
+const myChart = new Chart(
+document.getElementById('myChart'),
+config
+);
+</script>
   </body>
 </html>

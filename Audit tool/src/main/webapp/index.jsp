@@ -7,7 +7,7 @@
 <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>login</title>
+    <title>IA Accelerator</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -39,7 +39,7 @@
               <img id="logo" src="assets/images/KPMG logo balckbg.png" alt="KPMG" />
             </div>
             <div class="container-1">
-              <h3>Welcome, Login to Continue</h3>
+              <h3>Welcome, login to continue</h3>
               <form>
                 <div class="form-group">
                   <h6 style="font-size:23px!important;">User ID</h6>

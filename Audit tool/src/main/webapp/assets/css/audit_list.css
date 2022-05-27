@@ -19,7 +19,7 @@ table.dataTable {
 
 .chartCard {
   width: 60vw;
-  height: calc(100vh - 40px);
+  height: calc(100vh - 120px);
   /* background: rgba(255, 26, 104, 0.2); */
   display: flex;
   align-items: center;
@@ -27,6 +27,13 @@ table.dataTable {
   margin-left: 44%;
   margin-top: -40%;
   margin-bottom: -14%;
+}
+.chartBox2 {
+  width: 400px;
+  padding: 20px;
+  border-radius: 20px;
+  /* border: solid 3px rgba(255, 26, 104, 1); */
+  /* background: white; */
 }
 
 .chartBox {
@@ -271,7 +278,7 @@ tr:nth-child(odd) {
   left: 0;
   height: 625px;
   width: 1175px;
-  margin-top: 0px;
+  margin-top: -30px;
   object-fit: cover;
 }
 
@@ -376,11 +383,7 @@ td>a {
   width: 250px;
   height: 230px;
   border-radius: 50%;
-
-  /* (A2) SEGMENTS */
-  background: conic-gradient(rgb(0, 145, 218) 0deg 80deg,
-      rgb(188, 32, 75) 80deg 190deg,
-      rgb(0, 51, 141) 190deg 360deg);
+ 
 }
 
 /* (B) DONUT "CONVERSION" */

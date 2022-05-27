@@ -56,7 +56,7 @@ public class RegisterDao {
                 
                 if(i!=0)
                 {
-                	SendEmail se = new SendEmail(email, hash);
+                	SendEmail se = new SendEmail(email, hash,fullname);
                 	se.sendMail();
                 	return "SUCCESS";
                 }

@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>IA Accelerator</title>
     <link rel="stylesheet" href="assets/css/registration.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -102,13 +102,13 @@
     	var filter=/^[a-z0-9]+(?!.*(?:\+{2,}|\-{2,}|\.{2,}))(?:[\.+\-]{0,1}[a-z0-9])*@kpmg\.com$/
     	var filter1=/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[_@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/
     	if (!filter.test(email.value)) {
-    		alert('please provide valid KPMG email id')
+    		alert('Please provide valid KPMG Email Id!')
     	    email.focus;
     		return false;
     	
     	}
     	else if(!filter1.test(Pass.value)){
-    		alert("The password does not meet the password policy requirements\nYour password needs to:\n\u2022Include both lower and upper case\n\u2022Include at least one number and one symbol\n\u2022Be at least 8 characters long");
+    		alert("The password does not meet the password policy requirements\nYour password needs to:\n\u2022Include both lower and upper case\n\u2022Include at least one number and one special character\n\u2022Be at least 8 characters long");
     		Pass.focus;
         	return false;
     	}

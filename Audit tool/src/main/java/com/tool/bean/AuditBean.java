@@ -1,14 +1,17 @@
 package com.tool.bean;
 import java.util.*;
 public class AuditBean {
-	private String Initiative_id;
-	private String Name_of_client;
-	private String Engagement_name;
-	private String MegaProcess;
-	private String Department;
-	private String Process;
-	private String Audit_background;
-	private String Megaprocessid;
+	private String Initiative_id=" ";
+	private String Name_of_client=" ";
+	private String Engagement_name=" ";
+	private String MegaProcess=" ";
+	private String Department=" ";
+	private String Process=" ";
+	private String Audit_background=" ";
+	private String Megaprocessid=" ";
+	private String Categorizationid=" ";
+	private String Processid=" ";
+	private String Objectiveid=" ";
 
 	private Date Audit_start_date;
 	private Date Audit_end_date;
@@ -21,25 +24,50 @@ public class AuditBean {
 	private Date draftreport;
 	private Date exitmeeting;
 	private Date releasefinalreport;
-	private String epname;
-	private String edname;
-	private String emname1;
-	private String emname2;
-	private String etname1;
-	private String etname2;
-	private String etname3;
-	private String etname4;
-	private String epdes;
-	private String eddes;
-	private String emdes1;
-	private String emdes2;
-	private String etdes1;
-	private String etdes2;
-	private String etdes3;
-	private String etdes4;
+	private String epname=" ";
+	private String edname=" ";
+	private String emname1=" ";
+	private String emname2=" ";
+	private String etname1=" ";
+	private String etname2=" ";
+	private String etname3=" ";
+	private String etname4=" ";
+	private String epdes=" ";
+	private String eddes=" ";
+	private String emdes1=" ";
+	private String emdes2=" ";
+	private String etdes1=" ";
+	private String etdes2=" ";
+	private String etdes3=" ";
+	private String etdes4=" ";
+	private String dataid=" ";
 	
 	
 	
+	public String getDataid() {
+		return dataid;
+	}
+	public void setDataid(String dataid) {
+		this.dataid = dataid;
+	}
+	public String getCategorizationid() {
+		return Categorizationid;
+	}
+	public void setCategorizationid(String categorizationid) {
+		Categorizationid = categorizationid;
+	}
+	public String getProcessid() {
+		return Processid;
+	}
+	public void setProcessid(String processid) {
+		Processid = processid;
+	}
+	public String getObjectiveid() {
+		return Objectiveid;
+	}
+	public void setObjectiveid(String objectiveid) {
+		Objectiveid = objectiveid;
+	}
 	public String getMegaprocessid() {
 		return Megaprocessid;
 	}

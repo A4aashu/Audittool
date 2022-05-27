@@ -19,7 +19,7 @@
                                         content="admin, estimates, bootstrap, business, corporate, creative, management, minimal, modern, accounts, invoice, html5, responsive, CRM, Projects">
                                     <meta name="author" content="Dreamguys - Bootstrap Admin Template">
                                     <meta name="robots" content="noindex, nofollow">
-                                    <title>Project Objective</title>
+                                    <title>IA Accelerator</title>
 
                                     <!-- Favicon -->
 
@@ -84,6 +84,12 @@
                                         (session.getAttribute("currentSessionUser")));
                                         AuditBean currentUsers=((AuditBean)
                                             (session.getAttribute("currentSessionUsers")));
+                                        AuditBean currentUsers1=((AuditBean)
+                                                (session.getAttribute("megaprocess")));
+                                        AuditBean currentUsers2=((AuditBean)
+                                                (session.getAttribute("categorization")));
+                                        AuditBean currentUsers3=((AuditBean)
+                                                (session.getAttribute("process")));
                                             
                                         String process="";
                                         String editType = request.getParameter("infooo1");
@@ -204,10 +210,38 @@
 
 
                                                                 </nav>
-                                                                <!-- <div class="recc boxx-shadow2">
-                  <h5>Name of Client</h5>
-                  <h5>Engagement Name</h5>
-                </div> -->
+                                                                               <div class="recc boxx-shadow2">
+                
+                 <footer>
+<span style="margin-left:-30px;">2/4</span>
+        <div id="barInside" class="barInside"></div>
+
+        <div class="barBorder">
+
+          <div class="segment1"></div>
+
+          <div class="segment"></div>
+
+          <div class="segment12"></div>
+
+          <!-- <div class="segment"></div> -->
+
+          <!-- <div class="segment"></div>
+
+          <div class="segment"></div>
+
+          <div class="segment"></div>
+
+          <div class="segment"></div>
+
+          <div class="segment"></div>
+
+          <div class="segment"></div> -->
+
+        </div>
+
+      </footer>
+                </div> 
                                                             </div>
 
                                                         </div>
@@ -233,7 +267,7 @@
                                     										 <button
                                                                                 class="btn btn-default pull-right add-row"
                                                                                 id="next" onclick="xyz()" 
-                                                                                style="font-weight: bold!important;color:#00338D!important; font-size: 21px!important;">Next</button>
+                                                                                style="font-weight: bold!important;color:#00338D!important; font-size: 21px!important;"name="btn_megaprocess">Next</button>
                                                                             <button
                                                                                 class="btn btn-default pull-right add-row"
                                                                                 style="font-weight: bold!important;color:#00338D!important; font-size: 21px!important; border-right: 5px solid #00338D;"
@@ -280,7 +314,7 @@
 
                                                                         
                                                                            
-                                                                            <form action="" method="POST"
+                                                                            <form action="GeneralServlet" method="POST"
                                                                                 id="submit-form">
                                                                                 <input id="megaprocessid" value="<%=megaprocess%>" name="info1" hidden
                                                                                     >
@@ -306,8 +340,7 @@
 
                                                                             <table class="table" id="editableTable2"
                                                                                 data-toggle="table"
-                                                                                data-mobile-responsive="true" style="border-radius: 20px;
-                                        overflow: hidden;">
+                                                                                data-mobile-responsive="true" style="border-radius: 20px;overflow: hidden;">
                                                                                 <thead>
                                                                                     <tr>
                                                                                     <th class="roww"
@@ -346,7 +379,7 @@
                                                                             </table>
 
                                                                            
-<form action="" method="POST" id="submit-form1">
+<form action="GeneralServlet" method="POST" id="submit-form1">
 <input id="departmentid" value="" name="infoo1" hidden >
 </form>
 
@@ -414,7 +447,7 @@
                                                                             </table>
 
                                                                             
-<form action="" method="POST" id="submit-form2">
+<form action="GeneralServlet" method="POST" id="submit-form2">
 <input id="processid" value="<%=process%>" name="infooo1" hidden >
 </form>
 
@@ -478,6 +511,9 @@
                                         overflow: hidden;">
                                                                                 <thead>
                                                                                     <tr>
+                                                                                    <th class="rowww1"
+                                                                                            style=" padding-right: 26px!important;font-weight:bold!important;font-size:20px!important;" hidden>
+                                                                                            ID</th>
                                                                                         <th class="rowww1"
                                                                                             style=" padding-right: 26px!important;font-weight:bold!important;font-size:20px!important;">
                                                                                             Control Objective ID</th>
@@ -486,31 +522,28 @@
                                                                                             Control Objective</th>
                                                                                         <th class="rowww2"
                                                                                             style=" padding-right: 127px!important;font-weight:bold!important;font-size:20px!important;">
-                                                                                            Sub-Process</th>
+                                                                                            Process</th>
                                                                                         <th class="th">
                                                                                         </th>
                                                                                     </tr>
                                                                                 </thead>
                                                                                 <tbody>
-                                                                                    <tr data-id="1">
-
-                                                                                    </tr>
-
-
-
+                                                                                   
                                                                                 </tbody>
                                                                             </table>
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                                <form action="" method="POST">
-                                                                <input id="processid" value="<%=process%>" name="infooo1" hidden>
-                                                                <div class="row px-3"> <button type="submit"
+                                                                <div class="row px-3"> <button 
                                                                         class="btn btn-blue text-center signup_btn"
                                                                         style="background-color: #470A68;margin-top: 10px!important;
-                            margin-left: 920px!important;"formaction="GeneralServlet" name="btn_objective">Save & Proceed</button>
+                            margin-left: 920px!important;" onclick="xyz3()">Save & Proceed</button>
+                            
                                                                  
                                                                 </div>
+                                                                <form action="GeneralServlet" method="POST" id="submit-form3" >
+                                                                <input id="objectiveid" value="" name="infoooo1" hidden>
+                                                                
                                                                 </form>
                                                             </div>
                                                         </div>
@@ -519,7 +552,7 @@
                                                        <div class="modal" id="myModal">
                                                             <div class="modal-dialog">
                                                                 <div class="modal-content"
-                                                                    style="height: 380px!important;">
+                                                                    style="height: 500px!important;width: 720px!important;margin-left: -91px;">
 
                                                                     <!-- Modal Header -->
                                                                     <div class="modal-header">
@@ -541,11 +574,11 @@
                                                                     <!-- Modal body -->
                                                                     <div class="modal-body">
                                                                         <table id="myTable"
-                                                                            style="height:200px!important;width:700px!important;"
+                                                                            style="height:300px!important;width:100%!important;"
                                                                             class="table table-striped table-bordered table-responsive table-hover">
                                                                             <%
                                                                             try{
-                                                                            	String x1=request.getParameter("infooo1");
+                                                                            	String x1=currentUsers3.getProcessid();
                                                                             	int[] a1=Arrays.stream(x1.split(",")).mapToInt(Integer::parseInt).toArray();  
                                                                                 StringBuilder idList1 = new StringBuilder();
                                                                                 		for (int id : a1) {
@@ -570,7 +603,9 @@
                                                                                     <th style="text-align: left;">
                                                                                         Control Objective</th>
                                                                                     <th style="text-align: left;">
-                                                                                        Sub-Process</th>
+                                                                                        Process</th>
+                                                                                        <th style="text-align: left;" hidden>
+                                                                                        Id</th>
                                                                                 </tr>
                                                                             </thead>
                                                                             <tbody id="myTableb">
@@ -589,7 +624,9 @@
                                                                                         <%= resultset1.getString("ControlObjective")%></td>
                                                                                     <td name="email"
                                                                                         style="text-align: left;">
-                                                                                        <%= resultset1.getString("Subprocess")%></td>
+                                                                                        <%= resultset1.getString("Process")%></td>
+                                                                                        <td name="email"
+                                                                                        style="text-align: left;" hidden><%= resultset1.getString("id")%></td>
                                                                                 </tr>
             <% } 
 
@@ -624,7 +661,7 @@
                                                         <div class="modal" id="myModal4">
                                                             <div class="modal-dialog">
                                                                 <div class="modal-content"
-                                                                    style="height: 380px!important;">
+                                                                    style="height: 500px!important;width: 720px!important;margin-left: -91px;">
 
                                                                     <!-- Modal Header -->
                                                                     <div class="modal-header">
@@ -645,11 +682,11 @@
                                                                     <!-- Modal body -->
                                                                     <div class="modal-body">
                                                                         <table id="myTable4"
-                                                                            style="height:200px!important;width:700px!important;"
+                                                                            style="height:300px!important;width:100%!important;"
                                                                             class="table table-striped table-bordered table-responsive table-hover">
                                                                              <%
                                                                             try{
-                                                                            	String x1=request.getParameter("infooo1");
+                                                                            	String x1=currentUsers3.getProcessid();
                                                                             	int[] a1=Arrays.stream(x1.split(",")).mapToInt(Integer::parseInt).toArray();  
                                                                                 StringBuilder idList1 = new StringBuilder();
                                                                                 		for (int id : a1) {
@@ -739,7 +776,7 @@
                                                         <div class="modal" id="myModal3">
                                                             <div class="modal-dialog">
                                                                 <div class="modal-content"
-                                                                    style="height: 380px!important;">
+                                                                    style="height: 500px!important;width: 720px!important;margin-left: -101px;">
 
                                                                     <!-- Modal Header -->
                                                                     <div class="modal-header">
@@ -760,12 +797,12 @@
                                                                     <!-- Modal body -->
                                                                     <div class="modal-body">
                                                                         <table id="myTable3"
-                                                                            style="height:200px!important;width:700px!important;"
+                                                                            style="height:300px!important;width:100%!important;"
                                                                             class="table table-striped table-bordered table-responsive table-hover">
                                                                   
                                                                             <%
                                                                             try{
-                                                                            	String x1=request.getParameter("infoo1");
+                                                                            	String x1=currentUsers2.getCategorizationid();
                                                                             	int[] a1=Arrays.stream(x1.split(",")).mapToInt(Integer::parseInt).toArray();  
                                                                                 StringBuilder idList1 = new StringBuilder();
                                                                                 		for (int id : a1) {
@@ -852,7 +889,7 @@
                                                         <div class="modal" id="myModal2">
                                                             <div class="modal-dialog">
                                                                 <div class="modal-content"
-                                                                    style="height: 380px!important;">
+                                                                    style="height: 500px!important; width: 720px!important; margin-left: -101px;">
 
                                                                     <!-- Modal Header -->
                                                                     <div class="modal-header">
@@ -873,12 +910,12 @@
                                                                     <!-- Modal body -->
                                                                     <div class="modal-body">
                                                                         <table id="myTable2"
-                                                                            style="height:200px!important;width:700px!important;"
+                                                                            style="height:300px!important;width:100%!important;"
                                                                             class="table table-striped table-bordered table-responsive table-hover">
                                                                   
                                                                             <%
     try{
-    	String x=request.getParameter("info1");
+    	String x=currentUsers1.getMegaprocessid();
     	int[] a=Arrays.stream(x.split(",")).mapToInt(Integer::parseInt).toArray();  
         StringBuilder idList = new StringBuilder();
         		for (int id : a) {
@@ -945,7 +982,7 @@
                                                                     </div>
 
                                                                     <!-- Modal footer -->
-                                                                    <div class="modal-footer">
+                                                                    <div class="modal-footer" style="width: 100% !important;">
                                                                         <button type="button" class="btn btn-primary"
                                                                             style="padding: 10px!important;"
                                                                             data-dismiss="modal" id="userEntry"
@@ -964,10 +1001,10 @@
                                                         <div class="modal" id="myModal1">
                                                             <div class="modal-dialog">
                                                                 <div class="modal-content"
-                                                                    style="height: 380px!important;width: 554px !important;">
+                                                                    style="height: 500px!important;width: 520px!important;margin-left: -31px;">
 
                                                                     <!-- Modal Header -->
-                                                                    <div class="modal-header" style="width: 554px !important;">
+                                                                    <div class="modal-header" style="width: 100% !important;">
                                                                         <h4 class="modal-title">Record Lookup</h4>
                                                                         <form>
                                                                             <input type="text" name="q"
@@ -983,9 +1020,9 @@
                                                                     </div>
 
                                                                     <!-- Modal body -->
-                                                                    <div class="modal-body" style="width: 554px !important;">
+                                                                    <div class="modal-body" style="width: 100% !important;">
                                                                         <table id="myTable1"
-                                                                            style="height:200px!important; width:500px !important;"
+                                                                            style="height: 330px!important;"
                                                                             class="table table-striped table-bordered table-responsive table-hover">
                                                                             <sql:setDataSource var = "snapshot" driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver"
                                                                             url = "jdbc:sqlserver://IN-AASHUYADAV;databaseName=Audit_tool"
@@ -995,8 +1032,8 @@
                                                                             </sql:query>
                                                                             <thead>
                                                                                 <tr>
-                                                                                    <th style="text-align: left;">
-                                                                                        Select Control</th>
+                                                                                    <th style="text-align:center;" >
+                                                                                        Select</th>
                                                                                     <th style="text-align: left;">Mega
                                                                                         Process</th>
                                                                                         <th style="text-align: left;display:none">ID</th>
@@ -1005,9 +1042,9 @@
                                                                             <tbody class="tbodymodal" id="myTableb1">
                                                                                 
                                                                                 <c:forEach var = "row" items = "${resultset.rows}">
-                                                                                <tr >
-                                                                                <td name="control" style="style="width: 5%;"><input type="checkbox"
-                                                                                name="check-tab11111" /></td>
+                                                                                <tr  >
+                                                                                <td style="text-align: left;" name="control" ><input type="checkbox"
+                                                                                name="check-tab11111"  /></td>
                                                                                 
                                                                                 <td style="text-align: left;"><c:out value = "${row.MegaProcess}"/></td>
 																					<td style="text-align: left;display:none"><c:out value = "${row.id}"/></td>
@@ -1018,7 +1055,7 @@
                                                                     </div>
 
                                                                     <!-- Modal footer -->
-                                                                    <div class="modal-footer" style="width: 554px !important;">
+                                                                    <div class="modal-footer" style="width: 100% !important;">
                                                                         <button type="button" class="btn btn-primary"
                                                                             style="padding: 10px!important;"
                                                                             data-dismiss="modal" id="userEntry"
@@ -1163,30 +1200,53 @@
                                                                 cell2 = newRow.insertCell(1),
                                                                 cell3 = newRow.insertCell(2);
                                                             cell4 = newRow.insertCell(3);
+                                                            cell5 = newRow.insertCell(4);
 
                                                             // var d = table2.getElementsByTagName("tr")
                                                             newRow.style.borderBottom = '2px solid #00338D';
-                                                            cell1.innerHTML = table1.rows[i + 1].cells[1].innerHTML;
+                                                            cell1.innerHTML = table1.rows[i + 1].cells[4].innerHTML;
                                                             cell1.style.backgroundColor = 'rgba(167, 158, 205, 0.28)';
                                                             cell1.style.fontWeight = '700';
                                                             cell1.style.color = '#00338D';
+
+                                                            cell1.style.display = 'none';
                                                             // cell1.style.borderBottom='thick solid #00338D';
-                                                            cell2.innerHTML = table1.rows[i + 1].cells[2].innerHTML;
+                                                            cell2.innerHTML = table1.rows[i + 1].cells[1].innerHTML;
                                                             cell2.style.backgroundColor = 'rgba(167, 158, 205, 0.28)';
                                                             cell2.style.fontWeight = '700';
                                                             cell2.style.color = '#00338D';
-                                                            cell3.innerHTML = table1.rows[i + 1].cells[3].innerHTML;
+                                                            cell3.innerHTML = table1.rows[i + 1].cells[2].innerHTML;
                                                             cell3.style.backgroundColor = 'rgba(167, 158, 205, 0.28)';
                                                             cell3.style.fontWeight = '700';
                                                             cell3.style.color = '#00338D';
-                                                            cell4.innerHTML = '<button class="btn btn-outline-danger delete_row" style="border-radius: 20px;background-color: #C4C4C4;color: black;border-color: black!important;margin-top: -3px!important;">X</button>';
+                                                            cell4.innerHTML = table1.rows[i + 1].cells[3].innerHTML;
                                                             cell4.style.backgroundColor = 'rgba(167, 158, 205, 0.28)';
                                                             cell4.style.fontWeight = '700';
                                                             cell4.style.color = '#00338D';
+                                                            cell5.innerHTML = '<button class="btn btn-outline-danger delete_row" style="border-radius: 20px;background-color: #C4C4C4;color: black;border-color: black!important;margin-top: -3px!important;">X</button>';
+                                                            cell5.style.backgroundColor = 'rgba(167, 158, 205, 0.28)';
+                                                            cell5.style.fontWeight = '700';
+                                                            cell5.style.color = '#00338D';
                                                            
                                                             console.log(checkboxes.length);
                                                         }
                                                         $('input[type="checkbox"]').prop('checked', false);
+                                                }
+                                                var person3=[];
+
+                                                function showTableData3() {
+
+                                                var xyz=document.getElementById("objectiveid");
+                                                var myTab = document.getElementById('editableTable5');
+                                                for (j = 1; j < myTab.rows.length; j++) {
+                                                var objCells = myTab.rows.item(j).cells;
+                                                person3[j-1]=objCells.item(0).innerHTML;
+                                                }
+                                                xyz.value =person3;
+                                                }
+                                                function xyz3(){
+                                                showTableData3();
+                                                document.getElementById("submit-form3").submit();
                                                 }
 
 

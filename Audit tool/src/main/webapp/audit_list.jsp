@@ -16,7 +16,7 @@
     content="admin, estimates, bootstrap, business, corporate, creative, management, minimal, modern, accounts, invoice, html5, responsive, CRM, Projects" />
   <meta name="author" content="Dreamguys - Bootstrap Admin Template" />
   <meta name="robots" content="noindex, nofollow" />
-  <title>Dashboard - KPMG Admin Portal</title>
+  <title>IA Accelerator</title>
 
   <!-- Favicon -->
 
@@ -55,11 +55,7 @@
   <!-- Main CSS -->
   <link rel="stylesheet" href="assets/css/style.css" />
 
-  <link rel="stylesheet" href="d3.css">
-  <script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
-  <script type="text/javascript" src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
-  <script type="text/javascript" src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
-
+  
   <!-- 
 
     <link rel="stylesheet" href="assets/css/AnalystDashboard.css"> -->
@@ -107,9 +103,9 @@
     <p class="chart-text">List of Review</p>
     <!-- (A) DONUT CHART -->
     <div class="donut">
-      <div class="hole">
-        <h2 class="holeText">List of Reviews</h2>
-      </div>
+      <div class="chartBox2">
+        <canvas id="myChart2"></canvas>
+    </div>
     </div>
   </div>
   <div class="content-left">
@@ -117,14 +113,19 @@
       <img class="blue" src="assets/images/card1.png" alt="" />
       <img class="icon1" src="assets/images/icon1.png" alt="" />
       <h5 class="icon-tag-2">No. of <br />Mega Process</h5>
+      <h1 class="icon-tag-2" style="margin-top:50px;margin-left:78px;font-size: 30px;">0</h1>
+        
 
       <img class="icon2" src="assets/images/icon2.png" alt="" />
       <img class="red" src="assets/images/card2.png" alt="" />
       <h5 class="icon-tag">No. of <br />Departments</h5>
+      <h1 class="icon-tag-2" style="margin-top:50px;margin-left:335px;font-size: 30px;">0</h1>
+     
 
       <img class="darkblue" src="assets/images/card3.png" alt="" />
       <img class="icon3" src="assets/images/icon3.png" alt="" />
       <h5 class="icon-tag-1">No. of Clients</h5>
+      <h5 class="icon-tag-1"  style="font-size: 30px;">0</h5>
     </div>
     <div class="text-left">
       <div class="dropdown1">
@@ -261,8 +262,8 @@
         </div>
       </div>
       <div class="chartCard" style="display: flex;flex-direction:column">
-        <h4 style="font-size:23px;margin-left:80px!important;">No of sub-processes covered under Mega Process</h4>
-        <div class="chartBox">
+        <h4 style="font-size:23px;margin-left:80px!important;margin-top:-16px;">No of sub-processes covered under Mega Process</h4>
+        <div class="chartBox" style="margin-top:-12px;">
           <canvas id="myChart"></canvas>
         </div>
       </div>
@@ -416,6 +417,73 @@
       config
     );
   </script>
+   <script>
+    // setup 
+    const data2 = {
+        labels: ['No of Mega Processes', 'No of Categorization', 'No of Clients'],
+        datasets: [{
+            label: 'Tasks',
+            data: [1, 1, 2],
+            backgroundColor: [
+                'rgba(0, 145, 218, 0.9)',
+                'rgba(188, 32, 75, 0.9)',
+                'rgba(0, 51, 141, 0.9)',
+
+            ],
+            borderColor: [
+                'rgba(0, 145, 218, 0.9)',
+                'rgba(188, 32, 75, 0.9)',
+                'rgba(0, 51, 141, 0.9)',
+
+            ],
+            borderWidth: 1
+        }]
+    };
+
+    // config 
+    const config2 = {
+        type: 'doughnut',
+        data:data2,
+        options: {
+          plugins:{
+            legend:{
+              display:false
+            }
+          },
+            indexAxis: 'y',
+            scales: {
+      y: {
+        display: true,
+        ticks:{
+              display:false
+          },
+        grid:{
+            drawOnChartArea:false,
+            drawBorder:false
+          },
+          
+        
+      },x: {
+        display: true,
+        ticks:{
+              display:false
+          },
+        grid:{
+            drawOnChartArea:false,
+            drawBorder:false
+        }           
+      }
+    }
+        }
+    };
+
+    // render init block
+    const myChart2 = new Chart(
+        document.getElementById('myChart2'),
+        config2
+    );
+</script>
+  
 </body>
 
 </html>

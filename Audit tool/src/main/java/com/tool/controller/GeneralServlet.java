@@ -26,6 +26,7 @@ HttpServletResponse response)
 		try { 
  
 			AuditBean auditbean=new AuditBean();
+			
 			if(request.getParameter("btn_general")!=null)
 			{
 			Date date = new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("audit_start_date"));
@@ -43,10 +44,38 @@ HttpServletResponse response)
 			 response.sendRedirect("Projectobjective.jsp");
 			
 			}
-			if(request.getParameter("btn_objective")!=null)
+			if(request.getParameter("info1")!=null)
 			{
-			 auditbean.setMegaprocessid(request.getParameter("infooo1"));
+			 auditbean.setMegaprocessid(request.getParameter("info1"));
+			 System.out.println(request.getParameter("info1"));
+			 HttpSession session = request.getSession(true);
+			 session.setAttribute("megaprocess",auditbean);
+			 response.sendRedirect("Projectobjective.jsp");
+			
+			}
+			if(request.getParameter("infoo1")!=null)
+			{
+			 auditbean.setCategorizationid(request.getParameter("infoo1"));
+			 System.out.println(request.getParameter("infoo1"));
+			 HttpSession session = request.getSession(true);
+			 session.setAttribute("categorization",auditbean);
+			 response.sendRedirect("Projectobjective.jsp");
+			
+			}
+			if(request.getParameter("infooo1")!=null)
+			{
+			 auditbean.setProcessid(request.getParameter("infooo1"));
 			 System.out.println(request.getParameter("infooo1"));
+			 HttpSession session = request.getSession(true);
+			 session.setAttribute("process",auditbean);
+			 response.sendRedirect("Projectobjective.jsp");
+			
+			}
+			
+			if(request.getParameter("infoooo1")!=null)
+			{
+			 auditbean.setObjectiveid(request.getParameter("infoooo1"));
+			 System.out.println(request.getParameter("infoooo1"));
 			 HttpSession session = request.getSession(true);
 			 session.setAttribute("projectobjective",auditbean);
 			 response.sendRedirect("auditplan.jsp");
@@ -130,11 +159,15 @@ HttpServletResponse response)
 			{    
 				 response.sendRedirect("output.jsp");
 			}
-			else
+			if(request.getParameter("dataid")!=null)
 			{    
-				
-				 response.sendRedirect("ppt.jsp");
+				auditbean.setDataid(request.getParameter("dataid"));
+				 HttpSession session = request.getSession(true);
+				 session.setAttribute("currentSessionUser6",auditbean);
+				 response.sendRedirect("DR1.jsp");
+				 
 			}
+			
 			
 		} 
 		catch (Exception e) { 
