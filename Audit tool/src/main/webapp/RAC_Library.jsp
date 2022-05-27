@@ -92,11 +92,11 @@
               </div>
             </li>
             <li class="submenu">
-              <a class="btn-links btn-inactive" href="#"><i class="la la-dashboard"></i> <span>
+              <a class="btn-links btn-inactive" href="dashboard2.jsp"><i class="la la-dashboard"></i> <span>
                   Home</span></a>
             </li>
             <li class="submenu">
-              <a class="btn-links btn-inactive" href="#"><i class="la la-cube"></i> <span>My
+              <a class="btn-links btn-inactive" href="myAudits.jsp"><i class="la la-cube"></i> <span>My
                   Audits</span></a>
             </li>
             <li class="submenu">
@@ -105,7 +105,7 @@
             </li>
 
             <li class="submenu">
-              <a class="btn-links down" href="#"><i class="la la-user"></i> <span> Logout
+              <a class="btn-links down" href="logout.jsp"><i class="la la-user"></i> <span> Logout
                 </span></span></a>
             </li>
 
