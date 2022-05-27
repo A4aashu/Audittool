@@ -95,24 +95,31 @@ $('#mydate').val(output_s[0]);
               <span class="user-img"><img src="assets/images/profileimage.jpg" alt="">
                 <span class="status online"></span>
               </span>
-              <div class="section">
-                <span style="color:#ffffff;margin-left:85px;font-size: 16px!important;">Yatin Gaind</span>
-                <span style="color:#ffffff;margin-left:85px;">Associate Director</span>
-                <span style="color:#ffffff;margin-left:85px;">GRCS Telecom</span>
-              </div>
+             <div class="section">
+                                                                        <span
+                                                                            style="color:#ffffff;margin-left:85px;font-size: 16px!important;">
+                                                                            <%= currentUser.getFullname()%>
+                                                                        </span>
+                                                                        <span style="color:#ffffff;margin-left:85px;">
+                                                                            <%= currentUser.getDepartment()%>
+                                                                        </span>
+                                                                        <span style="color:#ffffff;margin-left:85px;">
+                                                                            <%= currentUser.getDesignation()%>
+                                                                        </span>
+                                                                    </div>
             </li>
             <li class="submenu">
-              <a class="btn-links btn-inactive" href="#"><i class="la la-dashboard"></i> <span> Home</span></a>
+              <a class="btn-links btn-inactive" href="dashboard2.jsp"><i class="la la-dashboard"></i> <span> Home</span></a>
             </li>
             <li class="submenu">
-              <a class="btn-links btn-inactive" href="#"><i class="la la-cube"></i> <span>My Audits</span></a>
+              <a class="btn-links btn-inactive" href="myAudits.jsp"><i class="la la-cube"></i> <span>My Audits</span></a>
             </li>
             <li class="submenu">
               <a class="btn-links btn-inactive" href="#"><i class="la la-cube"></i> <span>My
                     Contacts</span></a>
           </li>
             <li class="submenu">
-              <a class="btn-links down" href="#"><i class="la la-user"></i> <span> Logout
+              <a class="btn-links down" href="logout.jsp"><i class="la la-user"></i> <span> Logout
                 </span></span></a>
             </li>
 

@@ -48,7 +48,7 @@
 
     <link rel="stylesheet" href="assets/css/AnalystDashboard.css">
     <link rel="stylesheet" href="assets/css/Create_New_Audit.css">
-    <script>
+<script>
 
 $("#audit_end_date").change(function () {
 var startDate = document.getElementById("audit_start_date").value;
