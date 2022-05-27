@@ -45,6 +45,7 @@
                                 <h6 class="mb-0 text-lg labelstyle ">Designation</h6>
                             </label>
                              <select class="form-control input_designation font-weight-bold" name="input_designation">
+                             <option value="0">Choose Designation</option>
                                 <option value="Partner">Partner</option>
                                 <option value="Associate Partner">Associate Partner</option>
                                 <option value="Director">Director</option>
@@ -59,6 +60,7 @@
                             </label>
                             
                             <select class="form-control input_location font-weight-bold ms-Dropdown-select" name="input_location">
+                             <option value="0">Choose Location</option>
                                 <option value="Ahmedabad">Ahmedabad</option>
                                 <option value="Bengaluru">Bengaluru</option>
                                 <option value="Chandigarh">Chandigarh</option>
@@ -69,8 +71,6 @@
                                 <option value="Navi_Mumbai">Navi Mumbai</option>
                                 <option value="Noida">Noida</option>
                                 <option value="Pune">Pune</option>
-                                <option value="Vadodara">Vadodara</option>
-                                <option value="Vijayawada">Vijayawada</option>
                               </select>
                         </div>
                         <div class="row px-3"> <label class="mb-1">

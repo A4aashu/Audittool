@@ -228,6 +228,7 @@ $('#mydate').val(output_s[0]);
                             <td><%= resultset1.getString("data1")%></td>
                             <td><%= resultset1.getString("Process")%></td>
                             <td><select name="Period" id="Request-Type" class="form-control">
+                            <option value="0">Choose Period</option>
                                 <option value="Monthly">Monthly</option>
                                 <option value="Quarterly">Quarterly</option>
                                 <option value="Annually">Annually</option>
@@ -235,10 +236,12 @@ $('#mydate').val(output_s[0]);
                               </select>
                             </td>
                             <td><select name="Request-Type" id="Request-Type" class="form-control">
+                            <option value="0">Request Type</option>
                                 <option value="IDR">IDR</option>
                                 <option value="ADR">ADR</option>
                               </select></td>
                               <td><select name="Status" id="Status" class="form-control">
+                              <option value="0">Status</option>
                                 <option value="Received">Received</option>
                                 <option value="Pending">Pending</option>
                                 <option value="Partially Received">Partially Received</option>

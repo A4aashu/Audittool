@@ -393,8 +393,8 @@
               text: 'Mega-Process',
               color: '#00338D',
               font: {
-                family: 'Times',
-                size: 25,
+                
+                size: 20,
                 style: 'normal',
                 lineHeight: 1.2
               },

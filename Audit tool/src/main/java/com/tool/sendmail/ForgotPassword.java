@@ -48,7 +48,7 @@ public class ForgotPassword {
         	message.addRecipient(Message.RecipientType.TO, new InternetAddress(userEmail));
         	message.setSubject("Password Reset");
         	String link="http://localhost:8080/Audit_tool/changepassword.jsp?key1="+userEmail+"&key2="+token;
-            message.setContent("<p>Dear User,<br><br>Reset password using the below link and follow the on screen instruction.<br>This mail can be ignored in case you didn't request a password reset,this link is only available for short time.</p>Password URL:<a href="+link+">Reset your Password</a><br><br>"
+            message.setContent("<p>Dear User,<br><br>Reset password using the below link and follow the on screen instruction.<br>This mail can be ignored in case you didn't request a password reset, this link is only available for short time.</p>Password URL:<a href="+link+">Reset your Password</a><br><br>"
             		+ "<p>Regards<br>IA Accelerator team<br><br>Disclaimer: This is a system generated mail. Please do not reply.","text/html");
             Transport.send(message);
         	

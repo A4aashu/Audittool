@@ -28,8 +28,9 @@
 <% 
 String x=currentUser6.getObjectiveid();
 System.out.println(x);
-String delimiter = "\n\u2022";
+String delimiter = "\n\u2022 ";
 String result = "", prefix = "";
+Integer y=1;
 try{
 	int[] a=Arrays.stream(x.split(",")).mapToInt(Integer::parseInt).toArray();  
     StringBuilder idList = new StringBuilder();
@@ -47,7 +48,7 @@ try{
 while(resultset1.next()){ 
 	prefix = delimiter;
 	 result += prefix + resultset1.getString("ControlObjective");
-     										
+     		y++;								
              } 
 
         }
@@ -82,7 +83,8 @@ String engname=currentUsers.getEngagement_name();
 String reviewperiod = dateFormat.format(datestart)+" to "+dateFormat.format(dateend);
 String monthomd=dateFormat.format(datestart);
 String auditback=currentUsers.getAudit_background();
-String int1="1";
+String int1=Integer.toString(y);
+System.out.println(int1);
 String obj=result;
 String auditannounce1=dateFormat1.format(auditannounce);
 String irauditscope1=dateFormat1.format(irauditscope);
