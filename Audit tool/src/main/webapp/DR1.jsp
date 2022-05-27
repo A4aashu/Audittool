@@ -7,6 +7,7 @@
                     <%@ page language="java" import="com.tool.bean.LoginBean" %>
                         <%@ page language="java" import="com.tool.bean.AuditBean" %>
                             <%@ page language="java" import="com.tool.config.*" %>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,7 +19,7 @@
     content="admin, estimates, bootstrap, business, corporate, creative, management, minimal, modern, accounts, invoice, html5, responsive, CRM, Projects">
   <meta name="author" content="Dreamguys - Bootstrap Admin Template">
   <meta name="robots" content="noindex, nofollow">
-  <title>IA Accelerator</title>
+  <title>Dashboard - KPMG Admin Portal</title>
 
   <!-- Favicon -->
 
@@ -45,21 +46,38 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
   <script type="text/javascript">
+ 
+  $(document).ready(function(){
+$("#myTable").on('change','.request_date',function(){
+var currentRow=$(this).closest("tr");
 
-
-
-function date_chng(){
-first_date = new Date($('#request_date').val());
+first_date = new Date(currentRow.find('.request_date').val());
 output_f=new Date(first_date.setDate(first_date.getDate()+2)).toISOString().split('.');
 output_s = output_f[0].split('T');
-$('#mydate').val(output_s[0]);
-}
+currentRow.find('.mydate').val(output_s[0]);
+});
+$("#myTable").on('change','.end_date',function(){
+	var currentRow=$(this).closest("tr");
+
+	start_date = new Date(currentRow.find('.mydate').val());
+	end_date = new Date(currentRow.find('.end_date').val());
+	var time_difference = end_date.getTime() - start_date.getTime();
+	var days_difference = time_difference / (1000*3600*24);
+	currentRow.find('.days').val(days_difference);
+	});
 
 
 
 
-</script>
-  <!-- Fontawesome CSS -->
+
+
+  });
+
+
+
+
+</script>  
+<!-- Fontawesome CSS -->
   <link rel="stylesheet" href="assets/css/font-awesome.min.css">
 
   <!-- Lineawesome CSS -->
@@ -70,8 +88,7 @@ $('#mydate').val(output_s[0]);
 
   <!-- Main CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
-  <!-- 
-    <link rel="stylesheet" href="assets/css/AnalystDashboard.css"> -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <link rel="stylesheet" href="assets/css/DR1.css">
  
 </head>
@@ -95,18 +112,11 @@ $('#mydate').val(output_s[0]);
               <span class="user-img"><img src="assets/images/profileimage.jpg" alt="">
                 <span class="status online"></span>
               </span>
-             <div class="section">
-                                                                        <span
-                                                                            style="color:#ffffff;margin-left:85px;font-size: 16px!important;">
-                                                                            <%= currentUser.getFullname()%>
-                                                                        </span>
-                                                                        <span style="color:#ffffff;margin-left:85px;">
-                                                                            <%= currentUser.getDepartment()%>
-                                                                        </span>
-                                                                        <span style="color:#ffffff;margin-left:85px;">
-                                                                            <%= currentUser.getDesignation()%>
-                                                                        </span>
-                                                                    </div>
+              <div class="section">
+                <span style="color:#ffffff;margin-left:85px;font-size: 16px!important;">Yatin Gaind</span>
+                <span style="color:#ffffff;margin-left:85px;">Associate Director</span>
+                <span style="color:#ffffff;margin-left:85px;">GRCS Telecom</span>
+              </div>
             </li>
             <li class="submenu">
               <a class="btn-links btn-inactive" href="dashboard2.jsp"><i class="la la-dashboard"></i> <span> Home</span></a>
@@ -115,11 +125,11 @@ $('#mydate').val(output_s[0]);
               <a class="btn-links btn-inactive" href="myAudits.jsp"><i class="la la-cube"></i> <span>My Audits</span></a>
             </li>
             <li class="submenu">
-              <a class="btn-links btn-inactive" href="#"><i class="la la-cube"></i> <span>My
+              <a class="btn-links btn-inactive" href="logout.jsp"><i class="la la-cube"></i> <span>My
                     Contacts</span></a>
           </li>
             <li class="submenu">
-              <a class="btn-links down" href="logout.jsp"><i class="la la-user"></i> <span> Logout
+              <a class="btn-links down" href="#"><i class="la la-user"></i> <span> Logout
                 </span></span></a>
             </li>
 
@@ -171,18 +181,18 @@ $('#mydate').val(output_s[0]);
       </div>
      
                 <div class="exportbtn">
-                  <img src="assets/images/iconpicc.png">
+                  <!-- <img src="assets/images/iconpicc.png"> -->
                   <button type="submit"
                   class="btn btn-blue text-center signup_btn"
                   style="background-color: #470A68;
-                  margin-left: 890px!important;z-index: 111; margin-top: -50px !important;">Export List</button>
+                  margin-left: 890px!important;z-index: 111; margin-top: 10px !important;"> <i class="fa fa-list-alt" style="font-size:20px;padding-top:5px;" aria-hidden="true"></i>&nbsp;&nbsp;Export List</button>
                 </div>
                
-                <h4>Data Request List</h4>
+                <h3 style="color: #00338D;font-weight: bold;margin-top: -42px;">Data Request List</h3>
                
-                <div class="Mytable css-serial" margin>
-                    <table  class="table " data-toggle="table" >
-                         <%
+                <div class="Mytable" style="height:400px!important">
+                    <table  class="table css-serial margin " id="myTable"  data-toggle="table" style="margin-right:0px!important;margin-bottom:0px!important" >
+ <%
                                                                             try{
                                                                             	String x1=currentUsers.getDataid();
                                                                             	int[] a1=Arrays.stream(x1.split(",")).mapToInt(Integer::parseInt).toArray();  
@@ -200,11 +210,10 @@ $('#mydate').val(output_s[0]);
 
                                                                                 ResultSet resultset1 =psmt1.executeQuery() ;
                                                                         %>
-                                                                           <thead>
+                        <thead>
                           
                               
-                          <tr style=" border-color: white !important;">
-                            <th style=" border-color: none !important;">Sl.no.</th>
+                          <tr><th>Sl.no.</th>
                         <th>Data items</th>
                         <th>Process</th>
                         <th>Period</th>
@@ -213,19 +222,18 @@ $('#mydate').val(output_s[0]);
                         <th>Date Of Request</th>
                         <th>Expected date</th>
                         <th>Actual Date</th>
-                        <th>Delay</th>
-                  
-                  
-                          </tr>
+                        <th>Delay</th></tr>
                         </thead>
-                                                                            <tbody style=" border-color: none!important;">
-                                                                                
-                                                                                <%  while(resultset1.next()){ %>
-       																			
-                                                                                     <tr style=" border-color: white !important;">
-                            
+                        <tbody style=" border-color: none!important;">
+ <%  while(resultset1.next()){ %>
+                          
+                            <colgroup>
+                                <col span="4" style="background-color:#E5E5E5!important">
+                                
+                              </colgroup>
+                              <tr>
                               <td></td>
-                            <td><%= resultset1.getString("data1")%></td>
+                             <td><%= resultset1.getString("data1")%></td>
                             <td><%= resultset1.getString("Process")%></td>
                             <td><select name="Period" id="Request-Type" class="form-control">
                             <option value="0">Choose Period</option>
@@ -247,14 +255,12 @@ $('#mydate').val(output_s[0]);
                                 <option value="Partially Received">Partially Received</option>
                                 <option value="Not Applicable">Not Applicable</option>
                               </select></td>
-                              <td><input type="date" style="background-color: white !important ;" id="request_date" onchange="date_chng()" class="form-control"></td>
-                              <td><input type="date" style="background-color: white !important ;"  id="mydate" class="form-control" ></td>
-                            <td><input type="date" style="background-color: white !important ;" id="end_date"  onchange="getDays()"  class="form-control"></td>
-                            <td><input type="text" id="days" style="background-color: white !important ;" class="form-control"></td>
+                              <td><input type="date" style="background-color: white !important ;" id="request_date" class="request_date"></td>
+                              <td><input type="date" style="background-color: white !important ;"  id="mydate" class="mydate" readonly ></td>
+                            <td><input type="date" style="background-color: white !important ;" id="end_date"   class="end_date"></td>
+                            <td><input type="text" id="days" style="background-color: white !important ;" class="days" readonly></td>
                             </tr>
-                            
-                            
-                                                                              
+                                                                   
             <% } 
 
         }
@@ -263,52 +269,13 @@ $('#mydate').val(output_s[0]);
              out.println("No Data");
         }
 %>
-                        
-                         
-                        </tbody>
+
+
+</tbody>
                          
                           
                         
                       </table>
-                      
-                      
-                      
-                      
-                      
-                      
-                      
-                      
-                      
-                      
-                      
-                      
-                      
-                      
-                      
-                      
-                      
-                      
-                     
-                      
-                      
-                      
-                      
-                      
-                      
-                      
-                      
-                      
-                      
-                      
-                      
-                      
-                      
-                      
-                      
-                      
-                      
-                      
-                      
                 </div>
                
             
@@ -318,7 +285,7 @@ $('#mydate').val(output_s[0]);
             <button type="submit"
             class="btn btn-blue text-center signup_btn"
             style="background-color: #470A68;
-            margin-left: 900px!important;z-index: 111; margin-top: 180px !important;">Save & Submit</button>
+            margin-left: 900px!important;z-index: 111; margin-top:0px !important;">Save & Submit</button>
           </div>
   
   </div>
@@ -414,16 +381,57 @@ DateDiff.inDays
 </script> -->
 <script>
 
-
- function getDays(){
+  //formula for 
+// function getDays(){
  
-   var start_date = new Date(document.getElementById('mydate').value);
-   var end_date = new Date(document.getElementById('end_date').value);
-   var time_difference = end_date.getTime() - start_date.getTime();
-   var days_difference = time_difference / (1000*3600*24);
+//   var start_date = new Date(document.getElementById('start_date').value);
+//   var end_date = new Date(document.getElementById('end_date').value);
+//   //Here we will use getTime() function to get the time difference
+//   var time_difference = end_date.getTime() - start_date.getTime();
+//   //Here we will divide the above time difference by the no of miliseconds in a day
+//   var days_difference = time_difference / (1000*3600*24);
+//   //alert(days);
+//   document.getElementById('days').value = days_difference;
+// }
 
-   document.getElementById('days').value = days_difference;
- }
+ 
+
+
+</script>
+<script type="text/javascript">
+
+function date_chng(){
+first_date = new Date($('.request_date').val().first());
+output_f=new Date(first_date.setDate(first_date.getDate()+2)).toISOString().split('.');
+output_s = output_f[0].split('T');
+$('.mydate').val(output_s[0]).first();
+}
+$('.request_date').onchange(function(){
+
+    $(this).closest('tr').next('.mydate').onchange(function(){
+    	first_date = new Date($(this).closest('td').prev('.request_date').val());
+    	output_f=new Date(first_date.setDate(first_date.getDate()+2)).toISOString().split('.');
+    	output_s = output_f[0].split('T');
+    	$(this).closest('td').next('.mydate').val(output_s[0]);
+    })
+    
+});
+
+$(".request_date").onchange(function() {
+	  // row instance to use `find()` for the other input classes
+	  var $row = $(this).closest('tr');
+
+	  var date = new Date($row.find(".request_date").val()),
+	    
+
+	  if (!isNaN(date.getTime())) {
+	    date.setDate(date.getDate() + 2);
+
+	    $row.find(".mydate").val(date.toInputFormat());
+	  } else {
+	    alert("Invalid Date");
+	  }
+	});
 
 
 

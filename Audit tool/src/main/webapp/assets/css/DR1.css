@@ -8,8 +8,6 @@
   height: 40% !important;
   overflow-y: scroll !important;
   border-color: none !important;
-
-  ;
 }
 table{
 font-family: arial, sans-serif;
@@ -17,75 +15,75 @@ font-family: arial, sans-serif;
 border-color: none !important;
 width: 100% !important;
 height: 10% !important;
-margin-right: 100px;
-
 }
 .table>:not(:first-child) {
 border-top: 0px none !important;
 margin-top: 10px !important;
 }
-tr{
-height: 9px !important;
+
+tr:nth-child(even) {
+  height: 1px !important;
 border-color: none !important;
+background-color: white!important;
 }
+tr:nth-child(odd){
+height: 1px !important;
+border-color: none !important;
+background-color: lightgray;
+}
+
 td {
-height: 9px !important;
+height: 1px !important;
 text-align: left;
-width: 120px !important;
+width: 280px !important;
 border-color: none !important;
 
 }
+
 
 
 tr:nth-child(even) input{
 background-color: #E5E5E5 !important;
 height: 30px ;
-width: 130px !important;
+width: 180px !important;
 }
 tr:nth-child(odd) input {
 background-color: #E5E5E5 !important;
 height: 30px ;
-width: 130px !important;
+width: 180px !important;
 }
 tr:nth-child(even) colgroup {
 background-color: #E5E5E5;
 height: 30px ;
-width: 130px !important;
+width: 180px !important;
 }
 tr:nth-child(odd) colgroup {
 background-color: #E5E5E5;
 height: 30px ;
-width: 130px !important;
+width: 180px !important;
 }
 tr:nth-child(even) select{
 background-color: white;
 height: 30px ;
-width: 130px !important;
+width: 180px !important;
 }
 tr:nth-child(odd) select {
 background-color: white;
 height: 33px ;
-width: 130px !important;
+width: 180px !important;
 }
 
 tr:nth-child(even) se{
 background-color: white;
 height: 30px ;
-width: 130px !important;
+width: 180px !important;
 }
 tr:nth-child(odd) select {
 background-color: white;
 height: 33px ;
-width: 130px !important;
+width: 180px !important;
 }
-/* tr:nth-child(even) {
-background-color: #E5E5E5;
 
-}
-tr:nth-child(odd) {
-background-color: #E5E5E5;
-
-} */
 
 
 th{
@@ -103,11 +101,14 @@ h4{
   
 padding-left: 1px !important;
 }
-
+h3{
+	color: #00338D;
+	font-weight: bold;
+}
 input {
  height: 30px;
- width: 50px;
-border: none !important;
+ width: 180px!important;
+
 background-color: white !important;
 }
 .exportbtn{
@@ -164,19 +165,7 @@ body {
 }
 
 
-.card0 {
-  box-shadow: 0px 4px 8px 0px #757575;
-  border-radius: 0px;
-}
 
-.recc {
-  margin-left: 84% !important;
-  margin-top: -96px;
-  padding: 1.5% !important;
-  background-color: #ccc7e3;
-  border-top-left-radius: 31px !important;
-  border-bottom-left-radius: 31px !important;
-}
 
 .signup_btn {
   border-radius: 60px !important;
@@ -189,10 +178,6 @@ body {
   margin-top: 75px !important;
 }
 
-
-.card2 {
-  margin: 0px 40px;
-}
 
 .logo {
   width: 200px;

@@ -148,14 +148,14 @@
                                 </div>
                             </div>
                             </a>
-                            <a href="#">
+                            <a href="Risk_Repository.jsp">
                             <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
                                 <div class="card dash-widget" style="background: #005EB8;">
                                     <div class="card-body card-body-4">
                                         <img src="./assets/images/Picture4.png" alt="" width="70px" height="70px">
                                     </div>
                                     <div class="text px-3 py-2">
-                                        <a href="">
+                                        <a href="Risk_Repository.jsp">
                                             <h3>RAC Repository</h3>
                                         </a>
                                         <h5>Access to a KPMG repository of risks and controls.</h5>
