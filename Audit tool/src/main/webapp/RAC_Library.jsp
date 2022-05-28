@@ -79,7 +79,7 @@
                 <span class="status online"></span>
               </span>
               <div class="section">
-                 <span
+                  <span
                                                                             style="color:#ffffff;margin-left:85px;font-size: 16px!important;">
                                                                             <%= currentUser.getFullname()%>
                                                                         </span>
@@ -109,6 +109,7 @@
                 </span></span></a>
             </li>
 
+
           </ul>
         </div>
       </div>
@@ -133,7 +134,8 @@
                 <li style="width: 122px!important;"><a href="#"
                     class="hover-underline-animation nav-linkk nav2 " style="border-right: 1px solid black;width: 135px;
                     margin-right: 15px;
-                    padding-right: 1px;">RAC Dashboard</a>
+                    padding-right: 1px;
+                                        ">RAC Dashboard</a>
                 </li>
                 <li style="width: 122px;margin-left: -5px;"><a href="#" class="nav-linkk nav-2 boxx-shadow"
                     style="width: 97px;padding-right: 5px;">RAC Library</a></li>

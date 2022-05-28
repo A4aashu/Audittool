@@ -125,8 +125,8 @@
                             <ul>
                                 <li><button type="button" class="boxx-shadow2 nav1" style="width: 151px!important;">Audit Background</button></li>
                                 <li><button type="button" class="boxx-shadow2 nav-1" style="width: 141px!important;">Data Request</button></li>
-                                <li><button type="button" class="boxx-shadow2 nav1" style="width:152px;">Risk and
-                                        Controls</button></li>
+                                <li><a type="button" href="Risk_And_Controls.jsp" class="boxx-shadow2 nav1" style="width:152px;color: #00338D!important;">Risk and
+                                        Controls</a></li>
                                 <li><button type="button" class="boxx-shadow2 nav1">Meeting Tracker</button></li>
 
                             </ul>

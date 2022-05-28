@@ -155,7 +155,8 @@ $("#myTable").on('change','.end_date',function(){
               <ul>
                 <li><button type="button" class="boxx-shadow2 nav1">Audit Background</button></li>
                 <li><button type="button" class="boxx-shadow2 nav-1" style="width: 130px;">Data Request</button></li>
-                <li><button type="button" class="boxx-shadow2 nav1">Risk and Controls</button></li>
+                <li><a type="button" href="Risk_And_Controls.jsp" class="boxx-shadow2 nav1" style="width:152px;color: #00338D!important;">Risk and
+                                        Controls</a></li>
                 <li><button type="button" class="boxx-shadow2 nav1">Meeting Tracker</button></li>
 
               </ul>
@@ -285,7 +286,7 @@ $("#myTable").on('change','.end_date',function(){
             <button type="submit"
             class="btn btn-blue text-center signup_btn"
             style="background-color: #470A68;
-            margin-left: 900px!important;z-index: 111; margin-top:0px !important;">Save & Submit</button>
+            margin-left: 900px!important;z-index: 111; margin-top:10px !important;">Save & Submit</button>
           </div>
   
   </div>

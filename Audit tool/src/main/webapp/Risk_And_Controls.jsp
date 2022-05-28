@@ -1,3 +1,12 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+    <%@ page import="java.sql.*" %>
+        <%@ page import="java.io.*" %>
+        <%@ page import="java.util.*" %>
+            <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+                <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
+                    <%@ page language="java" import="com.tool.bean.LoginBean" %>
+                        <%@ page language="java" import="com.tool.bean.AuditBean" %>
+                            <%@ page language="java" import="com.tool.config.*" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -42,7 +51,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <!-- 
     <link rel="stylesheet" href="assets/css/AnalystDashboard.css"> -->
-    <link rel="stylesheet" href="./Risk_And_Controls.css">
+    <link rel="stylesheet" href="assets/css/Risk_And_Controls.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
@@ -58,6 +67,7 @@
 </head>
 
 <body>
+<%LoginBean currentUser=((LoginBean)(session.getAttribute("currentSessionUser")));%>
     <div class="main-wrapper">
 
 
@@ -67,30 +77,39 @@
                 <div id="sidebar-menu" class="sidebar-menu">
                     <ul>
                         <li class="nav-item main-drop">
-                            <span class="user-img"><img src="assets/img/profileimage.jpg" alt="">
+                            <span class="user-img"><img src="assets/images/profileimage.jpg" alt="">
                                 <span class="status online"></span>
                             </span>
                             <div class="section">
-                                <span style="color:#ffffff;margin-left:85px;font-size: 16px!important;">Yatin
-                                    Gaind</span>
-                                <span style="color:#ffffff;margin-left:85px;">Associate Director</span>
-                                <span style="color:#ffffff;margin-left:85px;">GRCS Telecom</span>
+                                   <span
+                                                                            style="color:#ffffff;margin-left:85px;font-size: 16px!important;">
+                                                                            <%= currentUser.getFullname()%>
+                                                                        </span>
+                                                                        <span style="color:#ffffff;margin-left:85px;">
+                                                                            <%= currentUser.getDepartment()%>
+                                                                        </span>
+                                                                        <span style="color:#ffffff;margin-left:85px;">
+                                                                            <%= currentUser.getDesignation()%>
+                                                                        </span>
                             </div>
                         </li>
                         <li class="submenu">
-                            <a class="btn-links btn-inactive" href="#"><i class="la la-dashboard"></i> <span>
-                                    Home</span></a>
-                        </li>
-                        <li class="submenu">
-                            <a class="btn-links btn-inactive" href="#"><i class="la la-cube"></i> <span>My
-                                    Audits</span></a>
-                        </li>
+              <a class="btn-links btn-inactive" href="dashboard2.jsp"><i class="la la-dashboard"></i> <span>
+                  Home</span></a>
+            </li>
+            <li class="submenu">
+              <a class="btn-links btn-inactive" href="myAudits.jsp"><i class="la la-cube"></i> <span>My
+                  Audits</span></a>
+            </li>
+            <li class="submenu">
+              <a class="btn-links btn-inactive" href="#"><i class="la la-cube"></i> <span>My
+                  Contacts</span></a>
+            </li>
 
-                        <li class="submenu">
-                            <a class="btn-links down" href="#"><i class="la la-user"></i> <span> Logout
-                                </span></span></a>
-                        </li>
-
+            <li class="submenu">
+              <a class="btn-links down" href="logout.jsp"><i class="la la-user"></i> <span> Logout
+                </span></a>
+            </li>
                     </ul>
                 </div>
             </div>
@@ -109,7 +128,7 @@
                 <div class="topnavbar">
                     <div class="compactnavbar">
 
-                        <nav class="Nav2 navbar-fixed-top">
+                        <nav class="Nav2 navbar-fixed-top" style="background-color:#E1ECF0!important;height: 110px;">
                             <ul>
                                 <li><button type="button" class="boxx-shadow2 nav1" style="width: 151px;">Audit Background</button></li>
                                 <li><button type="button" class="boxx-shadow2 nav1">Data Request</button></li>
@@ -133,93 +152,13 @@
 
             </div>
             
-            <div class="container-fluid" style="margin-top: 5%;margin-left: -3%;">
+            <div class="container-fluid" style="margin-top: 10%;margin-left: -3%;">
                 <div class="card border-0">
                     <div class="row d-flex">
                         <div class="col-lg-12" style="background-color: #ffffff; color: #00338D!important;">
                             <div class="row Lowerblock">
                                 <div class="col-md-12">
-                                    <div class="row upperblock">
-                                        <div class="col-md-12">
-                                            <h5 style="color:#00338D!important;margin-bottom: -22px;
-                                            margin-top: 7px;">Sub-Process</h5>
-                                            <button class="btn btn-default pull-right"
-                                                style="font-weight: bold!important;color:#00338D!important; font-size: 21px!important;"
-                                                data-toggle="modal" data-target="#myModal4">Lookup</button>
-                                            <button class="btn btn-default pull-right add_row" id="add_row4"
-                                                style="font-weight: bold!important;color:#00338D!important; font-size: 21px!important;border-right: 5px solid #00338D;">Add
-                                                Row</button>
-                                        </div>
-                                    </div>
-
-                                    <table class="table " id="editableTable4" data-toggle="table"
-                                        data-mobile-responsive="true" style="border-radius: 20px;
-                                        overflow: hidden;">
-                                        <thead>
-                                            <tr>
-                                                <th class="roww"
-                                                    style=" padding-right: 284px!important;font-weight:bold!important;font-size:20px!important;">
-                                                    Sub-Process</th>
-                                                <th class="roww2"
-                                                    style=" padding-right: 110px!important;font-weight:bold!important;font-size:20px!important;padding-left: 8%;">
-                                                    Process</th>
-                                                <th class="th">
-                                                </th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr data-id="1">
-
-                                                <td data-field="category" class="td_roww"
-                                                    style="font-weight: bold;color:#00338D;">
-                                                    Sub-Process 1
-                                                </td>
-                                                <td data-field="mega" class="td_roww2"
-                                                    style="font-weight: bold;color:#00338D;padding-left: 8.5%;">
-                                                    Process 1
-                                                </td>
-                                                <td
-                                                    style="background-color:rgba(167, 158, 205, 0.28);font-weight:700;color:#00338D">
-                                                    <button class="btn btn-outline-danger delete_row"
-                                                        style="border-radius: 20px;background-color: #C4C4C4;color: black;border-color: black!important;float:right!important;margin-left:86%;margin-top: -3px!important;">X</button>
-                                                </td>
-                                            </tr>
-                                            <tr data-id="2">
-
-                                                <td data-field="category" class="td_roww"
-                                                    style="font-weight: bold;color:#00338D;">
-                                                    Sub-Process 2
-                                                </td>
-                                                <td data-field="mega" class="td_roww2"
-                                                    style="font-weight: bold;color:#00338D;padding-left: 8.5%;">
-                                                    Process 2
-                                                </td>
-                                                <td
-                                                    style="background-color:rgba(167, 158, 205, 0.28);font-weight:700;color:#00338D">
-                                                    <button class="btn btn-outline-danger delete_row"
-                                                        style="border-radius: 20px;background-color: #C4C4C4;color: black;border-color: black!important;float:right!important;margin-left:86%;margin-top: -3px!important;">X</button>
-                                                </td>
-                                            </tr>
-                                            <tr data-id="3">
-                                                <td data-field="category" class="td_roww"
-                                                    style="font-weight: bold;color:#00338D;">
-                                                    Sub-Process 3
-                                                </td>
-                                                <td data-field="mega" class="td_roww2"
-                                                    style="font-weight: bold;color:#00338D;padding-left: 8.5%;">
-                                                    Process 3
-                                                </td>
-                                                <td
-                                                    style="background-color:rgba(167, 158, 205, 0.28);font-weight:700;color:#00338D">
-                                                    <button class="btn btn-outline-danger delete_row"
-                                                        style="border-radius: 20px;background-color: #C4C4C4;color: black;border-color: black!important;float:right!important;margin-left:86%;margin-top: -3px!important;">X</button>
-                                                </td>
-                                            </tr>
-
-
-
-                                        </tbody>
-                                    </table>
+                                   
 
 
                                     <div class="row upperblock">
