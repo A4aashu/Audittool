@@ -23,7 +23,7 @@ public class ForgotPassword {
 	public void sendMail()
 	{
 		String email = "kdsapm@gmail.com"; // sender email
-		String password = "Mtsasdk@211"; // sender password
+		String password = "kpmgKPMG@211"; // sender password
 		
 		Properties properties = new Properties();
 		

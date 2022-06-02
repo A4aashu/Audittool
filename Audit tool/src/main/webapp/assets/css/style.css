@@ -270,7 +270,7 @@ select.form-control[multiple], select.form-control[size] {
 	2. Table
 -----------------------*/
 
-.table-responsive {
+/* .table-responsive {
 	white-space: nowrap;
 	width: 100%;
 }
@@ -342,7 +342,7 @@ table.dataTable thead > tr > td.sorting {
 }
 .table.custom-table > tbody > tr > td, .table.custom-table > tbody > tr > th, .table.custom-table > tfoot > tr > td, .table.custom-table > tfoot > tr > th, .table.custom-table > thead > tr > td, .table.custom-table > thead > tr > th {
 	padding: 10px 20px !important;
-}
+} */
 /*-----------------
 	3. Helper Class
 -----------------------*/

@@ -64,8 +64,9 @@
             var data = table.row( this ).data();
             var id=data[0];
             var processid=data[1];
+            var objectiveid=data[2];
            
-            window.location.href = "<%=request.getContextPath()%>/Data_Request.jsp?&id="+id+ "&processid=" + processid;
+            window.location.href = "<%=request.getContextPath()%>/Data_Request.jsp?&id="+id+ "&processid=" + processid+ "&objid=" + objectiveid;
             
         } );
        
@@ -196,6 +197,7 @@
                   <tr>
                     <th>Audit ID</th>
                     <th hidden>Processid</th>
+                    <th hidden>objectiveid</th>
                     <th>Client Name</th>
                     <th>Review Name</th>
                     <th>Start Date</th>
@@ -214,6 +216,9 @@
                                                                                         <td 
                                                                                         style="text-align: left;"hidden>
                                                                                         <%= resultset1.getString("processid")%></td>
+                                                                                         <td 
+                                                                                        style="text-align: left;"hidden>
+                                                                                        <%= resultset1.getString("objectiveid")%></td>
                                                                                     <td 
                                                                                         style="text-align: left;">
                                                                                         <%= resultset1.getString("Name_of_client")%></td>
@@ -276,47 +281,38 @@ borderWidth: 1
 
 // config
 const config = {
-type: 'pie',
-data,
-plugins:[ChartDataLabels],
-options: {
-plugins:{
 
-datalabels:{
+                                        type: 'pie',
 
-fontColor:'#ffffff',
-color:'#ffffff',
-fontStyle:'bolder',
-}
-},
-indexAxis: 'y',
-scales: {
-y: {
-display: true,
-ticks: {
-display: false
-},
-grid: {
-drawOnChartArea: false,
-drawBorder: false
-},
+                                        data,
+
+                                        plugins: [ChartDataLabels],
+
+                                        options: {
+
+                                            plugins: {
 
 
 
+                                                datalabels: {
 
-}, x: {
-display: true,
-ticks: {
-display: false
-},
-grid: {
-drawOnChartArea: false,
-drawBorder: false
-}
-}
-}
-}
-};
+
+
+                                                    fontColor: '#ffffff',
+
+                                                    color: '#ffffff',
+
+                                                    fontStyle: 'bolder',
+
+                                                }
+
+                                            },
+
+                                            indexAxis: 'y',
+
+                                        }
+
+                                    };
 
 
 

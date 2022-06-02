@@ -2,8 +2,10 @@ package com.tool.controller;
 import java.util.Date;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.PreparedStatement;
 import java.text.SimpleDateFormat;
-
+import java.sql.ResultSet;
+import java.sql.Statement;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException; 
 import javax.servlet.annotation.WebServlet; 
@@ -11,6 +13,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest; 
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.sql.Connection;
+import java.sql.ResultSet;
+
+import com.tool.bean.LoginBean;
+import com.tool.config.Dbconfig;
 
 import com.tool.bean.*;
 import com.tool.dao.RegisterDao;
@@ -24,7 +31,7 @@ HttpServletResponse response)
 		throws ServletException, IOException 
 	{ 
 		try { 
- 
+			Connection connection = Dbconfig.getConnection();
 			AuditBean auditbean=new AuditBean();
 			
 			if(request.getParameter("btn_general")!=null)
@@ -161,12 +168,110 @@ HttpServletResponse response)
 			}
 			if(request.getParameter("dataid")!=null)
 			{    
-				auditbean.setDataid(request.getParameter("dataid"));
-				 HttpSession session = request.getSession(true);
-				 session.setAttribute("currentSessionUser6",auditbean);
-				 response.sendRedirect("DR1.jsp");
+				String dataid=request.getParameter("dataid");
+				String id=request.getParameter("auditid");
+				String objid=request.getParameter("objid");
+				 response.sendRedirect("DR1.jsp?id="+id+"&dataid="+dataid+"&objid="+objid);
 				 
 			}
+			if(request.getParameter("Period")!=null)
+			{    
+				String data[]=request.getParameterValues("data");
+				String process[]=request.getParameterValues("process");
+				String Period[]=request.getParameterValues("Period");
+				String RequestType[]=request.getParameterValues("Request-Type");
+				String Status[]=request.getParameterValues("Status");
+				String request_date[]=request.getParameterValues("request_date");
+				String mydate[]=request.getParameterValues("mydate");
+				String end_date[]=request.getParameterValues("end_date");
+				String days[]=request.getParameterValues("days");
+				Integer id=Integer.parseInt(request.getParameter("auditid"));
+				String objid=request.getParameter("objid");
+				
+				
+					String sqlQuery ="insert into IDR_TABLE values (?,?,?,?,?,?,?,?,?,?)";
+					String sql = "delete from IDR_TABLE where auditid="+id;
+					Date datev,datev1,datev2;
+					try{
+						Statement stmt = connection.createStatement();
+						stmt.executeUpdate(sql);
+						 
+					     PreparedStatement pstmt = connection.prepareStatement(sqlQuery);
+					     for(int j=0; j<data.length;j++){
+					          pstmt.setInt(1,id);
+					          pstmt.setString(2,data[j]);
+					          pstmt.setString(3,process[j]);
+					          pstmt.setString(4,Period[j]);
+					          pstmt.setString(5,RequestType[j]);
+					          pstmt.setString(6,Status[j]);
+					          if(request_date[j]!="")
+								 {
+									 datev = new SimpleDateFormat("yyyy-MM-dd").parse(request_date[j]);
+									 pstmt.setDate(7, new java.sql.Date(datev.getTime()));
+								 }
+								 else {
+									 datev=null;
+									 pstmt.setDate(7,null);
+								 }
+					          if(mydate[j]!="")
+								 {
+									 datev1 = new SimpleDateFormat("yyyy-MM-dd").parse(mydate[j]);
+									 pstmt.setDate(8, new java.sql.Date(datev1.getTime()));
+								 }
+								 else {
+									 datev1=null;
+									 pstmt.setDate(8,null);
+								 }
+					          if(end_date[j]!="")
+								 {
+									 datev2 = new SimpleDateFormat("yyyy-MM-dd").parse(end_date[j]);
+									 pstmt.setDate(9, new java.sql.Date(datev2.getTime()));
+								 }
+								 else {
+									 datev2=null;
+									 pstmt.setDate(9,null);
+								 }
+					         if(days[j]!="")
+							 {
+								
+								 pstmt.setString(10, days[j]);
+							 }
+							 else {
+								 pstmt.setString(10, null);
+							 }
+					         
+					          pstmt.addBatch();
+					     }
+					     int[] result = pstmt.executeBatch();
+					     System.out.println("The number of rows inserted: "+ result.length);
+					     connection.commit();
+					}catch(Exception e){
+					     e.printStackTrace();
+					} finally{
+					     
+					if(connection!=null)
+					     connection.close();
+					}
+					response.sendRedirect("Risk_And_Controls.jsp?id="+id+"&dataid="+"&objid="+objid);
+				}
+			if(request.getParameter("controlriskid")!=null)
+			{    
+				String dataid=request.getParameter("controlriskid");
+				String id=request.getParameter("auditid");
+				String sql="update audits set controlriskid='"+dataid+"' where Initiative_id="+id;
+				try{
+					Statement stmt = connection.createStatement();
+					stmt.executeUpdate(sql);
+				}
+				catch (Exception e) { 
+					e.printStackTrace(); 
+				} 
+				response.sendRedirect("myAudits.jsp");
+			}
+				
+			
+				 
+			
 			
 			
 		} 

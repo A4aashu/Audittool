@@ -153,7 +153,7 @@
             </div>
             
             <div class="container-fluid" style="margin-top: 10%;margin-left: -3%;">
-                <div class="card border-0">
+                <div class="">
                     <div class="row d-flex">
                         <div class="col-lg-12" style="background-color: #ffffff; color: #00338D!important;">
                             <div class="row Lowerblock">
@@ -164,119 +164,43 @@
                                     <div class="row upperblock">
                                         <div class="col-md-12">
                                             <h5 style="color:#00338D!important;margin-bottom: -22px;
-                                            margin-top: 7px;">Control Objective</h5>
+                                            margin-top: 7px;">Controls</h5>
                                             <button class="btn btn-default pull-right"
                                                 style="font-weight: bold!important;color:#00338D!important; font-size: 21px!important;"
                                                 data-toggle="modal" data-target="#myModal">Lookup</button>
-                                            <button class="btn btn-default pull-right add_row" id="add_row5"
-                                                style="font-weight: bold!important;color:#00338D!important; font-size: 21px!important;border-right: 5px solid #00338D;">Add
-                                                Row</button>
+                                            
                                         </div>
                                     </div>
 
                                     <table class="table" id="editableTable5" data-toggle="table"
                                         data-mobile-responsive="true" style="border-radius: 20px;
                                         overflow: hidden;">
+    
                                         <thead>
-                                            <tr>
+                                        
+        
+           <tr>
                                                 <th class="rowww"
-                                                    style=" font-weight:bold!important;font-size:18px!important;">Control Objective ID</th>
+                                                    style=" font-weight:bold!important;font-size:18px!important;"hidden >Control Objective ID</th>
                                                 <th class="rowww"
-                                                    style=" font-weight:bold!important;font-size:18px!important;">Control Objective</th>
+                                                    style=" font-weight:bold!important;font-size:18px!important;"hidden>Control Objective</th>
                                                 <th class="rowww"
                                                     style=" font-weight:bold!important;font-size:18px!important;">Control</th>   
                                                 <th class="rowww"
                                                     style=" font-weight:bold!important;font-size:18px!important;">Risk</th>  
                                                 <th class="rowww"
-                                                    style=" font-weight:bold!important;font-size:18px!important;">Sub-Process</th>
+                                                    style=" font-weight:bold!important;font-size:18px!important;"hidden>Process</th>
                                                 <th class="th">
                                                 </th>
                                             </tr>
+                                            
+      
                                         </thead>
+                                        
                                         <tbody>
-                                            <tr data-id="1">
-
-                                                <td data-field="control" class="td_roww"
-                                                    style="font-weight: bold;color:#00338D;">
-                                                    Control ID 1
-                                                </td>
-                                                <td data-field="control2" class="td_roww"
-                                                    style="font-weight: bold;color:#00338D;">
-                                                    Control Objective 1
-                                                </td>
-                                                <td data-field="control3" class="td_roww"
-                                                style="font-weight: bold;color:#00338D;">
-                                                Control 1
-                                                </td>
-                                                <td data-field="control4" class="td_roww"
-                                                style="font-weight: bold;color:#00338D;">
-                                                Risk 1
-                                                </td>
-                                                <td data-field="subprocess" class="td_roww2"
-                                                    style="font-weight: bold;color:#00338D;">
-                                                    Sub-Process 1
-                                                </td>
-                                                <td
-                                                    style="background-color:rgba(167, 158, 205, 0.28);font-weight:700;color:#00338D">
-                                                    <button class="btn btn-outline-danger delete_row"
-                                                        style="border-radius: 20px;background-color: #C4C4C4;color: black;border-color: black!important;float:right!important;margin-left:86%;margin-top: -3px!important;">X</button>
-                                                </td>
-                                            </tr>
-                                            <tr data-id="2">
-
-                                                <td data-field="control" class="td_roww"
-                                                    style="font-weight: bold;color:#00338D;">
-                                                    Control ID 1
-                                                </td>
-                                                <td data-field="control2" class="td_roww"
-                                                    style="font-weight: bold;color:#00338D;">
-                                                    Control Objective 1
-                                                </td>
-                                                <td data-field="control3" class="td_roww"
-                                                style="font-weight: bold;color:#00338D;">
-                                                Control 1
-                                                </td>
-                                                <td data-field="control4" class="td_roww"
-                                                style="font-weight: bold;color:#00338D;">
-                                                Risk 1
-                                                </td>
-                                                <td data-field="subprocess" class="td_roww2"
-                                                    style="font-weight: bold;color:#00338D;">
-                                                    Sub-Process 1
-                                                </td>
-                                                <td
-                                                    style="background-color:rgba(167, 158, 205, 0.28);font-weight:700;color:#00338D">
-                                                    <button class="btn btn-outline-danger delete_row"
-                                                        style="border-radius: 20px;background-color: #C4C4C4;color: black;border-color: black!important;float:right!important;margin-left:86%;margin-top: -3px!important;">X</button>
-                                                </td>
-                                            </tr>
-                                            <tr data-id="3">
-                                                <td data-field="control" class="td_roww"
-                                                    style="font-weight: bold;color:#00338D;">
-                                                    Control ID 1
-                                                </td>
-                                                <td data-field="control2" class="td_roww"
-                                                    style="font-weight: bold;color:#00338D;">
-                                                    Control Objective 1
-                                                </td>
-                                                <td data-field="control3" class="td_roww"
-                                                style="font-weight: bold;color:#00338D;">
-                                                Control 1
-                                                </td>
-                                                <td data-field="control4" class="td_roww"
-                                                style="font-weight: bold;color:#00338D;">
-                                                Risk 1
-                                                </td>
-                                                <td data-field="subprocess" class="td_roww2"
-                                                    style="font-weight: bold;color:#00338D;">
-                                                    Sub-Process 1
-                                                </td>
-                                                <td
-                                                    style="background-color:rgba(167, 158, 205, 0.28);font-weight:700;color:#00338D">
-                                                    <button class="btn btn-outline-danger delete_row"
-                                                        style="border-radius: 20px;background-color: #C4C4C4;color: black;border-color: black!important;float:right!important;margin-left:86%;margin-top: -3px!important;">X</button>
-                                                </td>
-                                            </tr>
+                                           
+                                                                                
+          
 
 
 
@@ -286,10 +210,13 @@
                             </div>
                         </div>
 
-                        <div class="row px-3"> <button type="submit" class="btn btn-blue text-center signup_btn" style="background-color: #470A68;margin-top: 10px!important;
-                            margin-left: 700px!important;">Save & Proceed</button>
-                            <button type="submit" class="btn btn-blue text-center signup_btn" style="background-color: #470A68;margin-left: 85.5%!important;
-                                margin-top: -30.05px!important;">Submit</button>
+                        <div class="row px-3"> 
+                            <button  class="btn btn-blue text-center signup_btn" style="background-color: #470A68;margin-left: 85.5%!important;
+                                "onclick="xyz3()">Save & Proceed</button>
+                                <form action="GeneralServlet" method="POST" id="submit-form3" >
+                                                                <input id="controlriskid" value="" name="controlriskid" hidden>
+                                                                <input id="auditid" value="<%=request.getParameter("id")%>" name="auditid" hidden>
+                                                                </form>
                         </div>
                     </div>
                 </div>
@@ -314,100 +241,55 @@
                             <div class="modal-body">
                                 <table id="myTable" style="height:200px!important;width:700px!important;"
                                     class="table table-striped table-bordered table-responsive table-hover">
+                                                                         <%
+    try{
+    	String x=request.getParameter("objid");
+    	int[] a=Arrays.stream(x.split(",")).mapToInt(Integer::parseInt).toArray();  
+        StringBuilder idList = new StringBuilder();
+        		for (int id : a) {
+        		   if (idList.length() > 0) {
+        		     idList.append(",");
+        		   }
+        		   idList.append(id);
+        		}
+    	Connection connection1=Dbconfig.getConnection();
+        PreparedStatement psmt=connection1.prepareStatement("select id,ControlobjectiveID,Controlobjective,Control,Risks,process from racm where Controlobjective in (select controlobjective from racm where id in ("+idList+"))");
+        
+ 		
+        ResultSet resultset =psmt.executeQuery() ;
+        
+%>
                                     <thead>
                                         <tr>
                                             <th style="text-align: center;">Select Control</th>
-                                            <th style="text-align: center;">Control Objective ID</th>
-                                            <th style="text-align: center;">Control Objective</th>
+                                            <th style="text-align: center;" hidden >ID</th>
+                                            <th style="text-align: center;" hidden>Control Objective</th>
                                             <th style="text-align: center;">Controls</th>
                                             <th style="text-align: center;">Risk</th>
-                                            <th style="text-align: center;">Sub-Process</th>
+                                            <th style="text-align: center;"hidden>Process</th>
                                         </tr>
                                     </thead>
                                     <tbody id="myTableb">
+                                  <%  while(resultset.next()){ %>   
+                                    
                                         <tr>
                                             <td name="control" style="width: 5%;"><input type="checkbox"
                                                     name="check-tab1" /> </td>
-                                            <td name="firstname" style="text-align: center;">Control ID 1</td>
-                                            <td name="lastname" style="text-align: center;">Control Objective 1</td>
-                                            <td name="email" style="text-align: center;">Control 1</td>
-                                            <td name="email1" style="text-align: center;">Risk 1</td>
-                                            <td name="email2" style="text-align: center;">Sub-Process 1</td>
+                                            <td name="firstname" style="text-align: center;" hidden><%= resultset.getString("ID")%></td>
+                                            <td name="lastname" style="text-align: center;" hidden><%= resultset.getString("Controlobjective")%></td>
+                                            <td name="email" style="text-align: center;"><%= resultset.getString("Control")%></td>
+                                            <td name="email1" style="text-align: center;"><%= resultset.getString("Risks")%></td>
+                                            <td name="email2" style="text-align: center;"hidden><%= resultset.getString("process")%></td>
                                         </tr>
+  <% } 
 
-                                        <tr>
-                                            <td name="control" style="width: 5%;"><input type="checkbox"
-                                                    name="check-tab1" /> </td>
-                                            <td name="firstname" style="text-align: center;">Control ID 1</td>
-                                            <td name="lastname" style="text-align: center;">Control Objective 1</td>
-                                            <td name="email" style="text-align: center;">Control 1</td>
-                                            <td name="email1" style="text-align: center;">Risk 1</td>
-                                            <td name="email2" style="text-align: center;">Sub-Process 1</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td name="control" style="width: 5%;"><input type="checkbox"
-                                                    name="check-tab1" /> </td>
-                                            <td name="firstname" style="text-align: center;">Control ID 1</td>
-                                            <td name="lastname" style="text-align: center;">Control Objective 1</td>
-                                            <td name="email" style="text-align: center;">Control 1</td>
-                                            <td name="email1" style="text-align: center;">Risk 1</td>
-                                            <td name="email2" style="text-align: center;">Sub-Process 1</td>
-                                        </tr>
-                                        <tr>
-                                            <td name="control" style="width: 5%;"><input type="checkbox"
-                                                    name="check-tab1" /> </td>
-                                            <td name="firstname" style="text-align: center;">Control ID 1</td>
-                                            <td name="lastname" style="text-align: center;">Control Objective 1</td>
-                                            <td name="email" style="text-align: center;">Control 1</td>
-                                            <td name="email1" style="text-align: center;">Risk 1</td>
-                                            <td name="email2" style="text-align: center;">Sub-Process 1</td>
-                                        </tr>
-                                        <tr>
-                                            <td name="control" style="width: 5%;"><input type="checkbox"
-                                                    name="check-tab1" /> </td>
-                                            <td name="firstname" style="text-align: center;">Control ID 1</td>
-                                            <td name="lastname" style="text-align: center;">Control Objective 1</td>
-                                            <td name="email" style="text-align: center;">Control 1</td>
-                                            <td name="email1" style="text-align: center;">Risk 1</td>
-                                            <td name="email2" style="text-align: center;">Sub-Process 1</td>
-                                        </tr>
-                                        <tr>
-                                            <td name="control" style="width: 5%;"><input type="checkbox"
-                                                    name="check-tab1" /> </td>
-                                            <td name="firstname" style="text-align: center;">Control ID 1</td>
-                                            <td name="lastname" style="text-align: center;">Control Objective 1</td>
-                                            <td name="email" style="text-align: center;">Control 1</td>
-                                            <td name="email1" style="text-align: center;">Risk 1</td>
-                                            <td name="email2" style="text-align: center;">Sub-Process 1</td>
-                                        </tr>
-                                        <tr>
-                                            <td name="control" style="width: 5%;"><input type="checkbox"
-                                                    name="check-tab1" /> </td>
-                                            <td name="firstname" style="text-align: center;">Control ID 1</td>
-                                            <td name="lastname" style="text-align: center;">Control Objective 1</td>
-                                            <td name="email" style="text-align: center;">Control 1</td>
-                                            <td name="email1" style="text-align: center;">Risk 1</td>
-                                            <td name="email2" style="text-align: center;">Sub-Process 1</td>
-                                        </tr>
-                                        <tr>
-                                            <td name="control" style="width: 5%;"><input type="checkbox"
-                                                    name="check-tab1" /> </td>
-                                            <td name="firstname" style="text-align: center;">Control ID 1</td>
-                                            <td name="lastname" style="text-align: center;">Control Objective 1</td>
-                                            <td name="email" style="text-align: center;">Control 1</td>
-                                            <td name="email1" style="text-align: center;">Risk 1</td>
-                                            <td name="email2" style="text-align: center;">Sub-Process 1</td>
-                                        </tr>
-                                        <tr>
-                                            <td name="control" style="width: 5%;"><input type="checkbox"
-                                                    name="check-tab1" /> </td>
-                                            <td name="firstname" style="text-align: center;">Control ID 1</td>
-                                            <td name="lastname" style="text-align: center;">Control Objective 1</td>
-                                            <td name="email" style="text-align: center;">Control 1</td>
-                                            <td name="email1" style="text-align: center;">Risk 1</td>
-                                            <td name="email2" style="text-align: center;">Sub-Process 1</td>
-                                        </tr>
+        }
+        catch(Exception e)
+        {
+             out.println("No Data for this Process");
+        }
+%>  
+                                       
                                     </tbody>
                                 </table>
                             </div>
@@ -618,7 +500,7 @@
 
                        
             
-            $('#add_row4').click(function () {
+           /*  $('#add_row4').click(function () {
                 //Add row
                 row = '';
                 row += '<tr><td class="td_roww" data-field="process"> <input type="text" class="form-control" style="margin-left: -2%;font-size:15px !important;font-weight:bolder !important;width:40%!important;margin-bottom: -30px!important;"></td><td class="td_roww2" data-field="Categorization"><input type="text" class="form-control" style="margin-left: 24%;width:40%!important;margin-bottom: -30px!important;"></td><td class="td"><button class="btn btn-outline-danger delete_row"  style="border-radius: 20px;background-color: #C4C4C4;color: black;border-color: black!important;margin-top: 6px!important;">X</button></td></tr>';
@@ -634,7 +516,7 @@
 
                 // row += '<td><button class="btn btn-outline-danger delete_row">X</button></td></tr>';
                 $("#editableTable5 > tbody").append(row);
-            })
+            }) */
 
             
             $("#editableTable4").on('click', '.delete_row', function () {
@@ -672,11 +554,13 @@
                     cell1.style.backgroundColor = 'rgba(167, 158, 205, 0.28)';
                     cell1.style.fontWeight = '700';
                     cell1.style.color = '#00338D';
+                    cell1.style.display = 'none';
                     // cell1.style.borderBottom='thick solid #00338D';
                     cell2.innerHTML = table1.rows[i + 1].cells[2].innerHTML;
                     cell2.style.backgroundColor = 'rgba(167, 158, 205, 0.28)';
                     cell2.style.fontWeight = '700';
                     cell2.style.color = '#00338D';
+                    cell2.style.display = 'none';
                     cell3.innerHTML = table1.rows[i + 1].cells[3].innerHTML;
                     cell3.style.backgroundColor = 'rgba(167, 158, 205, 0.28)';
                     cell3.style.fontWeight = '700';
@@ -690,53 +574,33 @@
                     cell5.style.backgroundColor = 'rgba(167, 158, 205, 0.28)';
                     cell5.style.fontWeight = '700';
                     cell5.style.color = '#00338D';
+                    cell5.style.display = 'none';
                     cell6.innerHTML = '<button class="btn btn-outline-danger delete_row" style="border-radius: 20px;background-color: #C4C4C4;color: black;border-color: black!important;margin-top: -3px!important;">X</button>';
                     cell6.style.backgroundColor = 'rgba(167, 158, 205, 0.28)';
                     cell6.style.fontWeight = '700';
                     cell6.style.color = '#00338D';
-                    var index = table1.rows[i + 1].rowIndex;
-                    table1.deleteRow(index);
-                    i--;
-                    console.log(checkboxes.length);
+                  
                 }
+            $('input[type="checkbox"]').prop('checked', false);
+        }
+        var person3=[];
+
+        function showTableData3() {
+        var xyz=document.getElementById("controlriskid");
+        var myTab = document.getElementById('editableTable5');
+        for (j = 1; j < myTab.rows.length; j++) {
+        var objCells = myTab.rows.item(j).cells;
+        person3[j-1]=objCells.item(0).innerHTML;
+        }
+        xyz.value =person3;
+        }
+        function xyz3(){
+        showTableData3();
+        document.getElementById("submit-form3").submit();
         }
 
 
-        function transfer4() {
-            var table1 = document.getElementById("myTable4"),
-                table2 = document.getElementById("editableTable4"),
-                checkboxes = document.getElementsByName("check-tab11");
-            console.log("Val1 = " + checkboxes.length);
-            for (var i = 0; i < checkboxes.length; i++)
-                if (checkboxes[i].checked) {
-                    var newRow = table2.insertRow(table2.length),
-                        cell1 = newRow.insertCell(0),
-                        cell2 = newRow.insertCell(1);
-                    cell3 = newRow.insertCell(2);
-
-                    newRow.style.borderBottom = 'thin solid #00338D';
-                    cell1.innerHTML = table1.rows[i + 1].cells[1].innerHTML;
-                    cell1.style.backgroundColor = 'rgba(167, 158, 205, 0.28)';
-                    cell1.style.fontWeight = '700';
-                    cell1.style.color = '#00338D';
-                    // cell1.style.borderBottom='thick solid #00338D';
-                    cell2.innerHTML = table1.rows[i + 1].cells[2].innerHTML;
-                    cell2.style.backgroundColor = 'rgba(167, 158, 205, 0.28)';
-                    cell2.style.fontWeight = '700';
-                    cell2.style.color = '#00338D';
-                    cell2.classList.add("subbprocess");
-
-                    cell3.innerHTML = '<button class="btn btn-outline-danger delete_row" style="border-radius: 20px;background-color: #C4C4C4;color: black;border-color: black!important;margin-top: -3px!important;">X</button>';;
-                    cell3.style.backgroundColor = 'rgba(167, 158, 205, 0.28)';
-                    cell3.style.fontWeight = '700';
-                    cell3.style.color = '#00338D';
-
-                    var index = table1.rows[i + 1].rowIndex;
-                    table1.deleteRow(index);
-                    i--;
-                    console.log(checkboxes.length);
-                }
-        }
+       
 
        
 

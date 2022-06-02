@@ -63,7 +63,10 @@ $("#myTable").on('change','.end_date',function(){
 	end_date = new Date(currentRow.find('.end_date').val());
 	var time_difference = end_date.getTime() - start_date.getTime();
 	var days_difference = time_difference / (1000*3600*24);
+	if(days_difference>0)
 	currentRow.find('.days').val(days_difference);
+	else
+		currentRow.find('.days').val(0);	
 	});
 
 
@@ -155,8 +158,7 @@ $("#myTable").on('change','.end_date',function(){
               <ul>
                 <li><button type="button" class="boxx-shadow2 nav1">Audit Background</button></li>
                 <li><button type="button" class="boxx-shadow2 nav-1" style="width: 130px;">Data Request</button></li>
-                <li><a type="button" href="Risk_And_Controls.jsp" class="boxx-shadow2 nav1" style="width:152px;color: #00338D!important;">Risk and
-                                        Controls</a></li>
+                <li><button type="button" class="boxx-shadow2 nav1" style="width:152px;">Risk and Controls</button></li>
                 <li><button type="button" class="boxx-shadow2 nav1">Meeting Tracker</button></li>
 
               </ul>
@@ -183,19 +185,30 @@ $("#myTable").on('change','.end_date',function(){
      
                 <div class="exportbtn">
                   <!-- <img src="assets/images/iconpicc.png"> -->
+                  <form action="idrdownload.jsp" method="POST">
+                  <input value="<%=request.getParameter("id")%>"  name="idrid" hidden >
+                  <input value="<%=request.getParameter("objid")%>"  name="objid" hidden >
                   <button type="submit"
                   class="btn btn-blue text-center signup_btn"
                   style="background-color: #470A68;
-                  margin-left: 890px!important;z-index: 111; margin-top: 10px !important;"> <i class="fa fa-list-alt" style="font-size:20px;padding-top:5px;" aria-hidden="true"></i>&nbsp;&nbsp;Export List</button>
+                  margin-left: 895px!important;z-index: 111; margin-top: 10px !important;" id="btnExcel" > <i class="fa fa-list-alt" style="font-size:20px;padding-top:5px;" aria-hidden="true"></i>&nbsp;&nbsp;Export List</button>
+                </form>
                 </div>
                
                 <h3 style="color: #00338D;font-weight: bold;margin-top: -42px;">Data Request List</h3>
                
-                <div class="Mytable" style="height:400px!important">
+                <div class="Mytable" style="height:400px!important;">
+               <form action="GeneralServlet" method="POST">
                     <table  class="table css-serial margin " id="myTable"  data-toggle="table" style="margin-right:0px!important;margin-bottom:0px!important" >
  <%
                                                                             try{
-                                                                            	String x1=currentUsers.getDataid();
+                                                                            	String auditid=request.getParameter("id");
+                                                                            	String x1=request.getParameter("dataid");
+                                                                            	ResultSet resultset1=null;
+                                                                            	ResultSet resultset2=null;
+                                                                            	  Connection connection=Dbconfig.getConnection();
+                                                                            	if(x1!="")
+                                                                            	{
                                                                             	int[] a1=Arrays.stream(x1.split(",")).mapToInt(Integer::parseInt).toArray();  
                                                                                 StringBuilder idList1 = new StringBuilder();
                                                                                 		for (int id : a1) {
@@ -205,61 +218,126 @@ $("#myTable").on('change','.end_date',function(){
                                                                                 		   idList1.append(id);
                                                                                 		}
                                                                             	
-                                                                                Connection connection=Dbconfig.getConnection();
+                                                                              System.out.println("done");
                                                                                 PreparedStatement psmt1=connection.prepareStatement("select data1,Process from datatable where dataid in ("+idList1+")");
-                                                                               
+                                                                                
+                                                                                PreparedStatement psmt2=connection.prepareStatement("select data,Process,period,requesttype,status,rd,ed,ad,delay from IDR_TABLE where auditid="+auditid);
+                                                                                resultset1 =psmt1.executeQuery() ;
+                                                                                resultset2 =psmt2.executeQuery() ;
+                                                                            	}
+                                                                            	else
+                                                                            	{
+                                                                            		System.out.println("done1");
+                                                                            		 PreparedStatement psmt2=connection.prepareStatement("select data,Process,period,requesttype,status,rd,ed,ad,delay from IDR_TABLE where auditid="+auditid);
+                                                                                     resultset2 =psmt2.executeQuery() ;
+                                                                            	}
 
-                                                                                ResultSet resultset1 =psmt1.executeQuery() ;
+                                                                                
                                                                         %>
-                        <thead>
+                        <thead >
                           
                               
-                          <tr><th>Sl.no.</th>
-                        <th>Data items</th>
-                        <th>Process</th>
-                        <th>Period</th>
-                        <th>Request-Type</th>
-                        <th>Status</th>
-                        <th>Date Of Request</th>
-                        <th>Expected date</th>
-                        <th>Actual Date</th>
-                        <th>Delay</th></tr>
+                          <tr><th style="text-align: center!important">Sl.no.</th>
+                        <th style="text-align: center!important">Data items</th>
+                        <th style="text-align: center!important">Process</th>
+                        <th style="text-align: center!important">Period</th>
+                        <th style="text-align: center!important">Request-Type</th>
+                        <th style="text-align: center!important">Status</th>
+                        <th style="text-align: center!important">Date Of Request</th>
+                        <th style="text-align: center!important">Expected date</th>
+                        <th style="text-align: center!important">Actual Date</th>
+                        <th style="text-align: center!important">Delay (Days)</th></tr>
                         </thead>
                         <tbody style=" border-color: none!important;">
- <%  while(resultset1.next()){ %>
-                          
-                            <colgroup>
-                                <col span="4" style="background-color:#E5E5E5!important">
+                         
+                        <%  while(resultset2.next()){ %>
+                        
+                       <colgroup>
+                                <col span="10" style="background-color:#E5E5E5!important;text-align: center!important">
                                 
                               </colgroup>
-                              <tr>
-                              <td></td>
-                             <td><%= resultset1.getString("data1")%></td>
-                            <td><%= resultset1.getString("Process")%></td>
-                            <td><select name="Period" id="Request-Type" class="form-control">
-                            <option value="0">Choose Period</option>
+                        
+                         <tr>
+                              <td style="text-align: center!important"></td>
+                             <td style="text-align: center!important"><textarea name="data" rows="auto" cols="25"  style="border:none;border-radius:5px;resize: none;text-align: center!important;" readonly><%= resultset2.getString("data")%></textarea></td>
+                            <td style="text-align: center!important"><textarea  name="process" rows="auto" cols="25" style="border:none;border-radius:5px;resize: none;text-align: center!important" readonly><%= resultset2.getString("Process")%></textarea></td>
+                            <td ><select name="Period" id="Request-Type" class="form-control" style="text-align: center!important">
+                            <option value="<%= resultset2.getString("period")%>"><%= resultset2.getString("period")%></option>
                                 <option value="Monthly">Monthly</option>
                                 <option value="Quarterly">Quarterly</option>
                                 <option value="Annually">Annually</option>
                                 <option value="As on Date">As on Date</option>
                               </select>
                             </td>
-                            <td><select name="Request-Type" id="Request-Type" class="form-control">
-                            <option value="0">Request Type</option>
+                            <td ><select name="Request-Type" id="Request-Type" class="form-control" style="text-align: center!important">
+                            <option value="<%= resultset2.getString("requesttype")%>"><%= resultset2.getString("requesttype")%></option>
                                 <option value="IDR">IDR</option>
                                 <option value="ADR">ADR</option>
                               </select></td>
-                              <td><select name="Status" id="Status" class="form-control">
-                              <option value="0">Status</option>
+                              <td ><select name="Status" id="Status" class="form-control" style="text-align: center!important">
+                              <option value="<%= resultset2.getString("status")%>"><%= resultset2.getString("status")%></option>
                                 <option value="Received">Received</option>
                                 <option value="Pending">Pending</option>
                                 <option value="Partially Received">Partially Received</option>
                                 <option value="Not Applicable">Not Applicable</option>
                               </select></td>
-                              <td><input type="date" style="background-color: white !important ;" id="request_date" class="request_date"></td>
-                              <td><input type="date" style="background-color: white !important ;"  id="mydate" class="mydate" readonly ></td>
-                            <td><input type="date" style="background-color: white !important ;" id="end_date"   class="end_date"></td>
-                            <td><input type="text" id="days" style="background-color: white !important ;" class="days" readonly></td>
+                              <td><input type="date" name="request_date" style="background-color: white !important ;border:none;border-radius:5px;text-align: center!important" id="request_date" class="request_date" value="<%= resultset2.getDate("RD")%>"></td>
+                              <td ><input type="date" name="mydate" style="background-color: white !important ;border:none;border-radius:5px;text-align: center!important"  id="mydate" class="mydate" value="<%= resultset2.getDate("ED")%>" readonly ></td>
+                            <td ><input type="date" name="end_date" style="background-color: white !important ;border:none;border-radius:5px;text-align: center!important" id="end_date"   class="end_date" value="<%= resultset2.getDate("AD")%>"></td>
+                            <td ><input type="text" name="days" id="days" style="background-color: white !important ;width:96px!important;border:none;border-radius:5px;text-align: center!important" class="days" value="<%= resultset2.getString("delay")%>" readonly></td>
+                            </tr>
+                        
+                        
+                        
+                        
+                               <% } 
+
+%>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+ <%  while(resultset1.next()){ %>
+                          <colgroup>
+                                <col span="10" style="text-align: center!important">
+                                
+                              </colgroup>
+                            
+                              <tr>
+                              <td style="text-align: center!important"></td>
+                             <td style="text-align: center!important"><textarea name="data" rows="auto" cols="25"  style="border:none;border-radius:5px;resize: none;text-align: center!important;" readonly><%= resultset1.getString("data1")%></textarea></td>
+                            <td style="text-align: center!important"><textarea  name="process" rows="auto" cols="25" style="border:none;border-radius:5px;resize: none;text-align: center!important" readonly><%= resultset1.getString("Process")%></textarea></td>
+                            <td ><select name="Period" id="Request-Type" class="form-control" style="text-align: center!important">
+                            <option value="">Choose Period</option>
+                                <option value="Monthly">Monthly</option>
+                                <option value="Quarterly">Quarterly</option>
+                                <option value="Annually">Annually</option>
+                                <option value="As on Date">As on Date</option>
+                              </select>
+                            </td>
+                            <td ><select name="Request-Type" id="Request-Type" class="form-control" style="text-align: center!important">
+                            <option value="">Request Type</option>
+                                <option value="IDR">IDR</option>
+                                <option value="ADR">ADR</option>
+                              </select></td>
+                              <td ><select name="Status" id="Status" class="form-control" style="text-align: center!important">
+                              <option value="">Status</option>
+                                <option value="Received">Received</option>
+                                <option value="Pending">Pending</option>
+                                <option value="Partially Received">Partially Received</option>
+                                <option value="Not Applicable">Not Applicable</option>
+                              </select></td>
+                              <td><input type="date" name="request_date" style="background-color: white !important ;border:none;border-radius:5px;text-align: center!important" id="request_date" class="request_date"></td>
+                              <td ><input type="date" name="mydate" style="background-color: white !important ;border:none;border-radius:5px;text-align: center!important"  id="mydate" class="mydate"  readonly ></td>
+                            <td ><input type="date" name="end_date" style="background-color: white !important ;border:none;border-radius:5px;text-align: center!important" id="end_date"   class="end_date" ></td>
+                            <td ><input type="text" name="days" id="days" style="background-color: white !important ;width:96px!important;border:none;border-radius:5px;text-align: center!important" class="days" readonly></td>
                             </tr>
                                                                    
             <% } 
@@ -267,7 +345,7 @@ $("#myTable").on('change','.end_date',function(){
         }
         catch(Exception e)
         {
-             out.println("No Data");
+             out.println("");
         }
 %>
 
@@ -277,17 +355,22 @@ $("#myTable").on('change','.end_date',function(){
                           
                         
                       </table>
+                      
                 </div>
                
             
           
-          
+          <input id="auditid" value="<%=request.getParameter("id")%>" name="auditid" hidden>
+          <input id="auditid" value="<%=request.getParameter("objid")%>" name="objid" hidden>
           <div class="savebtn">
-            <button type="submit"
+          
+            <button type="submit" 
             class="btn btn-blue text-center signup_btn"
             style="background-color: #470A68;
             margin-left: 900px!important;z-index: 111; margin-top:10px !important;">Save & Submit</button>
+     </form>
           </div>
+                
   
   </div>
   </div>
