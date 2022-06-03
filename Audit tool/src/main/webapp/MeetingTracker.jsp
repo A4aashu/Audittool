@@ -232,13 +232,13 @@ String currentUser1=session.getAttribute("auditid").toString();
          <form action="GeneralServlet" method="POST">         
       <table id="example" class="css-serial" style="width:100%">
         <thead>
-            <tr>
-                <th style="text-align: center;">SI.No.</th>
-                <th style="text-align: center;">Meeting Name</th>
-                <th style="text-align: center;">Expected meeting date</th>
-                <th style="text-align: center;">Actual meeting date</th>
-                <th style="text-align: center;">MoM</th>
-                <th style="text-align: center;">Comments</th>
+            <tr style="text-align: center!important;">
+                <th style="text-align: center!important;">SI.No.</th>
+                <th style="text-align: center!important;">Meeting Name</th>
+                <th style="text-align: center!important;">Expected meeting date</th>
+                <th style="text-align: center!important;">Actual meeting date</th>
+                <th style="text-align: center!important;">Minutes of Meeting</th>
+                <th style="text-align: center!important;">Comments</th>
             </tr>
         </thead>
         <tbody>
@@ -261,7 +261,7 @@ String currentUser1=session.getAttribute("auditid").toString();
           <td style="text-align: center!important"><input type="date" name="emd" style="border:none;border-radius:5px;resize: none;text-align: center!important;" value="<%= resultset2.getDate("EMD")%>"></td>
           <td style="text-align: center!important"><input type="date" name="amd" style="border:none;border-radius:5px;resize: none;text-align: center!important;" value="<%= resultset2.getDate("AMD")%>"></td>
           
-          <td style="text-align: center!important"><select name="mom" id="mom" style="border:none;border-radius:5px;resize: none;text-align: center!important;height:20px">
+          <td style="text-align: center!important"><select name="mom" id="mom" style="border:none;border-radius:5px;resize: none;text-align: center!important;height:22px!important;width:100px!important">
                               <option value="<%= resultset2.getString("mom")%>"><%= resultset2.getString("mom")%></option>
                                 <option value="Yes">Yes</option>
                                 <option value="No">No</option>
@@ -359,7 +359,7 @@ String currentUser1=session.getAttribute("auditid").toString();
       $('#add_row').click(function () {
             //Add row
             row = '';
-            row += '<tr><td style="text-align: center!important"></td><td style="text-align: center!important"><input type="text" class="    " style="border:none;border-radius:5px;resize: none;text-align: center!important;" name="meetingname"></td> <td style="text-align: center!important"><input type="date" class="    " style="border:none;border-radius:5px;resize: none;text-align: center!important;" name="emd"></td><td style="text-align: center!important"><input type="date" class="    " style="border:none;border-radius:5px;resize: none;text-align: center!important;" name="amd"></td><td style="text-align: center!important"><select name="mom" id="mom" class="    " style="border:none;border-radius:5px;resize: none;text-align: center!important;"><option value="">Status</option><option value="Yes">Yes</option><option value="No">No</option></select></td><td style="text-align: center!important"><input type="text" class="    "  style="border:none;border-radius:5px;resize: none;text-align: center!important;"name="comments"></td>';
+            row += '<tr><td style="text-align: center!important"></td><td style="text-align: center!important"><input type="text" class="    " style="border:none;border-radius:5px;resize: none;text-align: center!important;" name="meetingname"></td> <td style="text-align: center!important"><input type="date" class="    " style="border:none;border-radius:5px;resize: none;text-align: center!important;" name="emd"></td><td style="text-align: center!important"><input type="date" class="    " style="border:none;border-radius:5px;resize: none;text-align: center!important;" name="amd"></td><td style="text-align: center!important"><select name="mom" id="mom" class="    "  style="border:none;border-radius:5px;resize: none;text-align: center!important;height:22px!important;width:100px!important"><option value="">Status</option><option value="Yes">Yes</option><option value="No">No</option></select></td><td style="text-align: center!important"><input type="text" class="    "  style="border:none;border-radius:5px;resize: none;text-align: center!important;"name="comments"></td>';
             $("tbody").append(row);
         })
   });

@@ -93,6 +93,12 @@
     <!-- 
     <link rel="stylesheet" href="assets/css/AnalystDashboard.css"> -->
     <link rel="stylesheet" href="assets/css/myaudits.css" />
+    <style>
+    th, td{
+    font-size:14px;
+   
+    }
+    </style>
     
   </head>
 
@@ -138,7 +144,11 @@
                 Audits</span></a>
           </li>
           <li class="submenu">
-            <a class="btn-links down" href="logout.jsp"><i class="la la-user"></i> <span> Logout
+            <a class="btn-links btn-inactive" href="#"><i class="la la-cube"></i> <span>My
+                Contacts</span></a>
+          </li>
+          <li class="submenu">
+            <a class="btn-links" style="margin-top:235px!important;width:135px" href="logout.jsp"><i class="la la-user"></i> <span> Logout
               </span></a>
           </li>
 
