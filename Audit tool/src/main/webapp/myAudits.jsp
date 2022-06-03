@@ -50,11 +50,14 @@
     $(document).ready(function() {
 
         var table = $('#example').DataTable({
-            "scrollY": 200,
-            "paging": false,
-            "info":false,
-            "autoWidth": false,
+        	scrollY: 200,
+            scrollX: true,
+            scrollCollapse: true,
+            scroller: false,
+            "lengthChange": false,
             "searching": false,
+            "paging": false,
+            "info": false,
            
             
         } );
@@ -90,6 +93,7 @@
     <!-- 
     <link rel="stylesheet" href="assets/css/AnalystDashboard.css"> -->
     <link rel="stylesheet" href="assets/css/myaudits.css" />
+    
   </head>
 
   <body>
