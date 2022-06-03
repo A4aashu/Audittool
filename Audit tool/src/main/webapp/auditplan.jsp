@@ -84,9 +84,12 @@
                 <li class="submenu">
                   <a class="btn-links btn-inactive" href="#"><i class="la la-cube"></i> <span>My Audits</span></a>
                 </li>
+                                                                      <li class="submenu">
+              <a class="btn-links btn-inactive" href="#"><i class="la la-user"></i> <span>My Contacts</span></a>
+            </li>
                 
                 <li class="submenu">
-                  <a class="btn-links down" style="margin-top:320px!important;" href="logout.jsp"><i class="la la-user"></i> <span> Logout
+                  <a class="btn-links down" style="margin-top:220px!important;" href="logout.jsp"><i class="la la-user"></i> <span> Logout
                     </span></span></a>
                 </li>
 
@@ -114,6 +117,7 @@
                 <li><button type="button" class="boxx-shadow2 nav1">Data Request</button></li>
                 <li><button type="button" class="boxx-shadow2 nav1" style="width:150px;">Risk and Controls</button></li>
                 <li><button type="button" class="boxx-shadow2 nav1">Meeting Tracker</button></li>
+                 <li><button type="button" class="boxx-shadow2 nav1">Client Details</button></li>
 
               </ul>
 

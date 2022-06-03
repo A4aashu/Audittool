@@ -1,10 +1,3 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-      <%@ page import="java.sql.*" %>
-      <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-    <%@ taglib uri = "http://java.sun.com/jsp/jstl/sql" prefix = "sql"%>
-	<%@ page language="java" import="com.tool.bean.LoginBean"%>
-	<%@ page language="java" import="com.tool.config.*"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,7 +9,7 @@
         content="admin, estimates, bootstrap, business, corporate, creative, management, minimal, modern, accounts, invoice, html5, responsive, CRM, Projects" />
     <meta name="author" content="Dreamguys - Bootstrap Admin Template" />
     <meta name="robots" content="noindex, nofollow" />
-    <title>IA Accelerator</title>
+    <title>Dashboard - KPMG Admin Portal</title>
 
     <!-- Favicon -->
 
@@ -117,17 +110,6 @@
 </head>
 
 <body>
-<%LoginBean currentUser=((LoginBean)(session.getAttribute("currentSessionUser")));%>
-  <sql:setDataSource var = "snapshot" driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver"
-         url = "jdbc:sqlserver://IN-AASHUYADAV;databaseName=Audit_tool"
-         user = "aashu" password = "kpmgKPMG1"/>
-		<sql:query dataSource = "${snapshot}" var = "resultset">
-         SELECT count(distinct(megaprocess)) from audits;
-      	</sql:query>
-      	<sql:query dataSource = "${snapshot}" var = "resultset1">
-         SELECT count(distinct(Department)) from audits;
-      	</sql:query>
-      	
     <!-- Sidebar -->
     <div class="sidebar" style="background-color: #00338D!important;width: 170px;" id="sidebar">
         <div class="sidebar-inner slimscroll">
@@ -138,34 +120,27 @@
                             <span class="status online"></span>
                         </span>
                         <div class="section">
-                              <span
-                                                                            style="color:#ffffff;margin-left:85px;font-size: 16px!important;">
-                                                                            <%= currentUser.getFullname()%>
-                                                                        </span>
-                                                                        <span style="color:#ffffff;margin-left:85px;">
-                                                                            <%= currentUser.getDepartment()%>
-                                                                        </span>
-                                                                        <span style="color:#ffffff;margin-left:85px;">
-                                                                            <%= currentUser.getDesignation()%>
-                                                                        </span>
+                            <span style="color:#ffffff;margin-left:85px;font-size: 16px!important;">Yatin Gaind</span>
+                            <span style="color:#ffffff;margin-left:85px;">Associate Director</span>
+                            <span style="color:#ffffff;margin-left:85px;">GRCS Telecom</span>
                         </div>
                     </li>
                     <li class="submenu">
-                        <a class="btn-links btn-inactive" href="dashboard2.jsp"><i class="la la-dashboard"></i> <span>
+                        <a class="btn-links btn-inactive" href="#"><i class="la la-dashboard"></i> <span>
                                 Home</span></a>
                     </li>
                     <li class="submenu">
-                        <a class="btn-links btn-inactive" href="myAudits.jsp"><i class="la la-cube"></i> <span>My
+                        <a class="btn-links btn-inactive" href="#"><i class="la la-cube"></i> <span>My
                                 Audits</span></a>
                     </li>
-                   <li class="submenu">
-            <a class="btn-links btn-inactive" href="#"><i class="la la-cube"></i> <span>My
-                Contacts</span></a>
-          </li>
-          <li class="submenu">
-            <a class="btn-links" style="margin-top:235px!important;width:135px" href="logout.jsp"><i class="la la-user"></i> <span> Logout
-              </span></a>
-          </li>
+                    <li class="submenu">
+                        <a class="btn-links btn-inactive" href="#"><i class="la la-cube"></i> <span>My
+                                Contacts</span></a>
+                    </li>
+                    <li class="submenu">
+                        <a class="btn-links down" href="#"><i class="la la-user"></i> <span> Logout
+                            </span></span></a>
+                    </li>
 
                 </ul>
             </div>
@@ -185,11 +160,11 @@
             <img class="blue" src="assets/images/card1.png" alt="" />
             <img class="icon1" src="assets/images/icon1.png" alt="">
             <h5 class="icon-tag-2">No. of <br />Mega Process</h5>
-            <h1 class="icon-tag-2" style="margin-top:50px;margin-left:78px;font-size: 30px;">${resultset.rowsByIndex[0][0]}</h1>
+            <h1 class="icon-tag-2" style="margin-top:50px;margin-left:78px;font-size: 30px;">0</h1>
             <img class="icon2" src="assets/images/icon2.png" alt="">
             <img class="red" src="assets/images/card2.png" alt="" />
             <h5 class="icon-tag">No. of <br>Departments</h5>
-            <h1 class="icon-tag-2" style="margin-top:50px;margin-left:335px;font-size: 30px;">${resultset1.rowsByIndex[0][0]}</h1>
+            <h1 class="icon-tag-2" style="margin-top:50px;margin-left:335px;font-size: 30px;">0</h1>
 
         </div>
         <p>Please select Mega- Process and Department</p>
@@ -229,7 +204,7 @@
         <table id="example" class="" style="width:100%">
             <thead>
                 <tr>
-                    <th style="text-align: center;">Audit Id</th>
+                    <th style="text-align: center;">SI.No.</th>
                     <th style="text-align: center;">Client Name</th>
                     <th style="text-align: center;">Review Name</th>
                     <th style="text-align: center;">Opening Meeting Deck</th>
@@ -238,36 +213,78 @@
                 </tr>
             </thead>
             <tbody>
-                
-                 <%
-                                                                            try{
-                                                                            	
-                                                                                Connection connection=Dbconfig.getConnection();
-                                                                                PreparedStatement psmt1=connection.prepareStatement("select * from audits;");
-                                                                                
-
-                                                                                ResultSet resultset1 =psmt1.executeQuery() ;
-                                                                        %>
-            
-             <%  while(resultset1.next()){ %>
-       																			 <tr>
-                                                                                    <td style="text-align: center;" ><%= resultset1.getString("Initiative_id")%></td>
-                                                                                        <td  style="text-align: center;"  > <%= resultset1.getString("Name_of_client")%></td>
-                                                                                        <td style="text-align: center;"  > <%= resultset1.getString("Engagement_name")%></td>
-                                                                                       
-                                                                                       <td style="text-align: center;"><a href="#">Export.ppt</a></td>
-                    																		<td style="text-align: center;"><a href="#">Export.xlsx</a></td>
-                   																		 <td style="text-align: center;"><a href="#">Export.xlsx</a></td>
-                                                                                </tr>
-            <% } 
-
-        }
-        catch(Exception e)
-        {
-             out.println("No DATA");
-        }
-%>
-                
+                <tr>
+                    <td style="text-align: center;"></td>
+                    <td style="text-align: center;"></td>
+                    <td style="text-align: center;"></td>
+                    <td style="text-align: center;"><a href="#">Export.ppt</a></td>
+                    <td style="text-align: center;"><a href="#">Export.xlsx</a></td>
+                    <td style="text-align: center;"><a href="#">Export.xlsx</a></td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;"></td>
+                    <td style="text-align: center;"></td>
+                    <td style="text-align: center;"></td>
+                    <td style="text-align: center;"><a href="#">Export.ppt</a></td>
+                    <td style="text-align: center;"><a href="#">Export.xlsx</a></td>
+                    <td style="text-align: center;"><a href="#">Export.xlsx</a></td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;"></td>
+                    <td style="text-align: center;"></td>
+                    <td style="text-align: center;"></td>
+                    <td style="text-align: center;"><a href="#">Export.ppt</a></td>
+                    <td style="text-align: center;"><a href="#">Export.xlsx</a></td>
+                    <td style="text-align: center;"><a href="#">Export.xlsx</a></td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;"></td>
+                    <td style="text-align: center;"></td>
+                    <td style="text-align: center;"></td>
+                    <td style="text-align: center;"><a href="#">Export.ppt</a></td>
+                    <td style="text-align: center;"><a href="#">Export.xlsx</a></td>
+                    <td style="text-align: center;"><a href="#">Export.xlsx</a></td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;"></td>
+                    <td style="text-align: center;"></td>
+                    <td style="text-align: center;"></td>
+                    <td style="text-align: center;"><a href="#">Export.ppt</a></td>
+                    <td style="text-align: center;"><a href="#">Export.xlsx</a></td>
+                    <td style="text-align: center;"><a href="#">Export.xlsx</a></td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;"></td>
+                    <td style="text-align: center;"></td>
+                    <td style="text-align: center;"></td>
+                    <td style="text-align: center;"><a href="#">Export.ppt</a></td>
+                    <td style="text-align: center;"><a href="#">Export.xlsx</a></td>
+                    <td style="text-align: center;"><a href="#">Export.xlsx</a></td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;"></td>
+                    <td style="text-align: center;"></td>
+                    <td style="text-align: center;"></td>
+                    <td style="text-align: center;"><a href="#">Export.ppt</a></td>
+                    <td style="text-align: center;"><a href="#">Export.xlsx</a></td>
+                    <td style="text-align: center;"><a href="#">Export.xlsx</a></td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;"></td>
+                    <td style="text-align: center;"></td>
+                    <td style="text-align: center;"></td>
+                    <td style="text-align: center;"><a href="#">Export.ppt</a></td>
+                    <td style="text-align: center;"><a href="#">Export.xlsx</a></td>
+                    <td style="text-align: center;"><a href="#">Export.xlsx</a></td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;"></td>
+                    <td style="text-align: center;"></td>
+                    <td style="text-align: center;"></td>
+                    <td style="text-align: center;"><a href="#">Export.ppt</a></td>
+                    <td style="text-align: center;"><a href="#">Export.xlsx</a></td>
+                    <td style="text-align: center;"><a href="#">Export.xlsx</a></td>
+                </tr>
 
             </tbody>
         </table>

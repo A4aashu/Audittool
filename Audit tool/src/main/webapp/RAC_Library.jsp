@@ -60,8 +60,75 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@3.0.0-beta/dist/chart.min.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
+  
+  <style>
+        /* #example {
+            position: absolute!important;
+            margin-top: 10px!important;
+            width: 1140px !important;
+        } */
+        #example_wrapper{
+            position: absolute;
+            margin-left: 3%;
+        }
+
+        th {
+
+            background-color: #00338d !important;
+
+            color: white;
+
+        }
+
+        /* tr:nth-child(even) input {
+            background-color: #E5E5E5;
+
+        }*/
+
+        tr:nth-child(odd) {
+            background-color: #B7C1D3!important;
+
+        } 
+
+        tr:nth-child(even) {
+            background-color: #E5E5E5!important;
+
+        }
+
+        div.dataTables_wrapper {
+            width: 1140px;
+            height:200px;
+            margin: 0 auto;
+        }
+        .dataTable {
+      margin-left: 0px !important;
+      margin-bottom: 17px !important;
+    }
+    th{
+    	text-align:center!important;
+    }
     
+        /* .dataTables_scrollHead{
+            margin-bottom: -20px!important;
+        } */
+/* 
+        table {
+            table-layout: fixed;
+        }
+
+        td {
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #B7C1D3;
+        } */
+    </style>
 </head>
 
 <body>
@@ -100,14 +167,13 @@
                   Audits</span></a>
             </li>
             <li class="submenu">
-              <a class="btn-links btn-inactive" href="#"><i class="la la-cube"></i> <span>My
-                  Contacts</span></a>
-            </li>
-
-            <li class="submenu">
-              <a class="btn-links down" href="logout.jsp"><i class="la la-user"></i> <span> Logout
-                </span></span></a>
-            </li>
+            <a class="btn-links btn-inactive" href="#"><i class="la la-cube"></i> <span>My
+                Contacts</span></a>
+          </li>
+          <li class="submenu">
+            <a class="btn-links" style="margin-top:235px!important;width:135px" href="logout.jsp"><i class="la la-user"></i> <span> Logout
+              </span></a>
+          </li>
 
 
           </ul>
@@ -131,7 +197,7 @@
             <nav class="Nav2 navbar-fixed-top">
 
               <ul style="margin-left: 380px;margin-top: 4px;">
-                <li style="width: 122px!important;"><a href="#"
+                <li style="width: 122px!important;"><a href="Risk_Repository.jsp"
                     class="hover-underline-animation nav-linkk nav2 " style="border-right: 1px solid black;width: 135px;
                     margin-right: 15px;
                     padding-right: 1px;
@@ -217,63 +283,61 @@
 
           <h4 style="margin-left: 35px;margin-bottom: 25px;color:#00338D; margin-top: 25px !important;font-weight:bold; font-size: 25px !important;">Risk and Control Matrix
           </h4>
-          <div class="tableanddrp css-serial">
-            <div class="tablelist1">
-              
-              <div class="tablecss css-serial">
-                <div class="data-table">
-                  <table id="example1" class="table display nowrap" style="width: 100%">
+          
+                  <table id="example" class="table display nowrap css-serial" style="width: 100%;margin-left: 3.5%;">
                     <thead>
-                      <tr>
-                        <th>Sl.no.</th>
-                        <th>Sub Process</th>
-                        <th>Control Objective</th>
-                        <th>Control</th>
-                        <th>Risk</th>
+                      <tr style="text-align:left">
+                        <th style="text-align:left!important">Sl.no.</th>
+                        <th style="text-align:left!important">Sub Process</th>
+                        <th style="text-align:left!important">Control Objective</th>
+                        <th style="text-align:left!important">Control</th>
+                        <th style="text-align:left!important">Risk</th>
+                        <th style="text-align:left!important" hidden>Process</th>
+                        <th  style="text-align:left!important" hidden>Categorization</th>
+                        <th style="text-align:left!important" hidden>Megaprocess</th>
                       </tr>
                     </thead>
                     <tbody >
                       
-                      <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-              
-                      </tr>
-                      <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-              
-                      </tr>
-                      <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-              
-                      </tr>
-                      <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-              
-                      </tr>
+                     
+                       <%
+                                                                            try{
+                                                                            	
+                                                                                Connection connection=Dbconfig.getConnection();
+                                                                                PreparedStatement psmt1=connection.prepareStatement("select * from RACM;");
+                                                                                
+
+                                                                                ResultSet resultset1 =psmt1.executeQuery() ;
+                                                                        %>
+            
+             <%  while(resultset1.next()){ %>
+       																			 <tr>
+                                                                                    <td style="text-align:left"></td>
+                                                                                        <td style="text-align:left"><%= resultset1.getString("Subprocess")%></td>
+                        <td style="text-align:left"><%= resultset1.getString("ControlObjective")%></td>
+                        <td style="text-align:left"><%= resultset1.getString("control")%></td>
+                        <td style="text-align:left"><%= resultset1.getString("risks")%></td>
+                        <td style="text-align:left" hidden><%= resultset1.getString("Process")%></td>
+                        <td style="text-align:left" hidden><%= resultset1.getString("DepartmentCategorisation")%></td>
+                        <td style="text-align:left" hidden><%= resultset1.getString("MegaProcess")%></td>
+                                                                                       
+                                                                                </tr>
+            <% } 
+
+        }
+        catch(Exception e)
+        {
+             out.println("No DATA");
+        }
+%>
+                      
+                      
+                    
                      
                       
                     </tbody>
                   </table>
-                </div>
-              </div>
-            </div>
-          </div>
+          
         </div>
 
       </div>
@@ -312,13 +376,19 @@
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <script>
-    $('#example1').DataTable({
-      "scrollY": 100,
-      "paging": false,
-      "info": false,
-      "autoWidth": false,
-      "searching": false,
-    });
+        $(document).ready(function () {
+            $('#example').DataTable({
+                scrollY: 200,
+                scrollX: true,
+                scrollCollapse: true,
+                scroller: false,
+                "lengthChange": false,
+                "searching": false,
+                "paging": false,
+                "info": false,
+            });
+        });
+        
   </script>
 </body>
 

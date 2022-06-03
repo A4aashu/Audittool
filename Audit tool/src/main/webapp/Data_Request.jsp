@@ -94,14 +94,13 @@
                                     Audits</span></a>
                         </li>
                         <li class="submenu">
-                            <a class="btn-links btn-inactive" href="#"><i class="la la-cube"></i> <span>My
-                                    Contacts</span></a>
-                        </li>
-
-                        <li class="submenu">
-                            <a class="btn-links down" href="#"><i class="la la-user"></i> <span> Logout
-                                </span></span></a>
-                        </li>
+            <a class="btn-links btn-inactive" href="#"><i class="la la-cube"></i> <span>My
+                Contacts</span></a>
+          </li>
+          <li class="submenu">
+            <a class="btn-links" style="margin-top:235px!important;width:135px" href="logout.jsp"><i class="la la-user"></i> <span> Logout
+              </span></a>
+          </li>
 
                     </ul>
                 </div>
@@ -127,6 +126,8 @@
                                 <li><button type="button" class="boxx-shadow2 nav-1" style="width: 141px!important;">Data Request</button></li>
                                 <li><button type="button"  class="boxx-shadow2 nav1" style="width:152px;">Risk and Controls</button></li>
                                 <li><button type="button" class="boxx-shadow2 nav1">Meeting Tracker</button></li>
+                                <li><button type="button" class="boxx-shadow2 nav1">Client Details</button></li>
+                                
 
                             </ul>
 
@@ -219,6 +220,7 @@
                                                                 <input id="dataid" value="" name="dataid" hidden>
                                                                 <input id="auditid" value="<%=request.getParameter("id")%>" name="auditid" hidden>
                                                                 <input id="auditid" value="<%=request.getParameter("objid")%>" name="objid" hidden>
+                                                                <input id="auditid" value="<%=request.getParameter("controlriskid")%>" name="controlriskid" hidden>
                                                                 </form>
                         </div>
                     </div>
@@ -226,7 +228,7 @@
                             
                 <div class="modal" id="myModal2">
                     <div class="modal-dialog">
-                        <div class="modal-content" style="height: 380px!important;">
+                        <div class="modal-content" style="height: 500px!important;width: 720px!important;margin-left: -91px;">
 
                             <!-- Modal Header -->
                             <div class="modal-header">
@@ -241,7 +243,7 @@
 
                             <!-- Modal body -->
                             <div class="modal-body">
-                                <table id="myTable2" style="height:200px!important;width:700px!important;"
+                                <table id="myTable2" style="height:300px!important;width:100%!important;"
                                     class="table table-striped table-bordered table-responsive table-hover">
                                     
                                         

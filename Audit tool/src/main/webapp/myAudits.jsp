@@ -65,8 +65,9 @@
             var id=data[0];
             var processid=data[1];
             var objectiveid=data[2];
+            var controlriskid=data[3];
            
-            window.location.href = "<%=request.getContextPath()%>/Data_Request.jsp?&id="+id+ "&processid=" + processid+ "&objid=" + objectiveid;
+            window.location.href = "<%=request.getContextPath()%>/Data_Request.jsp?&id="+id+ "&processid=" + processid+ "&objid=" + objectiveid+ "&controlriskid=" + controlriskid;
             
         } );
        
@@ -198,6 +199,7 @@
                     <th>Audit ID</th>
                     <th hidden>Processid</th>
                     <th hidden>objectiveid</th>
+                    <th hidden>controlriskid</th>
                     <th>Client Name</th>
                     <th>Review Name</th>
                     <th>Start Date</th>
@@ -219,6 +221,9 @@
                                                                                          <td 
                                                                                         style="text-align: left;"hidden>
                                                                                         <%= resultset1.getString("objectiveid")%></td>
+                                                                                        <td 
+                                                                                        style="text-align: left;"hidden>
+                                                                                        <%= resultset1.getString("controlriskid")%></td>
                                                                                     <td 
                                                                                         style="text-align: left;">
                                                                                         <%= resultset1.getString("Name_of_client")%></td>

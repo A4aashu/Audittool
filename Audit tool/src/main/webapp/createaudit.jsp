@@ -50,17 +50,25 @@
     <link rel="stylesheet" href="assets/css/Create_New_Audit.css">
 <script>
 
-$("#audit_end_date").change(function () {
+/* $("#audit_end_date").change(function () {
 var startDate = document.getElementById("audit_start_date").value;
 var endDate = document.getElementById("audit_end_date").value;
-
-
-
 if ((Date.parse(startDate) >= Date.parse(endDate))) {
 alert("End date should be greater than Start date");
 document.getElementById("audit_end_date").value = "";
 }
-});
+}); */
+
+function xyz(){
+	var startDate = document.getElementById("audit_start_date").value;
+	var endDate = document.getElementById("audit_end_date").value;
+	if ((Date.parse(startDate) >= Date.parse(endDate))) {
+	alert("End date should be greater than Start date");
+	document.getElementById("audit_end_date").value = "";
+	} 
+	
+}
+
 </script>
 
 </head>
@@ -120,9 +128,12 @@ document.getElementById("audit_end_date").value = "";
                 <li class="submenu">
                   <a class="btn-links btn-inactive" href="#"><i class="la la-cube"></i> <span>My Audits</span></a>
                 </li>
+                <li class="submenu">
+              <a class="btn-links btn-inactive" href="#"><i class="la la-user"></i> <span>My Contacts</span></a>
+            </li>
                 
                 <li class="submenu">
-                  <a class="btn-links down" style="margin-top:320px!important;" href="logout.jsp"><i class="la la-user"></i> <span> Logout
+                  <a class="btn-links down" style="margin-top:220px!important;" href="logout.jsp"><i class="la la-user"></i> <span> Logout
                     </span></span></a>
                 </li>
     
@@ -150,6 +161,7 @@ document.getElementById("audit_end_date").value = "";
                     <li><button type="button" class="boxx-shadow2 nav1">Data Request</button></li>
                     <li><button type="button" class="boxx-shadow2 nav1" style="width:150px;">Risk and Controls</button></li>
                     <li><button type="button" class="boxx-shadow2 nav1">Meeting Tracker</button></li>
+                    <li><button type="button" class="boxx-shadow2 nav1">Client Details</button></li>
     
                   </ul>
     
@@ -378,7 +390,7 @@ document.getElementById("audit_end_date").value = "";
                                         <h6 class="mb-0 text-lg" style="margin-left: 28.5%;font-size: 23px;
                                         margin-top: -14.5%;">Audit End Date
                                         </h6>
-                                        </label> <input class="mb-4 input_end_date" id="audit_end_date" onchange="checkEmail()"
+                                        </label> <input class="mb-4 input_end_date" id="audit_end_date" onchange="xyz()"
                                             type="date" name="audit_end_date" value="<%=audit_end_date%>" required>
                                     </div>
 

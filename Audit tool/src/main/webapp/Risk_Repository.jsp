@@ -69,6 +69,27 @@
 
 <body>
 <%LoginBean currentUser=((LoginBean)(session.getAttribute("currentSessionUser")));%>
+<sql:setDataSource var = "snapshot" driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver"
+         url = "jdbc:sqlserver://IN-AASHUYADAV;databaseName=Audit_tool"
+         user = "aashu" password = "kpmgKPMG1"/>
+		<sql:query dataSource = "${snapshot}" var = "resultset">
+         SELECT count(distinct(MegaProcess)) from racm;
+      	</sql:query>
+      	<sql:query dataSource = "${snapshot}" var = "resultset1">
+         SELECT count(distinct(DepartmentCategorisation)) from racm;
+      	</sql:query>
+      	<sql:query dataSource = "${snapshot}" var = "resultset2">
+         SELECT count(distinct(Process)) from racm;
+      	</sql:query>
+      	<sql:query dataSource = "${snapshot}" var = "resultset3">
+         SELECT count(distinct(Subprocess)) from racm;
+      	</sql:query>
+      	<sql:query dataSource = "${snapshot}" var = "resultset4">
+         SELECT count(distinct(Control)) from racm;
+      	</sql:query>
+      	<sql:query dataSource = "${snapshot}" var = "resultset5">
+         SELECT count(distinct(Risks)) from racm;
+      	</sql:query>
   <div class="main-wrapper">
 
 
@@ -103,14 +124,13 @@
                   Audits</span></a>
             </li>
             <li class="submenu">
-              <a class="btn-links btn-inactive" href="#"><i class="la la-cube"></i> <span>My
-                  Contacts</span></a>
-            </li>
-
-            <li class="submenu">
-              <a class="btn-links down" href="logout.jsp"><i class="la la-user"></i> <span> Logout
-                </span></span></a>
-            </li>
+            <a class="btn-links btn-inactive" href="#"><i class="la la-cube"></i> <span>My
+                Contacts</span></a>
+          </li>
+          <li class="submenu">
+            <a class="btn-links" style="margin-top:235px!important;width:135px" href="logout.jsp"><i class="la la-user"></i> <span> Logout
+              </span></a>
+          </li>
 
           </ul>
         </div>
@@ -164,40 +184,48 @@
                 <img class="icon1" src="assets/images/1.png" alt="" />
                 <h5 class="icon-tag-2">No of Mega Processes<br> Covered</h5>
                 <h5 class="icon-tag-2" style="margin-top: 45px;
-                                font-size: 30px!important;">0</h5>
+                                font-size: 30px!important;">${resultset.rowsByIndex[0][0]}</h5>
 
                 <img class="red" src="assets/images/cardpic2.png" alt="" />
                 <img class="icon2" src="assets/images/2.png" alt="" />
                 <h5 class="icon-tag">No of Departments<br> Covered</h5>
                 <h5 class="icon-tag" style="margin-top: 45px;
-                                font-size: 30px!important;">0</h5>
+                                font-size: 30px!important;">${resultset1.rowsByIndex[0][0]}</h5>
 
                 <img class="darkblue" src="assets/images/cardpic3.png" alt="" />
                 <img class="icon3" src="assets/images/3.png" alt="" />
                 <h5 class="icon-tag-1">No of Processes<br> Covered</h5>
-                <h5 class="icon-tag-1" style="font-size: 30px!important;">0</h5>
+                <h5 class="icon-tag-1" style="font-size: 30px!important;">${resultset2.rowsByIndex[0][0]}</h5>
 
                 <img class="purple" src="assets/images/cardpic4.png" alt="" />
                 <img class="icon4" src="assets/images/4.png" alt="" />
                 <h5 class="icon-tag-4">No of Sub-Processes<br> Covered</h5>
-                <h5 class="icon-tag-4" style="font-size: 30px!important;">0</h5>
+                <h5 class="icon-tag-4" style="font-size: 30px!important;">${resultset3.rowsByIndex[0][0]}</h5>
 
                 <img class="five" src="assets/images/cardpic6.png" alt="" />
                 <img class="icon5" src="assets/images/5.png" alt="" />
                 <h5 class="icon-tag-5">No of Controls<br> Covered</h5>
-                <h5 class="icon-tag-5" style="font-size: 30px!important;">0</h5>
+                <h5 class="icon-tag-5" style="font-size: 30px!important;">${resultset4.rowsByIndex[0][0]}</h5>
 
                 <img class="six" src="assets/images/cardpic5.png" alt="" />
                 <img class="icon6" src="assets/images/6.png" alt="" />
                 <h5 class="icon-tag-6">No of Risks Covered</h5>
-                <h5 class="icon-tag-6" style="font-size: 30px!important;">0</h5>
+                <h5 class="icon-tag-6" style="font-size: 30px!important;">${resultset5.rowsByIndex[0][0]}</h5>
               </div>
             </div>
             <div class="chartCard">
               <h4 style="font-size:23px;margin-left:8px!important;">No of sub-processes covered under Mega Process</h4>
-              <div class="chartBox" style="display: flex;flex-direction:row;">
-                <canvas id="myChart"></canvas>
-                <canvas id="myChart2"></canvas>
+              <div class="chartBox" style="display: flex;flex-direction:row;margin-top:-50px;">
+                <div class="" style="display: flex;flex-direction:column;padding-right: 110px;">
+                  <h5 style="color: #00338d!important;font-size: 20px!important;">No. of sub-processes covered under Mega Process</h5>
+                  <br>
+                  <canvas id="myChart" style="width:500px;height:300px;"></canvas>
+                </div>
+                <div class="" style="display: flex;flex-direction:column;margin-top: -130px;">
+                  <h5 style="color: #00338d!important;font-size: 20px!important;text-align:center;">No. of Risks and Controls covered under Mega Process</h5>
+                  <br>
+                  <canvas id="myChart2" style="width:500px;height:370px;"></canvas>
+                </div>
               </div>
               <!-- <div class="chartBox">
                               <canvas id="myChart2"></canvas>
@@ -291,8 +319,14 @@
         },
         indexAxis: 'y',
         scales: {
-          y: {
-            display: true,
+        	y: {
+                display: true,
+                ticks: {
+                  color: '#00338D',
+                },
+                font:{
+                  size:12,
+                },
             grid: {
               drawOnChartArea: false,
               drawBorder: false
@@ -371,8 +405,15 @@
         },
         indexAxis: 'y',
         scales: {
-          y: {
-            display: true,
+        	y: {
+                display: true,
+                ticks: {
+                  color: '#00338D',
+                },
+                font:{
+                  size:12,
+                  weight:'bold',
+                },
             grid: {
               drawOnChartArea: false,
               drawBorder: false

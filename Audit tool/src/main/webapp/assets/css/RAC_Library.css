@@ -8,9 +8,7 @@
     background: #1A1A1A;
   
   }
-  table.dataTable {
-    margin-top: 0px !important;
-  }
+ 
   .chartMenu p {
     padding: 10px;
     font-size: 20px;
@@ -49,18 +47,7 @@
     margin-top: -17px !important;
   }
   
-  .table td {
-   
-    vertical-align: top;
-    /* border-top: 1px solid #eceeef; */
-    border:none!important;
-  }
-.table thead th {
-  font-weight: 500;
-  padding-right: 63px;
-  text-align: center;
-}
-  
+ 
   .sidebtn {
     float: right;
   
@@ -229,30 +216,7 @@
   }
   
 
-  thead,th  {
-    background-color: #00338d !important;
-    color: white;
-  }
-  
  
-  
- tbody>td {
- 
-    color: #00338d;
-    width: 50px !important;
-    font-size: 15px;
-    padding: 0px;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #e5e5e5;
-    
-  }
-  
-  tr:nth-child(odd) {
-    background-color: #b7c1d3;
-  
-  }
   
 /* down arrow 3 */
 .arrow {
@@ -391,12 +355,13 @@
 /* // for seriral no. */
 .css-serial {
   counter-reset: serial-number;  /* Set the serial number counter to 0 */
+ 
 }
 
 .css-serial td:first-child:before {
   counter-increment: serial-number;  /* Increment the serial number counter */
   content: counter(serial-number);  /* Display the counter */
-}
+ }
 
 
   .tablecss {

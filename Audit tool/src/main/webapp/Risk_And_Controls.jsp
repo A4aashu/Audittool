@@ -67,7 +67,9 @@
 </head>
 
 <body>
-<%LoginBean currentUser=((LoginBean)(session.getAttribute("currentSessionUser")));%>
+<%LoginBean currentUser=((LoginBean)(session.getAttribute("currentSessionUser")));
+String currentUser1=session.getAttribute("controlriskid").toString();
+%>
     <div class="main-wrapper">
 
 
@@ -101,15 +103,14 @@
               <a class="btn-links btn-inactive" href="myAudits.jsp"><i class="la la-cube"></i> <span>My
                   Audits</span></a>
             </li>
-            <li class="submenu">
-              <a class="btn-links btn-inactive" href="#"><i class="la la-cube"></i> <span>My
-                  Contacts</span></a>
+                                                             <li class="submenu">
+              <a class="btn-links btn-inactive" href="#"><i class="la la-user"></i> <span>My Contacts</span></a>
             </li>
-
-            <li class="submenu">
-              <a class="btn-links down" href="logout.jsp"><i class="la la-user"></i> <span> Logout
-                </span></a>
-            </li>
+                
+                <li class="submenu">
+                  <a class="btn-links down" style="margin-top:220px!important;" href="logout.jsp"><i class="la la-user"></i> <span> Logout
+                    </span></span></a>
+                </li>
                     </ul>
                 </div>
             </div>
@@ -135,6 +136,7 @@
                                 <li><button type="button" class="boxx-shadow2 nav-1" style="width:152px;">Risk and
                                         Controls</button></li>
                                 <li><button type="button" class="boxx-shadow2 nav1">Meeting Tracker</button></li>
+<li><button type="button" class="boxx-shadow2 nav1">Client Details</button></li>
 
                             </ul>
 
@@ -181,7 +183,7 @@
         
            <tr>
                                                 <th class="rowww"
-                                                    style=" font-weight:bold!important;font-size:18px!important;"hidden >Control Objective ID</th>
+                                                    style=" font-weight:bold!important;font-size:18px!important;" hidden>Control Objective ID</th>
                                                 <th class="rowww"
                                                     style=" font-weight:bold!important;font-size:18px!important;"hidden>Control Objective</th>
                                                 <th class="rowww"
@@ -198,9 +200,58 @@
                                         </thead>
                                         
                                         <tbody>
-                                           
+                                          <%
+    try{
+    	String x=session.getAttribute("controlriskid").toString();
+    	int[] a=Arrays.stream(x.split(",")).mapToInt(Integer::parseInt).toArray();  
+        StringBuilder idList = new StringBuilder();
+        		for (int id : a) {
+        		   if (idList.length() > 0) {
+        		     idList.append(",");
+        		   }
+        		   idList.append(id);
+        		}
+    	Connection connection1=Dbconfig.getConnection();
+        PreparedStatement psmt=connection1.prepareStatement("select id,Controlobjective,control,risks,process from racm where id in ("+idList+");");
+        
+ 		
+        ResultSet resultset =psmt.executeQuery() ;
+        
+%>  
                                                                                 
-          
+           <%  while(resultset.next()){ %>   
+                                    <tr data-id="1">
+
+                                                <td data-field="control" class="td_roww"style="font-weight: bold;color:#00338D;" hidden><%= resultset.getString("id")%></td>
+                                                <td data-field="control2" class="td_roww"style="font-weight: bold;color:#00338D;" hidden><%= resultset.getString("Controlobjective")%>
+                                                </td>
+                                                <td data-field="control3" class="td_roww"
+                                                style="font-weight: bold;color:#00338D;">
+                                                <%= resultset.getString("Control")%>
+                                                </td>
+                                                <td data-field="control4" class="td_roww"
+                                                style="font-weight: bold;color:#00338D;">
+                                               <%= resultset.getString("Risks")%>
+                                                </td>
+                                                <td data-field="subprocess" class="td_roww2"
+                                                    style="font-weight: bold;color:#00338D;" hidden>
+                                                    <%= resultset.getString("Process")%>
+                                                </td>
+                                                <td
+                                                    style="background-color:rgba(167, 158, 205, 0.28);font-weight:700;color:#00338D">
+                                                    <button class="btn btn-outline-danger delete_row"
+                                                        style="border-radius: 20px;background-color: #C4C4C4;color: black;border-color: black!important;float:right!important;margin-left:86%;margin-top: -3px!important;">X</button>
+                                                </td>
+                                            </tr>
+  <% 
+           } 
+
+        }
+        catch(Exception e)
+        {
+             out.println("");
+        }
+%>  
 
 
 
@@ -222,7 +273,7 @@
                 </div>
                 <div class="modal" id="myModal">
                     <div class="modal-dialog">
-                        <div class="modal-content" style="height: 380px!important;">
+                        <div class="modal-content" style="height: 500px!important;width: 720px!important;margin-left: -91px;">
 
                             <!-- Modal Header -->
                             <div class="modal-header">
@@ -239,7 +290,7 @@
 
                             <!-- Modal body -->
                             <div class="modal-body">
-                                <table id="myTable" style="height:200px!important;width:700px!important;"
+                                <table id="myTable" style="height:300px!important;width:100%!important;"
                                     class="table table-striped table-bordered table-responsive table-hover">
                                                                          <%
     try{
@@ -261,12 +312,12 @@
 %>
                                     <thead>
                                         <tr>
-                                            <th style="text-align: center;">Select Control</th>
-                                            <th style="text-align: center;" hidden >ID</th>
-                                            <th style="text-align: center;" hidden>Control Objective</th>
-                                            <th style="text-align: center;">Controls</th>
-                                            <th style="text-align: center;">Risk</th>
-                                            <th style="text-align: center;"hidden>Process</th>
+                                            <th style="text-align: left!important;">Select Control</th>
+                                            <th style="text-align: left!important;" hidden >ID</th>
+                                            <th style="text-align: left!important;" hidden>Control Objective</th>
+                                            <th style="text-align: left!important;">Controls</th>
+                                            <th style="text-align: left!important;">Risk</th>
+                                            <th style="text-align: left!important;"hidden>Process</th>
                                         </tr>
                                     </thead>
                                     <tbody id="myTableb">
@@ -275,11 +326,11 @@
                                         <tr>
                                             <td name="control" style="width: 5%;"><input type="checkbox"
                                                     name="check-tab1" /> </td>
-                                            <td name="firstname" style="text-align: center;" hidden><%= resultset.getString("ID")%></td>
-                                            <td name="lastname" style="text-align: center;" hidden><%= resultset.getString("Controlobjective")%></td>
-                                            <td name="email" style="text-align: center;"><%= resultset.getString("Control")%></td>
-                                            <td name="email1" style="text-align: center;"><%= resultset.getString("Risks")%></td>
-                                            <td name="email2" style="text-align: center;"hidden><%= resultset.getString("process")%></td>
+                                            <td name="firstname" style="text-align: left!important;" hidden><%= resultset.getString("ID")%></td>
+                                            <td name="lastname" style="text-align: left!important;" hidden><%= resultset.getString("Controlobjective")%></td>
+                                            <td name="email" style="text-align: left!important;"><%= resultset.getString("Control")%></td>
+                                            <td name="email1" style="text-align: left!important;"><%= resultset.getString("Risks")%></td>
+                                            <td name="email2" style="text-align: left!important;"hidden><%= resultset.getString("process")%></td>
                                         </tr>
   <% } 
 

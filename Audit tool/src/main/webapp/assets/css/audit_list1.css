@@ -5,10 +5,11 @@
   background: #1A1A1A;
 
 }
-table.dataTable {
+
+/* table.dataTable {
   margin-bottom: 15px !important;
   margin-top: 0px !important;
-}
+} */
 .chartMenu p {
   padding: 10px;
   font-size: 20px;
@@ -16,21 +17,14 @@ table.dataTable {
 
 .chartCard {
   width: 60vw;
-  height: calc(100vh - 120px);
+  height: calc(50vh - 50px);
   /* background: rgba(255, 26, 104, 0.2); */
   display: flex;
   align-items: center;
   justify-content: center;
   margin-left: 44%;
-  margin-top: -40%;
-  margin-bottom: -14%;
-}
-.chartBox2 {
-  width: 400px;
-  padding: 20px;
-  border-radius: 20px;
-  /* border: solid 3px rgba(255, 26, 104, 1); */
-  /* background: white; */
+  margin-top: -38%;
+  margin-bottom: -16%;
 }
 
 .chartBox {
@@ -41,9 +35,17 @@ table.dataTable {
   /* background: white; */
 }
 
+.chartBox2 {
+  width: 400px;
+  padding: 20px;
+  border-radius: 20px;
+  /* border: solid 3px rgba(255, 26, 104, 1); */
+  /* background: white; */
+}
+
 .dataTable {
   margin-left: 0px;
-  width: 1080px !important;
+  width: 1140px !important;
 }
 
 .dataTables_scrollBody {
@@ -108,7 +110,7 @@ table.dataTable {
 }
 
 .down {
-  margin-top: 185% !important;
+  margin-top: 145% !important;
 }
 
 .section {
@@ -225,11 +227,11 @@ table.dataTable {
   display: flex;
 }
 
-thead,
+/* thead,
 th {
   background-color: #00338d !important;
   color: white;
-}
+} */
 
 /* thead,
 th {
@@ -237,11 +239,11 @@ th {
   padding-bottom: 0px !important;
   border-bottom: 1px solid #00338d;
 } */
-
+/* 
 th,
 td {
   font-size: 10px;
-  /* padding: 5px !important; */
+  padding: 5px !important;
   width: 50px !important;
 }
 
@@ -256,26 +258,33 @@ tr:nth-child(even) {
 
 tr:nth-child(odd) {
   background-color: #b7c1d3;
-}
+} */
 
 .bg-img {
   float: right;
   position: relative;
   top: 0;
-  left: 0;
+  left: -1px;
   height: 625px;
-  width: 600px;
+  width: 594px;
   margin-top: 0px;
   object-fit: cover;
 }
 
 .bg-img-2 {
-  float: right;
+  /* float: right;
   position: relative;
-  left: 0;
+  left: 129px;
   height: 625px;
   width: 1175px;
-  margin-top: -30px;
+  margin-top: -188px;
+  object-fit: cover; */
+  float: right;
+  position: relative;
+  left: 8px;
+  height: 625px;
+  width: 1175px;
+  margin-top: 50px;
   object-fit: cover;
 }
 
@@ -289,7 +298,7 @@ tr:nth-child(odd) {
 .chart-text {
   position: absolute;
   top: 15px;
-  left: 1155px !important;
+  left: 1165px !important;
   height: 215px;
   font-weight: bolder;
   font-size: 25px;
@@ -340,6 +349,7 @@ h5 {
   font-weight: bold;
 }
 
+/* 
 .tablecss {
   margin-top: 10px;
 
@@ -353,14 +363,14 @@ h5 {
 td>a {
   text-decoration: underline;
 }
-
+*/
 .tableanddrp {
   position: relative !important;
   display: flex !important;
 }
 
 .content2 {
-  margin-top: 20px;
+  margin-top: 425px;
   color: #00338d;
   font-weight: bold;
   display: grid;
@@ -380,7 +390,7 @@ td>a {
   width: 250px;
   height: 230px;
   border-radius: 50%;
- 
+
 }
 
 /* (B) DONUT "CONVERSION" */

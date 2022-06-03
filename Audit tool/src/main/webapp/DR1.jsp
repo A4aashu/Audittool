@@ -19,7 +19,7 @@
     content="admin, estimates, bootstrap, business, corporate, creative, management, minimal, modern, accounts, invoice, html5, responsive, CRM, Projects">
   <meta name="author" content="Dreamguys - Bootstrap Admin Template">
   <meta name="robots" content="noindex, nofollow">
-  <title>Dashboard - KPMG Admin Portal</title>
+  <title>IA Accelerator</title>
 
   <!-- Favicon -->
 
@@ -128,13 +128,13 @@ $("#myTable").on('change','.end_date',function(){
               <a class="btn-links btn-inactive" href="myAudits.jsp"><i class="la la-cube"></i> <span>My Audits</span></a>
             </li>
             <li class="submenu">
-              <a class="btn-links btn-inactive" href="logout.jsp"><i class="la la-cube"></i> <span>My
-                    Contacts</span></a>
+            <a class="btn-links btn-inactive" href="#"><i class="la la-cube"></i> <span>My
+                Contacts</span></a>
           </li>
-            <li class="submenu">
-              <a class="btn-links down" href="#"><i class="la la-user"></i> <span> Logout
-                </span></span></a>
-            </li>
+          <li class="submenu">
+            <a class="btn-links" style="margin-top:235px!important;width:135px" href="logout.jsp"><i class="la la-user"></i> <span> Logout
+              </span></a>
+          </li>
 
           </ul>
         </div>
@@ -160,6 +160,8 @@ $("#myTable").on('change','.end_date',function(){
                 <li><button type="button" class="boxx-shadow2 nav-1" style="width: 130px;">Data Request</button></li>
                 <li><button type="button" class="boxx-shadow2 nav1" style="width:152px;">Risk and Controls</button></li>
                 <li><button type="button" class="boxx-shadow2 nav1">Meeting Tracker</button></li>
+                <li><button type="button" class="boxx-shadow2 nav1">Client Details</button></li>
+                
 
               </ul>
 

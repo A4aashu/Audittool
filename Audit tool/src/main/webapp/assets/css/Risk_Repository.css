@@ -28,18 +28,18 @@
     /* z-index: 111; */
   }
   
-  .chartBox {
-    width: 600px;
+ .chartBox {
+    width: 1030px;
     padding: 20px;
     border-radius: 20px;
     /* border: solid 3px rgba(255, 26, 104, 1); */
     background: white;
     margin-left: -2047px;
     z-index: 11;
-    margin-top: -12%;
+    margin-top: -6%;
     margin-bottom: -1%;
-  }
-  
+    margin-left: -140%;
+  }  
   .dataTable {
     margin-left: 0px;
     width: 1080px !important;

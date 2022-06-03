@@ -65,7 +65,11 @@
                 Audits</span></a>
           </li>
           <li class="submenu">
-            <a class="btn-links" style="margin-top:300px!important;width:135px" href="logout.jsp"><i class="la la-user"></i> <span> Logout
+            <a class="btn-links btn-inactive" href="#"><i class="la la-cube"></i> <span>My
+                Contacts</span></a>
+          </li>
+          <li class="submenu">
+            <a class="btn-links" style="margin-top:220px!important;width:135px" href="logout.jsp"><i class="la la-user"></i> <span> Logout
               </span></a>
           </li>
 

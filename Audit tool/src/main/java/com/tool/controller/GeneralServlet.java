@@ -171,6 +171,11 @@ HttpServletResponse response)
 				String dataid=request.getParameter("dataid");
 				String id=request.getParameter("auditid");
 				String objid=request.getParameter("objid");
+				String controlriskid=request.getParameter("controlriskid");
+				System.out.println(controlriskid);
+				HttpSession session1 = request.getSession(true);
+				 session1.setAttribute("controlriskid",controlriskid);
+				 session1.setAttribute("auditid",id);
 				 response.sendRedirect("DR1.jsp?id="+id+"&dataid="+dataid+"&objid="+objid);
 				 
 			}
@@ -257,7 +262,10 @@ HttpServletResponse response)
 			if(request.getParameter("controlriskid")!=null)
 			{    
 				String dataid=request.getParameter("controlriskid");
+				System.out.println("aas");
+				System.out.println(dataid);
 				String id=request.getParameter("auditid");
+				System.out.println(id);
 				String sql="update audits set controlriskid='"+dataid+"' where Initiative_id="+id;
 				try{
 					Statement stmt = connection.createStatement();
@@ -266,8 +274,128 @@ HttpServletResponse response)
 				catch (Exception e) { 
 					e.printStackTrace(); 
 				} 
-				response.sendRedirect("myAudits.jsp");
+				response.sendRedirect("MeetingTracker.jsp");
 			}
+			
+			
+			
+			
+			
+			
+			
+			
+			if(request.getParameter("meetingname")!=null)
+			{    
+				String meetingname[]=request.getParameterValues("meetingname");
+				String emd[]=request.getParameterValues("emd");
+				String amd[]=request.getParameterValues("amd");
+				String mom[]=request.getParameterValues("mom");
+				String comments[]=request.getParameterValues("comments");
+				Integer id=Integer.parseInt(request.getParameter("auditid"));;
+				
+					String sqlQuery ="insert into Audit_Meetings values (?,?,?,?,?,?)";
+					String sql = "delete from Audit_Meetings where audit_id="+id;
+					Date datev,datev1;
+					try{
+						Statement stmt = connection.createStatement();
+						stmt.executeUpdate(sql);
+						 
+					     PreparedStatement pstmt = connection.prepareStatement(sqlQuery);
+					     for(int j=0; j<meetingname.length;j++){
+					          pstmt.setInt(1,id);
+					          pstmt.setString(2,meetingname[j]);
+					          if(emd[j]!="")
+								 {
+									 datev = new SimpleDateFormat("yyyy-MM-dd").parse(emd[j]);
+									 pstmt.setDate(3, new java.sql.Date(datev.getTime()));
+								 }
+								 else {
+									 datev=null;
+									 pstmt.setDate(3,null);
+								 }
+					          if(amd[j]!="")
+								 {
+									 datev1 = new SimpleDateFormat("yyyy-MM-dd").parse(amd[j]);
+									 pstmt.setDate(4, new java.sql.Date(datev1.getTime()));
+								 }
+								 else {
+									 datev1=null;
+									 pstmt.setDate(4,null);
+								 }
+					          pstmt.setString(5,mom[j]);
+					          pstmt.setString(6,comments[j]);
+					        
+					          pstmt.addBatch();
+					     }
+					     int[] result = pstmt.executeBatch();
+					     System.out.println("The number of rows inserted: "+ result.length);
+					     connection.commit();
+					}catch(Exception e){
+					     e.printStackTrace();
+					} finally{
+					     
+					if(connection!=null)
+					     connection.close();
+					}
+					response.sendRedirect("clientDetails.jsp");
+				}
+			
+			
+			
+			
+			if(request.getParameter("country")!=null)
+			{    
+				String country[]=request.getParameterValues("country");
+				String spoc_name[]=request.getParameterValues("spoc_name");
+				String designation[]=request.getParameterValues("designation");
+				String department[]=request.getParameterValues("department");
+				String email[]=request.getParameterValues("email");
+				String contact[]=request.getParameterValues("contact");
+				String reportingto[]=request.getParameterValues("reportingto");
+				Integer id=Integer.parseInt(request.getParameter("auditid"));;
+				
+					String sqlQuery ="insert into contactdetails values (?,?,?,?,?,?,?,?)";
+					String sql = "delete from contactdetails where auditid="+id;
+					
+					try{
+						Statement stmt = connection.createStatement();
+						stmt.executeUpdate(sql);
+						 
+					     PreparedStatement pstmt = connection.prepareStatement(sqlQuery);
+					     for(int j=0; j<country.length;j++){
+					          pstmt.setInt(1,id);
+					          pstmt.setString(2,country[j]);
+					          pstmt.setString(3,spoc_name[j]);
+					          pstmt.setString(4,designation[j]);
+					          pstmt.setString(5,department[j]);
+					          pstmt.setString(6,email[j]);
+					          pstmt.setString(7,contact[j]);
+					          pstmt.setString(8,reportingto[j]);
+					        
+					          pstmt.addBatch();
+					     }
+					     int[] result = pstmt.executeBatch();
+					     System.out.println("The number of rows inserted: "+ result.length);
+					     connection.commit();
+					}catch(Exception e){
+					     e.printStackTrace();
+					} finally{
+					     
+					if(connection!=null)
+					     connection.close();
+					}
+					response.sendRedirect("myAudits.jsp");
+				}
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 				
 			
 				 
