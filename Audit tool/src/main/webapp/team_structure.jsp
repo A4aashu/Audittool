@@ -241,7 +241,7 @@
                             </thead>
                             <tbody>
                               <tr>
-                                <td> <input type="text" id="EMname" name="Epname" placeholder="Enter Name"></td>
+                                <td> <input type="text" id="EMname" name="Epname" style="text-align:center"placeholder="Enter Name"></td>
                                 <td> <select name="Epdes" id="EMname">
                                     <option value="">Enter Designation</option>
                                     <option value="Partner">Partner</option>
@@ -299,7 +299,7 @@
                             </thead>
                             <tbody>
                               <tr>
-                                <td> <input type="text" id="EDname" name="Edname" placeholder="Enter Name"></td>
+                                <td> <input type="text" id="EDname" name="Edname" style="text-align:center" placeholder="Enter Name"></td>
                                 <td> <select name="Eddes" id="EDname1">
                                     <option value="">Enter Designation</option>
                                     <option value="Director">Director</option>
@@ -366,7 +366,7 @@
                             </thead>
                             <tbody>
                               <tr>
-                                <td> <input type="text" id="EDname" name="Emname1" placeholder="Enter Name"></td>
+                                <td> <input type="text" id="EDname" name="Emname1" style="text-align:center"placeholder="Enter Name"></td>
                                 <td> <select name="Emdes1" id="EDname1">
                                     <option value="">Enter Designation</option>
                                     <option value="Manager">Manager</option>
@@ -376,7 +376,7 @@
                                
                               </tr>
                               <tr>
-                                <td> <input type="text" id="EDname1" name="Emname2" placeholder="Enter Name"></td>
+                                <td> <input type="text" id="EDname1" name="Emname2" style="text-align:center" placeholder="Enter Name"></td>
                                 <td> <select name="Emdes2" id="EDname3">
                                     <option value="">Enter Designation</option>
                                     <option value="Manager">Manager</option>
@@ -437,7 +437,7 @@
                             </thead>
                             <tbody>
                               <tr>
-                                <td> <input type="text" id="TNname" name="Tmname" placeholder="Enter Name"></td>
+                                <td> <input type="text" id="TNname" name="Tmname" style="text-align:center" placeholder="Enter Name"></td>
                                 <td> <select name="Tmdes" id="TNname1">
                                     <option value="">Enter Designation</option>
                                    <option value="Assistant Manager">Assistant Manager</option>
@@ -450,7 +450,7 @@
                                 
                               </tr>
                               <tr>
-                                <td> <input type="text" id="TNname1" name="Tmname1" placeholder="Enter Name"></td>
+                                <td> <input type="text" id="TNname1" name="Tmname1" style="text-align:center" placeholder="Enter Name"></td>
                                 <td> <select name="Tmdes1" id="TNname3">
                                     <option value="">Enter Designation</option>
                                     <option value="Assistant Manager">Assistant Manager</option>
@@ -464,7 +464,7 @@
                               </tr>
 
                               <tr>
-                                <td> <input type="text" id="TNname1" name="Tmname2" placeholder="Enter Name"></td>
+                                <td> <input type="text" id="TNname1" name="Tmname2" style="text-align:center" placeholder="Enter Name"></td>
                                 <td> <select name="Tmdes2" id="TNname3">
                                     <option value="">Enter Designation</option>
                                     
@@ -479,7 +479,7 @@
                               </tr>
 
                               <tr>
-                                <td> <input type="text" id="TNname1" name="Tmname3" placeholder="Enter Name"></td>
+                                <td> <input type="text" id="TNname1" name="Tmname3" style="text-align:center" placeholder="Enter Name"></td>
                                 <td> <select name="Tmdes3" id="TNname3">
                                      <option value="">Enter Designation</option>
                                     <option value="Assistant Manager">Assistant Manager</option>

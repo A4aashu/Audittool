@@ -227,29 +227,31 @@
       <div class="dropdown1">
         <h5>Mega Process</h5>
         <div class="dropdown dropdowncss">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
-            data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown button
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
+         <select class="form-control dropdowncss" id="dropdownMenuButton1" name="process" style="color:#495057!important;">
+<option value="" style="color:black!important;">Choose Value</option>
+<option value="Finance and Accounts"style="color:black!important;">Finance and Accounts</option>
+<option value="Human Resource" style="color:black!important;">Human Resource</option>
+<option value="IT & Networks" style="color:black!important;">IT & Networks</option>
+<option value="Legal" style="color:black!important;">Legal</option>
+<option value="Marketing" style="color:black!important;">Marketing</option>
+<option value="Operations" style="color:black!important;">Operations</option>
+<option value="Security" style="color:black!important;">Security</option>
+</select>
         </div>
       </div>
       <div class="dropdown2">
         <h5>Categorization</h5>
         <div class="dropdown dropdowncss">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
-            data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown button
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
+          <select class="form-control dropdowncss" id="dropdownMenuButton1" name="process" style="color:#495057!important;">
+<option value="" style="color:black!important;">Choose Value</option>
+<option value="Finance and Accounts"style="color:black!important;">Finance and Accounts</option>
+<option value="Human Resource" style="color:black!important;">Human Resource</option>
+<option value="IT & Networks" style="color:black!important;">IT & Networks</option>
+<option value="Legal" style="color:black!important;">Legal</option>
+<option value="Marketing" style="color:black!important;">Marketing</option>
+<option value="Operations" style="color:black!important;">Operations</option>
+<option value="Security" style="color:black!important;">Security</option>
+</select>
         </div>
       </div>
     </div>
@@ -319,29 +321,31 @@
       <div class="dropdown3">
         <h5>Mega Process</h5>
         <div class="dropdown dropdowncss">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
-            data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown button
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
+          <select class="form-control dropdowncss" id="dropdownMenuButton1" name="process" style="color:#495057!important;width:20%!important">
+<option value="" style="color:black!important;">Choose Value</option>
+<option value="Finance and Accounts"style="color:black!important;">Finance and Accounts</option>
+<option value="Human Resource" style="color:black!important;">Human Resource</option>
+<option value="IT & Networks" style="color:black!important;">IT & Networks</option>
+<option value="Legal" style="color:black!important;">Legal</option>
+<option value="Marketing" style="color:black!important;">Marketing</option>
+<option value="Operations" style="color:black!important;">Operations</option>
+<option value="Security" style="color:black!important;">Security</option>
+</select>
         </div>
       </div>
       <div class="dropdown4">
         <h5>Categorization</h5>
         <div class="dropdown dropdowncss">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
-            data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown button
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
+          <select class="form-control dropdowncss" id="dropdownMenuButton1" name="process" style="color:#495057!important;width:20%!important">
+<option value="" style="color:black!important;">Choose Value</option>
+<option value="Finance and Accounts"style="color:black!important;">Finance and Accounts</option>
+<option value="Human Resource" style="color:black!important;">Human Resource</option>
+<option value="IT & Networks" style="color:black!important;">IT & Networks</option>
+<option value="Legal" style="color:black!important;">Legal</option>
+<option value="Marketing" style="color:black!important;">Marketing</option>
+<option value="Operations" style="color:black!important;">Operations</option>
+<option value="Security" style="color:black!important;">Security</option>
+</select>
         </div>
       </div>
       <div class="chartCard" style="display: flex;flex-direction:column">

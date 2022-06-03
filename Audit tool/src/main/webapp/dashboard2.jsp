@@ -162,7 +162,7 @@
                                         <a href="Risk_Repository.jsp">
                                             <h3>RAC Repository</h3>
                                         </a>
-                                        <h5>Access to a KPMG repository of risks and controls.</h5>
+                                        <h5>Access to KPMG repository of risks and controls.</h5>
                                     </div>
                                 </div>
                             </div>

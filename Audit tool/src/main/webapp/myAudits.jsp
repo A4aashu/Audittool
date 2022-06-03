@@ -119,6 +119,10 @@
          SELECT count(distinct(Name_of_client)) from audits where createdby=?;
          <sql:param value = "<%=currentUser.getEmail()%>" />
       	</sql:query>
+      	<sql:query dataSource = "${snapshot}" var = "resultset3">
+         SELECT count(*) from audits where createdby=?;
+         <sql:param value = "<%=currentUser.getEmail()%>" />
+      	</sql:query>
       	
      <!-- Sidebar -->
   <div class="sidebar" style="background-color: #00338D!important;width: 170px;" id="sidebar">
@@ -210,16 +214,16 @@
                                                                         %>
                 <thead>
                   <tr>
-                    <th>Audit ID</th>
-                    <th hidden>Processid</th>
-                    <th hidden>objectiveid</th>
-                    <th hidden>controlriskid</th>
-                    <th>Client Name</th>
-                    <th>Review Name</th>
-                    <th>Start Date</th>
-                    <th>End Date</th>
-                    <th>Progress</th>
-                    <th>Last Modified By</th>
+                    <th style="text-align: center;">Audit ID</th>
+                    <th style="text-align: center;" hidden>Processid</th>
+                    <th style="text-align: center;" hidden>objectiveid</th>
+                    <th style="text-align: center;" hidden>controlriskid</th>
+                    <th style="text-align: center;">Client Name</th>
+                    <th style="text-align: center;">Review Name</th>
+                    <th style="text-align: center;">Start Date</th>
+                    <th style="text-align: center;">End Date</th>
+                    <th style="text-align: center;">Progress</th>
+                    <th style="text-align: center;">Last Modified By</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -227,34 +231,34 @@
                  <%  while(resultset1.next()){ %>
        																			 <tr>
                                                                                     <td 
-                                                                                        style="text-align: left;">
+                                                                                        style="text-align: center;">
                                                                                         <%= resultset1.getString("Initiative_id")%></td>
                                                                                         <td 
-                                                                                        style="text-align: left;"hidden>
+                                                                                        style="text-align: center;"hidden>
                                                                                         <%= resultset1.getString("processid")%></td>
                                                                                          <td 
-                                                                                        style="text-align: left;"hidden>
+                                                                                        style="text-align: center;"hidden>
                                                                                         <%= resultset1.getString("objectiveid")%></td>
                                                                                         <td 
-                                                                                        style="text-align: left;"hidden>
+                                                                                        style="text-align: center;"hidden>
                                                                                         <%= resultset1.getString("controlriskid")%></td>
                                                                                     <td 
-                                                                                        style="text-align: left;">
+                                                                                        style="text-align: center;">
                                                                                         <%= resultset1.getString("Name_of_client")%></td>
                                                                                         <td 
-                                                                                        style="text-align: left;">
+                                                                                        style="text-align: center;">
                                                                                         <%= resultset1.getString("Engagement_name")%></td>
                                                                                     <td 
-                                                                                        style="text-align: left;">
+                                                                                        style="text-align: center;">
                                                                                         <%= resultset1.getString("Audit_start_date")%></td>
                                                                                         <td 
-                                                                                        style="text-align: left;">
+                                                                                        style="text-align: center;">
                                                                                         <%= resultset1.getString("Audit_end_date")%></td>
                                                                                     <td 
-                                                                                        style="text-align: left;">
+                                                                                        style="text-align: center;">
                                                                                         Ongoing</td>
                                                                                         <td 
-                                                                                        style="text-align: left;">
+                                                                                        style="text-align: center;">
                                                                                         <%= resultset1.getString("createdby")%></td>
                                                                                     
                                                                                 </tr>
@@ -282,7 +286,7 @@ const data = {
 labels: ['On-going Engagements', 'Completed Engagements'],
 datasets: [{
 label: 'Tasks',
-data: [1, 1],
+data: [${resultset3.rowsByIndex[0][0]},20],
 backgroundColor: [
 'rgba(74, 10, 104, 0.9)',
 'rgba(188, 32, 75, 0.9)',
