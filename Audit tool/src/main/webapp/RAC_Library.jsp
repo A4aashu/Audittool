@@ -142,9 +142,9 @@
         <div id="sidebar-menu" class="sidebar-menu">
           <ul>
             <li class="nav-item main-drop">
-              <span class="user-img"><img src="assets/images/profileimage.jpg" alt="">
-                <span class="status online"></span>
-              </span>
+              <span class="user-img"><img src="assets/images/profileimage.jpg" style="border-radiius:100%!important;" width="50px" height="50px" alt="">
+<span class="status online"></span>
+</span>
               <div class="section">
                   <span
                                                                             style="color:#ffffff;margin-left:85px;font-size: 16px!important;">
@@ -230,13 +230,6 @@
                             width: 250px!important;
                             margin-left: 35px!important;">
                   <option value="" class='arrow'>Choose Value</option>
-                  <option value="Finance and Accounts">Finance and Accounts</option>
-                  <option value="Human Resource">Human Resource</option>
-                  <option value="IT & Networks">IT & Networks</option>
-                  <option value="Legal">Legal</option>
-                  <option value="Marketing">Marketing</option>
-                  <option value="Operations">Operations</option>
-                  <option value="Security">Security</option>
                 </select>
               </div>
               <i class="arrow2 down3" style="color: #00338D !important"></i>
@@ -248,13 +241,6 @@
                             width: 250px!important;
                             margin-left: 122px!important;">
                   <option value="">Choose Value</option>
-                  <option value="Finance and Accounts">Finance and Accounts</option>
-                  <option value="Human Resource">Human Resource</option>
-                  <option value="IT & Networks">IT & Networks</option>
-                  <option value="Legal">Legal</option>
-                  <option value="Marketing">Marketing</option>
-                  <option value="Operations">Operations</option>
-                  <option value="Security">Security</option>
                 </select>
               </div>
               <i class="arrow1 down2" style="color: #00338D !important"></i>
@@ -266,13 +252,6 @@
                                 width: 250px!important;
                                 margin-left: 102px!important;">
                   <option value="">Choose Value </option>
-                  <option value="Finance and Accounts">Finance and Accounts</option>
-                  <option value="Human Resource">Human Resource</option>
-                  <option value="IT & Networks">IT & Networks</option>
-                  <option value="Legal">Legal</option>
-                  <option value="Marketing">Marketing</option>
-                  <option value="Operations">Operations</option>
-                  <option value="Security">Security</option>
                 </select>
                 
                 

@@ -69,7 +69,7 @@
         <div id="sidebar-menu" class="sidebar-menu">
           <ul>
             <li class="nav-item main-drop">
-              <span class="user-img"><img src="assets/images/profileimage.jpg" alt="">
+              <span class="user-img"><img src="assets/images/profileimage.jpg" style="border-radiius:100%!important;" width="50px" height="50px" alt="">
                 <span class="status online"></span>
               </span>
               <div class="section">
@@ -197,16 +197,16 @@
                     <div class="dropdown-menu" style="margin-top: -400px;
                     margin-left: 29px;">
                       <a class="dropdown-item" href="#">1) Audit Announcement/ Kick off Meeting
-                        <span><input class="date-field" type="date" name="auditannounce" required/></span>
+                        <span><input class="date-field" type="date" id="date1" name="auditannounce" required/></span>
                       </a>
                       <a class="dropdown-item" href="#">2) Information Request to Audit Scope
-                        <span><input class="date-field" type="date" name="irauditscrop" required/></span>
+                        <span><input class="date-field" type="date" id="date2" name="irauditscrop" required/></span>
                       </a>
                       <a class="dropdown-item" href="#">3) Intial discussion with all auditees and set expectations
-                        <span><input class="date-field" type="date" name="discussiondate" required/></span>
+                        <span><input class="date-field" type="date" id="date3" name="discussiondate" required/></span>
                       </a>
                       <a class="dropdown-item" href="#">4) Walkthrough Session
-                        <span><input class="date-field" type="date" name="walktrhoughsession" required/></span>
+                        <span><input class="date-field" type="date" id="date4" name="walktrhoughsession" required/></span>
                       </a>
                     </div>
                   </div>
@@ -219,7 +219,7 @@
                     <div class="dropdown-menu disabled" style="margin-left: 11px;margin-top: 17px;">
                       <div class="text-div">
                         <a class="dropdown-item text-div" href="#"> Initial data request and Validation of existing controls design & effectiveness 
-                        <span><input class="date-field" type="date" name="datarequest" required/></span>
+                        <span><input class="date-field" type="date" id="date5" name="datarequest" required/></span>
                         </a>
                        
                       </div>
@@ -238,7 +238,7 @@
                       <a class="dropdown-item text-div" href="#">AQM Discussion with the stakeholders
                       </a>
                       <a class="dropdown-item text-div" href="#"> / Interim status update on findings
-                        <span><input class="date-field" type="date" name="aqm" required/></span>
+                        <span><input class="date-field" type="date" id="date6" name="aqm" required/></span>
                       </a>
                       <a class="dropdown-item text-div" href="#"> / Preperation of Draft Report and obtain initial
                         management
@@ -254,13 +254,13 @@
                     </button>
                     <div class="dropdown-menu" style="margin-top:-18px;margin-left: 14px;">
                       <a class="dropdown-item" href="#">1) Provide Draft Report to Stakeholders
-                        <span><input class="date-field" type="date" name="draftreport" required /></span>
+                        <span><input class="date-field" type="date" id="date7" name="draftreport" required /></span>
                       </a>
                       <a class="dropdown-item" href="#">2) Exit Meeting
-                        <span><input class="date-field" type="date" name="exitmeeting"  required/></span>
+                        <span><input class="date-field" type="date" id="date8" name="exitmeeting"  required/></span>
                       </a>
                       <a class="dropdown-item" href="#">3) Release Final Report
-                        <span><input class="date-field" type="date" name="releasefinalreport" required /></span>
+                        <span><input class="date-field" type="date" id="date9" name="releasefinalreport" required /></span>
                       </a>
                     </div>
 
@@ -282,7 +282,7 @@
             <div class="row px-3"> <button type="submit"
               class="btn btn-blue text-center signup_btn"
               style="background-color: #470A68;margin-top: -10px!important;
-              margin-left: 990px!important;z-index: 111;" formaction="GeneralServlet" name="btn_auditplan">Save & Proceed</button>
+              margin-left: 990px!important;z-index: 111;" formaction="GeneralServlet" name="btn_auditplan" id="btn_auditplan">Save & Proceed</button>
               
               </form>
             </div>
@@ -321,8 +321,110 @@
 
   <!-- Custom JS -->
 
-  
-  </script>
+ <script>
+	
+	$("#date5").change(function () {
+		var error=""
+	    var date1= document.getElementById("date1").value;
+	    var date2= document.getElementById("date2").value;
+        var date3= document.getElementById("date3").value;
+	    var date4= document.getElementById("date4").value;
+	    var date5= document.getElementById("date5").value;
+	    var date6= document.getElementById("date6").value;
+	    var date7= document.getElementById("date7").value;
+	    var date8= document.getElementById("date8").value;
+	    var date9= document.getElementById("date9").value;
+	   
+
+	    if ((Date.parse(date1) >= Date.parse(date5))||(Date.parse(date2) >= Date.parse(date5))||(Date.parse(date3) >= Date.parse(date5))) {
+	        alert(error + "Fieldwork date should be greater than Planning dates\n");
+	        document.getElementById("date5").value = "";
+	        
+	    }	    
+	    
+	    
+	    
+	}),
+	$("#date6").change(function () {
+		var error=""
+	    var date1= document.getElementById("date1").value;
+	    var date2= document.getElementById("date2").value;
+        var date3= document.getElementById("date3").value;
+	    var date4= document.getElementById("date4").value;
+	    var date5= document.getElementById("date5").value;
+	    var date6= document.getElementById("date6").value;
+	    var date7= document.getElementById("date7").value;
+	    var date8= document.getElementById("date8").value;
+	    var date9= document.getElementById("date9").value;
+	   
+	    if ((Date.parse(date5) >= Date.parse(date6)) || (Date.parse(date4) > Date.parse(date6)) || (Date.parse(date3) > Date.parse(date6))||(Date.parse(date2) > Date.parse(date6))||(Date.parse(date1) > Date.parse(date6))) {
+	        alert(error + "Discussion with stakeholders is always after Fieldwork and Planning Phase \n");
+	        document.getElementById("date6").value = "";
+	        
+	    }       
+	       
+	    
+	}),
+	$("#date7").change(function () {
+		var error=""
+	    var date1= document.getElementById("date1").value;
+	    var date2= document.getElementById("date2").value;
+        var date3= document.getElementById("date3").value;
+	    var date4= document.getElementById("date4").value;
+	    var date5= document.getElementById("date5").value;
+	    var date6= document.getElementById("date6").value;
+	    var date7= document.getElementById("date7").value;
+	    var date8= document.getElementById("date8").value;
+	    var date9= document.getElementById("date9").value;
+	   
+	    if ((Date.parse(date6) >= Date.parse(date7))||(Date.parse(date5) >= Date.parse(date7))||(Date.parse(date4) >= Date.parse(date7))||(Date.parse(date3) >= Date.parse(date7))||(Date.parse(date2) >= Date.parse(date7))||(Date.parse(date1) >= Date.parse(date7))) {
+	        alert(error + "Audit closure is always after Discussion with stakeholders ,Fieldwork and Planning Phase \n");
+	        document.getElementById("date7").value = "";
+	    }     
+	       
+	    
+	}),
+	$("#date8").change(function () {
+		var error=""
+	    var date1= document.getElementById("date1").value;
+	    var date2= document.getElementById("date2").value;
+        var date3= document.getElementById("date3").value;
+	    var date4= document.getElementById("date4").value;
+	    var date5= document.getElementById("date5").value;
+	    var date6= document.getElementById("date6").value;
+	    var date7= document.getElementById("date7").value;
+	    var date8= document.getElementById("date8").value;
+	    var date9= document.getElementById("date9").value;
+	   
+	    if ((Date.parse(date7) >= Date.parse(date8))||(Date.parse(date6) >= Date.parse(date8))||(Date.parse(date5) >= Date.parse(date8))||(Date.parse(date4) >= Date.parse(date8))||(Date.parse(date3) >= Date.parse(date8))||(Date.parse(date2) >= Date.parse(date8))||(Date.parse(date1) >= Date.parse(date8))) {
+	        alert(error + "Audit closure is always after Discussion with stakeholders ,Fieldwork and Planning Phase \n");
+	        document.getElementById("date8").value = "";
+	    }     
+	       
+	    
+	}),
+	$("#date9").change(function () {
+		var error=""
+		    var date1= document.getElementById("date1").value;
+		    var date2= document.getElementById("date2").value;
+	        var date3= document.getElementById("date3").value;
+		    var date4= document.getElementById("date4").value;
+		    var date5= document.getElementById("date5").value;
+		    var date6= document.getElementById("date6").value;
+		    var date7= document.getElementById("date7").value;
+		    var date8= document.getElementById("date8").value;
+		    var date9= document.getElementById("date9").value;
+		   
+		    if ((Date.parse(date8) >= Date.parse(date9))||(Date.parse(date7) >= Date.parse(date9))||(Date.parse(date6) >= Date.parse(date9))||(Date.parse(date5) >= Date.parse(date9))||(Date.parse(date4) >= Date.parse(date9))||(Date.parse(date3) >= Date.parse(date9))||(Date.parse(date2) >= Date.parse(date9))||(Date.parse(date1) >= Date.parse(date9))) {
+		        alert(error + "Audit closure is always after Discussion with stakeholders ,Fieldwork and Planning Phase \n");
+		        document.getElementById("date9").value = "";
+		    }     
+		       
+		    
+		});
+	
+	</script>
+	
 </body>
 
 </html>

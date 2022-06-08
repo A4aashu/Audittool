@@ -323,6 +323,36 @@ tr:nth-child(odd) {
   font-size: 14px;
   border: none !important;
 }
+#dropdownMenuButton2 {
+  margin-bottom: 20px;
+  background-color: #b9b4cf !important;
+  border-radius: 30px !important;
+  color: #00338d;
+  font-weight: bold;
+  height: 30px;
+  font-size: 14px;
+  border: none !important;
+}
+#dropdownMenuButton3 {
+  margin-bottom: 20px;
+  background-color: #b9b4cf !important;
+  border-radius: 30px !important;
+  color: #00338d;
+  font-weight: bold;
+  height: 30px;
+  font-size: 14px;
+  border: none !important;
+}
+#dropdownMenuButton4 {
+  margin-bottom: 20px;
+  background-color: #b9b4cf !important;
+  border-radius: 30px !important;
+  color: #00338d;
+  font-weight: bold;
+  height: 30px;
+  font-size: 14px;
+  border: none !important;
+}
 
 .dropdown2 {
   margin-left: 30px;

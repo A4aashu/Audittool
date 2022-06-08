@@ -90,9 +90,9 @@
         <div id="sidebar-menu" class="sidebar-menu">
           <ul>
             <li class="nav-item main-drop">
-              <span class="user-img"><img src="assets/images/profileimage.jpg" alt="">
-                <span class="status online"></span>
-              </span>
+              <span class="user-img"><img src="assets/images/profileimage.jpg" style="border-radiius:100%!important;" width="50px" height="50px" alt="">
+<span class="status online"></span>
+</span>
               <div class="section">
                     <span style="color:#ffffff;margin-left:85px;font-size: 16px!important;"><%= currentUser.getFullname()%></span>
                     <span style="color:#ffffff;margin-left:85px;"><%= currentUser.getDepartment()%></span>

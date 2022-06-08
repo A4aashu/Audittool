@@ -76,7 +76,10 @@
             color: white;
 
         }
-
+select
+{
+width:200px!important;
+}
         /* tr:nth-child(even) input {
             background-color: #E5E5E5;
 
@@ -134,9 +137,9 @@
             <div id="sidebar-menu" class="sidebar-menu">
                 <ul>
                     <li class="nav-item main-drop" style="margin-left: -28px">
-                        <span class="user-img"><img src="assets/images/profileimage.jpg" alt="">
-                            <span class="status online"></span>
-                        </span>
+                        <span class="user-img"><img src="assets/images/profileimage.jpg" style="border-radiius:100%!important;" width="50px" height="50px" alt="">
+<span class="status online"></span>
+</span>
                         <div class="section">
                               <span
                                                                             style="color:#ffffff;margin-left:85px;font-size: 16px!important;">
@@ -198,15 +201,8 @@
             <div class="dropdown1">
                 <h5>Mega Process</h5>
                 <div class="dropdown dropdowncss">
-                    <select class="form-control dropdowncss" id="dropdownMenuButton1" name="process" style="color:#495057!important;">
+                    <select class="form-control dropdowncss filter" onchange="filter_rows()" id="dropdownMenuButton1" name="process" style="color:#495057!important;">
 <option value="" style="color:black!important;">Choose Value</option>
-<option value="Finance and Accounts"style="color:black!important;">Finance and Accounts</option>
-<option value="Human Resource" style="color:black!important;">Human Resource</option>
-<option value="IT & Networks" style="color:black!important;">IT & Networks</option>
-<option value="Legal" style="color:black!important;">Legal</option>
-<option value="Marketing" style="color:black!important;">Marketing</option>
-<option value="Operations" style="color:black!important;">Operations</option>
-<option value="Security" style="color:black!important;">Security</option>
 </select>
                 </div>
 
@@ -214,15 +210,14 @@
             <div class="dropdown2">
                 <h5>Categorization</h5>
                 <div class="dropdown dropdowncss">
-<select class="form-control dropdowncss" id="dropdownMenuButton1" name="process" style="color:#495057!important;">
+<select class="form-control dropdowncss filter" onchange="filter_rows()" id="dropdownMenuButton2" name="process" style="color:#495057!important;margin-bottom: 20px;
+  background-color: #b9b4cf !important;
+  border-radius: 30px !important;
+  color: #495057!important;
+  font-weight: bold;
+  height: 30px;
+  font-size: 14px;">
 <option value="" style="color:black!important;">Choose Value</option>
-<option value="Finance and Accounts"style="color:black!important;">Finance and Accounts</option>
-<option value="Human Resource" style="color:black!important;">Human Resource</option>
-<option value="IT & Networks" style="color:black!important;">IT & Networks</option>
-<option value="Legal" style="color:black!important;">Legal</option>
-<option value="Marketing" style="color:black!important;">Marketing</option>
-<option value="Operations" style="color:black!important;">Operations</option>
-<option value="Security" style="color:black!important;">Security</option>
 </select>
                 </div>
             </div>
@@ -234,6 +229,8 @@
                     <th style="text-align: center;">Audit Id</th>
                     <th style="text-align: center;">Client Name</th>
                     <th style="text-align: center;">Review Name</th>
+                    <th style="text-align: center;" hidden>mega</th>
+                    <th style="text-align: center;" hidden>categorization</th>
                     <th style="text-align: center;">Opening Meeting Deck</th>
                     <th style="text-align: center;">RACM</th>
                     <th style="text-align: center;">IDR</th>
@@ -256,6 +253,11 @@
                                                                                     <td style="text-align: center;" ><%= resultset1.getString("Initiative_id")%></td>
                                                                                         <td  style="text-align: center;"  > <%= resultset1.getString("Name_of_client")%></td>
                                                                                         <td style="text-align: center;"  > <%= resultset1.getString("Engagement_name")%></td>
+                                                                                       <td style="text-align: center;" hidden class="mega" data-mega="<%= resultset1.getString("MegaProcess")%>" >
+                                                                                        <%= resultset1.getString("MegaProcess")%></td>
+                                                                                        <td style="text-align: center;" hidden
+                                                                                     class="department" data-department="<%= resultset1.getString("Department")%>"   >
+                                                                                        <%= resultset1.getString("Department")%></td>
                                                                                        
                                                                                        <td style="text-align: center;"><a href="#">Export.ppt</a></td>
                     																		<td style="text-align: center;"><a href="#">Export.xlsx</a></td>
@@ -298,7 +300,112 @@
             btn.style.color = "white";
         });
     </script>
+<script>
+function useNthColumn(n) {
 
+	   var data = [],
+	       i,
+	       yourSelect,
+	       unique;
+
+	   $("#example tr td:nth-child("+n+")").each(function () {
+	        data.push($(this).text());           
+	   });
+
+	   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+	   // Use this function if your table is not large as the time complexity is O(n^2)
+	   unique = data.filter(function(item, i, arr) {
+	       return i == arr.indexOf(item);
+	   });
+
+	   yourSelect = $('#dropdownMenuButton1');
+	   for (i = 0; i < unique.length; i += 1) {
+	        yourSelect.append("<option>"+unique[i]+"</option>");
+	   }
+	}
+
+	useNthColumn(4);
+	function useNthColumns(n) {
+
+		   var data = [],
+		       i,
+		       yourSelect,
+		       unique;
+
+		   $("#example tr td:nth-child("+n+")").each(function () {
+		        data.push($(this).text());           
+		   });
+
+		   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+		   // Use this function if your table is not large as the time complexity is O(n^2)
+		   unique = data.filter(function(item, i, arr) {
+		       return i == arr.indexOf(item);
+		   });
+
+		   yourSelect = $('#dropdownMenuButton2');
+		   for (i = 0; i < unique.length; i += 1) {
+		        yourSelect.append("<option>"+unique[i]+"</option>");
+		   }
+		}
+
+		useNthColumns(5);
+</script>
+<script>
+  $('.filter').change(function () {
+
+      filter_function();
+
+      //calling filter function each select box value change
+
+  });
+
+  $('#example tbody tr').show(); //intially all rows will be shown
+
+  function filter_function() {
+      $('#example tbody tr').hide(); //hide all rows
+
+      var companyFlag = 0;
+      var companyValue = $('#dropdownMenuButton1').val();
+      var contactFlag = 0;
+      var contactValue = $('#dropdownMenuButton2').val();
+      
+      //setting intial values and flags needed
+
+      //traversing each row one by one
+      $('#example tbody tr').each(function () {
+
+          if (companyValue == 0) {   //if no value then display row
+              companyFlag = 1;
+          }
+          else if (companyValue == $(this).find('td.mega').data('mega')) {
+              companyFlag = 1;       //if value is same display row
+          }
+          else {
+              companyFlag = 0;
+          }
+
+
+          if (contactValue == 0) {
+              contactFlag = 1;
+          }
+          else if (contactValue == $(this).find('td.department').data('department')) {
+              contactFlag = 1;
+          }
+          else {
+              contactFlag = 0;
+          }
+         
+          if (companyFlag && contactFlag) {
+              $(this).show();  //displaying row which satisfies all conditions
+          }
+
+      });
+
+
+
+
+  }
+</script>
 </body>
 
 </html>
