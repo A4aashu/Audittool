@@ -69,11 +69,14 @@ $("#myTable").on('change','.end_date',function(){
 		currentRow.find('.days').val(0);	
 	});
 
-
-
-
-
-
+var trs = $('tr').not(':eq(0)');
+$.each(trs, function() {
+	 var $this = $(this);
+	 var currentRow=$(this).closest("tr");
+     if (((currentRow.find('#Status').val() == 'Pending') || (currentRow.find('#Status').val() == 'Partially Received'))) {
+         alert("aashu");
+     }
+});
   });
 
 
@@ -263,7 +266,7 @@ $("#myTable").on('change','.end_date',function(){
                               <td style="text-align: center!important"></td>
                              <td style="text-align: center!important"><textarea name="data" rows="auto" cols="25"  style="border:none;border-radius:5px;resize: none;text-align: center!important;" readonly><%= resultset2.getString("data")%></textarea></td>
                             <td style="text-align: center!important"><textarea  name="process" rows="auto" cols="25" style="border:none;border-radius:5px;resize: none;text-align: center!important" readonly><%= resultset2.getString("Process")%></textarea></td>
-                            <td ><select name="Period" id="Request-Type" class="form-control" style="text-align: center!important">
+                            <td ><select name="Period" id="Period" class="form-control" style="text-align: center!important">
                             <option value="<%= resultset2.getString("period")%>"><%= resultset2.getString("period")%></option>
                                 <option value="Monthly">Monthly</option>
                                 <option value="Quarterly">Quarterly</option>
@@ -522,8 +525,18 @@ $(".request_date").onchange(function() {
 
 
 </script>
-
-
+<!-- <script>
+$(document).ready(function() {
+    var trs = $('tr').not(':eq(0)');
+    $.each(trs, function() {
+        var $this = $(this);
+        if ($this.find('>td#Period').text() == 'Monthly')  {
+        alert("aashu");
+        }
+    });
+});
+</script>
+ -->
 </body>
 
 </html>
