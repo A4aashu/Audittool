@@ -260,7 +260,7 @@ width:200px!important;
                                                                                         <%= resultset1.getString("Department")%></td>
                                                                                        
                                                                                        <td style="text-align: center;"><a href="exportppt.jsp?auditid=<%= resultset1.getString("Initiative_id")%>&objectiveid=<%= resultset1.getString("objectiveid")%>">Export.ppt</a></td>
-                    																		<td style="text-align: center;"><a href="#">Export.xlsx</a></td>
+                    																		<td style="text-align: center;"><a href="racmdownload.jsp?crid=<%= resultset1.getString("controlriskid")%>">Export.xlsx</a></td>
                    																		 <td style="text-align: center;"><a href="idrdownload.jsp?idrid=<%= resultset1.getString("Initiative_id")%>">Export.xlsx</a></td>
                                                                                 </tr>
             <% } 
