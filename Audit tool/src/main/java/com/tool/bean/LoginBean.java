@@ -8,6 +8,22 @@ public class LoginBean {
 	private String fullname;
 	private String department;
 	private String designation;
+	private byte[] image;  
+	 
+  
+    public byte[] getImage() {
+        return this.image;
+    }
+ 
+    private String base64Image;
+     
+    public String getBase64Image() {
+        return base64Image;
+    }
+ 
+    public void setBase64Image(String base64Image) {
+        this.base64Image = base64Image;
+    }
 	public boolean valid;
 	
 	public boolean isValid() {
