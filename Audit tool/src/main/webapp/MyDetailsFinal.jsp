@@ -98,7 +98,7 @@
           <div id="sidebar-menu" class="sidebar-menu">
             <ul>
               <li class="nav-item main-drop" style="margin-left: -28px;margin-top:5px;">
-                <span class="user-img"><img src="assets/images/profileimage.jpg" style="border-radiius:100%!important;" width="50px" height="50px" alt="">
+                <span class="user-img"><img src="data:image/jpg;base64,<%= currentUser.getBase64Image()%>" id="image" style="border-radiius:100%!important;" width="50px" height="50px" alt="">
 <span class="status online"></span>
 </span>
                 <div class="section">
@@ -147,7 +147,7 @@
         </div>
        
         <div class="row mt-2 ">
-            <div class="col-md-6"><label class="labels">Designation</label>
+            <div class="col-md-6"><label class="labels">Location</label>
               <div class="dropdown">
                 <i class="fa fa-caret-down" aria-hidden="true" style="width: 35px!important;
     font-size: 25px;
@@ -155,16 +155,30 @@
     position: absolute;
     top: 10px;
     left: 262px;"></i>
-                <select class="form-control" onchange="filter_rows()" id="dropdownMenuButton"
-            name="designation" ><i class="arrow1 down1"></i>
-            <option value="${row.user_designation}" selected>${row.user_designation}</option>
-            <option style="color:black!important;">Director</option>
-            <option style="color:black!important;">Manager</option>
-            <option style="color:black!important;">Assistant Manager</option>
-            <option style="color:black!important;">Consultant</option>
-            <option style="color:black!important;">Analyst</option>
-                        
-          </select>
+                
+          
+          <select class="form-control ms-Dropdown-select" id="dropdownMenuButton" name="location" >
+                             <option value="${row.user_location}">${row.user_location}</option>
+                                <option value="Ahmedabad">Ahmedabad</option>
+                                <option value="Bengaluru">Bengaluru</option>
+                                <option value="Chandigarh">Chandigarh</option>
+                                <option value="Chennai">Chennai</option>
+                                <option value="Gurugram">Gurugram</option>
+                                <option value="Hyderabad">Hyderabad</option>
+                                <option value="Jaipur">Jaipur</option>
+                                <option value="Kochi">Kochi</option>
+                                <option value="Kolkata">Kolkata</option>
+                                <option value="Mumbai">Mumbai</option>
+                                <option value="Mumbai_Lodha_Excelus">Mumbai Lodha Excelus</option>
+                                <option value="Mumbai(Vikhroli)">Mumbai(Vikhroli)</option>
+                                <option value="Navi_Mumbai">Navi Mumbai</option>
+                                <option value="Noida">Noida</option>
+                                <option value="Pune">Pune</option>
+                                <option value="Pune_PEBC">Pune PEBC (Commerzone)</option>
+                                <option value="Pune_Quibix">Pune Quibix IT Park</option> 
+                                <option value="Vadodara">Vadodara</option>
+                                <option value="Vijayawada">Vijayawada</option>                                
+             </select>
           
               </div>
             </div>
@@ -174,7 +188,7 @@
         
         <div class="row mt-3 ">
             <div class="col-md-8" style="margin-top: -13px;
-    margin-bottom: 12px;"><label class="labels">Location</label>
+    margin-bottom: 12px;"><label class="labels">Designation</label>
             <i class="fa fa-caret-down" aria-hidden="true" style="width: 35px!important;
     font-size: 25px;
     cursor: pointer;
@@ -182,20 +196,16 @@
     top: 50px;
     left: 276px;"></i>
     
-            <select class="form-control ms-Dropdown-select" id="dropdownMenuButton" name="location" >
-                             <option value="${row.user_location}">${row.user_location}</option>
-                                <option value="Ahmedabad">Ahmedabad</option>
-                                <option value="Bengaluru">Bengaluru</option>
-                                <option value="Chandigarh">Chandigarh</option>
-                                <option value="Chennai">Chennai</option>
-                                <option value="Gurugram">Gurugram</option>
-                                <option value="Hyderabad">Hyderabad</option>
-                                <option value="Mumbai">Mumbai</option>
-                                <option value="Navi_Mumbai">Navi Mumbai</option>
-                                <option value="Noida">Noida</option>
-                                <option value="Pune">Pune</option>
-                                
-             </select>
+            <select class="form-control" onchange="filter_rows()" id="dropdownMenuButton"
+            name="designation" ><i class="arrow1 down1"></i>
+            <option value="${row.user_designation}" selected>${row.user_designation}</option>
+            <option style="color:black!important;">Director</option>
+            <option style="color:black!important;">Manager</option>
+            <option style="color:black!important;">Assistant Manager</option>
+            <option style="color:black!important;">Consultant</option>
+            <option style="color:black!important;">Analyst</option>
+                        
+          </select>
             </div>
             <div class="col-md-8"><label class="labels">Contact No.</label><input type="text" class="form-control" placeholder="Enter number" value="${row.contactno}" pattern="[1-9]{1}[0-9]{9}" name="phone"></div>
             <div class="col-md-8" style="margin-top: 3px;"><label class="labels">Upload Profile Photo</label><input type="file" id="photo" class="form-control"  name="myimg">    

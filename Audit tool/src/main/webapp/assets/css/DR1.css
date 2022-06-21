@@ -303,8 +303,9 @@ a {
 }
 
 .main-drop .user-img img {
-  border-radius: 50%;
-  width: 50px !important;
+ border-radius: 50%;
+  width: 53px !important;
+    height: 53px!important;
 }
 
 .down {

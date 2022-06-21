@@ -117,7 +117,7 @@ text-overflow:ellipsis;
 <body>
 <%LoginBean currentUser = ((LoginBean) (session.getAttribute("currentSessionUser")));%>
  <sql:setDataSource var = "snapshot" driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver"
-         url = "jdbc:sqlserver://IN-Aashuyadav;databaseName=Audit_tool"
+         url = "jdbc:sqlserver://IN-AASHUYADAV;databaseName=Audit_tool"
          user = "aashu" password = "kpmgKPMG1"/>
 		<sql:query dataSource = "${snapshot}" var = "resultset">
          SELECT count(distinct(megaprocess)) from audits;
@@ -135,7 +135,7 @@ text-overflow:ellipsis;
             <ul>
                <a href="MyDetailsFinal.jsp">
           <li class="nav-item main-drop" style="margin-top:5px;margin-left:-28px;">
-                <span class="user-img"><img src="./assets/images/profileimage.jpg" alt="">
+                <span class="user-img"><img src="data:image/jpg;base64,<%= currentUser.getBase64Image()%>" id="image" style="border-radiius:100%!important;" width="50px" height="50px" alt="">
                   <span class="status online"></span>
                 </span>
                 <div class="section">

@@ -32,7 +32,14 @@
     <!-- Main CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/ManagerDashboard.css">
-    
+    <style>
+    .btn-inactive,.btn-links{
+    font-size: 13px !important;
+    }
+    dl li, ol li, ul li {
+   line-height: 1.2!important; 
+}
+    </style>
 </head>
 
 <body>

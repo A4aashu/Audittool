@@ -72,7 +72,8 @@
   
   .main-drop .user-img img {
     border-radius: 50%;
-    width: 50px !important;
+  width: 53px !important;
+    height: 53px!important;
   }
   
   .btn-inactive {
@@ -318,6 +319,21 @@
   } */
   
   #dropdownMenuButton1 {
+    margin-bottom: 20px;
+    margin-left: 90px;
+    /* padding-right: 90px!important; */
+    background-color: #B7C1D3 !important;
+    margin-top: -7px!important;
+    border-radius: 30px !important;
+    color: #00338d;
+    cursor:pointer;
+    font-weight: bold;
+    height: 40px;
+    font-size: 14px;
+    border: none !important;
+    width: 260px;
+  }
+  #dropdownMenuButton2 {
     margin-bottom: 20px;
     margin-left: 90px;
     /* padding-right: 90px!important; */

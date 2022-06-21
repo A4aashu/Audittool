@@ -32,7 +32,8 @@
 
 .main-drop .user-img img {
   border-radius: 50%;
-  width: 50px !important;
+  width: 53px !important;
+    height: 53px!important;
 }
 
 .btn-inactive {

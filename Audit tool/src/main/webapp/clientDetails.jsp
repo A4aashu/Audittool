@@ -162,7 +162,7 @@ String currentUser1=session.getAttribute("auditid").toString();
         <div id="sidebar-menu" class="sidebar-menu">
           <ul>
             <li class="nav-item main-drop">
-              <span class="user-img"><img src="assets/images/profileimage.jpg" style="border-radiius:100%!important;" width="50px" height="50px" alt="">
+              <span class="user-img"><img src="data:image/jpg;base64,<%= currentUser.getBase64Image()%>" id="image" style="border-radiius:100%!important;" width="50px" height="50px" alt="">
 <span class="status online"></span>
 </span>
               <div class="section">
@@ -185,7 +185,7 @@ String currentUser1=session.getAttribute("auditid").toString();
               <a class="btn-links btn-inactive" href="myAudits.jsp"><i class="la la-cube"></i> <span>My Audits</span></a>
             </li>
             <li class="submenu">
-            <a class="btn-links btn-inactive" href="#"><i class="la la-cube"></i> <span>My
+            <a class="btn-links btn-inactive" href="MyContacts.jsp"><i class="la la-cube"></i> <span>My
                 Contacts</span></a>
           </li>
           <li class="submenu">

@@ -67,10 +67,19 @@
                                 <option value="Chennai">Chennai</option>
                                 <option value="Gurugram">Gurugram</option>
                                 <option value="Hyderabad">Hyderabad</option>
+                                <option value="Jaipur">Jaipur</option>
+                                <option value="Kochi">Kochi</option>
+                                <option value="Kolkata">Kolkata</option>
                                 <option value="Mumbai">Mumbai</option>
+                                <option value="Mumbai_Lodha_Excelus">Mumbai Lodha Excelus</option>
+                                <option value="Mumbai(Vikhroli)">Mumbai(Vikhroli)</option>
                                 <option value="Navi_Mumbai">Navi Mumbai</option>
                                 <option value="Noida">Noida</option>
                                 <option value="Pune">Pune</option>
+                                <option value="Pune_PEBC">Pune PEBC (Commerzone)</option>
+                                <option value="Pune_Quibix">Pune Quibix IT Park</option> 
+                                <option value="Vadodara">Vadodara</option>
+                                <option value="Vijayawada">Vijayawada</option> 
                               </select>
                         </div>
                         <div class="row px-3"> <label class="mb-1">

@@ -142,7 +142,7 @@
         <div id="sidebar-menu" class="sidebar-menu">
           <ul>
             <li class="nav-item main-drop">
-              <span class="user-img"><img src="assets/images/profileimage.jpg" style="border-radiius:100%!important;" width="50px" height="50px" alt="">
+              <span class="user-img"><img src="data:image/jpg;base64,<%= currentUser.getBase64Image()%>" id="image" style="border-radiius:100%!important;" width="50px" height="50px" alt="">
 <span class="status online"></span>
 </span>
               <div class="section">
@@ -167,7 +167,7 @@
                   Audits</span></a>
             </li>
             <li class="submenu">
-            <a class="btn-links btn-inactive" href="#"><i class="la la-cube"></i> <span>My
+            <a class="btn-links btn-inactive" href="MyContacts.jsp"><i class="la la-cube"></i> <span>My
                 Contacts</span></a>
           </li>
           <li class="submenu">
@@ -224,7 +224,7 @@
           <div class="text-left">
             <div class="dropdown1">
               <h5 style="margin-left: 40px; margin-top: 38px !important;">Mega Process</h5>
-              <div class="dropdown dropdowncss">
+              <div class="dropdown dropdowncss filter">
 
                 <select class="form-control input_process" id="dropdownMenuButton1" name="process" style="color: #00338D!important;
                             width: 250px!important;
@@ -236,8 +236,8 @@
             </div>
             <div class="dropdown2">
               <h5 style="margin-left: 128px; margin-top: 38px !important;">Categorization</h5>
-              <div class="dropdown dropdowncss">
-                <select class="form-control input_process" id="dropdownMenuButton1" name="process" style="color: #00338D!important;
+              <div class="dropdown dropdowncss filter">
+                <select class="form-control input_process" id="dropdownMenuButton2" name="process" style="color: #00338D!important;
                             width: 250px!important;
                             margin-left: 122px!important;">
                   <option value="">Choose Value</option>
@@ -368,6 +368,72 @@
             });
         });
         
+  </script>
+    <script>
+  $('.filter').change(function () {
+
+      filter_function1();
+
+      //calling filter function each select box value change
+
+  });
+
+  $('#example tbody tr').show(); //intially all rows will be shown
+
+  function filter_function1() {
+      $('#example tbody tr').hide(); //hide all rows
+
+      var companyFlag = 0;
+      var companyValue = $('#dropdownMenuButton1').val();
+      var contactFlag = 0;
+      var contactValue = $('#dropdownMenuButton2').val();
+      var thirddropdownflag = 0;
+      var thirddropdownvalue = $('#dropdownMenuButton3').val();
+      //setting intial values and flags needed
+
+      //traversing each row one by one
+      $('#example tbody tr').each(function () {
+
+          if (companyValue == 0) {   //if no value then display row
+              companyFlag = 1;
+          }
+          else if (companyValue == $(this).find('td.mega').data('mega')) {
+              companyFlag = 1;       //if value is same display row
+          }
+          else {
+              companyFlag = 0;
+          }
+
+
+          if (contactValue == 0) {
+              contactFlag = 1;
+          }
+          else if (contactValue == $(this).find('td.department').data('department')) {
+              contactFlag = 1;
+          }
+          else {
+              contactFlag = 0;
+          }
+          if (thirddropdownvalue == 0) {
+        	  thirddropdownflag = 1;
+          }
+          else if (thirddropdownvalue == $(this).find('td.process').data('process')) {
+        	  thirddropdownflag = 1;
+          }
+          else {
+        	  thirddropdownflag = 0;
+          }
+         
+          if (companyFlag && contactFlag && thirddropdownflag) {
+              $(this).show();  //displaying row which satisfies all conditions
+          }
+
+      });
+
+
+
+
+  }
   </script>
 </body>
 
