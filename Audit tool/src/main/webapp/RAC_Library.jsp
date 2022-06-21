@@ -239,8 +239,20 @@
               <div class="dropdown dropdowncss filter">
                 <select class="form-control input_process" id="dropdownMenuButton2" name="process" style="color: #00338D!important;
                             width: 250px!important;
-                            margin-left: 122px!important;">
-                  <option value="">Choose Value</option>
+                            margin-left: 122px!important;margin-bottom: 20px;
+    margin-left: 90px;
+    /* padding-right: 90px!important; */
+    background-color: #B7C1D3 !important;
+    margin-top: -7px!important;
+    border-radius: 30px !important;
+    color: #00338d;
+    cursor:pointer;
+    font-weight: bold;
+    height: 40px;
+    font-size: 14px;
+    border: none !important;
+    width: 260px;">
+                 <option value="" class='arrow'>Choose Value</option>
                 </select>
               </div>
               <i class="arrow1 down2" style="color: #00338D !important"></i>
@@ -248,10 +260,22 @@
             <div class="dropdown2">
               <h5 style="    margin-left: 107px!important; margin-top: 38px !important;">Process</h5>
               <div class="dropdown dropdowncss">
-                <select class="form-control input_process " id="dropdownMenuButton1" name="process" style="color: #00338D!important;
-                                width: 250px!important;
-                                margin-left: 102px!important;">
-                  <option value="">Choose Value </option>
+               <select class="form-control input_process" id="dropdownMenuButton3" name="process" style="color: #00338D!important;
+                            width: 250px!important;
+                            margin-left: 122px!important;margin-bottom: 20px;
+    margin-left: 90px;
+    /* padding-right: 90px!important; */
+    background-color: #B7C1D3 !important;
+    margin-top: -7px!important;
+    border-radius: 30px !important;
+    color: #00338d;
+    cursor:pointer;
+    font-weight: bold;
+    height: 40px;
+    font-size: 14px;
+    border: none !important;
+    width: 260px;">
+                  <option value="" class='arrow'>Choose Value</option>
                 </select>
                 
                 
@@ -296,9 +320,9 @@
                         <td style="text-align:left"><%= resultset1.getString("ControlObjective")%></td>
                         <td style="text-align:left"><%= resultset1.getString("control")%></td>
                         <td style="text-align:left"><%= resultset1.getString("risks")%></td>
-                        <td style="text-align:left" hidden><%= resultset1.getString("Process")%></td>
-                        <td style="text-align:left" hidden><%= resultset1.getString("DepartmentCategorisation")%></td>
-                        <td style="text-align:left" hidden><%= resultset1.getString("MegaProcess")%></td>
+                        <td class="process" data-process="<%= resultset1.getString("Process")%>" style="text-align:left" hidden><%= resultset1.getString("Process")%></td>
+<td class="department" data-department="<%= resultset1.getString("DepartmentCategorisation")%>" style="text-align:left" hidden><%= resultset1.getString("DepartmentCategorisation")%></td>
+<td class="mega" data-mega="<%= resultset1.getString("MegaProcess")%>" style="text-align:left" hidden><%= resultset1.getString("MegaProcess")%></td>
                                                                                        
                                                                                 </tr>
             <% } 
@@ -369,6 +393,82 @@
         });
         
   </script>
+  <script>
+function useNthColumn(n) {
+
+	   var data = [],
+	       i,
+	       yourSelect,
+	       unique;
+
+	   $("#example tr td:nth-child("+n+")").each(function () {
+	        data.push($(this).text());           
+	   });
+
+	   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+	   // Use this function if your table is not large as the time complexity is O(n^2)
+	   unique = data.filter(function(item, i, arr) {
+	       return i == arr.indexOf(item);
+	   });
+
+	   yourSelect = $('#dropdownMenuButton1');
+	   for (i = 0; i < unique.length; i += 1) {
+	        yourSelect.append("<option>"+unique[i]+"</option>");
+	   }
+	}
+
+	useNthColumn(8);
+	function useNthColumns(n) {
+
+		   var data = [],
+		       i,
+		       yourSelect,
+		       unique;
+
+		   $("#example tr td:nth-child("+n+")").each(function () {
+		        data.push($(this).text());           
+		   });
+
+		   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+		   // Use this function if your table is not large as the time complexity is O(n^2)
+		   unique = data.filter(function(item, i, arr) {
+		       return i == arr.indexOf(item);
+		   });
+
+		   yourSelect = $('#dropdownMenuButton2');
+		   for (i = 0; i < unique.length; i += 1) {
+		        yourSelect.append("<option>"+unique[i]+"</option>");
+		   }
+		}
+
+		useNthColumns(7);
+		function useNthColumnss(n) {
+
+			   var data = [],
+			       i,
+			       yourSelect,
+			       unique;
+
+			   $("#example tr td:nth-child("+n+")").each(function () {
+			        data.push($(this).text());           
+			   });
+
+			   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+			   // Use this function if your table is not large as the time complexity is O(n^2)
+			   unique = data.filter(function(item, i, arr) {
+			       return i == arr.indexOf(item);
+			   });
+
+			   yourSelect = $('#dropdownMenuButton3');
+			   for (i = 0; i < unique.length; i += 1) {
+			        yourSelect.append("<option>"+unique[i]+"</option>");
+			   }
+			}
+
+			useNthColumnss(6);
+		
+			
+</script>
     <script>
   $('.filter').change(function () {
 

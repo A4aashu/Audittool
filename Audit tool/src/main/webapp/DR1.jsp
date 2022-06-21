@@ -74,7 +74,7 @@ $.each(trs, function() {
 	 var $this = $(this);
 	 var currentRow=$(this).closest("tr");
      if (((currentRow.find('#Status').val() == 'Pending') || (currentRow.find('#Status').val() == 'Partially Received'))) {
-         alert("aashu");
+        
      }
 });
   });
