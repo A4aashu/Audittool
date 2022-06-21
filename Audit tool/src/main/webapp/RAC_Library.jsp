@@ -141,8 +141,9 @@
       <div class="sidebar-inner slimscroll">
         <div id="sidebar-menu" class="sidebar-menu">
           <ul>
-            <li class="nav-item main-drop">
-              <span class="user-img"><img src="data:image/jpg;base64,<%= currentUser.getBase64Image()%>" id="image" style="border-radiius:100%!important;" width="50px" height="50px" alt="">
+             <a href="MyDetailsFinal.jsp">
+          <li class="nav-item main-drop" style="margin-top:5px;">
+              <span class="user-img"><img src="assets/images/profileimage.jpg" style="border-radiius:100%!important;" width="50px" height="50px" alt="">
 <span class="status online"></span>
 </span>
               <div class="section">
@@ -158,6 +159,7 @@
                                                                         </span>
               </div>
             </li>
+            </a>
             <li class="submenu">
               <a class="btn-links btn-inactive" href="dashboard2.jsp"><i class="la la-dashboard"></i> <span>
                   Home</span></a>
@@ -167,7 +169,7 @@
                   Audits</span></a>
             </li>
             <li class="submenu">
-            <a class="btn-links btn-inactive" href="MyContacts.jsp"><i class="la la-cube"></i> <span>My
+            <a class="btn-links btn-inactive" href="#"><i class="la la-cube"></i> <span>My
                 Contacts</span></a>
           </li>
           <li class="submenu">
@@ -226,18 +228,19 @@
               <h5 style="margin-left: 40px; margin-top: 38px !important;">Mega Process</h5>
               <div class="dropdown dropdowncss filter">
 
-                <select class="form-control input_process" id="dropdownMenuButton1" name="process" style="color: #00338D!important;
+                <select class="form-control input_process" id="dropdownMenuButton1" name="megaprocess" style="color: #00338D!important;
                             width: 250px!important;
-                            margin-left: 35px!important;">
+                            margin-left: 35px!important;" onchange=this.form.submit()>
                   <option value="" class='arrow'>Choose Value</option>
-                </select>
+              
+                                        </select>
               </div>
               <i class="arrow2 down3" style="color: #00338D !important"></i>
             </div>
             <div class="dropdown2">
               <h5 style="margin-left: 128px; margin-top: 38px !important;">Categorization</h5>
               <div class="dropdown dropdowncss filter">
-                <select class="form-control input_process" id="dropdownMenuButton2" name="process" style="color: #00338D!important;
+                <select class="form-control input_process" id="dropdownMenuButton2" name="department" style="color: #00338D!important;
                             width: 250px!important;
                             margin-left: 122px!important;margin-bottom: 20px;
     margin-left: 90px;
@@ -251,18 +254,20 @@
     height: 40px;
     font-size: 14px;
     border: none !important;
-    width: 260px;">
-                 <option value="" class='arrow'>Choose Value</option>
-                </select>
+    width: 260px;" onchange=this.form.submit()>
+                  <option value="">Choose Value</option>
+                  
+              
+                                        </select>
               </div>
               <i class="arrow1 down2" style="color: #00338D !important"></i>
             </div>
             <div class="dropdown2">
               <h5 style="    margin-left: 107px!important; margin-top: 38px !important;">Process</h5>
-              <div class="dropdown dropdowncss">
-               <select class="form-control input_process" id="dropdownMenuButton3" name="process" style="color: #00338D!important;
-                            width: 250px!important;
-                            margin-left: 122px!important;margin-bottom: 20px;
+              <div class="dropdown dropdowncss filter">
+                <select class="form-control input_process " id="dropdownMenuButton3" name="process" style="color: #00338D!important;
+                                width: 250px!important;
+                                margin-left: 102px!important;margin-bottom: 20px;
     margin-left: 90px;
     /* padding-right: 90px!important; */
     background-color: #B7C1D3 !important;
@@ -274,10 +279,10 @@
     height: 40px;
     font-size: 14px;
     border: none !important;
-    width: 260px;">
-                  <option value="" class='arrow'>Choose Value</option>
+    width: 260px;" onchange=this.form.submit()>
+                  <option value="">Choose Value </option>
+                  
                 </select>
-                
                 
               </div>
               <i class="arrow down1" style="color: #00338D !important" ></i>
@@ -321,8 +326,8 @@
                         <td style="text-align:left"><%= resultset1.getString("control")%></td>
                         <td style="text-align:left"><%= resultset1.getString("risks")%></td>
                         <td class="process" data-process="<%= resultset1.getString("Process")%>" style="text-align:left" hidden><%= resultset1.getString("Process")%></td>
-<td class="department" data-department="<%= resultset1.getString("DepartmentCategorisation")%>" style="text-align:left" hidden><%= resultset1.getString("DepartmentCategorisation")%></td>
-<td class="mega" data-mega="<%= resultset1.getString("MegaProcess")%>" style="text-align:left" hidden><%= resultset1.getString("MegaProcess")%></td>
+                        <td class="department" data-department="<%= resultset1.getString("DepartmentCategorisation")%>" style="text-align:left" hidden><%= resultset1.getString("DepartmentCategorisation")%></td>
+                        <td class="mega" data-mega="<%= resultset1.getString("MegaProcess")%>" style="text-align:left" hidden><%= resultset1.getString("MegaProcess")%></td>
                                                                                        
                                                                                 </tr>
             <% } 
@@ -394,7 +399,8 @@
         
   </script>
   <script>
-function useNthColumn(n) {
+  
+  function useNthColumn(n) {
 
 	   var data = [],
 	       i,
@@ -418,7 +424,8 @@ function useNthColumn(n) {
 	}
 
 	useNthColumn(8);
-	function useNthColumns(n) {
+	 
+	  function useNthColumns(n) {
 
 		   var data = [],
 		       i,
@@ -442,7 +449,7 @@ function useNthColumn(n) {
 		}
 
 		useNthColumns(7);
-		function useNthColumnss(n) {
+		function useNthColum(n) {
 
 			   var data = [],
 			       i,
@@ -465,11 +472,9 @@ function useNthColumn(n) {
 			   }
 			}
 
-			useNthColumnss(6);
-		
-			
-</script>
-    <script>
+			useNthColum(6);
+  </script>
+  <script>
   $('.filter').change(function () {
 
       filter_function1();
@@ -535,6 +540,7 @@ function useNthColumn(n) {
 
   }
   </script>
-</body>
+  
+ </body>
 
 </html>
