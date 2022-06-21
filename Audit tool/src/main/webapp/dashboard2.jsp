@@ -46,16 +46,18 @@
     <div class="sidebar-inner slimscroll">
       <div id="sidebar-menu" class="sidebar-menu">
         <ul>
-          <li class="nav-item main-drop" style="margin-left: -28px">
-            <span class="user-img"><img src="assets/images/profileimage.jpg" style="border-radiius:100%!important;" width="50px" height="50px" alt="">
+          <a href="MyDetailsFinal.jsp">
+<li class="nav-item main-drop" style="margin-left: -28px">
+<span class="user-img"><img src="assets/images/profileimage.jpg" style="border-radiius:100%!important;" width="50px" height="50px" alt="">
 <span class="status online"></span>
 </span>
-            <div class="section">
-              <span style="color:#ffffff;margin-left:85px;font-size: 16px!important;"><%= currentUser.getFullname()%></span>
-                    <span style="color:#ffffff;margin-left:85px;"><%= currentUser.getDepartment()%></span>
-                    <span style="color:#ffffff;margin-left:85px;"><%= currentUser.getDesignation()%></span>
-            </div>
-          </li>
+<div class="section">
+<span style="color:#ffffff;margin-left:85px;font-size: 16px!important;"><%= currentUser.getFullname()%></span>
+<span style="color:#ffffff;margin-left:85px;font-size: 10px!important;"><%= currentUser.getDepartment()%></span>
+<span style="color:#ffffff;margin-left:85px;font-size: 10px!important;"><%= currentUser.getDesignation()%></span>
+</div>
+</li>
+</a>
           <li class="submenu">
             <a class="btn-links" href="#" style="width:135px"><i class="la la-dashboard"></i> <span>
                 Home</span></a>
@@ -65,7 +67,7 @@
                 Audits</span></a>
           </li>
           <li class="submenu">
-            <a class="btn-links btn-inactive" href="#"><i class="la la-cube"></i> <span>My
+            <a class="btn-links btn-inactive" href="MyContacts.jsp"><i class="la la-cube"></i> <span>My
                 Contacts</span></a>
           </li>
           <li class="submenu">

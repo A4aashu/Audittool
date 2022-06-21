@@ -1,7 +1,3 @@
-/* $(document).ready(function () {
-    $('#example').DataTable();
-}); */
-
 .sidebtn {
   float: right;
 }
@@ -39,7 +35,8 @@
 
 .main-drop .user-img img {
   border-radius: 50%;
-  width: 50px !important;
+width: 53px !important;
+    height: 53px!important;
 }
 .btn-inactive {
   background-color: #b7c1d3 !important;
@@ -50,6 +47,7 @@
   margin-top: 50px;
   width: 135px !important;
   font-size: 13px !important;
+  text-decoration:none!important;
 }
 .btn-links {
   background-color: #ffffff;
@@ -64,7 +62,7 @@
 .down {
   margin-top: 145% !important;
 }
-.section {
+.section{
   margin-top: -50px;
   margin-left: 14px;
   font-size: 10px !important;
@@ -89,13 +87,15 @@
 .content-right {
   margin-top: 0px;
 }
-
+.sidebar-menu > ul > li > a{
+       text-decoration:none!important;
+}
 .bg-img {
   float: right;
   position: relative;
   top: 0;
   left: 0;
-  height: 660px;
+  height: 650px;
   width: 660px;
   margin-top: -40px;
   object-fit: cover;
@@ -118,12 +118,12 @@
 .Myform{
   margin-top: 30px;
 }
- h3{
+h3{
    color: #00338d !important;
    margin-top: 40px !important;
    font-weight: bold !important;
    margin-left: 13px !important;
- }
+}
 
 .labels{
   font-size: 20px;
@@ -135,25 +135,31 @@
 input{
   border: none !important;
   margin-bottom: 10px !important;
- 
+
 }
 
 .form-control{
   border-radius: 30px !important;
   background-color: #B7C1D3 !important;
- width: 290px !important;
+width: 290px !important;
 }
 
 input[type=file]::file-selector-button {border: 2px solid #B7C1D3;border-radius: .2em;background-color: #B7C1D3;transition: 1s;}
 #dropdownMenuButton{
-  border-radius: 30px !important;
-  background-color: #B7C1D3 !important;
- width: 290px !important;
- height: 43px !important;
- text-align: left;
- color: gray;
- border: none;
- 
+border-radius: 30px !important;
+background-color: #B7C1D3 !important;
+width: 290px !important;
+height: 43px !important;
+text-align: left;
+color: gray;
+border: none;
+
+
+}
+.scrollable-menu {
+    height: auto;
+    max-height: 200px;
+    overflow-x: hidden;
 }
 .dropdown-toggle::after{
 color: #00338d;
@@ -173,7 +179,7 @@ margin-left: 10px;
   display: inline-block;
   padding: 3px;
   margin-left: 250px;
- 
+
   
 }
 .down2{

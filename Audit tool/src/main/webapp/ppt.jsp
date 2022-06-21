@@ -54,7 +54,7 @@ while(resultset1.next()){
         }
         catch(Exception e)
         {
-             out.println("Pass from the previous table to preview this");
+             out.println("");
         }
 
 

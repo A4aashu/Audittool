@@ -251,14 +251,19 @@ String currentUser1=session.getAttribute("auditid").toString();
                 <table id="example" class="css-serial" style="width:100%">
                   <thead>
                       <tr>
-                        <th style="text-align: center;">Sl No.</th>
+                        <th style="text-align: center;">SNo.</th>
                           <th style="text-align: center;">Country</th>
                           <th style="text-align: center;">SPOC Name</th>
                           <th style="text-align: center;">Designation</th>
                           <th style="text-align: center;">Department</th>
                           <th style="text-align: center;">Email</th>
                           <th style="text-align: center;">Contact</th>
+                          <th style="text-align: center;">Country</th>
                           <th style="text-align: center;">Reporting To</th>
+                          <th style="text-align: center;">Designation</th>
+                          <th style="text-align: center;">Department</th>
+                          <th style="text-align: center;">Email</th>
+                          <th style="text-align: center;">Contact</th>
                          
                       </tr>
                   </thead>
@@ -284,7 +289,13 @@ String currentUser1=session.getAttribute("auditid").toString();
          <td style="text-align: center!important"><input type="text" name="department"style="border:none;border-radius:5px;resize: none;text-align: center!important;height:30px!important" value="<%= resultset2.getString("department")%>"readonly></input></td>
          <td style="text-align: center!important"><input type="email" name="email"style="border:none;border-radius:5px;resize: none;text-align: center!important;height:30px!important" value="<%= resultset2.getString("email")%>"readonly></input></td>
          <td style="text-align: center!important"><input type="text" name="contact"style="border:none;border-radius:5px;resize: none;text-align: center!important;height:30px!important" value="<%= resultset2.getString("contact")%>"readonly></input></td>
-         <td style="text-align: center!important"><input type="text" name="reportingto"style="border:none;border-radius:5px;resize: none;text-align: center!important;height:30px!important" value="<%= resultset2.getString("reportingto")%>"readonly></input></td> </tr>
+         <td style="text-align: center!important"><input type="text" name="rcountry" style="border:none;border-radius:5px;resize: none;text-align: center!important;height:30px!important" value="<%= resultset2.getString("rcountry")%>"readonly></input></td>
+         <td style="text-align: center!important"><input type="text" name="reportingto"style="border:none;border-radius:5px;resize: none;text-align: center!important;height:30px!important" value="<%= resultset2.getString("reportingto")%>"readonly></input></td>
+         <td style="text-align: center!important"><input type="text" name="rdesignation"style="border:none;border-radius:5px;resize: none;text-align: center!important;height:30px!important" value="<%= resultset2.getString("rdesignation")%>"readonly></input></td>
+         <td style="text-align: center!important"><input type="text" name="rdepartment"style="border:none;border-radius:5px;resize: none;text-align: center!important;height:30px!important" value="<%= resultset2.getString("rdepartment")%>"readonly></input></td>
+         <td style="text-align: center!important"><input type="email" name="remail"style="border:none;border-radius:5px;resize: none;text-align: center!important;height:30px!important" value="<%= resultset2.getString("remail")%>"readonly></input></td>
+         <td style="text-align: center!important"><input type="text" name="rcontact"style="border:none;border-radius:5px;resize: none;text-align: center!important;height:30px!important" value="<%= resultset2.getString("rcontact")%>"readonly></input></td>
+                  </tr>
        
                                  <% } 
 
@@ -373,7 +384,7 @@ String currentUser1=session.getAttribute("auditid").toString();
       $('#add_row').click(function () {
             //Add row
             row = '';
-            row += '<tr><td style="text-align: center!important"></td>  <td style="text-align: center!important"><input type="text" class="form-control" name="country"  style="border:none;border-radius:5px;resize: none;text-align: center!important;height:30px!important"></td> <td style="text-align: center!important"><input type="text" class="form-control" name="spoc_name"  style="border:none;border-radius:5px;resize: none;text-align: center!important;height:30px!important"></td> <td style="text-align: center!important"><input type="text" class=" form-control  " name="designation"  style="border:none;border-radius:5px;resize: none;text-align: center!important;height:30px!important"></td> <td style="text-align: center!important"><input type="text" class=" form-control  " name="department"  style="border:none;border-radius:5px;resize: none;text-align: center!important;height:30px!important"></td> <td style="text-align: center!important"><input type="email" class=" form-control  "name="email"  style="border:none;border-radius:5px;resize: none;text-align: center!important;height:30px!important"></td> <td style="text-align: center!important"><input type="text" class=" form-control  " name="contact"  style="border:none;border-radius:5px;resize: none;text-align: center!important;height:30px!important"></td> <td style="text-align: center!important"><input type="text" class=" form-control  "name="reportingto"  style="border:none;border-radius:5px;resize: none;text-align: center!important;height:30px!important"></td> ';
+            row += '<tr><td style="text-align: center!important"></td>  <td style="text-align: center!important"><input type="text" class="form-control" name="country"  style="border:none;border-radius:5px;resize: none;text-align: center!important;height:30px!important"></td> <td style="text-align: center!important"><input type="text" class="form-control" name="spoc_name"  style="border:none;border-radius:5px;resize: none;text-align: center!important;height:30px!important"></td> <td style="text-align: center!important"><input type="text" class=" form-control  " name="designation"  style="border:none;border-radius:5px;resize: none;text-align: center!important;height:30px!important"></td> <td style="text-align: center!important"><input type="text" class=" form-control  " name="department"  style="border:none;border-radius:5px;resize: none;text-align: center!important;height:30px!important"></td> <td style="text-align: center!important"><input type="email" class=" form-control  "name="email"  style="border:none;border-radius:5px;resize: none;text-align: center!important;height:30px!important"></td> <td style="text-align: center!important"><input type="text" class=" form-control  " name="contact"  style="border:none;border-radius:5px;resize: none;text-align: center!important;height:30px!important"></td><td style="text-align: center!important"><input type="text" class="form-control" name="rcountry"  style="border:none;border-radius:5px;resize: none;text-align: center!important;height:30px!important"></td>  <td style="text-align: center!important"><input type="text" class=" form-control  "name="reportingto"  style="border:none;border-radius:5px;resize: none;text-align: center!important;height:30px!important"></td><td style="text-align: center!important"><input type="text" class=" form-control  " name="rdesignation"  style="border:none;border-radius:5px;resize: none;text-align: center!important;height:30px!important"></td> <td style="text-align: center!important"><input type="text" class=" form-control  " name="rdepartment"  style="border:none;border-radius:5px;resize: none;text-align: center!important;height:30px!important"></td> <td style="text-align: center!important"><input type="email" class=" form-control  "name="remail"  style="border:none;border-radius:5px;resize: none;text-align: center!important;height:30px!important"></td> <td style="text-align: center!important"><input type="text" class=" form-control  " name="rcontact"  style="border:none;border-radius:5px;resize: none;text-align: center!important;height:30px!important"></td> ';
             $("tbody").append(row);
         })
 

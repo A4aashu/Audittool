@@ -1,0 +1,235 @@
+@charset "ISO-8859-1";
+.sidebtn {
+  float: right;
+}
+
+.sidebar {
+  top: 0px !important;
+}
+
+.user-img {
+  display: inline-block;
+  position: relative;
+  margin-left: 40px;
+  margin-right: 20px;
+}
+
+.sidebtn button {
+  width: 200px !important;
+  height: 80px !important;
+  margin-top: 20px !important;
+}
+
+.main-drop .user-img img {
+  border-radius: 50%;
+  width: 53px !important;
+    height: 53px!important;
+}
+.btn-inactive {
+  background-color: #b7c1d3 !important;
+  border-radius: 20px;
+  color: #00338d !important;
+  margin-bottom: 30px;
+  margin-left: 20px;
+  margin-top: 50px;
+  width: 135px !important;
+  font-size: 13px !important;
+}
+.btn-links {
+  background-color: #ffffff;
+  border-radius: 20px;
+  color: #00338d !important;
+  margin-bottom: 30px;
+  margin-left: 20px;
+  margin-top: 50px;
+  width: 135px !important;
+  font-size: 13px !important;
+}
+.down {
+  margin-top: 145% !important;
+}
+.section {
+  margin-top: -50px;
+  margin-left: 14px;
+  font-size: 10px !important;
+}
+.btn-links {
+  background-color: #ffffff;
+  border-radius: 20px;
+  color: #00338d !important;
+  margin-bottom: 30px;
+  margin-left: 20px;
+  margin-top: 50px;
+  width: 135px !important;
+  font-size: 13px !important;
+}
+
+.darkbluecard {
+  width: 250px;
+  position: relative;
+  top: 20px;
+  left: 0;
+}
+.bluecard {
+  width: 250px;
+  position: relative;
+  top: 20px;
+  left: 0;
+  margin-right: 20px;
+}
+
+.icon1card {
+  width: 80px;
+  position: absolute;
+  left: 210px;
+  top: 45px;
+}
+
+.icontag {
+  color: white;
+  position: absolute;
+  left: 310px;
+  top: 40px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.cardtext {
+  color: white;
+  position: absolute;
+  left: 340px;
+  top: 75px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.icon2card {
+  z-index: 1;
+  width: 80px;
+  position: absolute;
+  left: 480px;
+  top: 45px;
+}
+.icontag1 {
+  color: white;
+  position: absolute;
+  left: 570px;
+  top: 40px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.cardtext1 {
+  color: white;
+  position: absolute;
+  left: 620px;
+  top: 75px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+/* .cards-left {
+   margin: 20px;
+} */
+
+.content-left {
+  margin-left: 200px !important;
+}
+.content-right {
+  margin-top: 0px;
+}
+
+/* .cards-left {
+  /* margin-top: 25px; 
+} */
+
+.text-left {
+  margin-top: 20px;
+  color: #00338d;
+  font-weight: bold;
+  display: flex;
+}
+
+.bg-img {
+  float: right;
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 640px;
+  width: 625px;
+  margin-top: 0px;
+  object-fit: cover;
+}
+
+.bg-img-1 {
+  position: absolute;
+  top: 60px;
+  left: 1158px !important;
+  height: 200px;
+}
+
+.icon {
+  width: 70px !important;
+}
+
+/* .dropdowncss {
+  border-radius: 20px !important;
+  color: #b9b4cf !important;
+} */
+
+#dropdownMenuButton1 {
+  margin-bottom: 20px;
+  background-color: #b9b4cf !important;
+  border-radius: 30px !important;
+  color: #00338d;
+  font-weight: bold;
+  height: 30px;
+  font-size: 14px;
+}
+#dropdownMenuButton2 {
+  margin-bottom: 20px;
+  background-color: #b9b4cf !important;
+  border-radius: 30px !important;
+  color: #00338d;
+  font-weight: bold;
+  height: 30px;
+  font-size: 14px;
+}
+
+.dropdown2 {
+  margin-left: 50px;
+  margin-bottom: 10px;
+}
+
+.ptext {
+  margin-top: 40px;
+  font-size: 23px;
+  color: #00338d;
+  font-weight: bolder;
+}
+
+.tableheader {
+  margin-top: 10px;
+  margin-left: 10px !important;
+  color: #00338d;
+  font-weight: bolder;
+  font-size: 23px;
+}
+
+h5 {
+  margin-left: 5px;
+  font-weight: bold;
+}
+
+/* table  css*/
+
+.css-serial {
+  counter-reset: serial-number;
+}
+
+.css-serial td:first-child:before {
+  counter-increment: serial-number;
+  content: counter(serial-number);
+}

@@ -351,10 +351,15 @@ HttpServletResponse response)
 				String department[]=request.getParameterValues("department");
 				String email[]=request.getParameterValues("email");
 				String contact[]=request.getParameterValues("contact");
+				String rcountry[]=request.getParameterValues("rcountry");
 				String reportingto[]=request.getParameterValues("reportingto");
-				Integer id=Integer.parseInt(request.getParameter("auditid"));;
+				String rdesignation[]=request.getParameterValues("rdesignation");
+				String rdepartment[]=request.getParameterValues("rdepartment");
+				String remail[]=request.getParameterValues("remail");
+				String rcontact[]=request.getParameterValues("rcontact");
+				Integer id=Integer.parseInt(request.getParameter("auditid"));
 				
-					String sqlQuery ="insert into contactdetails values (?,?,?,?,?,?,?,?)";
+					String sqlQuery ="insert into contactdetails values (?,?,?,?,?,?,?,?,?,?,?,?,?)";
 					String sql = "delete from contactdetails where auditid="+id;
 					
 					try{
@@ -370,7 +375,12 @@ HttpServletResponse response)
 					          pstmt.setString(5,department[j]);
 					          pstmt.setString(6,email[j]);
 					          pstmt.setString(7,contact[j]);
-					          pstmt.setString(8,reportingto[j]);
+					          pstmt.setString(8,rcountry[j]);
+					          pstmt.setString(9,reportingto[j]);
+					          pstmt.setString(10,rdesignation[j]);
+					          pstmt.setString(11,rdepartment[j]);
+					          pstmt.setString(12,remail[j]);
+					          pstmt.setString(13,rcontact[j]);
 					        
 					          pstmt.addBatch();
 					     }
