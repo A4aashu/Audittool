@@ -181,7 +181,7 @@ text-overflow:ellipsis;
         <div class="cards-left">
             
             <img class="bluecard" src="assets/images/card1.png" alt="" />
-            <img class="icon1card" src="assets/images/icon2.png" alt="">
+            <img class="icon1card" src="assets/images/7.png" alt="">
             <h5 class="icontag">Number of <br />Engagements</h5>
             <p class="cardtext">04</p>
             <img class="icon2card" src="assets/images/icon3.png" alt="">

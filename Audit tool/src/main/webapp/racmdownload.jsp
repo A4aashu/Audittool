@@ -131,15 +131,15 @@ table, th, td {
            <td style="background-color:#00338D"></td>
            <td style="background-color:#00A3A1"></td>
            <td></td>
-             <td style=" border: 1px solid black;vertical-align:center;text-align:center;horizontal-align:center;"><%= resultset2.getString("MegaProcess")%></td>
+             <td style=" border: 1px solid black;vertical-align:center;text-align:center;horizontal-align:center;background-color:#D7D1EF"><%= resultset2.getString("MegaProcess")%></td>
             <td style=" border: 1px solid black;vertical-align:center;text-align:center;horizontal-align:center;"><%= resultset2.getString("DepartmentCategorisation")%></td>
-            <td style=" border: 1px solid black;vertical-align:center;text-align:center;horizontal-align:center;"><%= resultset2.getString("Process")%></td>
+            <td style=" border: 1px solid black;vertical-align:center;text-align:center;horizontal-align:center;background-color:#D7D1EF"><%= resultset2.getString("Process")%></td>
             <td style=" border: 1px solid black;vertical-align:center;text-align:center;horizontal-align:center;"><%= resultset2.getString("Subprocess")%></td>
-            <td style=" border: 1px solid black;vertical-align:center;text-align:center;horizontal-align:center;"><%= resultset2.getString("ControlobjectiveID")%></td>
+            <td style=" border: 1px solid black;vertical-align:center;text-align:center;horizontal-align:center;background-color:#D7D1EF"><%= resultset2.getString("ControlobjectiveID")%></td>
             <td style=" border: 1px solid black;vertical-align:center;text-align:center;horizontal-align:center;"><%= resultset2.getString("ControlObjective")%></td>
-            <td style=" border: 1px solid black;vertical-align:center;text-align:center;horizontal-align:center;"><%= resultset2.getString("RiskID")%></td>
+            <td style=" border: 1px solid black;vertical-align:center;text-align:center;horizontal-align:center;background-color:#D7D1EF"><%= resultset2.getString("RiskID")%></td>
             <td style=" border: 1px solid black;vertical-align:center;text-align:center;horizontal-align:center;"><%= resultset2.getString("Risks")%></td>
-            <td style=" border: 1px solid black;vertical-align:center;text-align:center;horizontal-align:center;"><%= resultset2.getString("ContColID")%></td>
+            <td style=" border: 1px solid black;vertical-align:center;text-align:center;horizontal-align:center;background-color:#D7D1EF"><%= resultset2.getString("ContColID")%></td>
             <td style=" border: 1px solid black;vertical-align:center;text-align:center;horizontal-align:center;"><%= resultset2.getString("Control")%></td>
             </tr>
         
