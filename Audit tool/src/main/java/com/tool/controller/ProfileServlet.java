@@ -39,7 +39,7 @@ HttpServletResponse response)
 		String phone=request.getParameter("phone");
 		 InputStream inputStream = null;
 		 Part filePart= request.getPart("myimg");
-
+		 System.out.println(filePart);
      if (filePart != null) {
 
          // Prints out some information
@@ -54,22 +54,40 @@ HttpServletResponse response)
          // Obtains input stream of the upload file
          inputStream
              = filePart.getInputStream();
+         System.out.println(inputStream);
      }
 	
 		try { 
 			Connection connection = Dbconfig.getConnection();
-			 
+			String x="";
+			
+			if(filePart.getSize()>0) {
+				
+				x="UPDATE tbl_user SET user_designation=?,user_department=?,user_location=?,contactno=?,profilephoto=? WHERE user_email=?";
+				PreparedStatement preparedStatement = connection.prepareStatement(x);
+				preparedStatement.setString(1,designation);
+				preparedStatement.setString(2,department);
+				preparedStatement.setString(3,location);
+				preparedStatement.setString(4,phone);
+				preparedStatement.setBlob(5, inputStream);
+				preparedStatement.setString(6,email);
+				preparedStatement.executeUpdate();
+				System.out.println("with photo");
+			}
+			else {
+				x="UPDATE tbl_user SET user_designation=?,user_department=?,user_location=?,contactno=? WHERE user_email=?";
+				PreparedStatement preparedStatement = connection.prepareStatement(x);
+				preparedStatement.setString(1,designation);
+				preparedStatement.setString(2,department);
+				preparedStatement.setString(3,location);
+				preparedStatement.setString(4,phone);
+				preparedStatement.setString(5,email);
+				preparedStatement.executeUpdate();
+				System.out.println("no photo");
+			}
 			
 			
-			PreparedStatement preparedStatement = connection.prepareStatement("UPDATE tbl_user SET user_designation=?,user_department=?,user_location=?,contactno=?,profilephoto=? WHERE user_email=?");
-			preparedStatement.setString(1,designation);
-			preparedStatement.setString(2,department);
-			preparedStatement.setString(3,location);
-			preparedStatement.setString(4,phone);
-			 preparedStatement.setBlob(5, inputStream);
-			preparedStatement.setString(6,email);
 			
-			preparedStatement.executeUpdate();
 			
 		
 					}catch(Exception e){

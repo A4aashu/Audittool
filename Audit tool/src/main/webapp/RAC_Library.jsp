@@ -128,6 +128,10 @@
         tr:nth-child(odd) {
             background-color: #B7C1D3;
         } */
+        option{
+    background-color:#B7C1D3 !important;
+    padding: 50px!important;
+  }
     </style>
 </head>
 

@@ -236,13 +236,7 @@ String currentUser1=session.getAttribute("auditid").toString();
       
       </div>
      
-                <div class="exportbtn">
-                 
-                  <button type="submit"
-                  class="btn btn-blue text-center signup_btn"
-                  style="background-color: #470A68;
-                  margin-left: 890px!important;z-index: 111; margin-top: 10px !important;"><i class="fa fa-list-alt" style="font-size:20px;padding-top:5px; padding-right: 15px !important;" aria-hidden="true"></i>Export List</button>
-                </div>
+                
                 <h4>List of meetings conducted during the review</h4>
                 <button class="btn btn-outline-success" id="add_row" class="add" style=" color: #00338D !important;
                 background-color: white !important ;margin-left: 80% !important ; margin-top: -20px !important ; border: none; font-weight: bold;"> + New Client Detail
@@ -251,19 +245,19 @@ String currentUser1=session.getAttribute("auditid").toString();
                 <table id="example" class="css-serial" style="width:100%">
                   <thead>
                       <tr>
-                        <th style="text-align: center;">SNo.</th>
-                          <th style="text-align: center;">Country</th>
-                          <th style="text-align: center;">SPOC Name</th>
-                          <th style="text-align: center;">Designation</th>
-                          <th style="text-align: center;">Department</th>
-                          <th style="text-align: center;">Email</th>
-                          <th style="text-align: center;">Contact</th>
-                          <th style="text-align: center;">Country</th>
-                          <th style="text-align: center;">Reporting To</th>
-                          <th style="text-align: center;">Designation</th>
-                          <th style="text-align: center;">Department</th>
-                          <th style="text-align: center;">Email</th>
-                          <th style="text-align: center;">Contact</th>
+                        <th style="text-align: center;width:50px">SNo.</th>
+                          <th style="text-align: center;width:150px">Country</th>
+                          <th style="text-align: center;width:150px">SPOC Name</th>
+                          <th style="text-align: center;width:150px">Designation</th>
+                          <th style="text-align: center;width:150px">Department</th>
+                          <th style="text-align: center;width:150px">Email</th>
+                          <th style="text-align: center;width:150px">Contact</th>
+                          <th style="text-align: center;width:150px">Country</th>
+                          <th style="text-align: center;width:150px">Reporting To</th>
+                          <th style="text-align: center;width:150px">Designation</th>
+                          <th style="text-align: center;width:150px">Department</th>
+                          <th style="text-align: center;width:150px">Email</th>
+                          <th style="text-align: center;width:150px">Contact</th>
                          
                       </tr>
                   </thead>

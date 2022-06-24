@@ -516,7 +516,7 @@
                                                                                             style=" padding-right: 26px!important;font-weight:bold!important;font-size:20px!important;" hidden>
                                                                                             ID</th>
                                                                                         <th class="rowww1"
-                                                                                            style=" padding-right: 26px!important;font-weight:bold!important;font-size:20px!important;">
+                                                                                            style=" padding-right: 26px!important;font-weight:bold!important;font-size:20px!important;" hidden>
                                                                                             Control Objective ID</th>
                                                                                         <th class="rowww"
                                                                                             style=" padding-right: 60px!important;font-weight:bold!important;font-size:20px!important;">
@@ -599,7 +599,7 @@
                                                                                 <tr>
                                                                                     <th style="text-align: left;">
                                                                                         Select Control</th>
-                                                                                    <th style="text-align: left;">
+                                                                                    <th style="text-align: left;" hidden>
                                                                                         Control Objective ID</th>
                                                                                     <th style="text-align: left;">
                                                                                         Control Objective</th>
@@ -618,7 +618,7 @@
                                                                                             type="checkbox"
                                                                                             name="check-tab1" /> </td>
                                                                                     <td name="firstname"
-                                                                                        style="text-align: left;">
+                                                                                        style="text-align: left;" hidden>
                                                                                         <%= resultset1.getString("ControlobjectiveID")%></td>
                                                                                     <td name="lastname"
                                                                                         style="text-align: left;">
@@ -1216,6 +1216,7 @@
                                                             cell2.style.backgroundColor = 'rgba(167, 158, 205, 0.28)';
                                                             cell2.style.fontWeight = '700';
                                                             cell2.style.color = '#00338D';
+                                                            cell2.style.display = 'none';
                                                             cell3.innerHTML = table1.rows[i + 1].cells[2].innerHTML;
                                                             cell3.style.backgroundColor = 'rgba(167, 158, 205, 0.28)';
                                                             cell3.style.fontWeight = '700';

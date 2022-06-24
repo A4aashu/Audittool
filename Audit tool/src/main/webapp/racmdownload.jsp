@@ -98,16 +98,16 @@ table, th, td {
            <th style="background-color:#00338D"></th>
            <th style="background-color:#00A3A1"></th>
            <th></th>
-                        <th style="background:#483698;color:white;border: 1px solid black;vertical-align:center;text-align:center;horizontal-align:center;">Mega Process</th>
-                        <th style="background:#483698;color:white;border: 1px solid black;vertical-align:center;text-align:center;horizontal-align:center;">Categorization</th>
-                        <th style="background:#483698;color:white;border: 1px solid black;vertical-align:center;text-align:center;horizontal-align:center;">Process</th>
-                        <th style="background:#483698;color:white;border: 1px solid black;vertical-align:center;text-align:center;horizontal-align:center;">Sub Process</th>
-                        <th style="background:#483698;color:white;border: 1px solid black;vertical-align:center;text-align:center;horizontal-align:center;">Control Objective Ref #</th>
-                        <th style="background:#483698;color:white;border: 1px solid black;vertical-align:center;text-align:center;horizontal-align:center;">Control Objective</th>
-                        <th style="background:#483698;color:white;border: 1px solid black;vertical-align:center;text-align:center;horizontal-align:center;">Risk Ref #</th>
-                        <th style="background:#483698;color:white;border: 1px solid black;vertical-align:center;text-align:center;horizontal-align:center;">Risk Description</th>
-                        <th style="background:#483698;color:white;border: 1px solid black;vertical-align:center;text-align:center;horizontal-align:center;">Control Ref#</th>
-                        <th style="background:#483698;color:white;border: 1px solid black;vertical-align:center;text-align:center;horizontal-align:center;">Control Description</th></tr>
+                        <th style="background:#483698;color:white;border: 1px solid black;text-align: center;vertical-align: middle;">Mega Process</th>
+                        <th style="background:#483698;color:white;border: 1px solid black;text-align: center;vertical-align: middle;">Categorization</th>
+                        <th style="background:#483698;color:white;border: 1px solid black;text-align: center;vertical-align: middle;">Process</th>
+                        <th style="background:#483698;color:white;border: 1px solid black;text-align: center;vertical-align: middle;">Sub Process</th>
+                        <th style="background:#483698;color:white;border: 1px solid black;text-align: center;vertical-align: middle;">Control Objective Ref #</th>
+                        <th style="background:#483698;color:white;border: 1px solid black;text-align: center;vertical-align: middle;">Control Objective</th>
+                        <th style="background:#483698;color:white;border: 1px solid black;text-align: center;vertical-align: middle;">Risk Ref #</th>
+                        <th style="background:#483698;color:white;border: 1px solid black;text-align: center;vertical-align: middle;">Risk Description</th>
+                        <th style="background:#483698;color:white;border: 1px solid black;text-align: center;vertical-align: middle;">Control Ref#</th>
+                        <th style="background:#483698;color:white;border: 1px solid black;text-align: center;vertical-align: middle;">Control Description</th></tr>
              
              </thead>
             
@@ -131,16 +131,16 @@ table, th, td {
            <td style="background-color:#00338D"></td>
            <td style="background-color:#00A3A1"></td>
            <td></td>
-             <td style=" border: 1px solid black;vertical-align:center;text-align:center;horizontal-align:center;background-color:#D7D1EF"><%= resultset2.getString("MegaProcess")%></td>
-            <td style=" border: 1px solid black;vertical-align:center;text-align:center;horizontal-align:center;"><%= resultset2.getString("DepartmentCategorisation")%></td>
-            <td style=" border: 1px solid black;vertical-align:center;text-align:center;horizontal-align:center;background-color:#D7D1EF"><%= resultset2.getString("Process")%></td>
-            <td style=" border: 1px solid black;vertical-align:center;text-align:center;horizontal-align:center;"><%= resultset2.getString("Subprocess")%></td>
-            <td style=" border: 1px solid black;vertical-align:center;text-align:center;horizontal-align:center;background-color:#D7D1EF"><%= resultset2.getString("ControlobjectiveID")%></td>
-            <td style=" border: 1px solid black;vertical-align:center;text-align:center;horizontal-align:center;"><%= resultset2.getString("ControlObjective")%></td>
-            <td style=" border: 1px solid black;vertical-align:center;text-align:center;horizontal-align:center;background-color:#D7D1EF"><%= resultset2.getString("RiskID")%></td>
-            <td style=" border: 1px solid black;vertical-align:center;text-align:center;horizontal-align:center;"><%= resultset2.getString("Risks")%></td>
-            <td style=" border: 1px solid black;vertical-align:center;text-align:center;horizontal-align:center;background-color:#D7D1EF"><%= resultset2.getString("ContColID")%></td>
-            <td style=" border: 1px solid black;vertical-align:center;text-align:center;horizontal-align:center;"><%= resultset2.getString("Control")%></td>
+             <td style=" border: 1px solid black;text-align: center;vertical-align: middle;background-color:#D7D1EF"><%= resultset2.getString("MegaProcess")%></td>
+            <td style=" border: 1px solid black;text-align: center;vertical-align: middle;"><%= resultset2.getString("DepartmentCategorisation")%></td>
+            <td style=" border: 1px solid black;text-align: center;vertical-align: middle;background-color:#D7D1EF"><%= resultset2.getString("Process")%></td>
+            <td style=" border: 1px solid black;text-align: center;vertical-align: middle;"><%= resultset2.getString("Subprocess")%></td>
+            <td style=" border: 1px solid black;text-align: center;vertical-align: middle;background-color:#D7D1EF"><%= resultset2.getString("ControlobjectiveID")%></td>
+            <td style=" border: 1px solid black;text-align: center;vertical-align: middle;"><%= resultset2.getString("ControlObjective")%></td>
+            <td style=" border: 1px solid black;text-align: center;vertical-align: middle;background-color:#D7D1EF"><%= resultset2.getString("RiskID")%></td>
+            <td style=" border: 1px solid black;text-align: center;vertical-align: middle;"><%= resultset2.getString("Risks")%></td>
+            <td style=" border: 1px solid black;text-align: center;vertical-align: middle;background-color:#D7D1EF"><%= resultset2.getString("ContColID")%></td>
+            <td style=" border: 1px solid black;text-align: center;vertical-align: middle;"><%= resultset2.getString("Control")%></td>
             </tr>
         
         

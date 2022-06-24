@@ -120,13 +120,11 @@ text-overflow:ellipsis;
          url = "jdbc:sqlserver://IN-AASHUYADAV;databaseName=Audit_tool"
          user = "aashu" password = "kpmgKPMG1"/>
 		<sql:query dataSource = "${snapshot}" var = "resultset">
-         SELECT count(distinct(megaprocess)) from audits;
+         SELECT count(distinct(Spoc_name)) from contactdetails;
       	</sql:query>
-      	<sql:query dataSource = "${snapshot}" var = "resultset1">
-         SELECT count(distinct(Department)) from audits;
-      	</sql:query>
+      	
       	<sql:query dataSource = "${snapshot}" var = "resultset2">
-         SELECT count(distinct(Name_of_client)) from audits;
+         SELECT count(*) from contactdetails;
       	</sql:query>
     <!-- Sidebar -->
     <div class="sidebar" style="background-color: #00338D!important;width: 170px;" id="sidebar">
@@ -183,11 +181,11 @@ text-overflow:ellipsis;
             <img class="bluecard" src="assets/images/card1.png" alt="" />
             <img class="icon1card" src="assets/images/7.png" alt="">
             <h5 class="icontag">Number of <br />Engagements</h5>
-            <p class="cardtext">04</p>
+            <p class="cardtext">${resultset2.rowsByIndex[0][0]}</p>
             <img class="icon2card" src="assets/images/icon3.png" alt="">
             <img class="darkbluecard" src="assets/images/card3.png" alt="" />
             <h5 class="icontag1">Number of Clients</h5>
-            <p class="cardtext1">${resultset2.rowsByIndex[0][0]}</p>
+            <p class="cardtext1">${resultset.rowsByIndex[0][0]}</p>
 
         </div>
         <p class="ptext">Please select Client and Review Name</p>
@@ -203,7 +201,7 @@ text-overflow:ellipsis;
     top: 4px;
     left: 127px;"></i>
                      <select class="form-control dropdowncss filter" onchange="filter_rows()" id="dropdownMenuButton1"
-            name="NameoftheClient" style="color:#495057!important;width: 130%;">
+            name="NameoftheClient" style="color:#495057!important;width:150px;">
             <option value="" style="color:black!important;"selected>Choose Value</option>
             </select>
                 </div>
@@ -219,7 +217,7 @@ text-overflow:ellipsis;
     top: 4px;
     left: 127px;"></i>
                      <select class="form-control dropdowncss filter" onchange="filter_rows()" id="dropdownMenuButton2"
-            name="NameoftheClient" style="color:#495057!important;width: 130%;">
+            name="NameoftheClient" style="color:#495057!important;width:150px;">
             <option value="" style="color:black!important;"selected>Choose Value</option>
             </select>
                 </div>
@@ -231,18 +229,18 @@ text-overflow:ellipsis;
                   <tr>
                     <th style="text-align: center;">SI.No.</th>
                     <th style="text-align: center; width:100px">Client Name</th>
-                    <th style="text-align: center; width:100px;">Review Name</th>
+                    <th style="text-align: center; width:300px;">Review Name</th>
                     <th style="text-align: center; width:100px">Country</th>
-                    <th style="text-align: center; width:100px">SPOC Name</th>
+                    <th style="text-align: center; width:200px">SPOC Name</th>
                     <th style="text-align: center; width:100px">Designation</th>
                     <th style="text-align: center; width:100px">Department</th>
-                    <th style="text-align: center; width:100px">E-mail</th>
+                    <th style="text-align: center; width:200px">E-mail</th>
                     <th style="text-align: center; width:100px">Contact</th>
                     <th style="text-align: center; width:100px">Country</th>
-                    <th style="text-align: center; width:100px">Reporting To </th>
+                    <th style="text-align: center; width:200px">Reporting To </th>
                     <th style="text-align: center; width:100px">Designation</th>
                     <th style="text-align: center; width:100px">Department</th>
-                    <th style="text-align: center; width:100px">E-mail</th>
+                    <th style="text-align: center; width:200px">E-mail</th>
                     <th style="text-align: center; width:100px">Contact</th>
                   </tr>
               </thead>

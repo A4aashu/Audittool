@@ -23,8 +23,8 @@ public class SendEmail {
 	
 	public void sendMail()
 	{
-		String email = "kdsapm@gmail.com"; // sender email
-		String password = "kpmgKPMG@211"; // sender password
+		String email = "iaacceleratorkpmg@gmail.com"; // sender email
+		String password = "vvrchttmvbzaxgaw"; // sender password
 		
 		Properties properties = new Properties();
 		

@@ -201,7 +201,7 @@ width:200px!important;
             <div class="dropdown1">
                 <h5>Mega Process</h5>
                 <div class="dropdown dropdowncss">
-                    <select class="form-control dropdowncss filter" onchange="filter_rows()" id="dropdownMenuButton1" name="process" style="color:#495057!important;">
+                    <select class="form-control dropdowncss filter" onchange="filter_rows()" id="dropdownMenuButton1" name="process" style="color:#495057!important;width:160px!important;height:30px!important">
 <option value="" style="color:black!important;">Choose Value</option>
 </select>
                 </div>
@@ -215,7 +215,7 @@ width:200px!important;
   border-radius: 30px !important;
   color: #495057!important;
   font-weight: bold;
-  height: 30px;
+  width:160px!important;height:30px!important;
   font-size: 14px;">
 <option value="" style="color:black!important;">Choose Value</option>
 </select>

@@ -17,9 +17,8 @@
 <style>
 table, th, td {
   border: 1px solid black;
-  vertical-align:center;
-  text-align:center;
-  horizontal-align:center;
+  text-align: center;
+  vertical-align: middle;
 }
 
 </style>

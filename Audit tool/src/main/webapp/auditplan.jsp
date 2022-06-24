@@ -321,109 +321,110 @@
 
   <!-- Custom JS -->
 
- <script>
-	
-	$("#date5").change(function () {
-		var error=""
-	    var date1= document.getElementById("date1").value;
-	    var date2= document.getElementById("date2").value;
+<script>
+       
+       $("#date5").change(function () {
+              var error=""
+           var date1= document.getElementById("date1").value;
+           var date2= document.getElementById("date2").value;
         var date3= document.getElementById("date3").value;
-	    var date4= document.getElementById("date4").value;
-	    var date5= document.getElementById("date5").value;
-	    var date6= document.getElementById("date6").value;
-	    var date7= document.getElementById("date7").value;
-	    var date8= document.getElementById("date8").value;
-	    var date9= document.getElementById("date9").value;
-	   
+           var date4= document.getElementById("date4").value;
+           var date5= document.getElementById("date5").value;
+           var date6= document.getElementById("date6").value;
+           var date7= document.getElementById("date7").value;
+           var date8= document.getElementById("date8").value;
+           var date9= document.getElementById("date9").value;
+          
 
-	    if ((Date.parse(date1) >= Date.parse(date5))||(Date.parse(date2) >= Date.parse(date5))||(Date.parse(date3) >= Date.parse(date5))) {
-	        alert(error + "Fieldwork date should be greater than Planning dates\n");
-	        document.getElementById("date5").value = "";
-	        
-	    }	    
-	    
-	    
-	    
-	}),
-	$("#date6").change(function () {
-		var error=""
-	    var date1= document.getElementById("date1").value;
-	    var date2= document.getElementById("date2").value;
+           if ((Date.parse(date1) >= Date.parse(date5))||(Date.parse(date2) >= Date.parse(date5))||(Date.parse(date3) >= Date.parse(date5))) {
+               alert(error + "Fieldwork Phase dates are always after the Planning Phase dates.\n");
+               document.getElementById("date5").value = "";
+               
+           }      
+           
+           
+           
+       }),
+       $("#date6").change(function () {
+              var error=""
+           var date1= document.getElementById("date1").value;
+           var date2= document.getElementById("date2").value;
         var date3= document.getElementById("date3").value;
-	    var date4= document.getElementById("date4").value;
-	    var date5= document.getElementById("date5").value;
-	    var date6= document.getElementById("date6").value;
-	    var date7= document.getElementById("date7").value;
-	    var date8= document.getElementById("date8").value;
-	    var date9= document.getElementById("date9").value;
-	   
-	    if ((Date.parse(date5) >= Date.parse(date6)) || (Date.parse(date4) > Date.parse(date6)) || (Date.parse(date3) > Date.parse(date6))||(Date.parse(date2) > Date.parse(date6))||(Date.parse(date1) > Date.parse(date6))) {
-	        alert(error + "Discussion with stakeholders is always after Fieldwork and Planning Phase \n");
-	        document.getElementById("date6").value = "";
-	        
-	    }       
-	       
-	    
-	}),
-	$("#date7").change(function () {
-		var error=""
-	    var date1= document.getElementById("date1").value;
-	    var date2= document.getElementById("date2").value;
+           var date4= document.getElementById("date4").value;
+           var date5= document.getElementById("date5").value;
+           var date6= document.getElementById("date6").value;
+           var date7= document.getElementById("date7").value;
+           var date8= document.getElementById("date8").value;
+           var date9= document.getElementById("date9").value;
+          
+           if ((Date.parse(date5) >= Date.parse(date6)) || (Date.parse(date4) > Date.parse(date6)) || (Date.parse(date3) > Date.parse(date6))||(Date.parse(date2) > Date.parse(date6))||(Date.parse(date1) > Date.parse(date6))) {
+               alert(error + "Discussion with stakeholders Phase dates are always after Fieldwork and Planning Phase dates. \n");
+               document.getElementById("date6").value = "";
+               
+           }       
+              
+           
+       }),
+       $("#date7").change(function () {
+              var error=""
+           var date1= document.getElementById("date1").value;
+           var date2= document.getElementById("date2").value;
         var date3= document.getElementById("date3").value;
-	    var date4= document.getElementById("date4").value;
-	    var date5= document.getElementById("date5").value;
-	    var date6= document.getElementById("date6").value;
-	    var date7= document.getElementById("date7").value;
-	    var date8= document.getElementById("date8").value;
-	    var date9= document.getElementById("date9").value;
-	   
-	    if ((Date.parse(date6) >= Date.parse(date7))||(Date.parse(date5) >= Date.parse(date7))||(Date.parse(date4) >= Date.parse(date7))||(Date.parse(date3) >= Date.parse(date7))||(Date.parse(date2) >= Date.parse(date7))||(Date.parse(date1) >= Date.parse(date7))) {
-	        alert(error + "Audit closure is always after Discussion with stakeholders ,Fieldwork and Planning Phase \n");
-	        document.getElementById("date7").value = "";
-	    }     
-	       
-	    
-	}),
-	$("#date8").change(function () {
-		var error=""
-	    var date1= document.getElementById("date1").value;
-	    var date2= document.getElementById("date2").value;
+           var date4= document.getElementById("date4").value;
+           var date5= document.getElementById("date5").value;
+           var date6= document.getElementById("date6").value;
+           var date7= document.getElementById("date7").value;
+           var date8= document.getElementById("date8").value;
+           var date9= document.getElementById("date9").value;
+          
+           if ((Date.parse(date6) >= Date.parse(date7))||(Date.parse(date5) >= Date.parse(date7))||(Date.parse(date4) >= Date.parse(date7))||(Date.parse(date3) >= Date.parse(date7))||(Date.parse(date2) >= Date.parse(date7))||(Date.parse(date1) >= Date.parse(date7))) {
+               alert(error + "Audit closure dates are always after Discussion with stakeholders, Fieldwork and Planning Phase dates.\n");
+               document.getElementById("date7").value = "";
+           }     
+              
+           
+       }),
+       $("#date8").change(function () {
+              var error=""
+           var date1= document.getElementById("date1").value;
+           var date2= document.getElementById("date2").value;
         var date3= document.getElementById("date3").value;
-	    var date4= document.getElementById("date4").value;
-	    var date5= document.getElementById("date5").value;
-	    var date6= document.getElementById("date6").value;
-	    var date7= document.getElementById("date7").value;
-	    var date8= document.getElementById("date8").value;
-	    var date9= document.getElementById("date9").value;
-	   
-	    if ((Date.parse(date7) >= Date.parse(date8))||(Date.parse(date6) >= Date.parse(date8))||(Date.parse(date5) >= Date.parse(date8))||(Date.parse(date4) >= Date.parse(date8))||(Date.parse(date3) >= Date.parse(date8))||(Date.parse(date2) >= Date.parse(date8))||(Date.parse(date1) >= Date.parse(date8))) {
-	        alert(error + "Audit closure is always after Discussion with stakeholders ,Fieldwork and Planning Phase \n");
-	        document.getElementById("date8").value = "";
-	    }     
-	       
-	    
-	}),
-	$("#date9").change(function () {
-		var error=""
-		    var date1= document.getElementById("date1").value;
-		    var date2= document.getElementById("date2").value;
-	        var date3= document.getElementById("date3").value;
-		    var date4= document.getElementById("date4").value;
-		    var date5= document.getElementById("date5").value;
-		    var date6= document.getElementById("date6").value;
-		    var date7= document.getElementById("date7").value;
-		    var date8= document.getElementById("date8").value;
-		    var date9= document.getElementById("date9").value;
-		   
-		    if ((Date.parse(date8) >= Date.parse(date9))||(Date.parse(date7) >= Date.parse(date9))||(Date.parse(date6) >= Date.parse(date9))||(Date.parse(date5) >= Date.parse(date9))||(Date.parse(date4) >= Date.parse(date9))||(Date.parse(date3) >= Date.parse(date9))||(Date.parse(date2) >= Date.parse(date9))||(Date.parse(date1) >= Date.parse(date9))) {
-		        alert(error + "Audit closure is always after Discussion with stakeholders ,Fieldwork and Planning Phase \n");
-		        document.getElementById("date9").value = "";
-		    }     
-		       
-		    
-		});
-	
-	</script>
+           var date4= document.getElementById("date4").value;
+           var date5= document.getElementById("date5").value;
+           var date6= document.getElementById("date6").value;
+           var date7= document.getElementById("date7").value;
+           var date8= document.getElementById("date8").value;
+           var date9= document.getElementById("date9").value;
+          
+           if ((Date.parse(date7) >= Date.parse(date8))||(Date.parse(date6) >= Date.parse(date8))||(Date.parse(date5) >= Date.parse(date8))||(Date.parse(date4) >= Date.parse(date8))||(Date.parse(date3) >= Date.parse(date8))||(Date.parse(date2) >= Date.parse(date8))||(Date.parse(date1) >= Date.parse(date8))) {
+               alert(error + "Audit closure dates are always after Discussion with stakeholders, Fieldwork and Planning Phase \n");
+               document.getElementById("date8").value = "";
+           }     
+              
+           
+       }),
+       $("#date9").change(function () {
+              var error=""
+                  var date1= document.getElementById("date1").value;
+                  var date2= document.getElementById("date2").value;
+               var date3= document.getElementById("date3").value;
+                  var date4= document.getElementById("date4").value;
+                  var date5= document.getElementById("date5").value;
+                  var date6= document.getElementById("date6").value;
+                  var date7= document.getElementById("date7").value;
+                  var date8= document.getElementById("date8").value;
+                  var date9= document.getElementById("date9").value;
+                 
+                  if ((Date.parse(date8) >= Date.parse(date9))||(Date.parse(date7) >= Date.parse(date9))||(Date.parse(date6) >= Date.parse(date9))||(Date.parse(date5) >= Date.parse(date9))||(Date.parse(date4) >= Date.parse(date9))||(Date.parse(date3) >= Date.parse(date9))||(Date.parse(date2) >= Date.parse(date9))||(Date.parse(date1) >= Date.parse(date9))) {
+                      alert(error + "Audit closure dates are always after Discussion with stakeholders, Fieldwork and Planning Phase dates.\n");
+                      document.getElementById("date9").value = "";
+                  }     
+                     
+                  
+              });
+       
+       </script>
+
 	
 </body>
 

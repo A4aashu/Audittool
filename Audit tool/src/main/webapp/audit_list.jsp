@@ -420,7 +420,7 @@ width:200px!important;
   <script>
 
     const data = {
-      labels: ['Operations', 'Finance & Accounts', 'Legal', 'Network & IT'],
+      labels: ['Operations', 'Finance & Accounts', 'Legal', 'IT & Network'],
       datasets: [{
         label: 'No of sub-processes covered under Mega Process',
         data: [15, 6, 3, 2],

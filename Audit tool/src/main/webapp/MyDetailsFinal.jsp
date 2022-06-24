@@ -78,6 +78,21 @@
   margin-top: -40px;
   object-fit: cover;
 }
+.upload {
+display: block;
+width: 100%;
+height: calc(1.5em + .75rem + 2px);
+padding: .375rem .75rem;
+font-size: 1rem;
+font-weight: 400;
+line-height: 1.5;
+color: #495057;
+background-color: #b7c1d3;
+background-clip: padding-box;
+border: 1px solid #ced4da;
+border-radius: 30px;
+cursor: pointer;
+}
        </style>
 </head>
        
@@ -140,7 +155,7 @@
     <div class="content-left ">
     <c:forEach var = "row" items = "${resultset.rows}">
         <h3>My Profile</h3>
-        <form style="padding-left: -20%; width: 800px;" class="Myform" action="ProfileServlet" method="POST" enctype="multipart/form-data">
+        <form style="padding-left: -20%;margin-top: 20px; width: 800px;" class="Myform" action="ProfileServlet" method="POST" enctype="multipart/form-data">
         <div class="row  Row1">
             <div class="col-md-6"><label class="labels ">Name</label><input type="text" class="form-control" placeholder="Enter name" value="${row.user_fullname}" readonly></div>
             <div class="col-md-6 "><label class="labels colDiff">Email ID</label><input id="txtEmail" name="email" type="email" class="form-control colDiff" value="${row.user_email}" placeholder="Enter email" onchange="buttonclick()" readonly></div>
@@ -208,7 +223,7 @@
           </select>
             </div>
             <div class="col-md-8"><label class="labels">Contact No.</label><input type="text" class="form-control" placeholder="Enter number" value="${row.contactno}" pattern="[1-9]{1}[0-9]{9}" name="phone"></div>
-            <div class="col-md-8" style="margin-top: 3px;"><label class="labels">Upload Profile Photo</label><input type="file" id="photo" class="form-control"  name="myimg">    
+            <div class="col-md-8" style="margin-top: 3px;"><label class="labels">Upload Profile Photo</label><input type="file" id="photo" class="upload"  name="myimg">    
         
               </div>
              

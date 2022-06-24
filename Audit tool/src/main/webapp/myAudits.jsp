@@ -69,8 +69,11 @@
             var processid=data[1];
             var objectiveid=data[2];
             var controlriskid=data[3];
+            var client=data[4];
+            var review=data[5];
+            var epname=data[6];
            
-            window.location.href = "<%=request.getContextPath()%>/Data_Request.jsp?&id="+id+ "&processid=" + processid+ "&objid=" + objectiveid+ "&controlriskid=" + controlriskid;
+            window.location.href = "<%=request.getContextPath()%>/Data_Request.jsp?&id="+id+ "&processid=" + processid+ "&objid=" + objectiveid+ "&controlriskid=" + controlriskid+"&client="+client+"&review="+review+"&epname="+epname;
             
         } );
        
@@ -223,6 +226,7 @@
                     <th style="text-align: center;" hidden>controlriskid</th>
                     <th style="text-align: center;">Client Name</th>
                     <th style="text-align: center;">Review Name</th>
+                    <th style="text-align: center;" hidden>epname</th>
                     <th style="text-align: center;">Start Date</th>
                     <th style="text-align: center;">End Date</th>
                     <th style="text-align: center;">Progress</th>
@@ -251,6 +255,9 @@
                                                                                         <td 
                                                                                         style="text-align: center;">
                                                                                         <%= resultset1.getString("Engagement_name")%></td>
+                                                                                        <td 
+                                                                                        style="text-align: center;" hidden>
+                                                                                        <%= resultset1.getString("epname")%></td>
                                                                                     <td 
                                                                                         style="text-align: center;">
                                                                                         <%= resultset1.getString("Audit_start_date")%></td>

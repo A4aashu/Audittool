@@ -61,7 +61,16 @@
     <script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"></script>
     <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-
+<style>
+.recc {
+  height:40px!important;
+  margin-left: 84% !important;
+  margin-top: -42px;
+  background-color: #ccc7e3;
+  border-top-left-radius: 31px !important;
+  border-bottom-left-radius: 31px !important;
+}
+</style>
 
 </head>
 
@@ -121,7 +130,12 @@
                     <div class="compactnavbar">
 
                         <nav class="Nav2 navbar-fixed-top" style="background-color:#E1ECF0!important;">
-                            <ul>
+                        <ul style="margin-top:-6px;">
+                        <li>
+                        <marquee  behavior="alternate" direction="left" style="margin-right:10px;margin-left:-33px;color:#F6AA00;background-color:Beige">Client Name: <%=request.getParameter("client")%> | Review Name: <%=request.getParameter("review")%> | Engagement Partner:  <%=request.getParameter("epname")%></marquee>
+                        </li>
+                        </ul>
+                            <ul style="margin-top:-20px">
                                 <li><button type="button" class="boxx-shadow2 nav1" style="width: 151px!important;">Audit Background</button></li>
                                 <li><button type="button" class="boxx-shadow2 nav-1" style="width: 141px!important;">Data Request</button></li>
                                 <li><button type="button"  class="boxx-shadow2 nav1" style="width:152px;">Risk and Controls</button></li>
@@ -131,21 +145,20 @@
 
                             </ul>
 
-                            <ul style="margin-left: 350px;margin-top: -11px;">
+                            <ul style="margin-left: 350px;margin-top: -20px;">
                                 <li style="width: 122px!important;"><a href="#" class="nav-linkk nav-2 boxx-shadow" style="border-right: 1px solid #B7C1D3;width: 65px;margin-right: 19px;padding-right: 5px;
                                         ">Create Data Items</a>
                                 </li>
-                                <li style="width: 122px;margin-left: -18px;"><a href="DR1.jsp"
+                                <li style="width: 122px;margin-left: -18px;"><a href=""
                                         class="hover-underline-animation nav-linkk nav2 boxx-shadow"
                                         style="width: 182px;padding-right: 5px;">Generate Data Request</a></li>
                             </ul>
 
 
                         </nav>
-                        <!-- <div class="recc boxx-shadow2">
-                  <h5>Name of Client</h5>
-                  <h5>Engagement Name</h5>
-                </div> -->
+                      <!--   <div class="recc boxx-shadow2" style="position:absolute;text-align:center;">
+                  <h5 style="margin-top:-10px">Name of Client</h5>
+                </div>  -->
                     </div>
 
                 </div>

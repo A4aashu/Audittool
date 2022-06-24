@@ -221,10 +221,10 @@
                   <br>
                   <canvas id="myChart" style="width:500px;height:300px;"></canvas>
                 </div>
-                <div class="" style="display: flex;flex-direction:column;margin-top: -130px;">
+                <div class="" style="display: flex;flex-direction:column;margin-top: -122px;">
                   <h5 style="color: #00338d!important;font-size: 20px!important;text-align:center;">No. of Risks and Controls covered under Mega Process</h5>
                   <br>
-                  <canvas id="myChart2" style="width:500px;height:370px;"></canvas>
+                  <canvas id="myChart2" style="width:500px;height:400px;"></canvas>
                 </div>
               </div>
               <!-- <div class="chartBox">
@@ -281,7 +281,7 @@
   <script>
     // setup 
     const data = {
-      labels: ['Operations', 'Finance & Accounts', 'Legal', 'Network & IT'],
+      labels: ['Operations', 'Finance & Accounts', 'Legal', 'IT & Network'],
       datasets: [{
         label: 'No of sub-processes covered under Mega Process',
         data: [15, 6, 3, 2],
@@ -362,7 +362,7 @@
   <script>
     // setup 
     const data2 = {
-      labels: ['Operations', 'Finance & Accounts', 'Legal', 'Network & IT'],
+      labels: ['Operations', 'Finance & Accounts', 'Legal', 'IT & Network'],
       datasets: [{
         label: 'No of Risks',
         data: [46, 12, 12, 2],
