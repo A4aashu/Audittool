@@ -73,7 +73,7 @@ public class EmailUtil {
         	MimeMessage message = new MimeMessage(session);
         	message.setFrom(new InternetAddress(email));
         	message.addRecipients(Message.RecipientType.TO, InternetAddress.parse(userEmail));
-        	message.setSubject("Remainder Mail");
+        	message.setSubject("Remainder mail for datasets | "+engagement);
             message.setContent("<p>Dear User,<br><br>Kindly note that you have only received "+percentage+" of the Datasets for "+engagement+".</p><p>The below table lays out the status for the pending datasets.</p>"+text+"</table><br></br><p>Regards<br>IA Accelerator team<br><br>Disclaimer: This is a system generated mail. Please do not reply.","text/html");
             Transport.send(message);
         	
