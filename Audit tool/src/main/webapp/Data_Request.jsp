@@ -129,10 +129,10 @@
                 <div class="topnavbar">
                     <div class="compactnavbar">
 
-                        <nav class="Nav2 navbar-fixed-top" style="background-color:#E1ECF0!important;">
-                        <ul style="margin-top:-6px;">
+                        <nav class="Nav2 navbar-fixed-top" style="height:120px!important;background-color:#E1ECF0!important;">
+                        <ul style="margin-top:-6px;padding-bottom: 5px;">
                         <li>
-                        <marquee  behavior="alternate" direction="left" style="margin-right:10px;margin-left:-33px;color:#F6AA00;background-color:Beige">Client Name: <%=request.getParameter("client")%> | Review Name: <%=request.getParameter("review")%> | Engagement Partner:  <%=request.getParameter("epname")%></marquee>
+                        <marquee  behavior="alternate" scrollamount="5" direction="left" style="margin-right: 10px;margin-left: -33px;color: #00338d;font-weight: 700;">Client Name: <%=request.getParameter("client")%> | Review Name: <%=request.getParameter("review")%> | Engagement Partner:  <%=request.getParameter("epname")%></marquee>
                         </li>
                         </ul>
                             <ul style="margin-top:-20px">
@@ -170,7 +170,7 @@
             <div class="container-fluid" style="margin-top: 2%;margin-left: -3%;">
                 <div >
                     <div class="row d-flex">
-                        <div class="col-lg-12" style="background-color: #ffffff; color: #00338D!important;">
+                        <div class="col-lg-12" style="margin-top: 2%;background-color: #ffffff; color: #00338D!important;">
                            
 
                             <div class="row Lowerblock">

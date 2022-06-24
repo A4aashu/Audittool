@@ -195,7 +195,12 @@ String currentUser1=session.getAttribute("auditid").toString();
         <div class="topnavbar">
           <div class="compactnavbar">
 
-            <nav class="Nav2 navbar-fixed-top">
+            <nav class="Nav2 navbar-fixed-top" style="height:120px!important;background-color:#E1ECF0!important;">
+                        <ul style="margin-top:-6px;margin-bottom: 5px;">
+                        <li>
+                        <marquee  behavior="alternate" scrollamount="5" direction="left" style="margin-right: 10px;margin-left: -33px;color: #00338d;font-weight: 700;">Client Name: <%=request.getParameter("client")%> | Review Name: <%=request.getParameter("review")%> | Engagement Partner:  <%=request.getParameter("epname")%></marquee>
+                        </li>
+                        </ul>
               <ul>
                 <li><button type="button" class="boxx-shadow2 nav1">Audit Background</button></li>
                 <li><button type="button" class="boxx-shadow2 nav1">Data Request</button></li>
