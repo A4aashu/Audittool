@@ -98,6 +98,19 @@ $.each(trs, function() {
   <link rel="stylesheet" href="assets/css/DR1.css">
  
 </head>
+<style>
+.sidebar .sidebar-menu > ul > li > a span {
+    font-weight:500;}
+    
+    .nav1{
+    font-size: 14px;
+  font-weight: 550;
+  }
+  .nav-1{
+  font-size: 14px;
+  font-weight: 550;
+  }
+</style>
 
 <body>
 <%LoginBean currentUser=((LoginBean)
@@ -118,11 +131,11 @@ $.each(trs, function() {
               <span class="user-img"><img src="data:image/jpg;base64,<%= currentUser.getBase64Image()%>" id="image" style="border-radiius:100%!important;" width="50px" height="50px" alt="">
 <span class="status online"></span>
 </span>
-              <div class="section">
-                <span style="color:#ffffff;margin-left:85px;font-size: 16px!important;">Yatin Gaind</span>
-                <span style="color:#ffffff;margin-left:85px;">Associate Director</span>
-                <span style="color:#ffffff;margin-left:85px;">GRCS Telecom</span>
-              </div>
+               <div class="section">
+                                 <span style="color:#ffffff;margin-left:85px;font-size: 16px!important;"><%= currentUser.getFullname()%></span>
+                    <span style="color:#ffffff;margin-left:85px;"><%= currentUser.getDepartment()%></span>
+                    <span style="color:#ffffff;margin-left:85px;"><%= currentUser.getDesignation()%></span>
+                            </div>
             </li>
             <li class="submenu">
               <a class="btn-links btn-inactive" href="dashboard2.jsp"><i class="la la-dashboard"></i> <span> Home</span></a>
@@ -135,7 +148,7 @@ $.each(trs, function() {
                 Contacts</span></a>
           </li>
           <li class="submenu">
-            <a class="btn-links" style="margin-top:235px!important;width:135px" href="logout.jsp"><i class="la la-user"></i> <span> Logout
+            <a class="btn-links" style="margin-top:225px!important;width:135px" href="logout.jsp"><i class="la la-user"></i> <span> Logout
               </span></a>
           </li>
 
@@ -157,14 +170,14 @@ $.each(trs, function() {
         <div class="topnavbar">
           <div class="compactnavbar">
 
-            <nav class="Nav2 navbar-fixed-top" style="height:120px!important;background-color:#E1ECF0!important;">
+          <nav class="Nav2 navbar-fixed-top" style="height:130px!important;background-color:#E1ECF0!important;">
                         <ul style="margin-top:-6px;margin-bottom: -5px;">
                         <li>
-                        <marquee  behavior="alternate" scrollamount="5" direction="left" style="margin-right: 10px;margin-left: -33px;color: #00338d;font-weight: 700;">Client Name: <%=request.getParameter("client")%> | Review Name: <%=request.getParameter("review")%> | Engagement Partner:  <%=request.getParameter("epname")%></marquee>
+                        <marquee  behavior="alternate" scrollamount="5" direction="left" style="padding-top: 8px;
+    padding-bottom: 2px;margin-right: 10px;margin-left: -33px;color: #00338d;font-weight: 700;">Client Name: <%=request.getParameter("client")%> | Review Name: <%=request.getParameter("review")%> | Engagement Partner:  <%=request.getParameter("epname")%></marquee>
                         </li>
                         </ul>
-                        
-              <ul>
+                        <ul>
                 <li><button type="button" class="boxx-shadow2 nav1">Audit Background</button></li>
                 <li><button type="button" class="boxx-shadow2 nav-1" style="width: 130px;">Data Request</button></li>
                 <li><button type="button" class="boxx-shadow2 nav1" style="width:152px;">Risk and Controls</button></li>
@@ -174,7 +187,7 @@ $.each(trs, function() {
 
               </ul>
 
-              <ul style="margin-left: 350px;margin-top: -43px;">
+              <ul style="margin-left: 380px;margin-top: -47px;">
                 <li style="width: 122px!important;"><a href="#" class="hover-underline-animation nav-linkk nav2 boxx-shadow" style="border-right: 1px solid #B7C1D3;width: 130px;margin-right: 19px;padding-right: 5px;
                         ">Create Data Items</a>
                 </li>
@@ -184,13 +197,14 @@ $.each(trs, function() {
             </ul>
 
             </nav>
+
             
           </div>
 
         </div>
 
       </div>
-      <div class="container" style="margin-top: 11%">
+      <div class="container" style="margin-top: 11%;margin-bottom:10%">
       
       </div>
      
@@ -206,7 +220,7 @@ $.each(trs, function() {
                 </form>
                 </div>
                
-                <h3 style="color: #00338D;font-weight: bold;margin-top: -42px;">Data Request List</h3>
+                <h3 style="color: #00338D;font-weight: bold;margin-top: -42px;margin-bottom: 15px;">Data Request List</h3>
                
                 <div class="Mytable" style="height:400px!important;">
                <form action="GeneralServlet" method="POST">
@@ -378,7 +392,10 @@ $.each(trs, function() {
             <button type="submit" 
             class="btn btn-blue text-center signup_btn"
             style="background-color: #470A68;
-            margin-left: 900px!important;z-index: 111; margin-top:10px !important;">Save & Submit</button>
+            margin-left: 900px!important;z-index: 111; margin-top:10px !important;border-radius: 60px !important; color: #fff !important;
+    padding: 4px !important;
+    width: 180px !important;
+    font-weight: bold !important;    height: 31px;">Save & Proceed</button>
      </form>
           </div>
                 

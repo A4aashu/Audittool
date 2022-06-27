@@ -66,6 +66,16 @@
 <link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
   
 <style>
+.sidebar .sidebar-menu > ul > li > a span {
+    font-weight:500;}
+    .nav1{
+    font-size: 14px;
+  font-weight: 550;
+  }
+  .nav-1{
+  font-size: 14px;
+  font-weight: 550;
+  }
 
   #example_wrapper{
       position: absolute;
@@ -189,7 +199,7 @@ String currentUser1=session.getAttribute("auditid").toString();
                 Contacts</span></a>
           </li>
           <li class="submenu">
-            <a class="btn-links" style="margin-top:235px!important;width:135px" href="logout.jsp"><i class="la la-user"></i> <span> Logout
+            <a class="btn-links" style="margin-top:225px!important;width:135px" href="logout.jsp"><i class="la la-user"></i> <span> Logout
               </span></a>
           </li>
 
@@ -211,9 +221,9 @@ String currentUser1=session.getAttribute("auditid").toString();
         <div class="topnavbar">
           <div class="compactnavbar">
 <nav class="Nav2 navbar-fixed-top" style="height:120px!important;background-color:#E1ECF0!important;">
-                        <ul style="margin-top:-6px;margin-bottom: 5px;">
+                        <ul style="margin-top:-6px;margin-bottom: 2px;">
                         <li>
-                        <marquee  behavior="alternate" scrollamount="5" direction="left" style="margin-right: 10px;margin-left: -33px;color: #00338d;font-weight: 700;">Client Name: <%=request.getParameter("client")%> | Review Name: <%=request.getParameter("review")%> | Engagement Partner:  <%=request.getParameter("epname")%></marquee>
+                        <marquee  behavior="alternate" scrollamount="5" direction="left" style="padding-top: 10px;margin-right: 10px;margin-left: -33px;color: #00338d;font-weight: 700;">Client Name: <%=request.getParameter("client")%> | Review Name: <%=request.getParameter("review")%> | Engagement Partner:  <%=request.getParameter("epname")%></marquee>
                         </li>
                         </ul>
               <ul>
@@ -229,21 +239,21 @@ String currentUser1=session.getAttribute("auditid").toString();
             
 
 
-            </nav>
-            
+            </nav>            
           </div>
 
         </div>
 
       </div>
-      <div class="container" style="margin-top: 9% ">
+      <div class="container" style="margin-top: 9%;margin-bottom:12%; ">
       
       </div>
      
                 
-                <h4>List of meetings conducted during the review</h4>
+                <h4 style="margin-top: -28px;
+    margin-bottom: 25px;">List of meetings conducted during the review</h4>
                 <button class="btn btn-outline-success" id="add_row" class="add" style=" color: #00338D !important;
-                background-color: white !important ;margin-left: 80% !important ; margin-top: -20px !important ; border: none; font-weight: bold;"> + New Client Detail
+                background-color: white !important ;margin-left: 82.5% !important ; margin-top: -20px !important ; border: none; font-weight: bold;"> + New Client Detail
                 </button>
                  <form action="GeneralServlet" method="POST">
                 <table id="example" class="css-serial" style="width:100%">
@@ -317,8 +327,11 @@ String currentUser1=session.getAttribute("auditid").toString();
             <button type="submit"
             class="btn btn-blue text-center signup_btn"
             style="background-color: #470A68;
-                margin-left: 1130px!important;
-                margin-top: 330px !important">Submit</button>
+                margin-left: 910px!important;
+                margin-top: 330px !important;z-index: 111;border-radius: 60px !important; color: #fff !important;
+    padding: 4px !important;
+    width: 180px !important;
+    font-weight: bold !important;    height: 31px;">Submit</button>
           </div>
           </form>
   </div>

@@ -104,6 +104,21 @@
     dl li, ol li, ul li {
    line-height: 1.4!important; 
 }
+tr:nth-child(odd) {
+      background-color: #B7C1D3!important;
+
+  } 
+
+  tr:nth-child(even) {
+      background-color: #E5E5E5!important;
+
+  }
+  table.dataTable.display tbody tr.odd>.sorting_1, table.dataTable.order-column.stripe tbody tr.odd>.sorting_1 {
+    background-color: #B7C1D3!important;
+}
+ table.dataTable.display tbody tr.even>.sorting_1, table.dataTable.order-column.stripe tbody tr.even>.sorting_1 {
+    background-color: #E5E5E5!important;
+}
     </style>
     
   </head>
@@ -158,7 +173,7 @@
                 Contacts</span></a>
           </li>
           <li class="submenu">
-            <a class="btn-links" style="margin-top:235px!important;width:135px" href="logout.jsp"><i class="la la-user"></i> <span> Logout
+            <a class="btn-links" style="margin-top:225px!important;width:135px" href="logout.jsp"><i class="la la-user"></i> <span> Logout
               </span></a>
           </li>
 

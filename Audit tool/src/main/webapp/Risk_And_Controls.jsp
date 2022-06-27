@@ -65,6 +65,18 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 </head>
+<style>
+.sidebar .sidebar-menu > ul > li > a span {
+    font-weight:500;}
+    .nav1{
+    font-size: 14px;
+  font-weight: 550;
+  }
+  .nav-1{
+  font-size: 14px;
+  font-weight: 550;
+  }
+</style>
 
 <body>
 <%LoginBean currentUser=((LoginBean)(session.getAttribute("currentSessionUser")));
@@ -108,7 +120,7 @@ String currentUser1=session.getAttribute("controlriskid").toString();
             </li>
                 
                 <li class="submenu">
-                  <a class="btn-links down" style="margin-top:220px!important;" href="logout.jsp"><i class="la la-user"></i> <span> Logout
+                  <a class="btn-links down" style="margin-top:225px!important;" href="logout.jsp"><i class="la la-user"></i> <span> Logout
                     </span></span></a>
                 </li>
                     </ul>
@@ -132,8 +144,8 @@ String currentUser1=session.getAttribute("controlriskid").toString();
                         <nav class="Nav2 navbar-fixed-top" style="height:120px!important;background-color:#E1ECF0!important;">
                         <ul style="margin-top:-6px;margin-bottom: 5px;">
                         <li>
-                        <marquee  behavior="alternate" scrollamount="5" direction="left" style="margin-right: 10px;margin-left: -33px;color: #00338d;font-weight: 700;">Client Name: <%=request.getParameter("client")%> | Review Name: <%=request.getParameter("review")%> | Engagement Partner:  <%=request.getParameter("epname")%></marquee>
-                        </li>
+                        <marquee  behavior="alternate" scrollamount="5" direction="left" style="    padding-top: 5px;margin-right: 10px;margin-left: -33px;color: #00338d;font-weight: 700;">Client Name: <%=request.getParameter("client")%> | Review Name: <%=request.getParameter("review")%> | Engagement Partner:  <%=request.getParameter("epname")%></marquee>
+                       </li>
                         </ul>    
                             <ul>
                                 <li><button type="button" class="boxx-shadow2 nav1" style="width: 151px;">Audit Background</button></li>

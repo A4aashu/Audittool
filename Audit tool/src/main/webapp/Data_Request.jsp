@@ -70,6 +70,17 @@
   border-top-left-radius: 31px !important;
   border-bottom-left-radius: 31px !important;
 }
+.sidebar .sidebar-menu > ul > li > a span {
+    font-weight:500;}
+    
+    .nav1{
+    font-size: 14px;
+  font-weight: 550;
+  }
+  .nav-1{
+  font-size: 14px;
+  font-weight: 550;
+  }
 </style>
 
 </head>
@@ -107,7 +118,7 @@
                 Contacts</span></a>
           </li>
           <li class="submenu">
-            <a class="btn-links" style="margin-top:235px!important;width:135px" href="logout.jsp"><i class="la la-user"></i> <span> Logout
+            <a class="btn-links" style="margin-top:225px!important;width:135px" href="logout.jsp"><i class="la la-user"></i> <span> Logout
               </span></a>
           </li>
 
@@ -129,11 +140,11 @@
                 <div class="topnavbar">
                     <div class="compactnavbar">
 
-                        <nav class="Nav2 navbar-fixed-top" style="height:120px!important;background-color:#E1ECF0!important;">
+                        <nav class="Nav2 navbar-fixed-top" style="height:125px!important;background-color:#E1ECF0!important;">
                         <ul style="margin-top:-6px;padding-bottom: 5px;">
                         <li>
-                        <marquee  behavior="alternate" scrollamount="5" direction="left" style="margin-right: 10px;margin-left: -33px;color: #00338d;font-weight: 700;">Client Name: <%=request.getParameter("client")%> | Review Name: <%=request.getParameter("review")%> | Engagement Partner:  <%=request.getParameter("epname")%></marquee>
-                        </li>
+                         <marquee  behavior="alternate" scrollamount="5" direction="left" style="padding-top: 5px;margin-right: 10px;margin-left: -33px;color: #00338d;font-weight: 700;">Client Name: <%=request.getParameter("client")%> | Review Name: <%=request.getParameter("review")%> | Engagement Partner:  <%=request.getParameter("epname")%></marquee>
+                         </li>
                         </ul>
                             <ul style="margin-top:-20px">
                                 <li><button type="button" class="boxx-shadow2 nav1" style="width: 151px!important;">Audit Background</button></li>
@@ -145,7 +156,7 @@
 
                             </ul>
 
-                            <ul style="margin-left: 350px;margin-top: -20px;">
+                            <ul style="margin-left: 380px;margin-top: -10px;">
                                 <li style="width: 122px!important;"><a href="#" class="nav-linkk nav-2 boxx-shadow" style="border-right: 1px solid #B7C1D3;width: 65px;margin-right: 19px;padding-right: 5px;
                                         ">Create Data Items</a>
                                 </li>
@@ -227,7 +238,7 @@
 
                         <div class="row px-3"> 
                            
-                            <button  class="btn btn-blue text-center signup_btn" style="background-color: #470A68;margin-left: 85.5%!important;
+                            <button  class="btn btn-blue text-center signup_btn" style="height:31px;background-color: #470A68;margin-left: 85.5%!important;
                                 "onclick="xyz3()">Save & Proceed</button>
                                <form action="GeneralServlet" method="POST" id="submit-form3" >
                                                                 <input id="dataid" value="" name="dataid" hidden>
