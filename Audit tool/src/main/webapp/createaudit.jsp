@@ -63,7 +63,7 @@ function xyz(){
 	var startDate = document.getElementById("audit_start_date").value;
 	var endDate = document.getElementById("audit_end_date").value;
 	if ((Date.parse(startDate) >= Date.parse(endDate))) {
-	alert("End date should be greater than Start date");
+	alert("End date should be after than Start date");
 	document.getElementById("audit_end_date").value = "";
 	} 
 	

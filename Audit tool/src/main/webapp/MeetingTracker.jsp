@@ -145,6 +145,12 @@ text-overflow:ellipsis;
 <body>
 <%LoginBean currentUser=((LoginBean)(session.getAttribute("currentSessionUser")));
 String currentUser1=session.getAttribute("auditid").toString();
+String test = session.getAttribute("client").toString();
+pageContext.setAttribute("test", test);
+String test1 = session.getAttribute("review").toString();
+pageContext.setAttribute("test1", test1);
+String test2 = session.getAttribute("epname").toString();
+pageContext.setAttribute("test2", test2);
 %>
   <!-- Main Wrapper -->
   <div class="main-wrapper">
@@ -208,7 +214,7 @@ String currentUser1=session.getAttribute("auditid").toString();
               <nav class="Nav2 navbar-fixed-top" style="height:120px!important;background-color:#E1ECF0!important;">
                         <ul style="margin-top:-6px;margin-bottom: 2px;">
                         <li>
-                        <marquee  behavior="alternate" scrollamount="5" direction="left" style="padding-top: 7px;margin-right: 10px;margin-left: -33px;color: #00338d;font-weight: 700;">Client Name: <%=request.getParameter("client")%> | Review Name: <%=request.getParameter("review")%> | Engagement Partner:  <%=request.getParameter("epname")%></marquee>
+                        <marquee  behavior="alternate" scrollamount="5" direction="left" style="padding-top: 7px;margin-right: 10px;margin-left: -33px;color: #00338d;font-weight: 700;">Client Name: <c:out value="${test}" escapeXml="false" /> | Review Name: <c:out value="${test1}" escapeXml="false" /> | Engagement Partner:  <c:out value="${test2}" escapeXml="false" /></marquee>
                         </li>
                         </ul>
               <ul>

@@ -132,6 +132,8 @@
     background-color:#B7C1D3 !important;
     padding: 50px!important;
   }
+  .sidebar .sidebar-menu > ul > li > a span {
+font-weight:500;}
     </style>
 </head>
 
@@ -173,7 +175,7 @@
                   Audits</span></a>
             </li>
             <li class="submenu">
-            <a class="btn-links btn-inactive" href="#"><i class="la la-cube"></i> <span>My
+            <a class="btn-links btn-inactive" href="MyContacts.jsp"><i class="la la-cube"></i> <span>My
                 Contacts</span></a>
           </li>
           <li class="submenu">

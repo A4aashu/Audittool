@@ -145,7 +145,9 @@
                         <li>
                          <marquee  behavior="alternate" scrollamount="5" direction="left" style="padding-top: 5px;margin-right: 10px;margin-left: -33px;color: #00338d;font-weight: 700;">Client Name: <%=request.getParameter("client")%> | Review Name: <%=request.getParameter("review")%> | Engagement Partner:  <%=request.getParameter("epname")%></marquee>
                          </li>
+                  
                         </ul>
+                               
                             <ul style="margin-top:-20px">
                                 <li><button type="button" class="boxx-shadow2 nav1" style="width: 151px!important;">Audit Background</button></li>
                                 <li><button type="button" class="boxx-shadow2 nav-1" style="width: 141px!important;">Data Request</button></li>
@@ -245,6 +247,9 @@
                                                                 <input id="auditid" value="<%=request.getParameter("id")%>" name="auditid" hidden>
                                                                 <input id="auditid" value="<%=request.getParameter("objid")%>" name="objid" hidden>
                                                                 <input id="auditid" value="<%=request.getParameter("controlriskid")%>" name="controlriskid" hidden>
+                                                                <input id="auditid" value="<%=request.getParameter("client")%>" name="c" hidden>
+         					   <input id="auditid" value="<%=request.getParameter("review")%>" name="r" hidden>
+                                <input id="auditid" value="<%=request.getParameter("epname")%>" name="e" hidden>
                                                                 </form>
                         </div>
                     </div>

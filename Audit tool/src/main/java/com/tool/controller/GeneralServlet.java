@@ -171,11 +171,24 @@ HttpServletResponse response)
 				String dataid=request.getParameter("dataid");
 				String id=request.getParameter("auditid");
 				String objid=request.getParameter("objid");
+				String client=request.getParameter("c");
+				
+				String review=request.getParameter("r");
+				String epname=request.getParameter("e");
 				String controlriskid=request.getParameter("controlriskid");
 				System.out.println(controlriskid);
 				HttpSession session1 = request.getSession(true);
+				HttpSession session2 = request.getSession(true);
+				HttpSession session3 = request.getSession(true);
+				HttpSession session4 = request.getSession(true);
 				 session1.setAttribute("controlriskid",controlriskid);
 				 session1.setAttribute("auditid",id);
+				 session2.setAttribute("client",client);
+				 session3.setAttribute("review",review);
+				 session4.setAttribute("epname",epname);
+				 System.out.println(client);
+				 System.out.println(review);
+				 System.out.println(epname);
 				 response.sendRedirect("DR1.jsp?id="+id+"&dataid="+dataid+"&objid="+objid);
 				 
 			}
