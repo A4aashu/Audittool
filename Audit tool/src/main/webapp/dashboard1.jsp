@@ -1,12 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+         <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
     <%@ taglib uri = "http://java.sun.com/jsp/jstl/sql" prefix = "sql"%>
 	<%@ page language="java" import="com.tool.bean.LoginBean"%>
 <!DOCTYPE html>
 <html>
 <head>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
     <meta name="description" content="Smarthr - Bootstrap Admin Template">
@@ -32,9 +31,13 @@
 
     <!-- Main CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
-
     <link rel="stylesheet" href="assets/css/AnalystDashboard.css">
-
+    <style>
+    dl li, ol li, ul li {
+   line-height: 1.2!important; 
+}
+.btn-links {font-size:13px!important;}
+    </style>
     
 </head>
 
@@ -45,35 +48,43 @@
 
 
         <!-- Sidebar -->
-        <div class="sidebar" style="background-color: #00338D!important;" id="sidebar">
-            <div class="sidebar-inner slimscroll">
-                <div id="sidebar-menu" class="sidebar-menu">
-                    <ul>
-                        <li class="nav-item main-drop">
-                            <span class="user-img"><img src="data:image/jpg;base64,<%= currentUser.getBase64Image()%>" id="image" style="border-radiius:100%!important;" width="50px" height="50px" alt="">
+        <div class="sidebar" style="background-color: #00338D!important;width: 170px;" id="sidebar">
+    <div class="sidebar-inner slimscroll">
+      <div id="sidebar-menu" class="sidebar-menu">
+        <ul>
+        <a href="MyDetailsFinal.jsp">
+          <li class="nav-item main-drop" style="margin-left: -28px">
+            <span class="user-img"><img src="assets/images/profileimage.jpg" style="border-radiius:100%!important;" width="50px" height="50px" alt="">
 <span class="status online"></span>
 </span>
-                            <div class="section">
-                                <span style="color:#ffffff;margin-left:85px;font-size: 16px!important;"><%= currentUser.getFullname()%></span>
-                                <span style="color:#ffffff;margin-left:85px;"><%= currentUser.getDepartment()%></span>
-                                <span style="color:#ffffff;margin-left:85px;"><%= currentUser.getDesignation()%></span>
-                            </div>
-                        </li>
-                        <li class="submenu">
-                            <a class="btn-links" href="#"><i class="la la-dashboard"></i> <span> Home</span></a>
-                        </li>
-                        <li class="submenu">
-                            <a class="btn-links" href="#"><i class="la la-cube"></i> <span>Audit List</span></a>
-                        </li>
-                        <li class="submenu">
-                            <a class="btn-links down" href="logout.jsp"><i class="la la-user"></i> <span> Logout
-                                </span></span></a>
-                        </li>
-
-                    </ul>
-                </div>
+            <div class="section">
+              <span style="color:#ffffff;margin-left:85px;font-size: 16px!important;"><%= currentUser.getFullname()%></span>
+                    <span style="color:#ffffff;margin-left:85px;font-size: 10px!important;"><%= currentUser.getDepartment()%></span>
+                    <span style="color:#ffffff;margin-left:85px;font-size: 10px!important;"><%= currentUser.getDesignation()%></span>
             </div>
-        </div>
+          </li>
+          </a>
+          <li class="submenu">
+            <a class="btn-links" href="#" style="width:135px"><i class="la la-dashboard"></i> <span>
+                Home</span></a>
+          </li>
+          <li class="submenu">
+            <a class="btn-links" href="myAudits.jsp" style="background-color:#B7C1D3 !important;width:135px"><i class="la la-cube"></i> <span>My
+                Audits</span></a>
+          </li>
+          <li class="submenu">
+            <a class="btn-links btn-inactive" style="background-color: #B7C1D3 !important;width: 135px;" href="MyContacts.jsp"><i class="la la-cube"></i> <span>My
+                Contacts</span></a>
+          </li>
+          <li class="submenu">
+            <a class="btn-links" style="margin-top:220px!important;width:135px" href="logout.jsp"><i class="la la-user"></i> <span> Logout
+              </span></a>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </div>
         <!-- /Sidebar -->
 
         <!-- Page Wrapper -->
@@ -91,7 +102,7 @@
                                 <div class="col-sm-12">
                                     <img src="./assets/images/Picture6.png" alt="" width="140px" height="100px">
                                     <h3 class="page-title">Welcome to </h3>
-                                    <h3 class="page-title">IA Acclerator</h3>
+                                    <h3 class="page-title">IA Accelerator</h3>
                                     <h5 style="width: 270px;margin-top: 30px;font-size: 15px;">One stop solution for all
                                         your Internal
                                         Audit requirements. Create and manage your reviews effortlessly.</h5>
@@ -102,14 +113,14 @@
                     <!-- /Page Header -->
                     <div class="container-2">
                         <div class="row" style="width: 1100px;padding-left: 130px;padding-top: 50px;">
-                            <a href="#">
+                        <a href="audit_list.jsp">
                             <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
                                 <div class="card dash-widget" style="background: #00338D;">
                                     <div class="card-body card-body-1">
                                         <img src="./assets/images/Picture5.png" alt="" width="70px" height="70px">
                                     </div>
                                     <div class="text px-3 py-2">
-                                        <a href="">
+                                        <a href="audit_list.jsp">
                                             <h3>Audit List</h3>
                                         </a>
                                         <h5>Track your existing audits effortlessly.</h5>
@@ -117,49 +128,49 @@
                                 </div>
                             </div>
                             </a>
-                           
+                            <a>
                             <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
                                 <div class="card dash-widget" style="background: #C4C4C4;">
                                     <div class="card-body card-body-2">
                                         <img src="./assets/images/Picture2.png" alt="" width="70px" height="70px">
                                     </div>
                                     <div class="text px-3 py-2">
-                                       
+                                        <a>
                                             <h3>Create New Audit</h3>
-                                        
+                                        </a>
                                         <h5>Plan your audit smoothly.</h5>
                                     </div>
                                 </div>
                             </div>
-                           
+                            </a>
                         </div>
                         <div class="row" style="width: 1100px;padding-left: 130px;padding-bottom: 20px;">
-                        <a href="#">
+                            <a href="export.jsp">
                             <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
                                 <div class="card dash-widget" style="background: #470A68;">
                                     <div class="card-body card-body-3">
                                         <img src="./assets/images/Picture3.png" alt="" width="70px" height="70px">
                                     </div>
                                     <div class="text px-3 py-2">
-                                        <a href="">
-                                            <h3>Export Documents</h3>
+                                        <a href="export.jsp">
+                                            <h3>Export Document</h3>
                                         </a>
                                         <h5>Get the existing document in one go.</h5>
                                     </div>
                                 </div>
                             </div>
                             </a>
-                            <a href="#">
+                            <a href="Risk_Repository.jsp">
                             <div class="col-md-6 col-sm-6 col-lg-6 col-xl-3">
                                 <div class="card dash-widget" style="background: #005EB8;">
                                     <div class="card-body card-body-4">
                                         <img src="./assets/images/Picture4.png" alt="" width="70px" height="70px">
                                     </div>
                                     <div class="text px-3 py-2">
-                                        <a href="">
+                                        <a href="Risk_Repository.jsp">
                                             <h3>RAC Repository</h3>
                                         </a>
-                                        <h5>Access to a KPMG repository of risks and controls.</h5>
+                                        <h5>Access to KPMG repository of risks and controls.</h5>
                                     </div>
                                 </div>
                             </div>

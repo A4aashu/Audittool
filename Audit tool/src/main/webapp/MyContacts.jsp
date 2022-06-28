@@ -116,6 +116,8 @@ text-overflow:ellipsis;
 </head>
 <body>
 <%LoginBean currentUser = ((LoginBean) (session.getAttribute("currentSessionUser")));%>
+<c:set var="userdata" scope="session"
+			value="<%= currentUser.getDesignation()%>" />
  <sql:setDataSource var = "snapshot" driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver"
          url = "jdbc:sqlserver://IN-AASHUYADAV;databaseName=Audit_tool"
          user = "aashu" password = "kpmgKPMG1"/>
@@ -143,10 +145,18 @@ text-overflow:ellipsis;
             	</div>
               </li>
               </a>
-              <li class="submenu">
-                <a class="btn-links btn-inactive" href="dashboard2.jsp"><i class="la la-dashboard"></i> <span>
-                        Home</span></a>
-            </li>
+              <c:if test="${userdata == 'Analyst'||userdata == 'Associate Consultant' ||userdata == 'Consultant' || userdata == 'Assistant Manager'}">
+          <li class="submenu">
+            <a class="btn-links btn-inactive" href="dashboard1.jsp"><i class="la la-dashboard"></i> <span>
+                Home</span></a>
+          </li>
+          </c:if>
+          <c:if test="${userdata == 'Manager' || userdata == 'Partner' ||userdata == 'Director' || userdata == 'Associate Director'}">
+          <li class="submenu">
+            <a class="btn-links btn-inactive" href="dashboard2.jsp"><i class="la la-dashboard"></i> <span>
+                Home</span></a>
+          </li>
+          </c:if>
             <li class="submenu">
                 <a class="btn-links btn-inactive" href="myAudits.jsp"><i class="la la-cube"></i> <span>My
                         Audits</span></a>
