@@ -529,11 +529,11 @@
             style="background-color: #470A68;margin-top: -5px!important;height:35px!important;
             margin-left: 970px!important;z-index: 111;"name="submitbutton" id="submit" formaction="GeneralServlet">Submit</button>
             
-            <button
+           <%--  <button
             class="btn btn-blue text-center signup_btn"
             style="background-color: #470A68;height:35px!important;
             margin-left: 970px!important;z-index: 111;margin-top:-450px!important" id="exportppt" name="pptx"disabled ><a href='ppt.jsp?id=<%=request.getParameter("id")%>' alt='Broken Link'>Export PPT</a></button>
-           
+            --%>
           </div>
           </div>
         </div>

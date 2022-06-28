@@ -87,7 +87,7 @@
                                    outs.println(
                                					"<html><head></head><body onload=\"alert('Audit created successfully, your Auditid is = "+ generatedKey + "')\"></body></html>");
                                							
-                                   outs.println("<meta http-equiv='refresh' content='1;URL=team_structure.jsp?id="+ generatedKey + "'>"); 
+                                   outs.println("<meta http-equiv='refresh' content='1;URL=myAudits.jsp'>"); 
                                            
                                         }
     catch(Exception e)

@@ -21,7 +21,7 @@ public class InitializeServlet extends HttpServlet {
 
 		Trigger trigger1 = TriggerBuilder.newTrigger()
 				.withIdentity("cronTrigger1", "group1")
-				.withSchedule(CronScheduleBuilder.cronSchedule("0 39 10 1/1 * ? *"))
+				.withSchedule(CronScheduleBuilder.cronSchedule("0 54 14 1/1 * ? *"))
 				.build();
 		
 		Scheduler scheduler1 = new StdSchedulerFactory().getScheduler();
