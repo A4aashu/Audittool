@@ -168,6 +168,8 @@ pageContext.setAttribute("test1", test1);
 String test2 = session.getAttribute("epname").toString();
 pageContext.setAttribute("test2", test2);
 %>
+<c:set var="userdata" scope="session"
+			value="<%= currentUser.getDesignation()%>" />
   <!-- Main Wrapper -->
   <div class="main-wrapper">
 
@@ -194,9 +196,18 @@ pageContext.setAttribute("test2", test2);
                                                                         </span>
               </div>
             </li>
-            <li class="submenu">
-              <a class="btn-links btn-inactive" href="dashboard2.jsp"><i class="la la-dashboard"></i> <span> Home</span></a>
-            </li>
+            <c:if test="${userdata == 'Analyst'||userdata == 'Associate Consultant' ||userdata == 'Consultant' || userdata == 'Assistant Manager'}">
+          <li class="submenu">
+            <a class="btn-links btn-inactive" href="dashboard1.jsp"><i class="la la-dashboard"></i> <span>
+                Home</span></a>
+          </li>
+          </c:if>
+          <c:if test="${userdata == 'Manager' || userdata == 'Partner' ||userdata == 'Director' || userdata == 'Associate Director'}">
+          <li class="submenu">
+            <a class="btn-links btn-inactive" href="dashboard2.jsp"><i class="la la-dashboard"></i> <span>
+                Home</span></a>
+          </li>
+          </c:if>
             <li class="submenu">
               <a class="btn-links btn-inactive" href="myAudits.jsp"><i class="la la-cube"></i> <span>My Audits</span></a>
             </li>
