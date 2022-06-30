@@ -89,8 +89,9 @@
       <div class="sidebar-inner slimscroll">
         <div id="sidebar-menu" class="sidebar-menu">
           <ul>
-            <li class="nav-item main-drop">
-              <span class="user-img"><img src="data:image/jpg;base64,<%= currentUser.getBase64Image()%>" id="image" style="border-radiius:100%!important;" width="50px" height="50px" alt="">
+             <a href="MyDetailsFinal.jsp">
+          <li class="nav-item main-drop" style="margin-top:5px;">
+              <span class="user-img"><img src="assets/images/profileimage.jpg" style="border-radiius:100%!important;" width="50px" height="50px" alt="">
 <span class="status online"></span>
 </span>
               <div class="section">
@@ -99,14 +100,15 @@
                     <span style="color:#ffffff;margin-left:85px;"><%= currentUser.getDesignation()%></span>
                   </div>
             </li>
+            </a>
             <li class="submenu">
               <a class="btn-links btn-inactive" href="dashboard2.jsp"><i class="la la-dashboard"></i> <span> Home</span></a>
             </li>
             <li class="submenu">
-              <a class="btn-links btn-inactive" href="myAudits.jsp"><i class="la la-cube"></i> <span>My Audits</span></a>
+              <a class="btn-links btn-inactive" href="#"><i class="la la-cube"></i> <span>My Audits</span></a>
             </li>
                                                                <li class="submenu">
-              <a class="btn-links btn-inactive" href="MyContacts.jsp"><i class="la la-user"></i> <span>My Contacts</span></a>
+              <a class="btn-links btn-inactive" href="#"><i class="la la-user"></i> <span>My Contacts</span></a>
             </li>
                 
                 <li class="submenu">
@@ -236,7 +238,7 @@
 
                                 <th>Partner Name</th>
                                 <th>Designation</th>
-
+								<th>Email</th>
                               </tr>
                             </thead>
                             <tbody>
@@ -247,8 +249,8 @@
                                     <option value="Partner">Partner</option>
                                     <option value="Director">Director</option>
                                   </select></td>
-
-                               
+								<td> <input type="email" id="EMemail" name="Epemail" style="text-align:center"placeholder="Enter Email"></td>
+                                                               
                               </tr>
                               
                             </tbody>
@@ -294,7 +296,7 @@
 
                                 <th>Director Name</th>
                                 <th>Designation</th>
-
+								<th>Email</th>
                               </tr>
                             </thead>
                             <tbody>
@@ -305,8 +307,8 @@
                                     <option value="Director">Director</option>
                                     <option value="Associate Director">Associate Director</option>
                                   </select></td>
-
-                                
+								 <td> <input type="email" id="EDemail" name="Edemail" style="text-align:center" placeholder="Enter Email"></td>
+                              		                                
                               </tr>
                               
 
@@ -361,7 +363,8 @@
 
                                 <th>Manager Name</th>
                                 <th>Designation</th>
-
+                                <th>Email</th>
+                                
                               </tr>
                             </thead>
                             <tbody>
@@ -372,7 +375,8 @@
                                     <option value="Manager">Manager</option>
                                     <option value="Assistant Manager">Assistant Manager</option>
                                   </select></td>
-
+                                <td> <input type="email" id="EDemail" name="Ememail1" style="text-align:center"placeholder="Enter Email"></td>
+                               
                                
                               </tr>
                               <tr>
@@ -382,7 +386,8 @@
                                     <option value="Manager">Manager</option>
                                     <option value="Assistant Manager">Assistant Manager</option>
                                   </select></td>
-
+                                <td> <input type="email" id="EDemail1" name="Ememail2" style="text-align:center"placeholder="Enter Email"></td>
+                               
                                 
                               </tr>
 
@@ -432,7 +437,7 @@
 
                                 <th>Team Member</th>
                                 <th>Designation</th>
-
+                                <th>Email</th>
                               </tr>
                             </thead>
                             <tbody>
@@ -446,8 +451,7 @@
                                     <option value="Analyst">Analyst</option>
                                     
                                   </select></td>
-
-                                
+                                <td> <input type="email" id="TEmail" name="Tmemail" style="text-align:center" placeholder="Enter Email"></td>                             
                               </tr>
                               <tr>
                                 <td> <input type="text" id="TNname1" name="Tmname1" style="text-align:center" placeholder="Enter Name"></td>
@@ -458,9 +462,9 @@
                                     <option value="Associate Consultant">Associate Consultant</option>
                                     <option value="Analyst">Analyst</option>
                                     
-                                  </select></td>
-
-                                
+                                  </select></td>                                  
+								<td> <input type="email" id="TEmail1" name="Tmemail1" style="text-align:center" placeholder="Enter Email"></td>                             
+                                                              
                               </tr>
 
                               <tr>
@@ -475,7 +479,7 @@
                                     
                                   </select></td>
 
-                                
+                                <td> <input type="email" id="TEmail2" name="Tmemail2" style="text-align:center" placeholder="Enter Email"></td>                             
                               </tr>
 
                               <tr>
@@ -489,7 +493,7 @@
                                     
                                   </select></td>
 
-                                
+                                <td> <input type="email" id="TEmail3" name="Tmemail3" style="text-align:center" placeholder="Enter Email"></td>                             
                               </tr>
 
                             </tbody>
@@ -529,11 +533,11 @@
             style="background-color: #470A68;margin-top: -5px!important;height:35px!important;
             margin-left: 970px!important;z-index: 111;"name="submitbutton" id="submit" formaction="GeneralServlet">Submit</button>
             
-           <%--  <button
+            <button
             class="btn btn-blue text-center signup_btn"
             style="background-color: #470A68;height:35px!important;
             margin-left: 970px!important;z-index: 111;margin-top:-450px!important" id="exportppt" name="pptx"disabled ><a href='ppt.jsp?id=<%=request.getParameter("id")%>' alt='Broken Link'>Export PPT</a></button>
-            --%>
+           
           </div>
           </div>
         </div>
