@@ -54,7 +54,7 @@
         <ul>
         <a href="MyDetailsFinal.jsp">
           <li class="nav-item main-drop" style="margin-left: -28px">
-            <span class="user-img"><img src="assets/images/profileimage.jpg" style="border-radiius:100%!important;" width="50px" height="50px" alt="">
+            <span class="user-img"><img src="data:image/jpeg;base64,<%= currentUser.getBase64Image()%>" style="border-radiius:100%!important;" width="50px" height="50px" alt="">
 <span class="status online"></span>
 </span>
             <div class="section">
