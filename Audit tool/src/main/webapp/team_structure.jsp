@@ -237,20 +237,20 @@
                               <tr>
 
                                 <th>Partner Name</th>
-                                <th>Designation</th>
-								<th>Email</th>
+                                <th>Email</th>
+                                <th>Designation</th>								
                               </tr>
                             </thead>
                             <tbody>
                               <tr>
                                 <td> <input type="text" id="EMname" name="Epname" style="text-align:center"placeholder="Enter Name"></td>
+                                <td> <input type="email" id="EMemail" name="Epemail" style="text-align:center"placeholder="Enter Email"></td>
                                 <td> <select name="Epdes" id="EMname">
                                     <option value="">Enter Designation</option>
                                     <option value="Partner">Partner</option>
                                     <option value="Director">Director</option>
                                   </select></td>
-								<td> <input type="email" id="EMemail" name="Epemail" style="text-align:center"placeholder="Enter Email"></td>
-                                                               
+								                              
                               </tr>
                               
                             </tbody>
@@ -295,19 +295,19 @@
                               <tr>
 
                                 <th>Director Name</th>
+                                <th>Email</th>
                                 <th>Designation</th>
-								<th>Email</th>
-                              </tr>
+								</tr>
                             </thead>
                             <tbody>
                               <tr>
                                 <td> <input type="text" id="EDname" name="Edname" style="text-align:center" placeholder="Enter Name"></td>
+         						 <td> <input type="email" id="EDemail" name="Edemail" style="text-align:center" placeholder="Enter Email"></td>
                                 <td> <select name="Eddes" id="EDname1">
                                     <option value="">Enter Designation</option>
                                     <option value="Director">Director</option>
                                     <option value="Associate Director">Associate Director</option>
                                   </select></td>
-								 <td> <input type="email" id="EDemail" name="Edemail" style="text-align:center" placeholder="Enter Email"></td>
                               		                                
                               </tr>
                               
@@ -362,32 +362,32 @@
                               <tr>
 
                                 <th>Manager Name</th>
-                                <th>Designation</th>
                                 <th>Email</th>
-                                
+                                <th>Designation</th>
+                                                                
                               </tr>
                             </thead>
                             <tbody>
                               <tr>
                                 <td> <input type="text" id="EDname" name="Emname1" style="text-align:center"placeholder="Enter Name"></td>
+                                <td> <input type="email" id="EDemail" name="Ememail1" style="text-align:center"placeholder="Enter Email"></td>
                                 <td> <select name="Emdes1" id="EDname1">
                                     <option value="">Enter Designation</option>
                                     <option value="Manager">Manager</option>
                                     <option value="Assistant Manager">Assistant Manager</option>
                                   </select></td>
-                                <td> <input type="email" id="EDemail" name="Ememail1" style="text-align:center"placeholder="Enter Email"></td>
                                
                                
                               </tr>
                               <tr>
                                 <td> <input type="text" id="EDname1" name="Emname2" style="text-align:center" placeholder="Enter Name"></td>
+                                <td> <input type="email" id="EDemail1" name="Ememail2" style="text-align:center"placeholder="Enter Email"></td>
                                 <td> <select name="Emdes2" id="EDname3">
                                     <option value="">Enter Designation</option>
                                     <option value="Manager">Manager</option>
                                     <option value="Assistant Manager">Assistant Manager</option>
                                   </select></td>
-                                <td> <input type="email" id="EDemail1" name="Ememail2" style="text-align:center"placeholder="Enter Email"></td>
-                               
+                                
                                 
                               </tr>
 
@@ -436,14 +436,15 @@
                               <tr>
 
                                 <th>Team Member</th>
-                                <th>Designation</th>
                                 <th>Email</th>
+                                <th>Designation</th>                                
                               </tr>
                             </thead>
                             <tbody>
                               <tr>
                                 <td> <input type="text" id="TNname" name="Tmname" style="text-align:center" placeholder="Enter Name"></td>
-                                <td> <select name="Tmdes" id="TNname1">
+                                <td> <input type="email" id="TEmail" name="Tmemail" style="text-align:center" placeholder="Enter Email"></td>                             
+                             	<td> <select name="Tmdes" id="TNname1">
                                     <option value="">Enter Designation</option>
                                    <option value="Assistant Manager">Assistant Manager</option>
                                     <option value="Consultant">Consultant</option>
@@ -451,10 +452,10 @@
                                     <option value="Analyst">Analyst</option>
                                     
                                   </select></td>
-                                <td> <input type="email" id="TEmail" name="Tmemail" style="text-align:center" placeholder="Enter Email"></td>                             
-                              </tr>
+                                </tr>
                               <tr>
                                 <td> <input type="text" id="TNname1" name="Tmname1" style="text-align:center" placeholder="Enter Name"></td>
+                                <td> <input type="email" id="TEmail1" name="Tmemail1" style="text-align:center" placeholder="Enter Email"></td>                             
                                 <td> <select name="Tmdes1" id="TNname3">
                                     <option value="">Enter Designation</option>
                                     <option value="Assistant Manager">Assistant Manager</option>
@@ -463,13 +464,13 @@
                                     <option value="Analyst">Analyst</option>
                                     
                                   </select></td>                                  
-								<td> <input type="email" id="TEmail1" name="Tmemail1" style="text-align:center" placeholder="Enter Email"></td>                             
-                                                              
+								                              
                               </tr>
 
                               <tr>
                                 <td> <input type="text" id="TNname1" name="Tmname2" style="text-align:center" placeholder="Enter Name"></td>
-                                <td> <select name="Tmdes2" id="TNname3">
+                                <td> <input type="email" id="TEmail2" name="Tmemail2" style="text-align:center" placeholder="Enter Email"></td>                             
+                              	<td> <select name="Tmdes2" id="TNname3">
                                     <option value="">Enter Designation</option>
                                     
                                     <option value="Assistant Manager">Assistant Manager</option>
@@ -479,12 +480,12 @@
                                     
                                   </select></td>
 
-                                <td> <input type="email" id="TEmail2" name="Tmemail2" style="text-align:center" placeholder="Enter Email"></td>                             
-                              </tr>
+                                </tr>
 
                               <tr>
                                 <td> <input type="text" id="TNname1" name="Tmname3" style="text-align:center" placeholder="Enter Name"></td>
-                                <td> <select name="Tmdes3" id="TNname3">
+                                <td> <input type="email" id="TEmail3" name="Tmemail3" style="text-align:center" placeholder="Enter Email"></td>                             
+                           		<td> <select name="Tmdes3" id="TNname3">
                                      <option value="">Enter Designation</option>
                                     <option value="Assistant Manager">Assistant Manager</option>
                                     <option value="Consultant">Consultant</option>
@@ -493,8 +494,7 @@
                                     
                                   </select></td>
 
-                                <td> <input type="email" id="TEmail3" name="Tmemail3" style="text-align:center" placeholder="Enter Email"></td>                             
-                              </tr>
+                                   </tr>
 
                             </tbody>
                           </table>
