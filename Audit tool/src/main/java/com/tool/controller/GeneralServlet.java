@@ -119,6 +119,7 @@ HttpServletResponse response)
 			{
 				auditbean.setEpname(request.getParameter("Epname"));
 				auditbean.setEpdes(request.getParameter("Epdes"));
+				auditbean.setEpemail(request.getParameter("Epemail"));
 				HttpSession session = request.getSession(true);
 				session.setAttribute("currentSessionUser2",auditbean);
 
@@ -129,6 +130,7 @@ HttpServletResponse response)
 			{
 				auditbean.setEdname(request.getParameter("Edname"));
 				auditbean.setEddes(request.getParameter("Eddes"));
+				auditbean.setEdemail(request.getParameter("Edemail"));
 				HttpSession session = request.getSession(true);
 				session.setAttribute("currentSessionUser3",auditbean);
 		
@@ -141,6 +143,9 @@ HttpServletResponse response)
 				auditbean.setEmdes1(request.getParameter("Emdes1"));
 				 auditbean.setEmname2(request.getParameter("Emname2"));
 				 auditbean.setEmdes2(request.getParameter("Emdes2"));
+				 auditbean.setEmemail1(request.getParameter("Ememail1"));
+				 auditbean.setEmemail2(request.getParameter("Ememail2"));
+				 
 				 HttpSession session = request.getSession(true);
 					session.setAttribute("currentSessionUser4",auditbean);
 		
@@ -157,6 +162,10 @@ HttpServletResponse response)
 				auditbean.setEtdes3(request.getParameter("Tmdes2"));
 				auditbean.setEtname4(request.getParameter("Tmname3"));
 				auditbean.setEtdes4(request.getParameter("Tmdes3"));
+				auditbean.setEtemail(request.getParameter("Tmemail"));
+				 auditbean.setEtemail1(request.getParameter("Tmemail2"));
+				 auditbean.setEtemail2(request.getParameter("Tmemail3"));
+				 auditbean.setEtemail3(request.getParameter("Tmemail4"));
 				 HttpSession session = request.getSession(true);
 				 session.setAttribute("currentSessionUser5",auditbean);
 				 response.sendRedirect("team_structure.jsp");

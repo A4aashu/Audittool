@@ -32,15 +32,15 @@
                                         try{
                                           
                                           Connection connection=Dbconfig.getConnection();
-                                          PreparedStatement st = connection .prepareStatement("insert into Audits(Name_of_client,Engagement_name,MegaProcess,Department,Audit_start_date,Audit_end_date,Audit_background,Process,Auditannounce,irauditscope,discussiondate,walkthroughsession,datarequest,aqm,draftreport,exitmeeting,releasefinalreport,epname,edname,emname1,emname2,etname1,etname2,etname3,etname4,epdes,eddes,emdes1,emdes2,etdes1,etdes2,etdes3,etdes4,createdby,megaprocessid,categorizationid,processid,objectiveid) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",Statement.RETURN_GENERATED_KEYS); 
+                                          PreparedStatement st = connection .prepareStatement("insert into Audits(Name_of_client,Engagement_name,MegaProcess,Department,Audit_start_date,Audit_end_date,Audit_background,Process,Auditannounce,irauditscope,discussiondate,walkthroughsession,datarequest,aqm,draftreport,exitmeeting,releasefinalreport,epname,edname,emname1,emname2,etname1,etname2,etname3,etname4,epdes,eddes,emdes1,emdes2,etdes1,etdes2,etdes3,etdes4,epemail,edemail,ememail1,ememail2,etemail,etemail1,etemail2,etemail3,createdby,megaprocessid,categorizationid,processid,objectiveid) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",Statement.RETURN_GENERATED_KEYS); 
                                           
                                           st.setString(1,currentUsers.getName_of_client());
                                           st.setString(2,currentUsers.getEngagement_name());
                                           st.setString(3,currentUsers.getMegaProcess());
-                                          st.setString(35,currentUserss.getMegaprocessid());
-                                          st.setString(36,currentUserss1.getCategorizationid());
-                                          st.setString(37,currentUserss2.getProcessid());
-                                          st.setString(38,currentUserss3.getObjectiveid());
+                                          st.setString(43,currentUserss.getMegaprocessid());
+                                          st.setString(44,currentUserss1.getCategorizationid());
+                                          st.setString(45,currentUserss2.getProcessid());
+                                          st.setString(46,currentUserss3.getObjectiveid());
                                           st.setString(4,currentUsers.getDepartment());
                                           st.setDate(5,new java.sql.Date(currentUsers.getAudit_start_date().getTime()));
                                           st.setDate(6,new java.sql.Date(currentUsers.getAudit_end_date().getTime()));
@@ -71,7 +71,15 @@
                                           st.setString(31,currentUser5.getEtdes2());
                                           st.setString(32,currentUser5.getEtdes3());
                                           st.setString(33,currentUser5.getEtdes4());
-                                          st.setString(34,currentUser.getEmail());
+                                          st.setString(34,currentUser2.getEpemail());
+                                          st.setString(35,currentUser3.getEdemail());
+                                          st.setString(36,currentUser4.getEmemail1());
+                                          st.setString(37,currentUser4.getEmemail2());
+                                          st.setString(38,currentUser5.getEtemail());
+                                          st.setString(39,currentUser5.getEtemail1());
+                                          st.setString(40,currentUser5.getEtemail2());
+                                          st.setString(41,currentUser5.getEtemail3());
+                                          st.setString(42,currentUser.getEmail());
                                           
                                           
                                     

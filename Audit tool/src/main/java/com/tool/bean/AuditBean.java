@@ -40,10 +40,67 @@ public class AuditBean {
 	private String etdes2=" ";
 	private String etdes3=" ";
 	private String etdes4=" ";
+	private String epemail=" ";
+	private String edemail=" ";
+	private String ememail1=" ";
+	private String ememail2=" ";
+	private String etemail=" ";
+	private String etemail1=" ";
+	private String etemail2=" ";
+	private String etemail3=" ";
 	private String dataid=" ";
 	
 	
 	
+	
+	public String getEpemail() {
+		return epemail;
+	}
+	public void setEpemail(String epemail) {
+		this.epemail = epemail;
+	}
+	public String getEdemail() {
+		return edemail;
+	}
+	public void setEdemail(String edemail) {
+		this.edemail = edemail;
+	}
+	public String getEmemail1() {
+		return ememail1;
+	}
+	public void setEmemail1(String ememail1) {
+		this.ememail1 = ememail1;
+	}
+	public String getEmemail2() {
+		return ememail2;
+	}
+	public void setEmemail2(String ememail2) {
+		this.ememail2 = ememail2;
+	}
+	public String getEtemail() {
+		return etemail;
+	}
+	public void setEtemail(String etemail) {
+		this.etemail = etemail;
+	}
+	public String getEtemail1() {
+		return etemail1;
+	}
+	public void setEtemail1(String etemail1) {
+		this.etemail1 = etemail1;
+	}
+	public String getEtemail2() {
+		return etemail2;
+	}
+	public void setEtemail2(String etemail2) {
+		this.etemail2 = etemail2;
+	}
+	public String getEtemail3() {
+		return etemail3;
+	}
+	public void setEtemail3(String etemail3) {
+		this.etemail3 = etemail3;
+	}
 	public String getDataid() {
 		return dataid;
 	}

@@ -131,19 +131,51 @@ tr:nth-child(odd) {
          url = "jdbc:sqlserver://IN-AASHUYADAV;databaseName=Audit_tool"
          user = "aashu" password = "kpmgKPMG1"/>
 		<sql:query dataSource = "${snapshot}" var = "resultset">
-         SELECT count(distinct(megaprocess)) from audits where createdby=?;
+         SELECT count(distinct(megaprocess)) from audits where createdby=? or epemail=? or edemail=? or ememail1=? or ememail2=? or etemail=? or etemail1=? or etemail2=? or etemail3=?;
+         <sql:param value = "<%=currentUser.getEmail()%>" />
+         <sql:param value = "<%=currentUser.getEmail()%>" />
+         <sql:param value = "<%=currentUser.getEmail()%>" />
+         <sql:param value = "<%=currentUser.getEmail()%>" />
+         <sql:param value = "<%=currentUser.getEmail()%>" />
+         <sql:param value = "<%=currentUser.getEmail()%>" />
+         <sql:param value = "<%=currentUser.getEmail()%>" />
+         <sql:param value = "<%=currentUser.getEmail()%>" />
          <sql:param value = "<%=currentUser.getEmail()%>" />
       	</sql:query>
       	<sql:query dataSource = "${snapshot}" var = "resultset1">
-         SELECT count(distinct(Department)) from audits where createdby=?;
+         SELECT count(distinct(Department)) from audits where createdby=? or epemail=? or edemail=? or ememail1=? or ememail2=? or etemail=? or etemail1=? or etemail2=? or etemail3=?;;
+         <sql:param value = "<%=currentUser.getEmail()%>" />
+         <sql:param value = "<%=currentUser.getEmail()%>" />
+         <sql:param value = "<%=currentUser.getEmail()%>" />
+         <sql:param value = "<%=currentUser.getEmail()%>" />
+         <sql:param value = "<%=currentUser.getEmail()%>" />
+         <sql:param value = "<%=currentUser.getEmail()%>" />
+         <sql:param value = "<%=currentUser.getEmail()%>" />
+         <sql:param value = "<%=currentUser.getEmail()%>" />
          <sql:param value = "<%=currentUser.getEmail()%>" />
       	</sql:query>
       	<sql:query dataSource = "${snapshot}" var = "resultset2">
-         SELECT count(distinct(Name_of_client)) from audits where createdby=?;
+         SELECT count(distinct(Name_of_client)) from audits where createdby=? or epemail=? or edemail=? or ememail1=? or ememail2=? or etemail=? or etemail1=? or etemail2=? or etemail3=?;;
+         <sql:param value = "<%=currentUser.getEmail()%>" />
+         <sql:param value = "<%=currentUser.getEmail()%>" />
+         <sql:param value = "<%=currentUser.getEmail()%>" />
+         <sql:param value = "<%=currentUser.getEmail()%>" />
+         <sql:param value = "<%=currentUser.getEmail()%>" />
+         <sql:param value = "<%=currentUser.getEmail()%>" />
+         <sql:param value = "<%=currentUser.getEmail()%>" />
+         <sql:param value = "<%=currentUser.getEmail()%>" />
          <sql:param value = "<%=currentUser.getEmail()%>" />
       	</sql:query>
       	<sql:query dataSource = "${snapshot}" var = "resultset3">
-         SELECT count(*) from audits where createdby=?;
+         SELECT count(*) from audits where createdby=? or epemail=? or edemail=? or ememail1=? or ememail2=? or etemail=? or etemail1=? or etemail2=? or etemail3=?;;
+         <sql:param value = "<%=currentUser.getEmail()%>" />
+         <sql:param value = "<%=currentUser.getEmail()%>" />
+         <sql:param value = "<%=currentUser.getEmail()%>" />
+         <sql:param value = "<%=currentUser.getEmail()%>" />
+         <sql:param value = "<%=currentUser.getEmail()%>" />
+         <sql:param value = "<%=currentUser.getEmail()%>" />
+         <sql:param value = "<%=currentUser.getEmail()%>" />
+         <sql:param value = "<%=currentUser.getEmail()%>" />
          <sql:param value = "<%=currentUser.getEmail()%>" />
       	</sql:query>
       	
@@ -238,8 +270,16 @@ tr:nth-child(odd) {
                                                                             try{
                                                                             	
                                                                                 Connection connection=Dbconfig.getConnection();
-                                                                                PreparedStatement psmt1=connection.prepareStatement("select * from audits where createdby=?;");
+                                                                                PreparedStatement psmt1=connection.prepareStatement("select * from audits where createdby=? or epemail=? or edemail=? or ememail1=? or ememail2=? or etemail=? or etemail1=? or etemail2=? or etemail3=?;;");
                                                                                 psmt1.setString(1,currentUser.getEmail());
+                                                                                psmt1.setString(2,currentUser.getEmail());
+                                                                                psmt1.setString(3,currentUser.getEmail());
+                                                                                psmt1.setString(4,currentUser.getEmail());
+                                                                                psmt1.setString(5,currentUser.getEmail());
+                                                                                psmt1.setString(6,currentUser.getEmail());
+                                                                                psmt1.setString(7,currentUser.getEmail());
+                                                                                psmt1.setString(8,currentUser.getEmail());
+                                                                                psmt1.setString(9,currentUser.getEmail());
 
                                                                                 ResultSet resultset1 =psmt1.executeQuery() ;
                                                                         %>
