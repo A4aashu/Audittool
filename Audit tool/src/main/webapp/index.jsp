@@ -28,13 +28,15 @@
     ></script>
     
  </head>
-
+<style>
+html, body{overflow:hidden;}
+</style>
 <body>
 <form method="post" action="LoginServlet" id="loginForm" class="form-horizontal">
-<div id="maincontainer" class="container login-container">
+<div id="maincontainer" class="container login-container" >
       
-        <div class="row">
-          <section class="col-lg-6 login-form-1">
+        <div class="row" style="height:650px!important">
+          <section class="col-lg-6 login-form-1" >
             <div class="logo">
               <img id="logo" src="assets/images/KPMG logo balckbg.png" alt="KPMG" />
             </div>
@@ -63,7 +65,7 @@
                     required
                   />
                 </div>
-                <div class="form-group" style="padding-top: 15px">
+                <div class="form-group" style="padding-top: 15px" >
                   <a href="forgotpass.jsp" class="ForgetPwd">Forget Password?</a>
                 </div>
                 <div class="form-group">
@@ -76,7 +78,7 @@
             </div>
           </section>
 
-          <div class="col-lg-6 login-form-2">
+          <div class="col-lg-6 login-form-2" >
             <img
               id="loginImage"
               src="assets/images/loginPageimg.png"

@@ -1027,7 +1027,7 @@
                                                                             class="table table-striped table-bordered table-responsive table-hover">
                                                                             <sql:setDataSource var = "snapshot" driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver"
                                                                             url = "jdbc:sqlserver://IN-AASHUYADAV;databaseName=Audit_tool"
-                                                                            user = "aashu" password = "kpmgKPMG1"/>
+                                                                            user = "aashu" password = "KPMG@211"/>
                                                                             <sql:query dataSource = "${snapshot}" var = "resultset">
                                                                             SELECT MegaProcess,min(id) as id from RACM group by megaprocess order by Megaprocess;
                                                                             </sql:query>

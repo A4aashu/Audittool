@@ -96,7 +96,7 @@ width:200px!important;
         }
 
         div.dataTables_wrapper {
-            width: 1140px;
+            width: 1220px;
             height:200px;
             margin: 0 auto;
         }
@@ -116,6 +116,7 @@ width:200px!important;
         tr:nth-child(odd) {
             background-color: #B7C1D3;
         } */
+        html, body{overflow:hidden;}
     </style>
 </head>
 
@@ -126,7 +127,7 @@ width:200px!important;
 			
   <sql:setDataSource var = "snapshot" driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver"
          url = "jdbc:sqlserver://IN-AASHUYADAV;databaseName=Audit_tool"
-         user = "aashu" password = "kpmgKPMG1"/>
+         user = "aashu" password = "KPMG@211"/>
 		<sql:query dataSource = "${snapshot}" var = "resultset">
          SELECT count(distinct(megaprocess)) from audits;
       	</sql:query>
@@ -198,12 +199,12 @@ width:200px!important;
 
             <img class="blue" src="assets/images/card1.png" alt="" />
             <img class="icon1" src="assets/images/icon1.png" alt="">
-            <h5 class="icon-tag-2">No. of <br />Mega Process</h5>
+            <h5 class="icon-tag-2" style="margin-left:40px">No. of <br />Mega Process</h5>
             <h1 class="icon-tag-2" style="margin-top:50px;margin-left:78px;font-size: 30px;">${resultset.rowsByIndex[0][0]}</h1>
             <img class="icon2" src="assets/images/icon2.png" alt="">
             <img class="red" src="assets/images/card2.png" alt="" />
-            <h5 class="icon-tag">No. of <br>Departments</h5>
-            <h1 class="icon-tag-2" style="margin-top:50px;margin-left:335px;font-size: 30px;">${resultset1.rowsByIndex[0][0]}</h1>
+            <h5 class="icon-tag" style="margin-left:40px">No. of <br>Departments</h5>
+            <h1 class="icon-tag-2" style="margin-top:50px;margin-left:350px;font-size: 30px;">${resultset1.rowsByIndex[0][0]}</h1>
 
         </div>
         <p>Please select Mega- Process and Department</p>

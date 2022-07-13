@@ -158,7 +158,7 @@ pageContext.setAttribute("test2", test2);
                 <div class="topnavbar">
                     <div class="compactnavbar">
 
-                        <nav class="Nav2 navbar-fixed-top" style="height:120px!important;background-color:#E1ECF0!important;">
+                        <nav class="Nav2 navbar-fixed-top" style="height:120px!important;width:120%;background-color:#E1ECF0!important;">
                         <ul style="margin-top:-6px;margin-bottom: 5px;">
                         <li>
                         <marquee  behavior="alternate" scrollamount="5" direction="left" style="    padding-top: 5px;margin-right: 10px;margin-left: -33px;color: #00338d;font-weight: 700;">Client Name: <c:out value="${test}" escapeXml="false" /> | Review Name: <c:out value="${test1}" escapeXml="false" /> | Engagement Partner:  <c:out value="${test2}" escapeXml="false" /></marquee>

@@ -261,33 +261,6 @@ tr:nth-child(odd) {
   background-color: #b7c1d3;
 } */
 
-.bg-img {
-  float: right;
-  position: relative;
-  top: 0;
-  left: -1px;
-  height: 625px;
-  width: 594px;
-  margin-top: 0px;
-  object-fit: cover;
-}
-
-.bg-img-2 {
-  /* float: right;
-  position: relative;
-  left: 129px;
-  height: 625px;
-  width: 1175px;
-  margin-top: -188px;
-  object-fit: cover; */
-  float: right;
-  position: relative;
-  left: 8px;
-  height: 625px;
-  width: 1175px;
-  margin-top: 50px;
-  object-fit: cover;
-}
 
 .bg-img-1 {
   position: absolute;

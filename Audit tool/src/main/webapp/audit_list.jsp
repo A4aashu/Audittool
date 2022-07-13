@@ -83,7 +83,7 @@ width:200px!important;
 
     td,
     th {
-      padding: 20px;
+      /* padding: 20px; */
       text-align: center;      
     }
 
@@ -107,7 +107,7 @@ width:200px!important;
     } */
 
     div.dataTables_wrapper {
-      width: 1140px;
+      width: 1220px;
       height: 200px!important;
       margin: 0 auto;
     }
@@ -117,6 +117,35 @@ width:200px!important;
       margin-bottom: 17px !important;
 
     }
+    .bg-img {
+  float: right;
+  position: relative;
+  top: 0;
+  left: -1px;
+  height: 625px;
+  width: 640px;
+  margin-top: 0px;
+  object-fit: cover;
+
+}
+
+.bg-img-2 {
+  /* float: right;
+  position: relative;
+  left: 129px;
+  height: 625px;
+  width: 1175px;
+  margin-top: -188px;
+  object-fit: cover; */
+  float: right;
+  position: relative;
+  left: 8px;
+  height: 625px;
+  width: 1205px;
+  margin-top: 50px;
+  object-fit: cover;
+}
+    
 
     /* .dataTables_scrollHead{
         margin-bottom: -20px!important;
@@ -144,7 +173,7 @@ width:200px!important;
 			
   <sql:setDataSource var = "snapshot" driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver"
          url = "jdbc:sqlserver://IN-AASHUYADAV;databaseName=Audit_tool"
-         user = "aashu" password = "kpmgKPMG1"/>
+         user = "aashu" password = "KPMG@211"/>
 		<sql:query dataSource = "${snapshot}" var = "resultset">
          SELECT count(distinct(megaprocess)) from audits;
       	</sql:query>
@@ -209,14 +238,14 @@ width:200px!important;
 
   <div class="content-right">
     <img class="bg-img" src="assets/images/bg-1.png" alt="" />
-    <p class="chart-text">List of Review</p>
+    <p class="chart-text" style="margin-left:20px;">List of Review</p>
     <!-- (A) DONUT CHART -->
-    <div class="donut">
+    <div class="donut" style="margin-left:20px;">
       <div class="chartBox2">
         <canvas id="myChart2" style="height: 280px;
         width: 280px;
         margin-top: 15px;
-        margin-left: 40px"></canvas>
+        margin-left: 100px"></canvas>
       </div>
     </div>
   </div>

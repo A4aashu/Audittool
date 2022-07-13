@@ -40,6 +40,9 @@
    line-height: 1.2!important; 
 }
     </style>
+    <style>
+html, body{overflow:hidden;}
+</style>
 </head>
 
 <body>

@@ -60,6 +60,7 @@
               margin-left: 14px!important;
               font-size: 10px !important;
        }
+       html, body{overflow:hidden;}
        .main-drop .user-img img {
   border-radius: 50%;
   width: 53px !important;
@@ -102,7 +103,7 @@ cursor: pointer;
   <c:set var="email" scope="session" value="<%= currentUser.getEmail()%>"/>
    <sql:setDataSource var = "snapshot" driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver"
          url = "jdbc:sqlserver://IN-AASHUYADAV;databaseName=Audit_tool"
-         user = "aashu" password = "kpmgKPMG1"/>
+         user = "aashu" password = "KPMG@211"/>
 		<sql:query dataSource = "${snapshot}" var = "resultset">
          SELECT * from tbl_user where user_email=?;
          <sql:param value = "${email}" />
@@ -146,7 +147,7 @@ cursor: pointer;
       <!-- /Sidebar -->
 
     <div class="content-right">
-        <img class="bg-img" src="assets/images/background-div.png" alt="" />
+        <img class="bg-img" src="assets/images/background-div.png" alt="" style="height:679px!important" />
 
         <img class="bg-img-1" src="assets/images/Pictures2.png" alt="" />
         

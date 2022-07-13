@@ -77,7 +77,7 @@ font-weight:500;}
 			
 <sql:setDataSource var = "snapshot" driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver"
          url = "jdbc:sqlserver://IN-AASHUYADAV;databaseName=Audit_tool"
-         user = "aashu" password = "kpmgKPMG1"/>
+         user = "aashu" password = "KPMG@211"/>
 		<sql:query dataSource = "${snapshot}" var = "resultset">
          SELECT count(distinct(MegaProcess)) from racm;
       	</sql:query>
@@ -229,7 +229,7 @@ font-weight:500;}
             </div>
             <div class="chartCard">
               <h4 style="font-size:23px;margin-left:8px!important;">No of sub-processes covered under Mega Process</h4>
-              <div class="chartBox" style="display: flex;flex-direction:row;margin-top:-50px;">
+              <div class="chartBox" style="display: flex;flex-direction:row;margin-top:-10px;">
                 <div class="" style="display: flex;flex-direction:column;padding-right: 110px;">
                   <h5 style="color: #00338d!important;font-size: 20px!important;">No. of sub-processes covered under Mega Process</h5>
                   <br>

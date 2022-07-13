@@ -147,10 +147,10 @@
 
                 <!-- top nav bar -->
 
-                <div class="topnavbar">
+                <div class="topnavbar" >
                     <div class="compactnavbar">
 
-                        <nav class="Nav2 navbar-fixed-top" style="height:125px!important;background-color:#E1ECF0!important;">
+                        <nav class="Nav2 navbar-fixed-top" style="height:125px!important;width:120%;background-color:#E1ECF0!important;">
                         <ul style="margin-top:-6px;padding-bottom: 5px;">
                         <li>
                          <marquee  behavior="alternate" scrollamount="5" direction="left" style="padding-top: 5px;margin-right: 10px;margin-left: -33px;color: #00338d;font-weight: 700;">Client Name: <%=request.getParameter("client")%> | Review Name: <%=request.getParameter("review")%> | Engagement Partner:  <%=request.getParameter("epname")%></marquee>

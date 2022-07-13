@@ -188,7 +188,7 @@ $.each(trs, function() {
         <div class="topnavbar">
           <div class="compactnavbar">
 
-          <nav class="Nav2 navbar-fixed-top" style="height:130px!important;background-color:#E1ECF0!important;">
+          <nav class="Nav2 navbar-fixed-top" style="height:130px!important;width:120%;background-color:#E1ECF0!important;">
                         <ul style="margin-top:-6px;margin-bottom: -5px;">
                         <li>
                         <marquee  behavior="alternate" scrollamount="5" direction="left" style="padding-top: 8px;

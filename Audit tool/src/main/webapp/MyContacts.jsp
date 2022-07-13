@@ -98,11 +98,11 @@
       }
 
       div.dataTables_wrapper {
-          width: 1140px;
+          width: 1220px;
           height:200px;
           margin: 0 auto;
       }
-
+html, body{overflow:hidden;}
       table{
 table-layout:fixed;
 }
@@ -120,7 +120,7 @@ text-overflow:ellipsis;
 			value="<%= currentUser.getDesignation()%>" />
  <sql:setDataSource var = "snapshot" driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver"
          url = "jdbc:sqlserver://IN-AASHUYADAV;databaseName=Audit_tool"
-         user = "aashu" password = "kpmgKPMG1"/>
+         user = "aashu" password = "KPMG@211"/>
 		<sql:query dataSource = "${snapshot}" var = "resultset">
          SELECT count(distinct(Spoc_name)) from contactdetails;
       	</sql:query>
@@ -180,9 +180,9 @@ text-overflow:ellipsis;
       <!-- /Sidebar -->
  
     <div class="content-right">
-        <img class="bg-img" src="assets/images/bg-1.png" alt="" height="650px!important"/>
+        <img class="bg-img" src="assets/images/bg-1.png" alt=""/>
 
-        <img class="bg-img-1" src="assets/images/6.png" alt="" />
+        <img class="bg-img-1" src="assets/images/6.png" alt=""/>
 
     </div>
     <div class="content-left">
@@ -234,7 +234,7 @@ text-overflow:ellipsis;
             </div>
         </div>
             <h4 class="tableheader"> List of Contacts</h4>
-            <table id="example" class="css-serial" style="width:100%">
+            <table id="example" class="css-serial" style="width:900px!important">
               <thead>
                   <tr>
                     <th style="text-align: center;">SI.No.</th>

@@ -100,7 +100,7 @@
         }
 
         div.dataTables_wrapper {
-            width: 1140px;
+            width: 1210px;
             height:200px;
             margin: 0 auto;
         }

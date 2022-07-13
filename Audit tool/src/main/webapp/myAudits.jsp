@@ -119,6 +119,7 @@ tr:nth-child(odd) {
  table.dataTable.display tbody tr.even>.sorting_1, table.dataTable.order-column.stripe tbody tr.even>.sorting_1 {
     background-color: #E5E5E5!important;
 }
+html, body{overflow:hidden;}
     </style>
     
   </head>
@@ -129,7 +130,7 @@ tr:nth-child(odd) {
 			value="<%= currentUser.getDesignation()%>" />
   <sql:setDataSource var = "snapshot" driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver"
          url = "jdbc:sqlserver://IN-AASHUYADAV;databaseName=Audit_tool"
-         user = "aashu" password = "kpmgKPMG1"/>
+         user = "aashu" password = "KPMG@211"/>
 		<sql:query dataSource = "${snapshot}" var = "resultset">
          SELECT count(distinct(megaprocess)) from audits where createdby=? or epemail=? or edemail=? or ememail1=? or ememail2=? or etemail=? or etemail1=? or etemail2=? or etemail3=?;
          <sql:param value = "<%=currentUser.getEmail()%>" />
@@ -224,10 +225,10 @@ tr:nth-child(odd) {
     </div>
   </div>
   <!-- /Sidebar -->
-    <div class="content-right">
-      <img class="bg-img" src="assets/images/bg-1.png" alt="" />
+    <div class="content-right" >
+      <img class="bg-img" src="assets/images/bg-1.png" alt="" style="height: 790px!important;width: 660px!important;"/>
       <p class="chart-text">On-Going vs Completed Engagements</p>
-      <div class="piechart">
+      <div class="piechart" style="margin-left:60px!important">
         <div class="chartBox">
             <canvas id="myChart"></canvas>
         </div>
@@ -250,20 +251,20 @@ tr:nth-child(odd) {
 
         <img class="darkblue" src="assets/images/card3.png" alt="" />
         <img class="icon3" src="assets/images/icon3.png" alt="" />
-        <h5 class="icon-tag-1">No. of Clients</h5>
-        <h5 class="icon-tag-1"  style="font-size: 30px;">${resultset2.rowsByIndex[0][0]}</h5>
+        <h5 class="icon-tag-1" >No. of Clients</h5>
+        <h5 class="icon-tag-1"  style="font-size: 30px">${resultset2.rowsByIndex[0][0]}</h5>
         
 
         <img class="icon4" style="margin-top:-50px"src="assets/images/icon4.png" alt="" />
         <img class="purple" src="assets/images/card4.png" alt="" />
-        <h5 class="icon-tag-3"style="margin-top:-20px" >No. of Completed <br/> Engagements</h5>
-        <h5 class="icon-tag-3" style="font-size: 30px;">0</h5>
+        <h5 class="icon-tag-3"style="margin-top:-20px;margin-left:10px" >No. of Completed <br/> Engagements</h5>
+        <h5 class="icon-tag-3" style="font-size: 30px;margin-left:20px">0</h5>
       </div>
 
       <div class="tableanddrp">
         <div class="tablelist1">
           <h4>List of Reviews</h4>
-          <div class="table-responsive tablecss">
+          <div class="table-responsive tablecss" style="width:1220px">
                 <div class="data-table">
                     <table id="example" class="display nowrap" style="width:100%">
                <%

@@ -24,9 +24,13 @@
       crossorigin="anonymous"
     ></script>
     <title>IA Accelerator</title>
+    <style>
+html, body{overflow:hidden;}
+</style>
   </head>
+  
   <body>
-    <div class="container-fluid">
+    <div class="container-fluid" >
       <div class="card card-style">
         <div class="row">
           <div class="col col-lg-6 col-md-12 col-sm-12 col-xs-12 main-content">
@@ -53,7 +57,7 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+          <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12" style="height:520px">
             <div class="content_3">
               <img src="assets/images/forgot_pwd.png" alt="forgot-pwd" />
             </div>

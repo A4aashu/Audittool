@@ -7,7 +7,7 @@ public class Dbconfig {
 	
 	static String dburl="jdbc:sqlserver://IN-AASHUYADAV;databaseName=Audit_tool";
 	static String dbusername="aashu";
-	static String dbpassword="kpmgKPMG1";
+	static String dbpassword="KPMG@211";
 	
 	static Connection con;
 	
