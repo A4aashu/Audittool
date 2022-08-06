@@ -224,7 +224,7 @@ cursor: pointer;
           </select>
             </div>
             <div class="col-md-8"><label class="labels">Contact No.</label><input type="text" class="form-control" placeholder="Enter number" value="${row.contactno}" pattern="[1-9]{1}[0-9]{9}" name="phone"></div>
-            <div class="col-md-8" style="margin-top: 3px;"><label class="labels">Upload Profile Photo</label><input type="file" id="photo" class="upload"  name="myimg">    
+            <div class="col-md-8" style="margin-top: 3px;"><label class="labels">Upload Profile Photo</label><input type="file" id="photo" class="upload" style="width:84%"  name="myimg">    
         
               </div>
              

@@ -76,6 +76,9 @@
 		}
  });
  </script>
+ <style>
+
+html, body{overflow:hidden;}</style>
 </head>
 
 <body>
@@ -134,7 +137,7 @@
         <div class="topnavbar">
           <div class="compactnavbar">
 
-            <nav class="Nav2 navbar-fixed-top" style="background-color:#E1ECF0!important;">
+            <nav class="Nav2 navbar-fixed-top" style="background-color:#E1ECF0!important;width:125%">
               <ul>
                 <li><button type="button" class="boxx-shadow2 nav-1">Audit Background</button></li>
                 <li><button type="button" class="boxx-shadow2 nav1">Data Request</button></li>
@@ -518,7 +521,7 @@
 
             </div>
             <div class="col-lg-4" style="background-color: #fff;">
-              <img src="assets/images/background-div.png" width="450px" height="455px"
+              <img src="assets/images/background-div.png" width="472px" height="465px"
                   style="margin-left: -20px!important;margin-top:0px;margin-bottom:-70px;" alt="">
               <img src="assets/images/Picture7.png" style="width: 300px;
               margin-top: -139%;

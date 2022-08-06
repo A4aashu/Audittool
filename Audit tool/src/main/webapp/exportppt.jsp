@@ -96,9 +96,13 @@ catch(Exception e)
 String int11=Integer.toString(y);
 String obj1=result;
 
-
-	ProcessBuilder builder=new ProcessBuilder("python","C:\\Users\\aashuyadav\\Downloads\\exportppt.py",noc,engname,reviewperiod,monthomd,auditback,obj1,auditannounce1,irauditscope1,discussiondate1,walkthroughsession1,datarequest1,aqm1,draftreport1,exitmeeting1,releasefinalreport1,lead,director,manager1,manager2,team1,team2,team3,team4,int11);
+String s=null;
+	ProcessBuilder builder=new ProcessBuilder("python","C:\\Users\\Aashuyadav\\Downloads\\exportppt.py",noc,engname,reviewperiod,monthomd,auditback,obj1,auditannounce1,irauditscope1,discussiondate1,walkthroughsession1,datarequest1,aqm1,draftreport1,exitmeeting1,releasefinalreport1,lead,director,manager1,manager2,team1,team2,team3,team4,int11);
 	Process p = builder.start();
+	BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream()));
+    while((s=in.readLine()) != null){
+        System.out.println(s);
+        }	
 	        PrintWriter outs = response.getWriter(); 
 	        
 	        outs.println(

@@ -168,7 +168,7 @@
                                                         <div class="topnavbar"  >
                                                             <div class="compactnavbar">
 
-                                                                <nav class="Nav2 navbar-fixed-top" style="background-color:#E1ECF0!important;">
+                                                                <nav class="Nav2 navbar-fixed-top" style="background-color:#E1ECF0!important;width:120%">
                                                                     <ul>
                                                                         <li><button type="button"
                                                                                 class="boxx-shadow2 nav-1">Audit

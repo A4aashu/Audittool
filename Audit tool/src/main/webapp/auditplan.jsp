@@ -54,7 +54,9 @@
   <!-- 
     <link rel="stylesheet" href="assets/css/AnalystDashboard.css"> -->
   <link rel="stylesheet" href="assets/css/Audit_Plan.css">
+<style>
 
+html, body{overflow:hidden;}</style>
 </head>
 
 <body onload="myfunction()">
@@ -111,7 +113,7 @@
         <div class="topnavbar">
           <div class="compactnavbar">
 
-            <nav class="Nav2 navbar-fixed-top" style="background-color:#E1ECF0!important;">
+            <nav class="Nav2 navbar-fixed-top" style="background-color:#E1ECF0!important;width:120%!important">
               <ul>
                 <li><button type="button" class="boxx-shadow2 nav-1">Audit Background</button></li>
                 <li><button type="button" class="boxx-shadow2 nav1">Data Request</button></li>
@@ -194,7 +196,7 @@
                       data-toggle="dropdown" style="background-color:#470a68!important;margin-top: 1px;font-size: 12px!important;" id="posuvnik1">
                       Planning
                     </button>
-                    <div class="dropdown-menu" style="margin-top: -400px;
+                    <div class="dropdown-menu" style="margin-top: -413px;
                     margin-left: 29px;">
                       <a class="dropdown-item" href="#">1) Audit Announcement/ Kick off Meeting
                         <span><input class="date-field" type="date" id="date1" name="auditannounce" required/></span>
@@ -270,7 +272,7 @@
                 </div>
               </div>
               <div class="col-lg-4" style="background-color: #fff;">
-                <img src="assets/images/background-div.png" width="450px" height="464px"
+                <img src="assets/images/background-div.png" width="472px" height="478px"
                     style="margin-left: -20px!important;margin-top:0px;margin-bottom:-80px;" alt="">
                 <img src="assets/images/Picture3.png" style="width: 300px;
                 margin-top: -139%;
@@ -281,7 +283,7 @@
             </div>
             <div class="row px-3"> <button type="submit"
               class="btn btn-blue text-center signup_btn"
-              style="background-color: #470A68;margin-top: -10px!important;
+              style="background-color: #470A68;margin-top: -15px!important;
               margin-left: 990px!important;z-index: 111;" formaction="GeneralServlet" name="btn_auditplan" id="btn_auditplan">Save & Proceed</button>
               
               </form>

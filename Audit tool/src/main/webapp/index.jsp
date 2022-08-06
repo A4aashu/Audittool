@@ -74,6 +74,7 @@ html, body{overflow:hidden;}
                 <div class="form-group">
                   <a href="registration.jsp" class="NewUser">New User? Sign Up</a>
                 </div>
+                
               </form>
             </div>
           </section>

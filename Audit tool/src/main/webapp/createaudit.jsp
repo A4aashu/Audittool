@@ -68,9 +68,10 @@ function xyz(){
 	} 
 	
 }
-
 </script>
+<style>
 
+html, body{overflow:hidden;}</style>
 </head>
 
 <body>
@@ -155,7 +156,7 @@ function xyz(){
             <div class="topnavbar">
               <div class="compactnavbar">
     
-                <nav class="Nav2 navbar-fixed-top" style="background-color:#E1ECF0!important;">
+                <nav class="Nav2 navbar-fixed-top" style="background-color:#E1ECF0!important;width:120%">
                   <ul>
                     <li><button type="button" class="boxx-shadow2 nav-1">Audit Background</button></li>
                     <li><button type="button" class="boxx-shadow2 nav1">Data Request</button></li>
@@ -243,7 +244,7 @@ function xyz(){
                                         <h6 class="mb-0 text-lg" style="margin-left: 28.5%;font-size: 23px;
                                         margin-top: -13.5%;">Engagement Name</h6>
                                         </label> <input class="mb-4 input_engagement_name" id="txtPassword" placeholder="Enter Name"
-                                            onchange="checkPass()" type="text" name="engagement_name" value="<%=engagement_name%>" required>
+                                            onchange="checkPass()" type="text" name="engagement_name" style="margin-left:28.5%!important" value="<%=engagement_name%>" required>
                                     </div>
                                     <div class="row px-3"> <label class="mb-0"
                                             style="margin-bottom: -1.75rem!important;">
@@ -293,7 +294,7 @@ function xyz(){
                                             margin-top: -12.5%;">
                                             Categorization</h6>
                                         </label>
-                                        <select class="form-control input_categorization" id="exampleFormControlSelect2" name="department" style="color:#495057!important" onchange=this.form.submit()>
+                                        <select class="form-control input_categorization" id="exampleFormControlSelect2" name="department" style="color:#495057!important;margin-left:28.5%!important" onchange=this.form.submit()>
                                         <option value="0">Choose Value</option>
                                         <%
                                         try{
@@ -337,7 +338,7 @@ function xyz(){
                                         <i class="fa fa-caret-down" aria-hidden="true" style="margin-top: -35px;
                                         margin-left: 138px;width: 35px!important;
                                         font-size: 25px;cursor: pointer;"></i>
-                                        <select class="form-control input_subprocess" id="exampleFormControlSelect1" name="process" style="color:#495057!important">
+                                        <select class="form-control input_subprocess" id="exampleFormControlSelect1" name="process" style="color:#495057!important;margin-left:63.5%!important">
                                             <option value="0">Choose Value</option>
                                             
                                             
@@ -370,10 +371,10 @@ function xyz(){
                                             
                                         </select>
                                         <i class="fa fa-caret-down" aria-hidden="true" style="margin-top: -38px;
-                                        margin-left: 363px;width: 35px!important;
+                                        margin-left: 383px;width: 35px!important;
                                         font-size: 25px;cursor: pointer;"></i>
                                         <i class="fa fa-caret-down" aria-hidden="true" style="margin-top: -38px;
-                                        margin-left: 597px;width: 35px!important;
+                                        margin-left: 617px;width: 35px!important;
                                         font-size: 25px;cursor: pointer;"></i>
                                         
 
@@ -391,7 +392,7 @@ function xyz(){
                                         margin-top: -14.5%;">Audit End Date
                                         </h6>
                                         </label> <input class="mb-4 input_end_date" id="audit_end_date" onchange="xyz()"
-                                            type="date" name="audit_end_date" value="<%=audit_end_date%>" required>
+                                            type="date" name="audit_end_date" style="margin-left: 28.5%!important" value="<%=audit_end_date%>" required>
                                     </div>
 
                                     <div class="row px-3">
@@ -409,7 +410,7 @@ function xyz(){
                                
                             </div>
                             <div class="col-lg-4" style="background-color: #fff;">
-                                <img src="assets/images/background-div.png" width="450px" height="452px"
+                                <img src="assets/images/background-div.png" width="475px" height="464px"
                                     style="margin-left: -20px!important;margin-top:0px;margin-bottom:-70px;" alt="">
                                 <img src="assets/images/Pictures2.png" style="width: 339px;
                                 margin-top: -139%;
